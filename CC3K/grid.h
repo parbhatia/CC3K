@@ -9,20 +9,19 @@ using namespace std;
 class TextDisplay;
 
 class Grid {
-    int size;
-    TextDisplay td;
+    int width = 79;
+    int height = 30;
     std::vector <std::vector <Cell>> cells;
+    TextDisplay *td = nullptr;
 public:
     Grid();
     ~Grid();
-    void default_layout(string s);
-    void read_layout();
+    void read_layout(string s);
+    void default_layout();
     bool valid_direction();
     void update_observers();
+    friend std::ostream &operator<<(std::ostream &out, const Grid &g);
 };
 
-void operator<<(string out, Grid *g) {
-    
-}
 
 #endif
