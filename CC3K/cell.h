@@ -9,6 +9,7 @@ class Cell {
     int row, col;
     TextDisplay *td;
     std::vector<std::vector<Cell*>> observers;
+    Object* ob = nullptr;
 public:
     virtual void move_to(Cell& to);
     virtual bool accept_move(Cell &who);
