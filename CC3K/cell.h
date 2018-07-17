@@ -1,6 +1,16 @@
 #ifndef cell_hpp
 #define cell_hpp
 
-#include <stdio.h>
+#include <iostream>
 
-#endif /* cell_hpp */
+class Cell {
+    int row, col;
+    TextDisplay *td;
+    <vector <vector *Cell> observers;
+public:
+    void move_to(Cell )
+}
+
+
+
+#endif

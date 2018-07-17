@@ -1,2 +1,2 @@
-/#include "textdisplay.h"
+#include "textdisplay.h"
 

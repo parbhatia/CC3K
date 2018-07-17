@@ -1,6 +1,6 @@
 #ifndef textdisplay_hpp
 #define textdisplay_hpp
 
-#include <stdio.h>
+#include <iostream>
 
 #endif /* textdisplay_hpp */
