@@ -1,6 +1,6 @@
 #ifndef cell_hpp
 #define cell_hpp
 
-#include <stdio.h>
+#include <iostream>
 
 #endif /* cell_hpp */
