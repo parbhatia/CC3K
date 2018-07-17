@@ -8,9 +8,11 @@ class Object;
 class Cell {
     int row, col;
     TextDisplay *td;
-    std::vector<std::vector<Cell*>> observers;
+    std::vector<Cell*> observers;
     Object* ob = nullptr;
 public:
+    Cell(int r, int c);
+
     virtual void move_to(Cell& to);
     virtual bool accept_move(Cell &who);
     virtual void interact(Cell &target);
@@ -20,7 +22,10 @@ public:
     virtual void notify(Cell &whoFrom);
     virtual Object& getObject();
     virtual void attachObserver(Cell* ob);
+    virtual void setDisplay(TextDisplay *td);
     
+
+
     virtual ~Cell() = 0;
     
 };
