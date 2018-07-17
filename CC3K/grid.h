@@ -2,13 +2,20 @@
 #define grid_hpp
 
 #include <iostream>
+#include <vector>
+#include "textdisplay.h"
+#include "cell.h"
+
+class TextDisplay;
 
 class Grid {
     int size;
     TextDisplay td;
-    vector <<vector Cell> cells>;
+    vector <vector <Cell>> cells>;
 public:
-    void default_layout();
+    Grid();
+    ~Grid();
+    void default_layout(string s);
     void read_layout();
     bool valid_direction();
     void update_observers();
