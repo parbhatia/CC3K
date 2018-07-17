@@ -1,33 +1,40 @@
-#include "grid.h"
 #include <sstream>
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "grid.h"
 using namespace std;
 
 void Grid::default_layout(string s) {
     ifstream file(s.c_str());
     string l;
-    int line_num;
+    int row = 0;
     while(getline(file,l)) {
         stringstream line{l};
+        ++row;
         char c;
-        int char_num;
+        int col = 0;
         while(line >> c) {
+            ++col;
             switch(c) {
                 case '|':
-                    cells[line_num][char_num] = new Wall(c);
+                    cells[row][col] = new OBDCell(row,col,c);
                 case '-':
-                    cells[line_num][char_num] = new Wall(c);
+                    cells[line_num][char_num] = new OBDCell(row,col,c);
                 case '.':
-                    cells[line_num][char_num] = new Floor();
+                    cells[line_num][char_num] = new Floor(row,col);
                 case '#':
-                    //do something
+                    cells[line_num][char_num] = new Bridge(row,col);
                 case ' ':
-                    //do something
+                    cells[line_num][char_num] = new OBDCell(row,col,c);
                 case '+':
-                    //do something
+                    cells[line_num][char_num] = new Door(row,col);
             }
         }
+        col = 0; //reset column counter
     }
+}
+
+std::ostream &Grid::operator<<(std::ostream &out, const Grid &g) {
+    
 }

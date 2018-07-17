@@ -19,10 +19,9 @@ public:
     void read_layout();
     bool valid_direction();
     void update_observers();
+    friend std::ostream &operator<<(std::ostream &out, const Grid &g);
 };
 
-void operator<<(string out, Grid *g) {
-    
-}
+
 
 #endif
