@@ -16,11 +16,11 @@ void Grid::default_layout(string s) {
         while(line >> c) {
             switch(c) {
                 case '|':
-                    //do something
+                    cells[line_num][char_num] = new Wall(c);
                 case '-':
-                    //do something
+                    cells[line_num][char_num] = new Wall(c);
                 case '.':
-                    //do something
+                    cells[line_num][char_num] = new Floor();
                 case '#':
                     //do something
                 case ' ':
