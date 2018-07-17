@@ -6,6 +6,7 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
+  friend std::ostream &operator<<(std::ostream &out, const Grid &g);
 //test alex
 
 //test par
