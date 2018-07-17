@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4B2B5D6E20FE8B1B00F5B673 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D6D20FE8B1B00F5B673 /* main.cc */; };
+		4B2B5D7620FE968D00F5B673 /* grid.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D7420FE968D00F5B673 /* grid.cc */; };
+		4B2B5D7920FE969A00F5B673 /* textdisplay.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D7720FE969A00F5B673 /* textdisplay.cc */; };
+		4B2B5D7C20FE96C700F5B673 /* cell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D7A20FE96C700F5B673 /* cell.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		4B2B5D6A20FE8B1B00F5B673 /* CC3K */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CC3K; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2B5D6D20FE8B1B00F5B673 /* main.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
+		4B2B5D7420FE968D00F5B673 /* grid.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = grid.cc; sourceTree = "<group>"; };
+		4B2B5D7520FE968D00F5B673 /* grid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grid.h; sourceTree = "<group>"; };
+		4B2B5D7720FE969A00F5B673 /* textdisplay.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = textdisplay.cc; sourceTree = "<group>"; };
+		4B2B5D7820FE969A00F5B673 /* textdisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textdisplay.h; sourceTree = "<group>"; };
+		4B2B5D7A20FE96C700F5B673 /* cell.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cell.cc; sourceTree = "<group>"; };
+		4B2B5D7B20FE96C700F5B673 /* cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				4B2B5D6D20FE8B1B00F5B673 /* main.cc */,
+				4B2B5D7420FE968D00F5B673 /* grid.cc */,
+				4B2B5D7520FE968D00F5B673 /* grid.h */,
+				4B2B5D7720FE969A00F5B673 /* textdisplay.cc */,
+				4B2B5D7820FE969A00F5B673 /* textdisplay.h */,
+				4B2B5D7A20FE96C700F5B673 /* cell.cc */,
+				4B2B5D7B20FE96C700F5B673 /* cell.h */,
 			);
 			path = CC3K;
 			sourceTree = "<group>";
@@ -118,7 +133,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B2B5D7920FE969A00F5B673 /* textdisplay.cc in Sources */,
+				4B2B5D7C20FE96C700F5B673 /* cell.cc in Sources */,
 				4B2B5D6E20FE8B1B00F5B673 /* main.cc in Sources */,
+				4B2B5D7620FE968D00F5B673 /* grid.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
