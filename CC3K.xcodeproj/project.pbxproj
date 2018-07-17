@@ -34,6 +34,7 @@
 		4B2B5D7820FE969A00F5B673 /* textdisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textdisplay.h; sourceTree = "<group>"; };
 		4B2B5D7A20FE96C700F5B673 /* cell.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cell.cc; sourceTree = "<group>"; };
 		4B2B5D7B20FE96C700F5B673 /* cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cell.h; sourceTree = "<group>"; };
+		4B2B5D7D20FE9B6900F5B673 /* cc3k_emptyfloor.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = cc3k_emptyfloor.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +67,7 @@
 		4B2B5D6C20FE8B1B00F5B673 /* CC3K */ = {
 			isa = PBXGroup;
 			children = (
+				4B2B5D7D20FE9B6900F5B673 /* cc3k_emptyfloor.txt */,
 				4B2B5D6D20FE8B1B00F5B673 /* main.cc */,
 				4B2B5D7420FE968D00F5B673 /* grid.cc */,
 				4B2B5D7520FE968D00F5B673 /* grid.h */,
