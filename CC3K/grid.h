@@ -4,6 +4,11 @@
 #include <vector>
 #include "textdisplay.h"
 #include "cell.h"
+#include "doorcell.h"
+#include "floorcell.h"
+#include "nullcell.h"
+#include "bridge.h"
+
 using namespace std;
 
 class TextDisplay;
@@ -11,7 +16,7 @@ class TextDisplay;
 class Grid {
     int width = 79;
     int height = 30;
-    std::vector <std::vector <Cell>> cells;
+    std::vector <std::vector <Cell*>> cells;
     TextDisplay *td = nullptr;
 public:
     Grid();

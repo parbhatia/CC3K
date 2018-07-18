@@ -1,5 +1,5 @@
-#ifndef floorcell_hpp
-#define floorcell_hpp
+#ifndef nullcell_hpp
+#define nullcell_hpp
 #include "cell.h"
 
 class Object;
