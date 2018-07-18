@@ -23,7 +23,7 @@ class Grid {
     int level = 1;
     string race = "Shade";
     //Character *player = nullptr;
-    std::vector <std::vector <Chamber>> chambers;
+    std::vector <Chamber> chambers;
 public:
     Grid();
     //~Grid();

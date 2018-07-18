@@ -3,7 +3,6 @@
 #include <string>
 #include <fstream>
 #include "grid.h"
-#include "cell.h"
 using namespace std;
 
 Grid::Grid() {
@@ -11,7 +10,10 @@ Grid::Grid() {
 }
 
 void Grid::test_chambers() {
+    int i=1;
     for (auto it: chambers) {
+        cout << "Chamber: " << i << " " << endl;
+        ++i;
         it.print();
     }
 }
@@ -46,25 +48,40 @@ void Grid::read_layout(string s) {
                     line.emplace_back(new NullCell(row,col,c));
                     break;
                 case '1':
-                    line.emplace_back(new FloorCell(row,col));
-                    chambers[0].emplace_back(cells[row][col]);
+                {
+                    Cell *new_cell = new FloorCell(row,col);
+                    line.emplace_back(new_cell);
+                    chambers[0].add_cell(new_cell);
                     break;
+                }
                 case '2':
-                    line.emplace_back(new FloorCell(row,col));
-                    chambers[1].emplace_back(cells[row][col]);
+                {
+                    Cell *new_cell2 = new FloorCell(row,col);
+                    line.emplace_back(new_cell2);
+                    chambers[1].add_cell(new_cell2);
                     break;
+                }
                 case '3':
-                    line.emplace_back(new FloorCell(row,col));
-                    chambers[2].emplace_back(cells[row][col]);
+                {
+                    Cell *new_cell3 = new FloorCell(row,col);
+                    line.emplace_back(new_cell3);
+                    chambers[2].add_cell(new_cell3);
                     break;
+                }
                 case '4':
-                    line.emplace_back(new FloorCell(row,col));
-                    chambers[3].emplace_back(cells[row][col]);
+                {
+                    Cell *new_cell4 = new FloorCell(row,col);
+                    line.emplace_back(new_cell4);
+                    chambers[3].add_cell(new_cell4);
                     break;
+                }
                 case '5':
-                    line.emplace_back(new FloorCell(row,col));
-                    chambers[4].emplace_back(cells[row][col]);
+                {
+                    Cell *new_cell5 = new FloorCell(row,col);
+                    line.emplace_back(new_cell5);
+                    chambers[4].add_cell(new_cell5);
                     break;
+                }
                 case '#':
                     line.emplace_back(new Bridge(row,col));
                     break;
@@ -85,8 +102,8 @@ void Grid::read_layout(string s) {
 
 std::ostream &operator<<(std::ostream &out, const Grid &g) {
     //print display
-    for (int i=0; i<25; ++i) {
-        for (int j=0; j<79; ++j) {
+    for (int i=0; i<g.height-5; ++i) {
+        for (int j=0; j<g.width; ++j) {
             out << g.cells[i][j]->print();
         }
         if (i != 25) out << endl;

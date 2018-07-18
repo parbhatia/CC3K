@@ -1,6 +1,10 @@
 #include "chamber.h"
 #include <iostream>
 
+int Chamber::numPotions = 10;
+int Chamber::numGold = 10;
+int Chamber::numEnemies = 10;
+
 void Chamber::print(){
     for(auto cell: cells){
         std::cout<< cell->print() << " ";
@@ -12,6 +16,10 @@ void Chamber::reset(){
     for(auto cell:cells){
         cell->clear();
     }
+}
+
+void Chamber::add_cell(Cell *c) {
+    cells.emplace_back(c);
 }
 
 void Chamber::generate_potion(){

@@ -10,6 +10,7 @@ public:
     void generate_gold();
     void generate_enemy();
     void reset();
+    void add_cell(Cell *c);
 };
 
 
