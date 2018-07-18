@@ -10,6 +10,17 @@ Grid::Grid() {
     read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
 }
 
+void Grid::test_chambers() {
+    for (auto it: chambers) {
+        it.print();
+    }
+}
+
+
+void Grid::generate_chamber() {
+    
+}
+
 void Grid::read_layout(string s) {
     //create chambers
     for (int i=0; i<5; ++i) {
