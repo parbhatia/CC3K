@@ -1,5 +1,11 @@
 #include "floorcell.h"
 
-Floorcell::Floorcell(int r, int c): Cell{r,c} {
-    
+FloorCell::FloorCell(int r, int c): Cell{r,c} {  
+}
+
+char FloorCell::print(){
+    if(ob){}
+    else{
+        return '.';
+    }
 }
