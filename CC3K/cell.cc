@@ -20,3 +20,15 @@ Cell::~Cell(){}
 //    }
 //}
 
+bool Cell::hasPlayer(){
+    if(player){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+void Cell::clear(){
+    delete ob;
+}

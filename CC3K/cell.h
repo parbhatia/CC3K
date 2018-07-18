@@ -12,10 +12,13 @@ class Cell {
     std::vector<Cell*> observers;
 
 protected:
+    Object* player = nullptr;
     Object* ob = nullptr;    
 public:
     Cell(int r, int c);
     virtual char print() = 0;
+    bool hasPlayer();
+    void clear();
 
 //    virtual void move_to(Cell& to);
 //    virtual bool accept_move(Cell &who);
