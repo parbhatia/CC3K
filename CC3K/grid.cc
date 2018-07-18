@@ -4,6 +4,7 @@
 #include <fstream>
 #include "grid.h"
 #include "floorcell.h"
+#include "cell.h"
 using namespace std;
 
 Grid::Grid() {
