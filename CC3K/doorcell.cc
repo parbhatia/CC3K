@@ -7,3 +7,5 @@ DoorCell::DoorCell(int r, int c) :  Cell{r,c} {}
 char DoorCell::print() {
         return '+';
 }
+
+DoorCell::~DoorCell() {}

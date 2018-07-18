@@ -20,7 +20,7 @@ class Grid {
     TextDisplay *td = nullptr;
 public:
     Grid();
-    ~Grid();
+    //~Grid();
     void read_layout(string s);
     void default_layout();
     bool valid_direction();

@@ -8,6 +8,7 @@ public:
     FloorCell(int r, int c);
 
     char print() override;
+    ~FloorCell() {}
 
 /*
     void move_to(Cell& to) override;

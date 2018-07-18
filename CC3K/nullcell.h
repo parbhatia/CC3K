@@ -9,6 +9,7 @@ public:
     NullCell(int r, int c, char type);
 
     char print() override;
+    ~NullCell() {}
 
 /*
     void move_to(Cell& to) override;

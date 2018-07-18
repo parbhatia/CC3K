@@ -15,19 +15,20 @@ protected:
     Object* ob = nullptr;    
 public:
     Cell(int r, int c);
+    virtual char print() = 0;
 
-    virtual void move_to(Cell& to);
-    virtual bool accept_move(Cell &who);
-    virtual void interact(Cell &target);
-    virtual void accept_interact(Cell &whoFrom);
-    virtual char print();
-    virtual void notifyObservers();
-    virtual void notify(Cell &whoFrom);
-    virtual Object& getObject();
-    virtual void attachObserver(Cell* ob);
-    virtual void setDisplay(TextDisplay *td);
-    virtual void notifyDisplay();
-    
+//    virtual void move_to(Cell& to);
+//    virtual bool accept_move(Cell &who);
+//    virtual void interact(Cell &target);
+//    virtual void accept_interact(Cell &whoFrom);
+//
+//    virtual void notifyObservers();
+//    virtual void notify(Cell &whoFrom);
+//    virtual Object& getObject();
+//    virtual void attachObserver(Cell* ob);
+//    virtual void setDisplay(TextDisplay *td);
+//    virtual void notifyDisplay();
+//
 
 
     virtual ~Cell() = 0;

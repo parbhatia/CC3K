@@ -8,6 +8,7 @@ class DoorCell : public Cell {
 public:
     DoorCell(int r, int c);
     char print() override;
+    ~DoorCell();
     /*
     void move_to(Cell& to) override;
     bool accept_move(Cell &who) override;
