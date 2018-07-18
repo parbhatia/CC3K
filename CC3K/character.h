@@ -9,7 +9,6 @@ class Character : public Object
     int atk;
     int def;
     int hp;
-
   public:
     Character(std::string race, int atk, int def, int hp) : race{race}, atk{atk}, hp{hp} {}
 };
