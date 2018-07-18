@@ -18,7 +18,11 @@ public:
     Cell(int r, int c);
     virtual char print() = 0;
     bool hasPlayer();
+    bool isOccupied();
     void clear();
+    void setPotion();
+    void setEnemy();
+    void setGold();
 
 //    virtual void move_to(Cell& to);
 //    virtual bool accept_move(Cell &who);

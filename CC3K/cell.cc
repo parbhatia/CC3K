@@ -32,3 +32,24 @@ bool Cell::hasPlayer(){
 void Cell::clear(){
     delete ob;
 }
+
+bool Cell::isOccupied(){
+    if(hasPlayer() or ob){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+void Cell::setEnemy(){
+    //NEED TO WRITE
+}
+
+void Cell::setPotion(){
+    //NEED TO WRITE
+}
+
+void Cell::setGold(){
+    //NEED TO WRITE
+}
