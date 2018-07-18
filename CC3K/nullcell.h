@@ -3,9 +3,10 @@
 #include "cell.h"
 
 class Object;
-class FloorCell: public Cell{
+class NullCell: public Cell{
+    char type;
 public:
-    FloorCell(int r, int c);
+    NullCell(int r, int c, char type);
 
     char print() override;
 
