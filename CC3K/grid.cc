@@ -25,16 +25,22 @@ void Grid::read_layout(string s) {
             switch(c) {
                 case '|':
                     line.emplace_back(new NullCell(row,col,c));
+                    break;
                 case '-':
                     line.emplace_back(new NullCell(row,col,c));
+                    break;
                 case '.':
                     line.emplace_back(new FloorCell(row,col));
+                    break;
                 case '#':
                     line.emplace_back(new Bridge(row,col));
+                    break;
                 case ' ':
                     line.emplace_back(new NullCell(row,col,c));
+                    break;
                 case '+':
                     line.emplace_back(new DoorCell(row,col));
+                    break;
             }
         }
         cells.emplace_back(line);
@@ -45,12 +51,20 @@ void Grid::read_layout(string s) {
 }
 
 std::ostream &operator<<(std::ostream &out, const Grid &g) {
-    for (auto it: g.cells) {
-        for (auto it2: it) {
-            out << it2->print();
+    //print display
+    for (int i=0; i<25; ++i) {
+        for (int j=0; j<79; ++j) {
+            out << g.cells[i][j]->print();
         }
-        out << endl;
+        if (i != 25) out << endl;
     }
-    return out;
+
+    //print stats
+    out << "Race: " << left << setw(63) << g.race << right << setw(8) << "Level: " << g.level << endl;
+    out << "HP: " << endl;
+    out << "Atk: " << endl;
+    out << "Def: " << endl;
+    out << "Action: " << endl;
     
+    return out;
 }
