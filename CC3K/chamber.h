@@ -10,3 +10,6 @@ public:
     void generate_gold();
     void reset();
 };
+
+srand((unsigned)time(NULL)); //uses "seed" as current time
+int x = rand() % 5; //generates number from 0 to 4

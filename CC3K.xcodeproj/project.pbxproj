@@ -17,6 +17,7 @@
 		4B2B5D8920FEC1D200F5B673 /* bridge.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8820FEC1D200F5B673 /* bridge.cc */; };
 		4B2B5D8C20FFD7A000F5B673 /* character.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8A20FFD7A000F5B673 /* character.cc */; };
 		4B2B5D8F20FFD80B00F5B673 /* item.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8E20FFD80B00F5B673 /* item.cc */; };
+		4B53F1B820FFE96300736E14 /* chamber.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1B620FFE96300736E14 /* chamber.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,8 @@
 		4B2B5D8B20FFD7A000F5B673 /* character.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = character.h; sourceTree = "<group>"; };
 		4B2B5D8D20FFD7F300F5B673 /* item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = item.h; sourceTree = "<group>"; };
 		4B2B5D8E20FFD80B00F5B673 /* item.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = item.cc; sourceTree = "<group>"; };
+		4B53F1B620FFE96300736E14 /* chamber.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chamber.cc; sourceTree = "<group>"; };
+		4B53F1B720FFE96300736E14 /* chamber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chamber.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,7 @@
 				4B2B5D7D20FE9B6900F5B673 /* cc3k_emptyfloor.txt */,
 				4B2B5D6D20FE8B1B00F5B673 /* main.cc */,
 				4B2B5D7520FE968D00F5B673 /* grid.h */,
+				4B53F1B720FFE96300736E14 /* chamber.h */,
 				4B2B5D8B20FFD7A000F5B673 /* character.h */,
 				4B2B5D8D20FFD7F300F5B673 /* item.h */,
 				4B2B5D7B20FE96C700F5B673 /* cell.h */,
@@ -96,6 +100,7 @@
 				4B2B5D8720FEC1D200F5B673 /* bridge.h */,
 				4B2B5D7820FE969A00F5B673 /* textdisplay.h */,
 				4B2B5D8220FEBB6300F5B673 /* nullcell.h */,
+				4B53F1B620FFE96300736E14 /* chamber.cc */,
 				4B2B5D8E20FFD80B00F5B673 /* item.cc */,
 				4B2B5D8A20FFD7A000F5B673 /* character.cc */,
 				4B2B5D7420FE968D00F5B673 /* grid.cc */,
@@ -171,6 +176,7 @@
 				4B2B5D7C20FE96C700F5B673 /* cell.cc in Sources */,
 				4B2B5D8F20FFD80B00F5B673 /* item.cc in Sources */,
 				4B2B5D6E20FE8B1B00F5B673 /* main.cc in Sources */,
+				4B53F1B820FFE96300736E14 /* chamber.cc in Sources */,
 				4B2B5D8C20FFD7A000F5B673 /* character.cc in Sources */,
 				4B2B5D8620FEBD2B00F5B673 /* doorcell.cc in Sources */,
 				4B2B5D7620FE968D00F5B673 /* grid.cc in Sources */,
