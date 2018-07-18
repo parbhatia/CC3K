@@ -11,6 +11,11 @@ Grid::Grid() {
 }
 
 void Grid::read_layout(string s) {
+    //create chambers
+    for (int i=0; i<5; ++i) {
+        chambers.emplace_back(Chamber());
+    }
+    
     ifstream file(s.c_str()); //read lines
     string l;
     int row = -1;
@@ -29,8 +34,25 @@ void Grid::read_layout(string s) {
                 case '-':
                     line.emplace_back(new NullCell(row,col,c));
                     break;
-                case '.':
+                case '1':
                     line.emplace_back(new FloorCell(row,col));
+                    chambers[0].emplace_back(cells[row][col]);
+                    break;
+                case '2':
+                    line.emplace_back(new FloorCell(row,col));
+                    chambers[1].emplace_back(cells[row][col]);
+                    break;
+                case '3':
+                    line.emplace_back(new FloorCell(row,col));
+                    chambers[2].emplace_back(cells[row][col]);
+                    break;
+                case '4':
+                    line.emplace_back(new FloorCell(row,col));
+                    chambers[3].emplace_back(cells[row][col]);
+                    break;
+                case '5':
+                    line.emplace_back(new FloorCell(row,col));
+                    chambers[4].emplace_back(cells[row][col]);
                     break;
                 case '#':
                     line.emplace_back(new Bridge(row,col));
