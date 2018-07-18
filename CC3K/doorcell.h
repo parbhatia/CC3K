@@ -3,6 +3,7 @@
 #include "cell.h"
 
 class Object;
+
 class DoorCell : public Cell {
 public:
     DoorCell(int r, int c);
