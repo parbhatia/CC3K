@@ -60,7 +60,8 @@ std::ostream &operator<<(std::ostream &out, const Grid &g) {
     }
 
     //print stats
-    out << "Race: " << left << setw(63) << g.race << right << setw(8) << "Level: " << g.level << endl;
+    out << "Race: " << left << setw(63) << g.race
+    << right << setw(8) << "Level: " << g.level << endl;
     out << "HP: " << endl;
     out << "Atk: " << endl;
     out << "Def: " << endl;
