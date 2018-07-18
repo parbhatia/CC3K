@@ -2,6 +2,10 @@
 #define cell_hpp
 #include <vector>
 #include <iostream>
+#include "doorcell.h"
+#include "nullcell.h"
+#include "floorcell.h"
+#include "doorcell.h"
 
 class TextDisplay;
 class Object;

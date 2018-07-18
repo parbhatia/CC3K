@@ -12,6 +12,7 @@
 		4B2B5D7920FE969A00F5B673 /* textdisplay.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D7720FE969A00F5B673 /* textdisplay.cc */; };
 		4B2B5D7C20FE96C700F5B673 /* cell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D7A20FE96C700F5B673 /* cell.cc */; };
 		4B2B5D8120FEBA2200F5B673 /* floorcell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8020FEBA2200F5B673 /* floorcell.cc */; };
+		4B2B5D8420FEBB6300F5B673 /* nullcell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8320FEBB6300F5B673 /* nullcell.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,8 @@
 		4B2B5D7E20FEBA2200F5B673 /* floorcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = floorcell.h; sourceTree = "<group>"; };
 		4B2B5D7F20FEBA2200F5B673 /* doorcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doorcell.h; sourceTree = "<group>"; };
 		4B2B5D8020FEBA2200F5B673 /* floorcell.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = floorcell.cc; sourceTree = "<group>"; };
+		4B2B5D8220FEBB6300F5B673 /* nullcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nullcell.h; sourceTree = "<group>"; };
+		4B2B5D8320FEBB6300F5B673 /* nullcell.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nullcell.cc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				4B2B5D7820FE969A00F5B673 /* textdisplay.h */,
 				4B2B5D7A20FE96C700F5B673 /* cell.cc */,
 				4B2B5D7B20FE96C700F5B673 /* cell.h */,
+				4B2B5D8320FEBB6300F5B673 /* nullcell.cc */,
+				4B2B5D8220FEBB6300F5B673 /* nullcell.h */,
 			);
 			path = CC3K;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B2B5D8420FEBB6300F5B673 /* nullcell.cc in Sources */,
 				4B2B5D7920FE969A00F5B673 /* textdisplay.cc in Sources */,
 				4B2B5D7C20FE96C700F5B673 /* cell.cc in Sources */,
 				4B2B5D6E20FE8B1B00F5B673 /* main.cc in Sources */,
