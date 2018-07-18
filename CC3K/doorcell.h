@@ -5,7 +5,7 @@
 class Object;
 class Floorcell: public Cell{
 public:
-    Floorcell(int r, int c);
+    DoorCell(int r, int c);
 
     void move_to(Cell& to) override;
     bool accept_move(Cell &who) override;
