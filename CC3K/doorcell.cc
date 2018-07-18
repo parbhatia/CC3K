@@ -1,6 +1,6 @@
 #include "doorcell.h"
 #include <string>
 
-std::string Doorcell::print() {
-        return "+";
+char DoorCell::print() {
+        return '+';
 }
