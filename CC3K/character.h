@@ -17,8 +17,11 @@ class Character : public Object
     void changeDef(int n) {
       def += n;
     }
-    void changeHP(int n) {
+    void changeHp(int n) {
       hp += n;  
     }
+    int getAtk() {return atk;}
+    int getDef() {return def;}
+    int getHp() {return hp;}
 };
 #endif
