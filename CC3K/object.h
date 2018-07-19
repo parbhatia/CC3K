@@ -1,6 +1,5 @@
 #ifndef OBJECT_H_
 #define OBJECT_H_
-#include <string>
 
 class Halfling;
 class Dwarf;
@@ -9,7 +8,7 @@ class Drow;
 
 class Object {
 public:
-    virtual std::string print()=0;
+    virtual char print()=0;
     virtual void interact(Object *whoTo)=0;
     virtual void acceptInteract(Object *whoFrom)=0; 
     virtual void interact(Halfling* h);
