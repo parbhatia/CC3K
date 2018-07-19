@@ -28,7 +28,7 @@ public:
     Grid();
     //~Grid();
     void read_layout(string s);
-    //void set_player(string race); //sets player's race for display purposes
+    void intialize_player(string type); //initializes player with race type, and changes race attribute for display purposes
     void default_layout();
     void generate_chamber();
     void test_chambers(); //for testing chambers, delete later!
