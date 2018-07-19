@@ -11,5 +11,14 @@ class Character : public Object
     int hp;
   public:
     Character(std::string race, int atk, int def, int hp) : race{race}, atk{atk}, hp{hp} {}
+    void changeAtk(int n) {
+      atk += n;
+    }
+    void changeDef(int n) {
+      def += n;
+    }
+    void changeHP(int n) {
+      hp += n;  
+    }
 };
 #endif
