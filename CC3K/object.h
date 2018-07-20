@@ -12,7 +12,7 @@ public:
     virtual char print()=0;
     virtual void acceptInteract(Object *whoFrom)=0;
     virtual void interact(Item *whoTo)=0;
-    virtual void interact(Character *whoTo)=0; 
+    virtual void interact(Character *whoTo)=0;
     virtual void interact(Halfling* h);
     virtual void interact(Dwarf* d);
     virtual void interact(Drow* h);
