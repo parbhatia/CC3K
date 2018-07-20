@@ -15,18 +15,20 @@ bool Grid::in_range(int row, int col) {
 
 void Grid::set_observers() {
     //iterate over cells, and set radius of each cell to observe others
-    for (auto cell : cells) {
-        int x = cell.getCol();
-        int y = cell.getRow();
-        if (in_range(y+1,x-1)) {cell.attachObserver(&cells[y+1][x-1]);}
-        
-        if (in_range(y+1,x)) {cell.attachObserver(&cells[y+1][x]);}
-        if (in_range(y+1,x+1)) {cell.attachObserver(&cells[y+1][x+1]);}
-        if (in_range(y,x-1)) {cell.attachObserver(&cells[y][x-1]);}
-        if (in_range(y,x+1)) {cell.attachObserver(&cells[y][x+1]);}
-        if (in_range(y-1,x-1)) {cell.attachObserver(&cells[y-1][x-1]);}
-        if (in_range(y-1,x)) {cell.attachObserver(&cells[y-1][x]);}
-        if (in_range(y-1,x+1)) {cell.attachObserver(&cells[y-1][x+1]);}
+    for (auto row : cells) {
+        for (auto cell: row) {
+            int x = cell->getCol();
+            int y = cell->getRow();
+            if (in_range(y+1,x-1)) {cell->attachObserver(&cells[y+1][x-1]);}
+            
+            if (in_range(y+1,x)) {cell->attachObserver(&cells[y+1][x]);}
+            if (in_range(y+1,x+1)) {cell->attachObserver(&cells[y+1][x+1]);}
+            if (in_range(y,x-1)) {cell->attachObserver(&cells[y][x-1]);}
+            if (in_range(y,x+1)) {cell->attachObserver(&cells[y][x+1]);}
+            if (in_range(y-1,x-1)) {cell->attachObserver(&cells[y-1][x-1]);}
+            if (in_range(y-1,x)) {cell->attachObserver(&cells[y-1][x]);}
+            if (in_range(y-1,x+1)) {cell->attachObserver(&cells[y-1][x+1]);}
+        }
     }
 }
 

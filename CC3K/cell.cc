@@ -20,6 +20,10 @@ Cell::~Cell(){}
 //    }
 //}
 
+int Cell::getRow() { return row; }
+
+int Cell::getCol() { return col; }
+
 bool Cell::hasPlayer(){
     if(player){
         return true;
