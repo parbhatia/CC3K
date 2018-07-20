@@ -12,9 +12,6 @@ void Shade::interact(Character *whoTo) {
     whoTo->changeHp(getAtk() - whoTo->getDef());
 }
 
-void Shade::interact(Character *whoTo) {
-    
-}
 void interact(Halfling* h) {}
 void interact(Dwarf* d) {}
 void interact(Drow* h) {}

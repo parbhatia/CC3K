@@ -9,6 +9,22 @@ Grid::Grid() {
     read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
 }
 
+
+void Grid::intialize_player(string type) {
+    race = type;
+    //if (race == "s") create shade
+    //etc.
+}
+
+void Grid::use_pot_player(Direction d) {
+    if (d == Direction::N) {}
+}
+
+
+void Grid::move_player(Direction d) {
+    if (d == Direction::N) {}
+}
+
 void Grid::test_chambers() {
     int i=1;
     for (auto it: chambers) {
@@ -18,9 +34,15 @@ void Grid::test_chambers() {
     }
 }
 
-
-void Grid::generate_chamber() {
-    
+void Grid::generate_in_chambers() {
+    //generate 20 enemies
+    int count = 20;
+    while(count > 0) {
+        //randomly pick chamber to generate enemy
+        srand((unsigned)time(NULL));
+        int chamb_num = rand() % 5;
+        chambers[chamb_num].generate_enemy();
+    }
 }
 
 void Grid::read_layout(string s) {

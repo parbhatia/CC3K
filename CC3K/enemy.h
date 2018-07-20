@@ -1,6 +1,6 @@
 #include "character.h"
 
-class Enemy : public Character
-{
+class Enemy : public Character {
     bool isHostile;
+    
 };

@@ -19,6 +19,8 @@
 		4B53F1B820FFE96300736E14 /* chamber.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1B620FFE96300736E14 /* chamber.cc */; };
 		4B53F1BA21000FB800736E14 /* character.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1B921000FB800736E14 /* character.cc */; };
 		4B53F1C22100105B00736E14 /* shade.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1BD2100105A00736E14 /* shade.cc */; };
+		4B53F1C421018C8200736E14 /* enemy.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1C321018C8200736E14 /* enemy.cc */; };
+		4B53F1C721018CF900736E14 /* dwarf.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1C521018CF900736E14 /* dwarf.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,6 +66,10 @@
 		4B53F1BF2100105B00736E14 /* shade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shade.h; sourceTree = "<group>"; };
 		4B53F1C02100105B00736E14 /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		4B53F1C12100105B00736E14 /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
+		4B53F1C321018C8200736E14 /* enemy.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enemy.cc; sourceTree = "<group>"; };
+		4B53F1C521018CF900736E14 /* dwarf.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dwarf.cc; sourceTree = "<group>"; };
+		4B53F1C621018CF900736E14 /* dwarf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dwarf.h; sourceTree = "<group>"; };
+		4B53F1C821018EE300736E14 /* info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = info.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +106,11 @@
 				4B2B5D7D20FE9B6900F5B673 /* cc3k_emptyfloor.txt */,
 				4B2B5D6D20FE8B1B00F5B673 /* main.cc */,
 				4B2B5D7520FE968D00F5B673 /* grid.h */,
+				4B53F1C821018EE300736E14 /* info.h */,
 				4B53F1B720FFE96300736E14 /* chamber.h */,
 				4B2B5D8B20FFD7A000F5B673 /* character.h */,
 				4B53F1BB2100105A00736E14 /* enemy.h */,
+				4B53F1C621018CF900736E14 /* dwarf.h */,
 				4B53F1BC2100105A00736E14 /* object.h */,
 				4B53F1C12100105B00736E14 /* player.h */,
 				4B53F1BE2100105A00736E14 /* potion.h */,
@@ -114,6 +122,8 @@
 				4B2B5D8720FEC1D200F5B673 /* bridge.h */,
 				4B2B5D7820FE969A00F5B673 /* textdisplay.h */,
 				4B2B5D8220FEBB6300F5B673 /* nullcell.h */,
+				4B53F1C521018CF900736E14 /* dwarf.cc */,
+				4B53F1C321018C8200736E14 /* enemy.cc */,
 				4B53F1B921000FB800736E14 /* character.cc */,
 				4B53F1BD2100105A00736E14 /* shade.cc */,
 				4B53F1B620FFE96300736E14 /* chamber.cc */,
@@ -188,12 +198,14 @@
 				4B53F1BA21000FB800736E14 /* character.cc in Sources */,
 				4B2B5D8420FEBB6300F5B673 /* nullcell.cc in Sources */,
 				4B2B5D7920FE969A00F5B673 /* textdisplay.cc in Sources */,
+				4B53F1C421018C8200736E14 /* enemy.cc in Sources */,
 				4B2B5D8920FEC1D200F5B673 /* bridge.cc in Sources */,
 				4B2B5D7C20FE96C700F5B673 /* cell.cc in Sources */,
 				4B53F1C22100105B00736E14 /* shade.cc in Sources */,
 				4B2B5D8F20FFD80B00F5B673 /* item.cc in Sources */,
 				4B2B5D6E20FE8B1B00F5B673 /* main.cc in Sources */,
 				4B53F1B820FFE96300736E14 /* chamber.cc in Sources */,
+				4B53F1C721018CF900736E14 /* dwarf.cc in Sources */,
 				4B2B5D8620FEBD2B00F5B673 /* doorcell.cc in Sources */,
 				4B2B5D7620FE968D00F5B673 /* grid.cc in Sources */,
 				4B2B5D8120FEBA2200F5B673 /* floorcell.cc in Sources */,
