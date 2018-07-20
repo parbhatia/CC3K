@@ -40,7 +40,8 @@ public:
     virtual void interact(Cell &target);
     virtual void accept_interact(Cell &whoFrom);
     
-    
+    int getRow();
+    int getCol();
     
     virtual ~Cell() = 0;
 };

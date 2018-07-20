@@ -31,7 +31,7 @@ void Chamber::generate_potion() {
         bool done = false;
         while (!done) {
             int x = rand() % cells.size(); //generates number from 0 to sizeof cells
-            if (cells[x]->isOccupied()) {
+            if (!cells[x]->isOccupied()) {
                 cells[x]->setPotion();
                 done = true;
             }
@@ -48,7 +48,7 @@ void Chamber::generate_gold() {
         bool done = false;
         while (!done) {
             int x = rand() % cells.size(); //generates number from 0 to sizeof cells
-            if (cells[x]->isOccupied()) {
+            if (!cells[x]->isOccupied()) {
                 cells[x]->setGold();
                 done = true;
             }
@@ -65,8 +65,11 @@ void Chamber::generate_enemy() {
         bool done = false;
         while (!done) {
             int x = rand() % cells.size(); //generates number from 0 to sizeof cells
-            if (cells[x]->isOccupied()) {
-                cells[x]->setEnemy();
+            if (!cells[x]->isOccupied()) {
+                int y = rand() % 6;
+                //choose random enemy
+                Object *new_enemy = new enemy_map[y];
+                cells[x]->setObject(new_enemy);
                 done = true;
             }
         }
