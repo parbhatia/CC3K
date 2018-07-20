@@ -7,6 +7,7 @@ class Object;
 class Dwarf : public Enemy
 {
   public:
+    Dwarf();
     char print() override;
 };
 

@@ -19,7 +19,7 @@ public:
     void notify(Cell &whoFrom) override;
     Object& getObject() override;
     void attachObserver(Cell* ob) override;
-     */
+    */
 };
 
 #endif
