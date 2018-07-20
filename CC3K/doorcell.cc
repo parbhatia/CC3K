@@ -9,3 +9,16 @@ char DoorCell::print() {
 }
 
 DoorCell::~DoorCell() {}
+/*
+
+void DoorCell::move_to(Cell& to){}
+
+bool DoorCell::accept_move(){
+        //send player through the door
+        //reject enemies
+}
+
+
+
+*/
+
