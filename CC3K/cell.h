@@ -6,8 +6,7 @@
 
 class TextDisplay;
 class Object;
-class Cell
-{
+class Cell {
     int row, col;
     TextDisplay *td;
     std::vector<Cell *> observers;
@@ -17,32 +16,23 @@ protected:
 public:
     Cell(int r, int c);
     virtual char print() = 0;
+    int getRow();
+    int getCol();
     bool hasPlayer();
     bool isOccupied();
     void clear();
-    void setPotion();
-    void setEnemy();
-    void setGold();
-    virtual void move_to(Cell &to);
-    virtual bool accept_move(Cell &who);
-    
+    virtual void setObject(Object *newob);
+    virtual void moveTo(Cell &whoTo);
+    virtual bool acceptMove(Cell &whoFrom); 
     virtual void attack(Cell &target);
-    virtual void beAttacked(Cell &whoFrom);
-    
+    virtual void use(Cell &target);  
     virtual void notifyObservers();
     virtual void notify(Cell &whoFrom);
-    virtual Object& getObject();
-    virtual void attachObserver(Cell* ob);
-    virtual void setDisplay(TextDisplay *td);
-    virtual void notifyDisplay();
-    
-    Object* getPlayer();
-    virtual void interact(Cell &target);
-    virtual void accept_interact(Cell &whoFrom);
-    
-    int getRow();
-    int getCol();
-    
+    void attachObserver(Cell* ob);
+    void setDisplay(TextDisplay *td);
+    void notifyDisplay(); 
+    Object* getPlayer(); 
+    Object* getObject();
     virtual ~Cell() = 0;
 };
 
