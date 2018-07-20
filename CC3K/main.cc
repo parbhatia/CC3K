@@ -9,11 +9,17 @@ int main(int argc, const char * argv[]) {
     string race;
     //cin >> race;
     cout << g;
+    g.test_chambers();
+    cout << g;
     
     //command interpreter
     
+    /*
     cin.exceptions(ios::eofbit|ios::failbit);
     string cmd;
+    
+    
+    
     try {
         while (true) {
             cin >> cmd;
@@ -47,6 +53,7 @@ int main(int argc, const char * argv[]) {
     catch (ios::failure &) {
         return 0;
     }  // Any I/O failure quits
+     */
 }
 
 

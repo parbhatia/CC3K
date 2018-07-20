@@ -13,7 +13,7 @@ class Chamber
     void generate_potion();
     void generate_gold();
     void generate_enemy();
-    void generate_player(string type);
+    void generate_player(std::string type);
     void reset();
     void add_cell(Cell *c);
 };

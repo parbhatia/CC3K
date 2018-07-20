@@ -43,11 +43,11 @@ void Grid::use_pot_player(Direction d) {
     if (d == Direction::N) {}
 }
 
-void Grid::move_player(Direction d) {
+/*void Grid::move_player(Direction d) {
     if (d == Direction::N) {
         if (cells[])
     }
-}
+}*/
 
 void Grid::test_chambers() {
     int i = 1;
