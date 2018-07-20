@@ -5,7 +5,7 @@
 
 class Player : public Character {
 public:
-    Player(std::string race="Shade", int atk=10, int def=5, int hp=100): Character{race, atk, def, hp} {}
+    Player( int atk=10, int def=5, int hp=100): Character{atk, def, hp} {}
     void beAttacked(Object *whoFrom) override { 
         whoFrom->attack(this);
     }
