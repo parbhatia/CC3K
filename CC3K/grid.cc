@@ -39,9 +39,9 @@ void Grid::intialize_player(string type) {
     race = type;
 }
 
-void Grid::use_pot_player(Direction d) {
-    if (d == Direction::N) {}
-}
+//void Grid::use_pot_player(Direction d) {
+//    if (d == Direction::N) {}
+//}
 
 /*void Grid::move_player(Direction d) {
     if (d == Direction::N) {
@@ -59,13 +59,15 @@ void Grid::test_chambers() {
 }
 
 void Grid::generate_enemies() {
-    while(true) {
+    int x = 100;
+    srand((unsigned)time(NULL));
+    while(x>0) {
         //randomly pick chamber to generate enemy
-        srand((unsigned)time(NULL));
         int chamb_num = rand() % 5;
         chambers[chamb_num].generate_enemy();
         //chambers[chamb_num].generate_potions();
         //chambers[chamb_num].generate_gold();
+        --x;
     }
 }
 

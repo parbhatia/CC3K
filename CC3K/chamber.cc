@@ -42,7 +42,7 @@ void Chamber::generate_player(string type) {
 /*
 void Chamber::generate_potion() {
     srand((unsigned)time(NULL)); //uses "seed" as current time
-    if (numPotions >= 10) {
+    if (numPotions == 10) {
         return;
     }
     else {
@@ -59,7 +59,7 @@ void Chamber::generate_potion() {
 
 void Chamber::generate_gold() {
     srand((unsigned)time(NULL)); //uses "seed" as current time
-    if (numGold >= 10) {
+    if (numGold == 0) {
         return;
     }
     else {
@@ -76,7 +76,7 @@ void Chamber::generate_gold() {
 */
 void Chamber::generate_enemy() {
     srand((unsigned)time(NULL)); //uses "seed" as current time
-    if (numGold >= 10) {
+    if (numGold == 0) {
         return;
     }
     else {
@@ -93,4 +93,5 @@ void Chamber::generate_enemy() {
             }
         }
     }
+   
 }

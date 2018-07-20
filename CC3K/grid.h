@@ -29,9 +29,8 @@ class Grid {
     void read_layout(std::string s);
     void intialize_player(std::string type); //initializes player with race type, and changes race attribute for display purposes
     void default_layout();
-    void move_player(Direction d);    //moves player in d
-    void use_pot_player(Direction d); //makes player use potion in d
-    //void generate_in_chambers();      //chambers generate items and enemies
+    //void move_player(Direction d);    //moves player in d
+    //void use_pot_player(Direction d); //makes player use potion in d
     void generate_enemies(); //chambers generate enemies
     void test_chambers();    //for testing chambers, delete later!
     void reset_chambers();   //regenerates all chambers

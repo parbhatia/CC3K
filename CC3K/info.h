@@ -4,6 +4,7 @@
 #include "dwarf.h"
 #include "shade.h"
 
+/*
 enum class Direction { NW, N, NE, W, E, SW, S, SE };
 std::map<std::string, Direction> dir_map = {
     {"no", Direction::N},
@@ -15,6 +16,7 @@ std::map<std::string, Direction> dir_map = {
     {"se", Direction::SE},
     {"sw", Direction::SW},
 };
+*/
 /*
 std::map<int, Player> enemy_map = {
     {0, Shade()},
