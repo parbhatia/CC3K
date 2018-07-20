@@ -6,7 +6,7 @@
 
 class Shade: public Player {
 public:
-    Shade(std::string race="Shade", int atk=10, int def=5, int hp=100): Player{race, atk, def, hp} {}
+    Shade(std::string race="Shade", int atk=25, int def=25, int hp=125): Player{race, atk, def, hp} {}
     char print() override;
     void acceptInteract(Object *whoFrom) override;
     void interact(Character *whoTo) override;
