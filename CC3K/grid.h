@@ -23,6 +23,7 @@ class Grid
     string race = "Shade";
     Character *player = nullptr;
     std::vector<Chamber> chambers;
+    bool in_range(int row, int col); //returns true if row,col is in range of grid
 
   public:
     Grid();
@@ -33,7 +34,7 @@ class Grid
     void move_player(Direction d);    //moves player in d
     void use_pot_player(Direction d); //makes player use potion in d
     //void generate_in_chambers();      //chambers generate items and enemies
-    void generate_enemies(); //chambers
+    void generate_enemies(); //chambers generate enemies
     void test_chambers();    //for testing chambers, delete later!
     void reset_chambers();   //regenerates all chambers
     void set_observers();    //sets observers for cell
