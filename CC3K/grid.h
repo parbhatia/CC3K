@@ -12,24 +12,22 @@
 #include "character.h"
 #include "info.h"
 
-using namespace std;
-
-class Grid
-{
+class Grid {
     int width = 79;
     int height = 30;
     std::vector<std::vector<Cell *>> cells;
     int level = 1;
-    string race = "Shade";
-    Character *player = nullptr;
+    std::string race = "Shade";
+    Cell *player_cell = nullptr;
+    //Character *player = nullptr;
     std::vector<Chamber> chambers;
     bool in_range(int row, int col); //returns true if row,col is in range of grid
 
   public:
     Grid();
     //~Grid();
-    void read_layout(string s);
-    void intialize_player(string type); //initializes player with race type, and changes race attribute for display purposes
+    void read_layout(std::string s);
+    void intialize_player(std::string type); //initializes player with race type, and changes race attribute for display purposes
     void default_layout();
     void move_player(Direction d);    //moves player in d
     void use_pot_player(Direction d); //makes player use potion in d
