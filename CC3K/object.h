@@ -2,13 +2,13 @@
 #define OBJECT_H_
 class Item;
 class Character;
+class Player;
 class Halfling;
 class Dwarf;
 class Goblin;
 class Drow;
 
-class Object
-{
+class Object {
 public:
   virtual char print() = 0;
   virtual void beAttacked(Object *whoFrom) = 0;
@@ -18,6 +18,7 @@ public:
   virtual void attack(Dwarf *d);
   virtual void attack(Drow *h);
   virtual void attack(Goblin *g);
+  virtual void beUsed(Player *whoFrom);
 };
 
 #endif
