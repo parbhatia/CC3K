@@ -12,7 +12,7 @@ Grid::Grid() {
 
 void Grid::intialize_player(string type) {
     race = type;
-    //if (race == "s") create shade
+    /if (race == "s") create shade
     //etc.
 }
 

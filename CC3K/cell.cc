@@ -53,7 +53,10 @@ void Cell::setPotion(){
 void Cell::setGold(){
     //NEED TO WRITE
 }
+<<<<<<< HEAD
 
 Object* Cell::getPlayer() {
     return player;
 }
+=======
+>>>>>>> f2135ea8e77b748b189daae1acd3e8a7a8cb85a1
