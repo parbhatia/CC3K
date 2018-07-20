@@ -28,9 +28,9 @@ public:
     virtual void use(Cell &target);  
     virtual void notifyObservers();
     virtual void notify(Cell &whoFrom);
-    virtual void attachObserver(Cell* ob);
-    virtual void setDisplay(TextDisplay *td);
-    virtual void notifyDisplay(); 
+    void attachObserver(Cell* ob);
+    void setDisplay(TextDisplay *td);
+    void notifyDisplay(); 
     Object* getPlayer(); 
     Object* getObject();
     virtual ~Cell() = 0;

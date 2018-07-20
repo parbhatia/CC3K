@@ -87,8 +87,13 @@ void Cell::attachObserver(Cell* ob) {
 void setDisplay(TextDisplay *td) {
     td = td;
 }
-//void Cell::attack(Cell &target);
-//void Cell::use(Cell &target);  
-//void notifyDisplay() { 
-//}
+void Cell::attack(Cell &target) {
+    //to write
+}
+void Cell::use(Cell &target) {
+    //to write
+} 
+void notifyDisplay() { 
+    //to write
+}
 
