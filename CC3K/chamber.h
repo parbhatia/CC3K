@@ -1,5 +1,6 @@
 #include <vector>
 #include "cell.h"
+#include "info.h"
 
 class Chamber
 {
