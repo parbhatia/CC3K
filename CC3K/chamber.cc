@@ -39,7 +39,7 @@ void Chamber::generate_player(string type) {
         }
     }
 }
-
+/*
 void Chamber::generate_potion() {
     srand((unsigned)time(NULL)); //uses "seed" as current time
     if (numPotions >= 10) {
@@ -50,7 +50,7 @@ void Chamber::generate_potion() {
         while (!done) {
             int x = rand() % cells.size(); //generates number from 0 to sizeof cells
             if (!cells[x]->isOccupied()) {
-                cells[x]->setPotion();
+                cells[x]->setObject();
                 done = true;
             }
         }
@@ -67,13 +67,13 @@ void Chamber::generate_gold() {
         while (!done) {
             int x = rand() % cells.size(); //generates number from 0 to sizeof cells
             if (!cells[x]->isOccupied()) {
-                cells[x]->setGold();
+                cells[x]->setObject();
                 done = true;
             }
         }
     }
 }
-
+*/
 void Chamber::generate_enemy() {
     srand((unsigned)time(NULL)); //uses "seed" as current time
     if (numGold >= 10) {
@@ -84,9 +84,10 @@ void Chamber::generate_enemy() {
         while (!done) {
             int x = rand() % cells.size(); //generates number from 0 to sizeof cells
             if (!cells[x]->isOccupied()) {
-                int y = rand() % 6;
+                //int y = rand() % 6;
                 //choose random enemy
-                Object *new_enemy = new enemy_map[y];
+                Object *new_enemy = new Shade();
+                //Object *new_enemy = new enemy_map[y];
                 cells[x]->setObject(new_enemy);
                 done = true;
             }

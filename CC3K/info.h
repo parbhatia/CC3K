@@ -2,6 +2,7 @@
 #define info_h
 #include <map>
 #include "dwarf.h"
+#include "shade.h"
 
 enum class Direction { NW, N, NE, W, E, SW, S, SE };
 std::map<std::string, Direction> dir_map = {
@@ -14,17 +15,17 @@ std::map<std::string, Direction> dir_map = {
     {"se", Direction::SE},
     {"sw", Direction::SW},
 };
-
-std::map<int, Enemy> enemy_map = {
-    {0, Dwarf()},
-    {1, Dwarf()},
-    {2, Dwarf()},
-    {3, Dwarf()},
-    {4, Dwarf()},
-    {5, Dwarf()}
+/*
+std::map<int, Player> enemy_map = {
+    {0, Shade()},
+    {1, Shade()},
+    {2, Shade()},
+    {3, Shade()},
+    {4, Shade()},
+    {5, Shade()}
     //add more later
 };
-
+*/
 
 
 #endif

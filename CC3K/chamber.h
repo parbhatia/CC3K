@@ -10,8 +10,8 @@ class Chamber
 
   public:
     void print();
-    void generate_potion();
-    void generate_gold();
+    //void generate_potion();
+    //void generate_gold();
     void generate_enemy();
     void generate_player(std::string type);
     void reset();
