@@ -1,5 +1,6 @@
 #include "chamber.h"
 #include <iostream>
+using namespace std;
 
 int Chamber::numPotions = 10;
 int Chamber::numGold = 10;
@@ -20,6 +21,23 @@ void Chamber::reset() {
 
 void Chamber::add_cell(Cell *c) {
     cells.emplace_back(c);
+}
+
+
+void Chamber::generate_player(string type) {
+    bool done = false;
+    while (!done) {
+        int x = rand() % cells.size(); //generates number from 0 to sizeof cells
+        if (!cells[x]->isOccupied()) {
+            //set player based on type
+            Object *new_player = nullptr;
+            //set to use map later
+            if (type == "s") new_player = new Shade();
+            //else if (type == "v") new_player = new Vampire();
+            cells[x]->setObject(new_player);
+            done = true;
+        }
+    }
 }
 
 void Chamber::generate_potion() {

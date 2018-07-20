@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include "grid.h"
 #include "info.h"
+using namespace std;
 
 int main(int argc, const char * argv[]) {
     Grid g;
