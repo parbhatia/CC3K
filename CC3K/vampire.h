@@ -8,12 +8,12 @@ class Vampire: public Player {
 public:
     Vampire(std::string race="Vampire", int atk=25, int def=25, int hp=50): Player{race, atk, def, hp} {}
     char print() override;
-    void acceptInteract(Object *whoFrom) override;
-    void interact(Character *whoTo) override;
-    void interact(Item *whoTo) override;
-    void interact(Halfling* h) override;
-    void interact(Dwarf* d) override;
-    void interact(Drow* h) override;
-    void interact(Goblin* g) override;
+    void acceptattack(Object *whoFrom) override;
+    void attack(Character *whoTo) override;
+    void attack(Item *whoTo) override;
+    void attack(Halfling* h) override;
+    void attack(Dwarf* d) override;
+    void attack(Drow* h) override;
+    void attack(Goblin* g) override;
 };
 #endif

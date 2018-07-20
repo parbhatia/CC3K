@@ -7,16 +7,17 @@ class Dwarf;
 class Goblin;
 class Drow;
 
-class Object {
+class Object
+{
 public:
-    virtual char print()=0;
-    virtual void acceptInteract(Object *whoFrom)=0;
-    virtual void interact(Item *whoTo)=0;
-    virtual void interact(Character *whoTo)=0;
-    virtual void interact(Halfling* h);
-    virtual void interact(Dwarf* d);
-    virtual void interact(Drow* h);
-    virtual void interact(Goblin* g);
+  virtual char print() = 0;
+  virtual void beAttacked(Object *whoFrom) = 0;
+  virtual void attack(Item *whoTo) = 0;
+  virtual void attack(Character *whoTo) = 0;
+  virtual void attack(Halfling *h);
+  virtual void attack(Dwarf *d);
+  virtual void attack(Drow *h);
+  virtual void attack(Goblin *g);
 };
 
 #endif

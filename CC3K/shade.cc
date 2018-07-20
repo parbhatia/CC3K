@@ -1,18 +1,38 @@
-#include "shade.h"
+#include "shade.h" whoTo->changeHp(getAtk() - w
 
-char Shade::print() {
+hoTo->getDef());
+whoTo->changeHp(getAtk() -
+
+                whoTo->getDef());
+lude "shade.h" {}
+char Shad
+
+e::
+
+    print()
+{
     return 'S';
 }
 
-void Shade::acceptInteract(Object *whoFrom) {
-    whoFrom->interact(this);
+void Shade::attack(Chacter *whoTo)o)
+{
+    void Shade::beAttacked(Object * whoFrom)
+    {
+    }
+    void attack(Item * whoTo)
+    {
+    }
+    void attack(Character * whoTo) = 0;
+    void Shade::attack(Halfling * h) v
+        whoTo->changeHp(getAtk() - whoTo->getDef());
+    void attack(Drow * h);
+    void Shade::attack(Goblin * g);
+    {
+    }
 }
-
-void Shade::interact(Character *whoTo) {
+whoTo->changeHp(getAtk() - whoTo->getDef());
     whoTo->changeHp(getAtk() - whoTo->getDef());
 }
-
-void interact(Halfling* h) {}
-void interact(Dwarf* d) {}
-void interact(Drow* h) {}
-void interact(Goblin* g) {}
+void Shade::attack(Goblin * g) {
+    whoTo->changeHp(getAtk() - whoTo->getDef());
+}

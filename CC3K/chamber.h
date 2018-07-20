@@ -1,10 +1,12 @@
 #include <vector>
 #include "cell.h"
 
-class Chamber{
-    std::vector<Cell*> cells;
+class Chamber
+{
+    std::vector<Cell *> cells;
     static int numPotions, numGold, numEnemies;
-public:
+
+  public:
     void print();
     void generate_potion();
     void generate_gold();
@@ -12,5 +14,3 @@ public:
     void reset();
     void add_cell(Cell *c);
 };
-
-
