@@ -3,9 +3,8 @@
 #include "character.h"
 #include <string>
 
-class Player : public Character
-{
+class Player : public Character {
 public:
-    Player(std::string race="Shade", int atk=10, int def=5, int hp=100): Character{race, atk, def, hp} {}
+    Player(std::string race, int atk, int def, int hp): Character{race, atk, def, hp} {}
 };
 #endif
