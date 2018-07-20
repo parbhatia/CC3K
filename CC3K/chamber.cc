@@ -5,43 +5,33 @@ int Chamber::numPotions = 10;
 int Chamber::numGold = 10;
 int Chamber::numEnemies = 20;
 
-void Chamber::print()
-{
-    for (auto cell : cells)
-    {
+void Chamber::print() {
+    for (auto cell : cells) {
         std::cout << cell->print() << " ";
     }
     std::cout << std::endl;
 }
 
-void Chamber::reset()
-{
-    for (auto cell : cells)
-    {
+void Chamber::reset() {
+    for (auto cell : cells) {
         cell->clear();
     }
 }
 
-void Chamber::add_cell(Cell *c)
-{
+void Chamber::add_cell(Cell *c) {
     cells.emplace_back(c);
 }
 
-void Chamber::generate_potion()
-{
+void Chamber::generate_potion() {
     srand((unsigned)time(NULL)); //uses "seed" as current time
-    if (numPotions >= 10)
-    {
+    if (numPotions >= 10) {
         return;
     }
-    else
-    {
+    else {
         bool done = false;
-        while (!done)
-        {
+        while (!done) {
             int x = rand() % cells.size(); //generates number from 0 to sizeof cells
-            if (cells[x]->isOccupied())
-            {
+            if (cells[x]->isOccupied()) {
                 cells[x]->setPotion();
                 done = true;
             }
@@ -49,21 +39,16 @@ void Chamber::generate_potion()
     }
 }
 
-void Chamber::generate_gold()
-{
+void Chamber::generate_gold() {
     srand((unsigned)time(NULL)); //uses "seed" as current time
-    if (numGold >= 10)
-    {
+    if (numGold >= 10) {
         return;
     }
-    else
-    {
+    else {
         bool done = false;
-        while (!done)
-        {
+        while (!done) {
             int x = rand() % cells.size(); //generates number from 0 to sizeof cells
-            if (cells[x]->isOccupied())
-            {
+            if (cells[x]->isOccupied()) {
                 cells[x]->setGold();
                 done = true;
             }
@@ -71,21 +56,16 @@ void Chamber::generate_gold()
     }
 }
 
-void Chamber::generate_enemy()
-{
+void Chamber::generate_enemy() {
     srand((unsigned)time(NULL)); //uses "seed" as current time
-    if (numGold >= 10)
-    {
+    if (numGold >= 10) {
         return;
     }
-    else
-    {
+    else {
         bool done = false;
-        while (!done)
-        {
+        while (!done) {
             int x = rand() % cells.size(); //generates number from 0 to sizeof cells
-            if (cells[x]->isOccupied())
-            {
+            if (cells[x]->isOccupied()) {
                 cells[x]->setEnemy();
                 done = true;
             }
