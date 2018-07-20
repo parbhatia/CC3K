@@ -69,7 +69,7 @@ void Chamber::generate_enemy() {
                 int y = rand() % 6;
                 //choose random enemy
                 Object *new_enemy = new enemy_map[y];
-                cells[x]->setEnemy(new_enemy);
+                cells[x]->setObject(new_enemy);
                 done = true;
             }
         }
