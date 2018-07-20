@@ -32,9 +32,11 @@ void Grid::set_observers() {
 }
 
 void Grid::intialize_player(string type) {
+    //randomly pick chamber to generate enemy
+    srand((unsigned)time(NULL));
+    int chamb_num = rand() % 5;
+    chambers[chamb_num].generate_player(type);
     race = type;
-    ///if (race == "s") create shade
-    //etc.
 }
 
 void Grid::use_pot_player(Direction d) {

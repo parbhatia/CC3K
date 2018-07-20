@@ -1,5 +1,6 @@
 #include <vector>
 #include "cell.h"
+#include "shade.h"
 #include "info.h"
 
 class Chamber
@@ -12,6 +13,7 @@ class Chamber
     void generate_potion();
     void generate_gold();
     void generate_enemy();
+    void generate_player(string type);
     void reset();
     void add_cell(Cell *c);
 };

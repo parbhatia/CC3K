@@ -10,14 +10,10 @@ int Cell::getRow() { return row; }
 
 int Cell::getCol() { return col; }
 
-bool Cell::hasPlayer(){
-    if(player){
-        return true;
-    }
-    else{
-        return false;
-    }
+bool Cell::hasPlayer() {
+    return (player != nullptr);
 }
+
 
 void Cell::clear(){
     delete ob;
