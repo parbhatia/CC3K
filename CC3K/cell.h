@@ -2,7 +2,7 @@
 #define cell_hpp
 #include <vector>
 #include <iostream>
-
+#include "object.h"
 
 class TextDisplay;
 class Object;
@@ -13,7 +13,7 @@ class Cell {
 
 protected:
     Object* player = nullptr;
-    Object* ob = nullptr;    
+    Object* ob = nullptr;
 public:
     Cell(int r, int c);
     virtual char print() = 0;
@@ -23,7 +23,7 @@ public:
     void setPotion();
     void setEnemy();
     void setGold();
-
+    Object* getPlayer();
 //    virtual void move_to(Cell& to);
 //    virtual bool accept_move(Cell &who);
 //    virtual void interact(Cell &target);

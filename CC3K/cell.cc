@@ -1,5 +1,5 @@
 #include "cell.h"
-
+#include "object.h"
 Cell::Cell(int r, int c): row{r},col{c}{}
 Cell::~Cell(){}
 //void Cell::setDisplay(TextDisplay *td){
@@ -52,4 +52,8 @@ void Cell::setPotion(){
 
 void Cell::setGold(){
     //NEED TO WRITE
+}
+
+Object* Cell::getPlayer() {
+    return player;
 }
