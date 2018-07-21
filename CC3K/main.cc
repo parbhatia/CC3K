@@ -9,7 +9,7 @@ int main(int argc, const char * argv[]) {
     string race;
     //cin >> race;
     cout << g;
-    g.test_chambers();
+    //g.test_chambers();
     g.generate_enemies();
     cout << g;
     
