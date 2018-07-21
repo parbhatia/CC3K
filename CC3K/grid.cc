@@ -36,6 +36,7 @@ void Grid::intialize_player(string type) {
     srand((unsigned)time(NULL));
     int chamb_num = rand() % 5;
     chambers[chamb_num].generate_player(type);
+    //use map for race type
     race = type;
 }
 
@@ -43,11 +44,11 @@ void Grid::intialize_player(string type) {
 //    if (d == Direction::N) {}
 //}
 
-/*void Grid::move_player(Direction d) {
-    if (d == Direction::N) {
-        if (cells[])
-    }
-}*/
+//void Grid::move_player(Direction d) {
+//    if (d == Direction::N) {
+//        if (cells[])
+//    }
+//}
 
 void Grid::test_chambers() {
     int i = 1;
