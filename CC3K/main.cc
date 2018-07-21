@@ -4,7 +4,12 @@
 #include "info.h"
 using namespace std;
 
+//std::map<std::string, Direction> dir_map;
+
 int main(int argc, const char * argv[]) {
+    //dir_map.insert(std::pair<std::string, Direction>("no", Direction::N));
+    
+    
     Grid g;
     string race;
     //cin >> race;
