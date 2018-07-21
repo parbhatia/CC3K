@@ -18,9 +18,8 @@ class Grid {
     std::vector<std::vector<Cell *>> cells;
     int level = 1;
     std::string race = "Shade";
-    Cell *player_cell = nullptr;
-    //Character *player = nullptr;
-    std::vector<Chamber> chambers;
+    Cell *player_cell = nullptr; //keeping track of player's movements
+    std::vector<Chamber> chambers; //chambers on each level
     bool in_range(int row, int col); //returns true if row,col is in range of grid
 
   public:
@@ -32,6 +31,8 @@ class Grid {
     //void move_player(Direction d);    //moves player in d
     //void use_pot_player(Direction d); //makes player use potion in d
     void generate_enemies(); //chambers generate enemies
+    void create_randomness(); //sets time as seed 
+    int chamber_picker(); //returns random chamber (0 to 4)
     void test_chambers();    //for testing chambers, delete later!
     void reset_chambers();   //regenerates all chambers
     void set_observers();    //sets observers for cell

@@ -7,12 +7,10 @@
 #include "dwarf.h"
 #include "shade.h"
 
-//std::map <int, int> mymap =
-//{
-//    std::pair <int, int> (1, 1),
-//    std::pair <int, int> (2, 2),
-//    std::pair <int, int> (2, 2)
-//};
+//error codes
+class No_More_Enemies {};
+class No_More_Potions {};
+class No_More_Gold {};
 
 enum class Direction { NW, N, NE, W, E, SW, S, SE };
 

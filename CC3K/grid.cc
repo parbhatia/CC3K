@@ -59,24 +59,39 @@ void Grid::test_chambers() {
     }
 }
 
-void Grid::generate_enemies() {
-    int x = 100;
+void Grid::create_randomness() {
     srand((unsigned)time(NULL));
-    while(x>0) {
-        //randomly pick chamber to generate enemy
-        int chamb_num = rand() % 5;
-        chambers[chamb_num].generate_enemy();
-        //chambers[chamb_num].generate_potions();
-        //chambers[chamb_num].generate_gold();
-        --x;
+}
+
+int Grid::chamber_picker() {
+    return rand() % 5;
+}
+
+void Grid::generate_enemies() {
+    while(1) {
+        int chamb_num = chamber_picker();
+        try {
+            chambers[chamb_num].generate_enemy();
+        }
+        catch(No_More_Enemies &) {
+            return;
+        }
     }
 }
+//    int x = 100;
+//    while(x>0) {
+//        int chamb_num = chamber_picker();
+//        chambers[chamb_num].generate_enemy();
+//        --x;
+//    }
 
 void Grid::read_layout(string s) {
     //create chambers
     for (int i = 0; i < 5; ++i) {
         chambers.emplace_back(Chamber());
     }
+    
+    create_randomness(); //for random generation
     
     ifstream file(s.c_str()); //read lines
     string l;

@@ -23,11 +23,15 @@ void Chamber::add_cell(Cell *c) {
     cells.emplace_back(c);
 }
 
+int Chamber::cell_picker() {
+    return rand() % cells.size();
+}
+
 
 void Chamber::generate_player(string type) {
     bool done = false;
     while (!done) {
-        int x = rand() % cells.size(); //generates number from 0 to sizeof cells
+        int x = cell_picker();
         if (!cells[x]->isOccupied()) {
             //set player based on type
             Object *new_player = nullptr;
@@ -41,54 +45,55 @@ void Chamber::generate_player(string type) {
 }
 /*
 void Chamber::generate_potion() {
-    srand((unsigned)time(NULL)); //uses "seed" as current time
-    if (numPotions == 10) {
-        return;
+    if (numPotions == 0) {
+        throw No_More_Potions();
     }
     else {
         bool done = false;
         while (!done) {
-            int x = rand() % cells.size(); //generates number from 0 to sizeof cells
+            int x = cell_picker();
             if (!cells[x]->isOccupied()) {
                 cells[x]->setObject();
                 done = true;
             }
         }
+ --numPotions;
     }
 }
 
 void Chamber::generate_gold() {
-    srand((unsigned)time(NULL)); //uses "seed" as current time
     if (numGold == 0) {
-        return;
+        throw No_More_Gold();
     }
     else {
         bool done = false;
         while (!done) {
-            int x = rand() % cells.size(); //generates number from 0 to sizeof cells
+            int x = cell_picker();
             if (!cells[x]->isOccupied()) {
                 cells[x]->setObject();
                 done = true;
             }
         }
     }
+ --numGold;
 }
 */
+
 void Chamber::generate_enemy() {
-    srand((unsigned)time(NULL)); //uses "seed" as current time
-    if (numGold == 0) {
-        return;
+    if (numEnemies == 0) {
+        throw No_More_Enemies();
     }
     else {
         bool done = false;
         while (!done) {
-            int x = rand() % cells.size(); //generates number from 0 to sizeof cells
+            int x = cell_picker();
             if (!cells[x]->isOccupied()) {
                 //int y = rand() % 6;
                 //choose random enemy
                 Object *new_enemy = new Shade();
                 //Object *new_enemy = new enemy_map[y];
                 cells[x]->setObject(new_enemy);
+                --numEnemies;
                 done = true;
             }
         }
