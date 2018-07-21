@@ -7,7 +7,9 @@
 #include "dwarf.h"
 #include "shade.h"
 
-//error codes
+//pls don't change anything here!! - par
+
+//error codes to move in seperate file later
 class No_More_Enemies {};
 class No_More_Potions {};
 class No_More_Gold {};

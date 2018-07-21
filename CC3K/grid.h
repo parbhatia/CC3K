@@ -2,6 +2,7 @@
 #define grid_hpp
 #include <iostream>
 #include <vector>
+#include <string>
 #include "cell.h"
 #include <iomanip>
 #include "doorcell.h"
@@ -20,6 +21,7 @@ class Grid {
     std::string race = "Shade";
     Cell *player_cell = nullptr; //keeping track of player's movements
     std::vector<Chamber> chambers; //chambers on each level
+    std::vector<std::string> actions; //keeping track of actions
     bool in_range(int row, int col); //returns true if row,col is in range of grid
 
   public:
