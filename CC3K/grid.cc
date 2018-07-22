@@ -53,8 +53,21 @@ void Grid::use_pot(Direction d) {
 }
 
 void Grid::move_player(Direction d) {
-    if (d == Direction::N) {
-        //if (cells[isOccupied();)
+    int p_row = player_cell->getRow();
+    int p_col = player_cell->getCol();
+    Cell *new_cell = nullptr;
+    //set new_cell position
+    if (d == Direction::N) { new_cell = cells[p_row-1][p_col]; }
+    else if (d == Direction::NW) { new_cell = cells[p_row-1][p_col-1]; }
+    else if (d == Direction::NE) { new_cell = cells[p_row-1][p_col+1]; }
+    else if (d == Direction::S) { new_cell = cells[p_row+1][p_col]; }
+    else if (d == Direction::SW) { new_cell = cells[p_row+1][p_col-1]; }
+    else if (d == Direction::SE) { new_cell = cells[p_row+1][p_col+1]; }
+    else if (d == Direction::E) { new_cell = cells[p_row][p_col+1]; }
+    else { new_cell = cells[p_row][p_col-1]; }
+    //move player if newcell is not empty
+    if (!new_cell->isOccupied()) {
+        player_cell->moveTo(*new_cell);
     }
 }
 

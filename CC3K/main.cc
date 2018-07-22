@@ -25,6 +25,7 @@ int main(int argc, const char * argv[]) {
                 (cmd == "se") | (cmd == "sw")) {
                 //grid moves player at direction cmd
                 g.move_player(dir_map.at(cmd));
+                cout << g;
             } else if ((cmd == "s") | (cmd == "d") | (cmd == "v") |
                        (cmd == "g") | (cmd == "t")) {
                 if (player_set) {
