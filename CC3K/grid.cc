@@ -89,6 +89,7 @@ void Grid::move_player(Direction d) {
         }
     }
 }
+
 void Grid::test_chambers() {
     int i = 1;
     for (auto it : chambers) {
