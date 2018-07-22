@@ -23,5 +23,7 @@ class Character : public Object
     void attack(Item *whoTo) override;
     void attack(Character *whoTo) override;
     void beUsed(Player *whoFrom);
+    void beAttacked(Object *whoFrom) override;
+    ~Character() = 0;
 };
 #endif

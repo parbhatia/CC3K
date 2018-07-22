@@ -5,3 +5,9 @@ Drow::Drow(int atk, int def, int hp): Player{atk, def, hp} {}
 void Drow::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
+
+char Drow::print() {
+    return 'D';
+}
+
+Drow::~Drow() {}

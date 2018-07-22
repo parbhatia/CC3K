@@ -10,7 +10,7 @@ public:
     virtual void attack(Item *whoTo);
     virtual void attack(Character *whoTo);
     virtual void beUsed(Player *whoFrom);
-    virtual ~Item() = 0;
+    //virtual ~Item() = 0;
 };
 
 

@@ -8,3 +8,7 @@ Vampire::Vampire(int atk, int def, int hp): Player{atk, def, hp} {
 void Vampire::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
+
+char Vampire::print() {
+    return 'V';
+}
