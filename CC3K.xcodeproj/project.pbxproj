@@ -24,6 +24,12 @@
 		4B53F1CA2102A26000736E14 /* object.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1C92102A26000736E14 /* object.cc */; };
 		4B53F1CD2104406700736E14 /* factory.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1CB2104406700736E14 /* factory.cc */; };
 		4B53F1D02104E20900736E14 /* potion.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1CF2104E20900736E14 /* potion.cc */; };
+		4BCE7AF621052EEE00B2532A /* resHP.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AEB21052EED00B2532A /* resHP.cc */; };
+		4BCE7AF721052EEE00B2532A /* vampire.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF021052EED00B2532A /* vampire.cc */; };
+		4BCE7AF821052EEE00B2532A /* elf.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF121052EED00B2532A /* elf.cc */; };
+		4BCE7AF921052EEE00B2532A /* halfling.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF221052EEE00B2532A /* halfling.cc */; };
+		4BCE7AFA21052EEE00B2532A /* human.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF421052EEE00B2532A /* human.cc */; };
+		4BCE7AFB21052EEE00B2532A /* orc.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF521052EEE00B2532A /* orc.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -78,6 +84,17 @@
 		4B53F1CC2104406700736E14 /* factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = factory.h; sourceTree = "<group>"; };
 		4B53F1CE2104E20900736E14 /* vampire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vampire.h; sourceTree = "<group>"; };
 		4B53F1CF2104E20900736E14 /* potion.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = potion.cc; sourceTree = "<group>"; };
+		4BCE7AEB21052EED00B2532A /* resHP.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = resHP.cc; sourceTree = "<group>"; };
+		4BCE7AEC21052EED00B2532A /* resHP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resHP.h; sourceTree = "<group>"; };
+		4BCE7AED21052EED00B2532A /* halfling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = halfling.h; sourceTree = "<group>"; };
+		4BCE7AEE21052EED00B2532A /* human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = human.h; sourceTree = "<group>"; };
+		4BCE7AEF21052EED00B2532A /* orc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orc.h; sourceTree = "<group>"; };
+		4BCE7AF021052EED00B2532A /* vampire.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vampire.cc; sourceTree = "<group>"; };
+		4BCE7AF121052EED00B2532A /* elf.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = elf.cc; sourceTree = "<group>"; };
+		4BCE7AF221052EEE00B2532A /* halfling.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = halfling.cc; sourceTree = "<group>"; };
+		4BCE7AF321052EEE00B2532A /* elf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = elf.h; sourceTree = "<group>"; };
+		4BCE7AF421052EEE00B2532A /* human.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = human.cc; sourceTree = "<group>"; };
+		4BCE7AF521052EEE00B2532A /* orc.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = orc.cc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,11 +145,22 @@
 				4B53F1BF2100105B00736E14 /* shade.h */,
 				4B2B5D8D20FFD7F300F5B673 /* item.h */,
 				4B2B5D7F20FEBA2200F5B673 /* doorcell.h */,
+				4BCE7AF321052EEE00B2532A /* elf.h */,
+				4BCE7AED21052EED00B2532A /* halfling.h */,
+				4BCE7AEE21052EED00B2532A /* human.h */,
+				4BCE7AEF21052EED00B2532A /* orc.h */,
+				4BCE7AEC21052EED00B2532A /* resHP.h */,
 				4B2B5D7E20FEBA2200F5B673 /* floorcell.h */,
 				4B2B5D8720FEC1D200F5B673 /* bridge.h */,
 				4B2B5D7820FE969A00F5B673 /* textdisplay.h */,
 				4B2B5D8220FEBB6300F5B673 /* nullcell.h */,
 				4B53F1CB2104406700736E14 /* factory.cc */,
+				4BCE7AF521052EEE00B2532A /* orc.cc */,
+				4BCE7AF121052EED00B2532A /* elf.cc */,
+				4BCE7AF221052EEE00B2532A /* halfling.cc */,
+				4BCE7AF421052EEE00B2532A /* human.cc */,
+				4BCE7AEB21052EED00B2532A /* resHP.cc */,
+				4BCE7AF021052EED00B2532A /* vampire.cc */,
 				4B53F1CF2104E20900736E14 /* potion.cc */,
 				4B53F1C92102A26000736E14 /* object.cc */,
 				4B53F1C521018CF900736E14 /* dwarf.cc */,
@@ -211,11 +239,16 @@
 				4B53F1BA21000FB800736E14 /* character.cc in Sources */,
 				4B2B5D8420FEBB6300F5B673 /* nullcell.cc in Sources */,
 				4B2B5D7920FE969A00F5B673 /* textdisplay.cc in Sources */,
+				4BCE7AFB21052EEE00B2532A /* orc.cc in Sources */,
+				4BCE7AF721052EEE00B2532A /* vampire.cc in Sources */,
 				4B53F1D02104E20900736E14 /* potion.cc in Sources */,
+				4BCE7AF821052EEE00B2532A /* elf.cc in Sources */,
 				4B53F1C421018C8200736E14 /* enemy.cc in Sources */,
 				4B53F1CD2104406700736E14 /* factory.cc in Sources */,
 				4B53F1CA2102A26000736E14 /* object.cc in Sources */,
 				4B2B5D8920FEC1D200F5B673 /* bridge.cc in Sources */,
+				4BCE7AF921052EEE00B2532A /* halfling.cc in Sources */,
+				4BCE7AF621052EEE00B2532A /* resHP.cc in Sources */,
 				4B2B5D7C20FE96C700F5B673 /* cell.cc in Sources */,
 				4B53F1C22100105B00736E14 /* shade.cc in Sources */,
 				4B2B5D8F20FFD80B00F5B673 /* item.cc in Sources */,
@@ -223,6 +256,7 @@
 				4B53F1B820FFE96300736E14 /* chamber.cc in Sources */,
 				4B53F1C721018CF900736E14 /* dwarf.cc in Sources */,
 				4B2B5D8620FEBD2B00F5B673 /* doorcell.cc in Sources */,
+				4BCE7AFA21052EEE00B2532A /* human.cc in Sources */,
 				4B2B5D7620FE968D00F5B673 /* grid.cc in Sources */,
 				4B2B5D8120FEBA2200F5B673 /* floorcell.cc in Sources */,
 			);

@@ -1,7 +1,7 @@
 #include "vampire.h"
 #include <climits>
 
-Vampire::Vampire(int atk=25, int def=25, int hp=50): Player{atk, def, hp} {
+Vampire::Vampire(int atk, int def, int hp): Player{atk, def, hp} {
     setMaxHp(INT32_MAX);
 }
 
