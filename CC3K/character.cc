@@ -1,6 +1,8 @@
 #include "character.h"
+#include <cstdlib>
+#include <ctime>
     
-Character::Character(int atk, int def, int hp) : atk{atk}, def{def}, hp{hp}, maxHp{hp} {}
+Character::Character(int atk, int def, int hp) : atk{atk}, def{def}, hp{hp}, maxHp{hp}, missChance{0} {}
 void Character::changeAtk(int n) {
     atk += n;
 }
@@ -17,6 +19,10 @@ int Character::getHp() {return hp;}
 int Character::getMaxHp() {return maxHp;}
 void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, so it does nothing.
 void Character::attack(Character *whoTo) {
-    whoTo->changeHp(getAtk() - whoTo->getDef());
+    srand(time(NULL));
+    int chance = rand()%10 + 1;
+    if (chance > missChance) {
+        whoTo->changeHp(-getAtk()*100/(100+whoTo->getDef())); 
+    }
 }
 void Character::beUsed(Player *whoFrom) {}; //Only a potion can be used or a gold can be picked, so it does nothing.ss
