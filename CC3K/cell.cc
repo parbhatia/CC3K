@@ -58,10 +58,11 @@ char Cell::print() {
 }
 
 int Cell::moveTo(Cell &whoTo) {
-    if (whoTo.acceptMove(*this) == 1) { //if player move was successful
+    int move_code = whoTo.acceptMove(*this);
+    if (move_code == 1) { //if player move was successful
         player = nullptr;
         return 1;
-    } else if (whoTo.acceptMove(*this) == 2) {
+    } else if (move_code == 2) { //if player moves on door
         player = nullptr;
         return 2;
     } else return 0;

@@ -1,5 +1,5 @@
-#include "resHP.h"
-
-void resHP::beUsed(Player *whoFrom) {
-    whoFrom->changeHp(10);
-}
+//#include "resHP.h"
+//
+//void resHP::beUsed(Player *whoFrom) {
+//    whoFrom->changeHp(10);
+//}

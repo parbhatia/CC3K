@@ -9,8 +9,7 @@ public:
     DoorCell(int r, int c);
     char print() override;
     ~DoorCell();
-     
-    //int moveTo(Cell& whoTo) override;
+    
     int acceptMove(Cell &whoFrom) override;
 //    void attack(Cell &target) override;
 //    void beAttacked(Cell &whoFrom) override;

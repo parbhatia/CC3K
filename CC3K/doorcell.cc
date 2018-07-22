@@ -10,10 +10,12 @@ char DoorCell::print() {
 
 DoorCell::~DoorCell() {}
 
-//int DoorCell::moveTo(Cell& whoTo) { return 1; }
-
 int DoorCell::acceptMove(Cell &whoFrom) {
-    setPlayer(whoFrom.getPlayer());
-    //notifyObservers();
-    return 2;
+    std::cout << "DOOR ACEPTING MOVE" << std::endl;
+    if (!isOccupied()) {
+        setPlayer(whoFrom.getPlayer());
+        return 2;
+    } else {
+        return 0;
+    }
 }

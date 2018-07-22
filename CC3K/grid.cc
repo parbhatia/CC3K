@@ -81,9 +81,10 @@ void Grid::move_player(Direction d) {
     else { new_cell = cells[p_row][p_col-1]; }
     //move player if newcell is not empty
     if (!new_cell->isOccupied()) {
-        if (player_cell->moveTo(*new_cell) == 1) { //if move successful
+        int move_code = player_cell->moveTo(*new_cell);
+        if (move_code == 1) { //if move successful
             player_cell = new_cell;
-        } else if (player_cell->moveTo(*new_cell) == 2) { //if move was on door
+        } else if (move_code == 2) { //if move was on door
             player_cell = new_cell;
             move_player(d);
         }
