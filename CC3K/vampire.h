@@ -6,14 +6,10 @@
 
 class Vampire: public Player {
 public:
-    Vampire(std::string race="Vampire", int atk=25, int def=25, int hp=50): Player{race, atk, def, hp} {}
-    char print() override;
-    void acceptattack(Object *whoFrom) override;
-    void attack(Character *whoTo) override;
-    void attack(Item *whoTo) override;
-    void attack(Halfling* h) override;
-    void attack(Dwarf* d) override;
-    void attack(Drow* h) override;
-    void attack(Goblin* g) override;
+    Vampire(int atk=25, int def=25, int hp=50): Player{atk, def, hp} {}
+    char print() override { return 'V';}
+    void beAttacked(Object *whoFrom) override {
+      whoFrom->attack(this);
+    }
 };
 #endif
