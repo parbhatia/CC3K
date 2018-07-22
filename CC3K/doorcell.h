@@ -10,8 +10,9 @@ public:
     char print() override;
     ~DoorCell();
     /*
-    void move_to(Cell& to) override;
-    bool accept_move(Cell &who) override;
+     
+    bool moveTo(Cell& to) override;
+    bool acceptMove(Cell &who) override;
     void attack(Cell &target) override;
     void beAttacked(Cell &whoFrom) override;
     
