@@ -7,6 +7,7 @@ class Potion : public Item{
 public:
     ~Potion() = 0;
     char print() override;
+    
 };
 
 #endif
