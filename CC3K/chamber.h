@@ -1,3 +1,6 @@
+#ifndef CHAMBER_H
+#define CHAMBER_H
+
 #include <vector>
 #include "cell.h"
 #include "shade.h"
@@ -21,3 +24,5 @@ class Chamber {
     void reset();
     void add_cell(Cell *c);
 };
+
+#endif

@@ -13,8 +13,6 @@
 #include "character.h"
 #include "info.h"
 
-class Chamber;
-
 class Grid {
     int width = 79;
     int height = 30;

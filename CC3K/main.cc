@@ -1,7 +1,6 @@
 #include <iostream>
 #include <stdexcept>
 #include "grid.h"
-#include "chamber.h"
 #include "info.h"
 using namespace std;
 
