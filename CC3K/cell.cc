@@ -49,7 +49,7 @@ Object* Cell::getObject() {
 
 char Cell::print() {
     if (player) {
-        return '@';
+        return player->print();
     } else if (ob) {
         return ob->print();
     } else {
