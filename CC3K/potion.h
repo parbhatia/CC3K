@@ -2,7 +2,9 @@
 #define potion_hpp
 #include "item.h"
 
-class Potion:public Item{
+
+class Potion : public Item{
+public:
     ~Potion() = 0;
     char print() override;
 };
