@@ -19,11 +19,12 @@ void Chamber::reset() {
     }
 }
 
+//assumes chamber has player cell
 Cell* Chamber::give_playercell() {
-    //set my player_cell field to null, after giving to Grid
-    Cell *temp = player_cell;
-    player_cell = nullptr;
-    return temp;
+    for (auto cell: cells) {
+        if (cell->hasPlayer()) return cell;
+    }
+    return 0;
 }
 
 void Chamber::add_cell(Cell *c) {

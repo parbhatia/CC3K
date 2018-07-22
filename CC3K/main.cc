@@ -12,7 +12,7 @@ int main(int argc, const char * argv[]) {
     //g.test_chambers();
     g.generate_enemies();
     cout << g;
-    
+    //g.cell_test();
     //command interpreter
     cin.exceptions(ios::eofbit|ios::failbit);
     string cmd;
@@ -23,6 +23,11 @@ int main(int argc, const char * argv[]) {
             if ((cmd == "no") | (cmd == "so") | (cmd == "ea") |
                 (cmd == "we") | (cmd == "ne") | (cmd == "nw") |
                 (cmd == "se") | (cmd == "sw")) {
+                if (!player_set) {
+                    cout << "Please pick player." << endl;
+                    continue;
+                }
+                cout << g.has_player_test() << endl;
                 //grid moves player at direction cmd
                 g.move_player(dir_map.at(cmd));
                 cout << g;

@@ -29,6 +29,8 @@ class Grid {
     Grid();
     ~Grid();
     void read_layout(std::string s);
+    bool has_player_test(); //delete later
+    void cell_test(); //delete later
     void intialize_player(std::string type); //initializes player with race type, and changes race attribute for display purposes
     void default_layout();
     void move_player(Direction d);    //moves player in d

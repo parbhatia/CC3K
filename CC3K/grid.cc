@@ -40,6 +40,19 @@ void Grid::set_observers() {
     }
 }
 
+
+bool Grid::has_player_test() {
+    return player_cell == nullptr;
+}
+
+void Grid::cell_test() {
+    for(auto row: cells) {
+        for (auto cell: row) {
+            cout << cell->getRow() << "," << cell->getCol() << endl;
+        }
+    }
+}
+
 void Grid::intialize_player(string type) {
     //pick chamber to generate player
     int chamb_num = chamber_picker();

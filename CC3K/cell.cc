@@ -33,6 +33,10 @@ void Cell::setObject(Object *newob){
     ob = newob;
 }
 
+void Cell::setPlayer(Object *newob){
+    player = newob;
+}
+
 Object* Cell::getPlayer() {
     return player;
 }

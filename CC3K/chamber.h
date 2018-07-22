@@ -11,7 +11,6 @@ class Chamber {
     std::vector<Cell *> cells;
     static int numPotions, numGold, numEnemies;
     Factory f;
-    Cell *player_cell = nullptr; //to give to Grid, gets nullpointed once it's called
   public:
     void print();
     //void generate_potion();
@@ -20,7 +19,7 @@ class Chamber {
     int cell_picker(); //picks random cell
     int enemy_picker(); //picks random enemy type(int)
     void generate_player(std::string type);
-    Cell *give_playercell(); //gives player cell to Grid
+    Cell *give_playercell(); //gives player cell to Grid, assumes chamber has player
     void reset();
     void add_cell(Cell *c);
 };

@@ -22,6 +22,7 @@ public:
     bool isOccupied();
     void clear();
     virtual void setObject(Object *newob);
+    virtual void setPlayer(Object *newob);
     virtual void moveTo(Cell &whoTo);
     virtual bool acceptMove(Cell &whoFrom); 
     virtual void attack(Cell &target);
