@@ -57,22 +57,23 @@ char Cell::print() {
     }
 }
 
-bool Cell::moveTo(Cell &whoTo) {
-    if (whoTo.acceptMove(*this)) { //if player move was successful
+int Cell::moveTo(Cell &whoTo) {
+    if (whoTo.acceptMove(*this) == 1) { //if player move was successful
         player = nullptr;
-        return true;
-    } else {
-        return false;
-    }
+        return 1;
+    } else if (whoTo.acceptMove(*this) == 2) {
+        player = nullptr;
+        return 2;
+    } else return 0;
 }
 
-bool Cell::acceptMove(Cell &whoFrom) {
+int Cell::acceptMove(Cell &whoFrom) {
     if (!isOccupied()) {
         setPlayer(whoFrom.getPlayer());
         notifyObservers();
-        return true;
+        return 1;
     } else {
-        return false;
+        return 0;
     }
 }
 

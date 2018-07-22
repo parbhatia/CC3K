@@ -25,7 +25,6 @@ int main(int argc, const char * argv[]) {
                     cout << "Please pick player." << endl;
                     continue;
                 }
-                cout << cmd << endl;
                 //grid moves player at direction cmd
                 g.move_player(dir_map.at(cmd));
                 cout << g;

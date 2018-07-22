@@ -23,8 +23,8 @@ public:
     void clear();
     virtual void setObject(Object *newob);
     virtual void setPlayer(Object *newob);
-    virtual bool moveTo(Cell &whoTo);
-    virtual bool acceptMove(Cell &whoFrom); 
+    virtual int moveTo(Cell &whoTo);
+    virtual int acceptMove(Cell &whoFrom); 
     virtual void attack(Cell &target);
     virtual void use(Cell &target);  
     virtual void notifyObservers();

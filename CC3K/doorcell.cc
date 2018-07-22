@@ -9,16 +9,11 @@ char DoorCell::print() {
 }
 
 DoorCell::~DoorCell() {}
-/*
 
-void DoorCell::move_to(Cell& to){}
+//int DoorCell::moveTo(Cell& whoTo) { return 1; }
 
-bool DoorCell::accept_move(){
-        //send player through the door
-        //reject enemies
+int DoorCell::acceptMove(Cell &whoFrom) {
+    setPlayer(whoFrom.getPlayer());
+    //notifyObservers();
+    return 2;
 }
-
-
-
-*/
-

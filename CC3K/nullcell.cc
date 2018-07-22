@@ -7,8 +7,8 @@ char NullCell::print(){
     return type;
 }
 
-bool NullCell::moveTo(Cell &whoTo) { return false; }
+int NullCell::moveTo(Cell &whoTo) { return 0; }
 
-bool NullCell::acceptMove(Cell &whoFrom) { return false; }
+int NullCell::acceptMove(Cell &whoFrom) { return 0; }
 
 NullCell::~NullCell() {}
