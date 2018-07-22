@@ -40,16 +40,12 @@ void Grid::set_observers() {
     }
 }
 
-void Grid::set_playercell(Cell *c) {
-    player_cell = c;
-}
-
 void Grid::intialize_player(string type) {
     //pick chamber to generate player
     int chamb_num = chamber_picker();
-    //also pick cell chamber will use, so grid 
-    chambers[chamb_num].generate_player(this,type);
+    chambers[chamb_num].generate_player(type);
     race = player_name.at(type); //for grid's display purposes
+    player_cell = chambers[chamb_num].give_playercell(); //ask chamber for player cell
 }
 
 void Grid::use_pot(Direction d) {

@@ -33,7 +33,6 @@ class Grid {
     void read_layout(std::string s);
     void intialize_player(std::string type); //initializes player with race type, and changes race attribute for display purposes
     void default_layout();
-    void set_playercell(Cell *c);
     void move_player(Direction d);    //moves player in d
     void use_pot(Direction d); //makes player use potion in d
     void generate_enemies(); //chambers generate enemies

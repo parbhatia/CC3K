@@ -19,6 +19,13 @@ void Chamber::reset() {
     }
 }
 
+Cell* Chamber::give_playercell() {
+    //set my player_cell field to null, after giving to Grid
+    Cell *temp = player_cell;
+    player_cell = nullptr;
+    return temp;
+}
+
 void Chamber::add_cell(Cell *c) {
     cells.emplace_back(c);
 }
@@ -31,14 +38,13 @@ int Chamber::enemy_picker() {
     return rand() % enemy_types;
 }
 
-void Chamber::generate_player(Grid *g, string type) {
+void Chamber::generate_player(string type) {
     bool done = false;
     while (!done) {
         int x = cell_picker();
         if (!cells[x]->isOccupied()) {
             Object *new_player = f.PlayerFactory(type);
             cells[x]->setObject(new_player);
-            g->set_playercell(cells[x]);
             --numEnemies;
             done = true;
         }
