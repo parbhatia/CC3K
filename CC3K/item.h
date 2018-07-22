@@ -5,7 +5,7 @@
 
 class Item:public Object{
 public:
-    virtual char print();
+    //virtual char print();
     virtual void beAttacked(Object *whoFrom);
     virtual void attack(Item *whoTo);
     virtual void attack(Character *whoTo);
