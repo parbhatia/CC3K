@@ -9,6 +9,15 @@ Grid::Grid() {
     read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
 }
 
+Grid::~Grid() {
+    //delete all cells
+    for (auto row: cells) {
+        for (auto cell: row) {
+            delete cell; //calls cell's dtor
+        }
+    }
+}
+
 bool Grid::in_range(int row, int col) {
     return ((row>=0 && row<height-5) && (col >0 && col<width));
 }
@@ -33,22 +42,20 @@ void Grid::set_observers() {
 
 void Grid::intialize_player(string type) {
     //randomly pick chamber to generate enemy
-    srand((unsigned)time(NULL));
-    int chamb_num = rand() % 5;
+    int chamb_num = chamber_picker();
     chambers[chamb_num].generate_player(type);
     //use map for race type
     race = type;
 }
 
-//void Grid::use_pot_player(Direction d) {
-//    if (d == Direction::N) {}
-//}
+void Grid::use_pot(Direction d) {
+    if (d == Direction::N) {}
+}
 
-//void Grid::move_player(Direction d) {
-//    if (d == Direction::N) {
-//        if (cells[])
-//    }
-//}
+void Grid::move_player(Direction d) {
+    if (d == Direction::N) {
+    }
+}
 
 void Grid::test_chambers() {
     int i = 1;
@@ -78,19 +85,12 @@ void Grid::generate_enemies() {
         }
     }
 }
-//    int x = 100;
-//    while(x>0) {
-//        int chamb_num = chamber_picker();
-//        chambers[chamb_num].generate_enemy();
-//        --x;
-//    }
 
 void Grid::read_layout(string s) {
     //create chambers
     for (int i = 0; i < 5; ++i) {
         chambers.emplace_back(Chamber());
     }
-    
     create_randomness(); //for random generation
     
     ifstream file(s.c_str()); //read lines

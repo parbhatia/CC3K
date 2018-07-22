@@ -14,13 +14,8 @@ int main(int argc, const char * argv[]) {
     cout << g;
     
     //command interpreter
-    
-    /*
     cin.exceptions(ios::eofbit|ios::failbit);
     string cmd;
-    
-    
-    
     try {
         while (true) {
             cin >> cmd;
@@ -28,7 +23,7 @@ int main(int argc, const char * argv[]) {
                 (cmd == "we") | (cmd == "ne") | (cmd == "nw") |
                 (cmd == "se") | (cmd == "sw")) {
                 //grid moves player at direction cmd
-                g.move_player(dir_map[cmd]);
+                g.move_player(dir_map.at(cmd));
             } else if (cmd == "s") {
                 g.intialize_player(cmd);
             } else if (cmd == "d") {
@@ -43,7 +38,7 @@ int main(int argc, const char * argv[]) {
                 string dir;
                 cin >> dir;
                 //make player use potion at direction dir
-                g.use_pot_player(dir_map[dir]);
+                g.use_pot(dir_map.at(dir));
             } else if (cmd == "a") {
             } else if (cmd == "f") {
             } else if (cmd == "r") {
@@ -54,7 +49,6 @@ int main(int argc, const char * argv[]) {
     catch (ios::failure &) {
         return 0;
     }  // Any I/O failure quits
-     */
 }
 
 

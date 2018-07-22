@@ -26,12 +26,12 @@ class Grid {
 
   public:
     Grid();
-    //~Grid();
+    ~Grid();
     void read_layout(std::string s);
     void intialize_player(std::string type); //initializes player with race type, and changes race attribute for display purposes
     void default_layout();
-    //void move_player(Direction d);    //moves player in d
-    //void use_pot_player(Direction d); //makes player use potion in d
+    void move_player(Direction d);    //moves player in d
+    void use_pot(Direction d); //makes player use potion in d
     void generate_enemies(); //chambers generate enemies
     void create_randomness(); //sets time as seed 
     int chamber_picker(); //returns random chamber (0 to 4)
