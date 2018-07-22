@@ -54,6 +54,7 @@ void Grid::use_pot(Direction d) {
 
 void Grid::move_player(Direction d) {
     if (d == Direction::N) {
+        if (cells[isOccupied();)
     }
 }
 
