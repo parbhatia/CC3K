@@ -45,7 +45,7 @@ void Chamber::generate_player(string type) {
         int x = cell_picker();
         if (!cells[x]->isOccupied()) {
             Object *new_player = f.PlayerFactory(type);
-            cells[x]->setObject(new_player);
+            cells[x]->setPlayer(new_player);
             --numEnemies;
             done = true;
         }

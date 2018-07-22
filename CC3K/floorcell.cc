@@ -4,8 +4,7 @@ FloorCell::FloorCell(int r, int c): Cell{r,c} {
 }
 
 char FloorCell::print(){
-    if(ob){ return ob->print();}
-    else{
-        return '.';
-    }
+    if (player) return player->print();
+    else if(ob){ return ob->print();}
+    else return '.';
 }

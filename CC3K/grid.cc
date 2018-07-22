@@ -42,7 +42,8 @@ void Grid::set_observers() {
 
 
 bool Grid::has_player_test() {
-    return player_cell == nullptr;
+    cout << player_cell->print() << endl;
+    return player_cell != nullptr;
 }
 
 void Grid::cell_test() {
@@ -81,6 +82,7 @@ void Grid::move_player(Direction d) {
     //move player if newcell is not empty
     if (!new_cell->isOccupied()) {
         player_cell->moveTo(*new_cell);
+        player_cell = new_cell;
     }
 }
 

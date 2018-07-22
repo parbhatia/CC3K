@@ -9,10 +9,8 @@ int main(int argc, const char * argv[]) {
     string race;
     //cin >> race;
     cout << g;
-    //g.test_chambers();
-    g.generate_enemies();
-    cout << g;
-    //g.cell_test();
+    //g.generate_enemies();
+    //cout << g;
     //command interpreter
     cin.exceptions(ios::eofbit|ios::failbit);
     string cmd;
@@ -27,7 +25,7 @@ int main(int argc, const char * argv[]) {
                     cout << "Please pick player." << endl;
                     continue;
                 }
-                cout << g.has_player_test() << endl;
+                cout << cmd << endl;
                 //grid moves player at direction cmd
                 g.move_player(dir_map.at(cmd));
                 cout << g;
@@ -39,6 +37,7 @@ int main(int argc, const char * argv[]) {
                 }
                 player_set = true;
                 g.intialize_player(cmd);
+                cout << g.has_player_test() << endl;
                 cout << g;
             } else if (cmd == "u") {
                 string dir;
