@@ -30,6 +30,8 @@
 		4BCE7AF921052EEE00B2532A /* halfling.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF221052EEE00B2532A /* halfling.cc */; };
 		4BCE7AFA21052EEE00B2532A /* human.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF421052EEE00B2532A /* human.cc */; };
 		4BCE7AFB21052EEE00B2532A /* orc.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF521052EEE00B2532A /* orc.cc */; };
+		4BCE7AFF210535E900B2532A /* player.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AFC210535E800B2532A /* player.cc */; };
+		4BCE7B00210535E900B2532A /* drow.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AFE210535E900B2532A /* drow.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,6 +97,9 @@
 		4BCE7AF321052EEE00B2532A /* elf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = elf.h; sourceTree = "<group>"; };
 		4BCE7AF421052EEE00B2532A /* human.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = human.cc; sourceTree = "<group>"; };
 		4BCE7AF521052EEE00B2532A /* orc.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = orc.cc; sourceTree = "<group>"; };
+		4BCE7AFC210535E800B2532A /* player.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cc; sourceTree = "<group>"; };
+		4BCE7AFD210535E900B2532A /* drow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drow.h; sourceTree = "<group>"; };
+		4BCE7AFE210535E900B2532A /* drow.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = drow.cc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +137,8 @@
 				4B2B5D7D20FE9B6900F5B673 /* cc3k_emptyfloor.txt */,
 				4B2B5D6D20FE8B1B00F5B673 /* main.cc */,
 				4B2B5D7520FE968D00F5B673 /* grid.h */,
+				4BCE7AFE210535E900B2532A /* drow.cc */,
+				4BCE7AFD210535E900B2532A /* drow.h */,
 				4B2B5D7B20FE96C700F5B673 /* cell.h */,
 				4B2B5D7F20FEBA2200F5B673 /* doorcell.h */,
 				4B2B5D7E20FEBA2200F5B673 /* floorcell.h */,
@@ -154,6 +161,7 @@
 				4B2B5D8720FEC1D200F5B673 /* bridge.h */,
 				4B2B5D7820FE969A00F5B673 /* textdisplay.h */,
 				4B2B5D8220FEBB6300F5B673 /* nullcell.h */,
+				4BCE7AFC210535E800B2532A /* player.cc */,
 				4B53F1CB2104406700736E14 /* factory.cc */,
 				4BCE7AF521052EEE00B2532A /* orc.cc */,
 				4BCE7AF121052EED00B2532A /* elf.cc */,
@@ -238,11 +246,13 @@
 			files = (
 				4B53F1BA21000FB800736E14 /* character.cc in Sources */,
 				4B2B5D8420FEBB6300F5B673 /* nullcell.cc in Sources */,
+				4BCE7AFF210535E900B2532A /* player.cc in Sources */,
 				4B2B5D7920FE969A00F5B673 /* textdisplay.cc in Sources */,
 				4BCE7AFB21052EEE00B2532A /* orc.cc in Sources */,
 				4BCE7AF721052EEE00B2532A /* vampire.cc in Sources */,
 				4B53F1D02104E20900736E14 /* potion.cc in Sources */,
 				4BCE7AF821052EEE00B2532A /* elf.cc in Sources */,
+				4BCE7B00210535E900B2532A /* drow.cc in Sources */,
 				4B53F1C421018C8200736E14 /* enemy.cc in Sources */,
 				4B53F1CD2104406700736E14 /* factory.cc in Sources */,
 				4B53F1CA2102A26000736E14 /* object.cc in Sources */,
