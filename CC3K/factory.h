@@ -4,6 +4,11 @@
 #include "player.h"
 #include "dwarf.h"
 #include "shade.h"
+#include "orc.h"
+#include "elf.h"
+#include "halfling.h"
+#include "drow.h"
+#include "vampire.h"
 
 class Factory {
 public:

@@ -8,8 +8,7 @@ int main(int argc, const char * argv[]) {
     Grid g;
     string race;
     //cin >> race;
-    cout << g;
-    //g.generate_enemies();
+    g.generate_enemies();
     //cout << g;
     //command interpreter
     cin.exceptions(ios::eofbit|ios::failbit);
