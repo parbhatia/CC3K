@@ -5,3 +5,7 @@ char Potion::print(){
 }
 
 Potion::~Potion(){}
+
+void Potion::beAttacked(Object *whoFrom) {}
+void Potion::attack(Item *whoTo) {}
+void Potion::attack(Character *whoTo) {}
