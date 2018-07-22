@@ -7,7 +7,7 @@
 class Drow: public Player {
 public:
     Drow(int atk=25, int def=15, int hp=150);
-    char print() override;
+    //char print() override;
     void beAttacked(Object *whoFrom) override;
     ~Drow();
 };

@@ -9,6 +9,6 @@ void Vampire::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
 
-char Vampire::print() {
+/*char Vampire::print() {
     return 'V';
-}
+}*/

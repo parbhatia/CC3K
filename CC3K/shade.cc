@@ -6,6 +6,6 @@ void Shade::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
 
-char Shade::print() {
+/*char Shade::print() {
     return 'S';
-}
+}*/
