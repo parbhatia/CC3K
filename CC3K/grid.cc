@@ -40,12 +40,16 @@ void Grid::set_observers() {
     }
 }
 
+void Grid::set_playercell(Cell *c) {
+    player_cell = c;
+}
+
 void Grid::intialize_player(string type) {
-    //randomly pick chamber to generate enemy
+    //pick chamber to generate player
     int chamb_num = chamber_picker();
-    chambers[chamb_num].generate_player(type);
-    //use map for race type
-    race = type;
+    //also pick cell chamber will use, so grid 
+    chambers[chamb_num].generate_player(this,type);
+    race = player_name.at(type); //for grid's display purposes
 }
 
 void Grid::use_pot(Direction d) {
@@ -171,10 +175,13 @@ std::ostream &operator<<(std::ostream &out, const Grid &g) {
         }
         if (i != 25) out << endl;
     }
-    
     //print stats
-    out << "Race: " << left << setw(63) << g.race
-    << right << setw(8) << "Level: " << g.level << endl;
+    out.setf(ios::left);
+    out << "Race: " << setw(8) << g.race << " Gold: " << setw(3) << g.gold;
+    out.unsetf(ios::left);
+    out.setf(ios::right);
+    out << setw(50) << "Level: " << g.level << endl;
+    out.unsetf(ios::right);
     out << "HP: " << endl;
     out << "Atk: " << endl;
     out << "Def: " << endl;

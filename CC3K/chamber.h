@@ -15,7 +15,7 @@ class Chamber {
     void generate_enemy();
     int cell_picker(); //picks random cell
     int enemy_picker(); //picks random enemy type(int)
-    void generate_player(std::string type);
+    void generate_player(Grid *g, std::string type);
     void reset();
     void add_cell(Cell *c);
 };

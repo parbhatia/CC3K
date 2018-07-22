@@ -31,20 +31,21 @@ int Chamber::enemy_picker() {
     return rand() % enemy_types;
 }
 
-void Chamber::generate_player(string type) {
+void Chamber::generate_player(Grid *g, string type) {
     bool done = false;
     while (!done) {
         int x = cell_picker();
         if (!cells[x]->isOccupied()) {
-            //set player based on type
-            Object *new_player = nullptr;
-            if (type == "s") new_player = new Shade();
-            //else if (type == "v") new_player = new Vampire();
+            Object *new_player = f.PlayerFactory(type);
             cells[x]->setObject(new_player);
+            g->set_playercell(cells[x]);
+            --numEnemies;
             done = true;
         }
     }
+    
 }
+
 /*
 void Chamber::generate_potion() {
     if (numPotions == 0) {

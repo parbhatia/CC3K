@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include "grid.h"
+#include "chamber.h"
 #include "info.h"
 using namespace std;
 
@@ -17,6 +18,7 @@ int main(int argc, const char * argv[]) {
     cin.exceptions(ios::eofbit|ios::failbit);
     string cmd;
     try {
+        bool player_set = false;
         while (true) {
             cin >> cmd;
             if ((cmd == "no") | (cmd == "so") | (cmd == "ea") |
@@ -24,16 +26,15 @@ int main(int argc, const char * argv[]) {
                 (cmd == "se") | (cmd == "sw")) {
                 //grid moves player at direction cmd
                 g.move_player(dir_map.at(cmd));
-            } else if (cmd == "s") {
+            } else if ((cmd == "s") | (cmd == "d") | (cmd == "v") |
+                       (cmd == "g") | (cmd == "t")) {
+                if (player_set) {
+                    cout << "Player already picked." << endl;
+                    continue;
+                }
+                player_set = true;
                 g.intialize_player(cmd);
-            } else if (cmd == "d") {
-                g.intialize_player(cmd);
-            } else if (cmd == "v") {
-                g.intialize_player(cmd);
-            } else if (cmd == "g") {
-                g.intialize_player(cmd);
-            } else if (cmd == "t") {
-                g.intialize_player(cmd);
+                cout << g;
             } else if (cmd == "u") {
                 string dir;
                 cin >> dir;

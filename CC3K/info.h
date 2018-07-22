@@ -5,6 +5,7 @@
 #include <iostream>
 
 const int enemy_types = 8;
+const int player_types = 5;
 const int potion_types = 6;
 
 //error codes to move in seperate file later
@@ -23,6 +24,14 @@ const std::map<std::string, Direction> dir_map {
     std::pair <std::string, Direction> ("nw", Direction::NW),
     std::pair <std::string, Direction> ("se", Direction::SE),
     std::pair <std::string, Direction> ("sw", Direction::SW),
+};
+
+const std::map<std::string, std::string> player_name {
+    std::pair <std::string, std::string> ("s", "Shade"),
+    std::pair <std::string, std::string> ("d", "Drow"),
+    std::pair <std::string, std::string> ("v", "Vampire"),
+    std::pair <std::string, std::string> ("g", "Goblin"),
+    std::pair <std::string, std::string> ("t", "Troll"),
 };
 
 

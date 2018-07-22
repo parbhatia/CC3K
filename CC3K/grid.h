@@ -13,12 +13,15 @@
 #include "character.h"
 #include "info.h"
 
+class Chamber;
+
 class Grid {
     int width = 79;
     int height = 30;
     std::vector<std::vector<Cell *>> cells;
     int level = 1;
-    std::string race = "Shade";
+    std::string race;
+    int gold = 0;
     Cell *player_cell = nullptr; //keeping track of player's movements
     std::vector<Chamber> chambers; //chambers on each level
     std::vector<std::string> actions; //keeping track of actions
@@ -30,6 +33,7 @@ class Grid {
     void read_layout(std::string s);
     void intialize_player(std::string type); //initializes player with race type, and changes race attribute for display purposes
     void default_layout();
+    void set_playercell(Cell *c);
     void move_player(Direction d);    //moves player in d
     void use_pot(Direction d); //makes player use potion in d
     void generate_enemies(); //chambers generate enemies
