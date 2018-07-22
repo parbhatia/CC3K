@@ -8,6 +8,7 @@ class Character : public Object
     int atk;
     int def;
     int hp;
+    int maxHp;
   public:
     Character(int atk, int def, int hp);
     void changeAtk(int n);

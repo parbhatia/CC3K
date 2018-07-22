@@ -1,6 +1,6 @@
 #include "character.h"
     
-Character::Character(int atk, int def, int hp) : atk{atk}, def{def}, hp{hp} {}
+Character::Character(int atk, int def, int hp) : atk{atk}, def{def}, hp{hp}, maxHp{hp} {}
 void Character::changeAtk(int n) {
     atk += n;
 }
