@@ -3,11 +3,9 @@
 #include <map>
 #include <string>
 #include <iostream>
-#include "player.h"
-#include "dwarf.h"
-#include "shade.h"
 
-//pls don't change anything here!! - par
+const int enemy_types = 8;
+const int potion_types = 6;
 
 //error codes to move in seperate file later
 class No_More_Enemies {};
@@ -27,14 +25,40 @@ const std::map<std::string, Direction> dir_map {
     std::pair <std::string, Direction> ("sw", Direction::SW),
 };
 
-const std::map<int, Player*> enemy_map {
-    std::pair <int, Player*> (0, new Shade()),
-    std::pair <int, Player*> (1, new Shade()),
-    std::pair <int, Player*> (2, new Shade()),
-    std::pair <int, Player*> (3, new Shade()),
-    std::pair <int, Player*> (4, new Shade()),
-    std::pair <int, Player*> (5, new Shade()),
-};
 
+//    if (rand_num == 5) return new Shade();
+//
+//    switch (rand_num) {
+//        case 0:
+//            return new Shade();
+//            break;
+//        case 1:
+//            return new Shade();
+//            break;
+//        case 2:
+//            return new Shade();
+//            break;
+//        case 3:
+//            return new Shade();
+//            break;
+//        case 4:
+//            return new Shade();
+//            break;
+//        case 5:
+//            return new Shade();
+//            break;
+//    }
+//}
+
+/*
+ const std::map<int, Object*> enemy_map {
+ std::pair <int, Object*> (0, new Shade()),
+ std::pair <int, Object*> (1, new Shade()),
+ std::pair <int, Object*> (2, new Shade()),
+ std::pair <int, Object*> (3, new Shade()),
+ std::pair <int, Object*> (4, new Shade()),
+ std::pair <int, Object*> (5, new Shade()),
+ };
+ */
 
 #endif

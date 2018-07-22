@@ -27,6 +27,9 @@ int Chamber::cell_picker() {
     return rand() % cells.size();
 }
 
+int Chamber::enemy_picker() {
+    return rand() % enemy_types;
+}
 
 void Chamber::generate_player(string type) {
     bool done = false;
@@ -35,7 +38,6 @@ void Chamber::generate_player(string type) {
         if (!cells[x]->isOccupied()) {
             //set player based on type
             Object *new_player = nullptr;
-            //set to use map later
             if (type == "s") new_player = new Shade();
             //else if (type == "v") new_player = new Vampire();
             cells[x]->setObject(new_player);
@@ -88,10 +90,9 @@ void Chamber::generate_enemy() {
         while (!done) {
             int x = cell_picker();
             if (!cells[x]->isOccupied()) {
-                //int y = rand() % 6;
+                int y = enemy_picker();
                 //choose random enemy
-                Object *new_enemy = new Shade();
-                //Object *new_enemy = new enemy_map[y];
+                Object *new_enemy = f.EnemyFactory(y);
                 cells[x]->setObject(new_enemy);
                 --numEnemies;
                 done = true;

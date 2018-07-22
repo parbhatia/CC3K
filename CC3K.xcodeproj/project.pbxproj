@@ -22,6 +22,7 @@
 		4B53F1C421018C8200736E14 /* enemy.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1C321018C8200736E14 /* enemy.cc */; };
 		4B53F1C721018CF900736E14 /* dwarf.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1C521018CF900736E14 /* dwarf.cc */; };
 		4B53F1CA2102A26000736E14 /* object.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1C92102A26000736E14 /* object.cc */; };
+		4B53F1CD2104406700736E14 /* factory.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1CB2104406700736E14 /* factory.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +73,8 @@
 		4B53F1C621018CF900736E14 /* dwarf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dwarf.h; sourceTree = "<group>"; };
 		4B53F1C821018EE300736E14 /* info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = info.h; sourceTree = "<group>"; };
 		4B53F1C92102A26000736E14 /* object.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = object.cc; sourceTree = "<group>"; };
+		4B53F1CB2104406700736E14 /* factory.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = factory.cc; sourceTree = "<group>"; };
+		4B53F1CC2104406700736E14 /* factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = factory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				4B2B5D7520FE968D00F5B673 /* grid.h */,
 				4B53F1C821018EE300736E14 /* info.h */,
 				4B53F1B720FFE96300736E14 /* chamber.h */,
+				4B53F1CB2104406700736E14 /* factory.cc */,
+				4B53F1CC2104406700736E14 /* factory.h */,
 				4B2B5D8B20FFD7A000F5B673 /* character.h */,
 				4B53F1BB2100105A00736E14 /* enemy.h */,
 				4B53F1C621018CF900736E14 /* dwarf.h */,
@@ -202,6 +207,7 @@
 				4B2B5D8420FEBB6300F5B673 /* nullcell.cc in Sources */,
 				4B2B5D7920FE969A00F5B673 /* textdisplay.cc in Sources */,
 				4B53F1C421018C8200736E14 /* enemy.cc in Sources */,
+				4B53F1CD2104406700736E14 /* factory.cc in Sources */,
 				4B53F1CA2102A26000736E14 /* object.cc in Sources */,
 				4B2B5D8920FEC1D200F5B673 /* bridge.cc in Sources */,
 				4B2B5D7C20FE96C700F5B673 /* cell.cc in Sources */,
