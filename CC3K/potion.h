@@ -3,7 +3,7 @@
 #include "item.h"
 
 class Potion:public Item{
-    ~Potion = 0;
+    ~Potion() = 0;
 };
 
 #endif
