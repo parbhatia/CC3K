@@ -50,7 +50,6 @@ void Chamber::generate_player(string type) {
             done = true;
         }
     }
-    
 }
 
 /*

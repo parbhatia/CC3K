@@ -57,16 +57,18 @@ char Cell::print() {
     }
 }
 
-void Cell::moveTo(Cell &whoTo) {
+bool Cell::moveTo(Cell &whoTo) {
     if (whoTo.acceptMove(*this)) { //if player move was successful
         player = nullptr;
+        return true;
+    } else {
+        return false;
     }
 }
 
 bool Cell::acceptMove(Cell &whoFrom) {
     if (!isOccupied()) {
         setPlayer(whoFrom.getPlayer());
-        cout << "MADE MOVE" << endl;
         notifyObservers();
         return true;
     } else {

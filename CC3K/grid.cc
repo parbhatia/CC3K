@@ -81,8 +81,9 @@ void Grid::move_player(Direction d) {
     else { new_cell = cells[p_row][p_col-1]; }
     //move player if newcell is not empty
     if (!new_cell->isOccupied()) {
-        player_cell->moveTo(*new_cell);
-        player_cell = new_cell;
+        if (player_cell->moveTo(*new_cell)) { //if move successful
+            player_cell = new_cell;
+        }
     }
 }
 

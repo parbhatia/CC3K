@@ -37,7 +37,6 @@ int main(int argc, const char * argv[]) {
                 }
                 player_set = true;
                 g.intialize_player(cmd);
-                cout << g.has_player_test() << endl;
                 cout << g;
             } else if (cmd == "u") {
                 string dir;
