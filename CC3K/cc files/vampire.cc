@@ -18,22 +18,45 @@ void Vampire::attack(Character *whoTo) {
     if (chance > getMissChance()) {
     int dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
     whoTo->changeHp(dmg); 
-    changeHp(5);
-    }   // Vampire gains 5 HP every successful attack.
+    if(whoTo->getHp()<=0){
+            throw Attack{dmg, 0, Result::death};
+    } else {
+      throw Attack{dmg, whoTo->getHp(), Result::attack};
+    }
+    changeHp(5); // Vampire gains 5 HP every successful attack.
+    } else {
+      throw Attack{0, whoTo->getHp(), Result::miss};
+    }  
 }
 
 void Vampire::attack(Halfling *h) {
   int chance = rand() % 10 + 1;
   if (chance > 5) {   // Halfling has 50% chance to cause PC to miss.
-    h->changeHp(-getAtk() * 100 / (100 + h->getDef()));  
+    int dmg = (-getAtk() * 100 / (100 + h->getDef()));
+    h->changeHp(dmg); 
     changeHp(5);   // Vampire gains 5 HP every successful attack.
+    if(h->getHp()<=0){
+            throw Attack{dmg, 0, Result::death};
+    } else {
+      throw Attack{dmg, h->getHp(), Result::attack};
+    }    
+  } else {
+    throw Attack{0, h->getHp(), Result::miss};
   }
 }
 
 void Vampire::attack(Dwarf *d) {
   int chance = rand() % 10 + 1;
   if (chance > getMissChance()) {
-    d->changeHp(-getAtk() * 100 / (100 + d->getDef())); 
+    int dmg = (-getAtk() * 100 / (100 + d->getDef()));
+    d->changeHp(dmg);
+    if(d->getHp()<=0){
+      throw Attack{dmg, 0, Result::death};
+    } else {
+      throw Attack{dmg, d->getHp(), Result::attack};
+    }   
     changeHp(-5);   // Vampires are allergic to dwarves. lose 5HP instead.
+  } else {
+    throw Attack{0, d->getHp(), Result::miss};
   }
 }
