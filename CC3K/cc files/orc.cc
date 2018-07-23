@@ -18,7 +18,7 @@ void Orc::attack(Goblin* g){
     if (chance > getMissChance()) {
         int dmg = (-getAtk()*100/(100+g->getDef()))*1.5;
         g->changeHp(dmg);
-        if(g->getHp<=0){
+        if(g->getHp()<=0){
             throw Attack{dmg, 0, Result::death};
         }
         else{
