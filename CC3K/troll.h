@@ -1,12 +1,12 @@
-#ifndef SHADE_H
-#define SHADE_H
+#ifndef TROLL_H
+#define TROLL_H
 #include "player.h"
 #include <string>
 
-class Shade : public Player
+class Troll: public Player
 {
   public:
-    Shade(int atk = 25, int def = 25, int hp = 125);
+    Troll(int atk = 25, int def = 15, int hp = 120);
     void beAttacked(Object *whoFrom) override;
     void attack(Halfling *h) override;
     void attack(Dwarf *d) override;
