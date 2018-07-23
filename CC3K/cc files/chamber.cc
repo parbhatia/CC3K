@@ -27,6 +27,14 @@ Cell* Chamber::give_playercell() {
     return 0;
 }
 
+//assumes chamber has player
+Object* Chamber::give_player() {
+    for (auto cell: cells) {
+        if (cell->hasPlayer()) return cell->getPlayer();
+    }
+    return 0;
+}
+
 void Chamber::add_cell(Cell *c) {
     cells.emplace_back(c);
 }
@@ -87,6 +95,23 @@ void Chamber::generate_gold() {
  --numGold;
 }
 */
+
+void Chamber::generate_stairs() {
+    bool done = false;
+    while (!done) {
+        int x = cell_picker();
+        if (!cells[x]->isOccupied()) {
+            //delete old cell, replace with stair cell
+            int temp_row = cells[x]->getRow();
+            int temp_col = cells[x]->getCol();
+            Cell *temp = cells[x];
+            Cell *new_cell = new StairCell(temp_row, temp_col);
+            cells[x] = new_cell;
+            delete temp;
+            done = true;
+        }
+    }
+}
 
 void Chamber::generate_enemy() {
     if (numEnemies == 0) {

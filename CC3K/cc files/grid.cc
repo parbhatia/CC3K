@@ -58,6 +58,7 @@ void Grid::intialize_player(string type) {
     //pick chamber to generate player
     int chamb_num = chamber_picker();
     chambers[chamb_num].generate_player(type);
+    player = chambers[chamb_num].give_player(); //grid keeps track of player
     race = player_name.at(type); //for grid's display purposes
     player_cell = chambers[chamb_num].give_playercell(); //ask chamber for player cell
 }
@@ -109,6 +110,11 @@ void Grid::create_randomness() {
 
 int Grid::chamber_picker() {
     return rand() % 5;
+}
+
+void Grid::generate_stairs() {
+    int chamb_num = chamber_picker();
+    chambers[chamb_num].generate_stairs();
 }
 
 void Grid::generate_enemies() {

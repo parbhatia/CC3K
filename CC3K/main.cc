@@ -7,8 +7,6 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     Grid g;
     string race;
-    //cin >> race;
-    g.generate_enemies();
     //cout << g;
     //command interpreter
     cin.exceptions(ios::eofbit|ios::failbit);
@@ -35,6 +33,11 @@ int main(int argc, const char * argv[]) {
                 }
                 player_set = true;
                 g.intialize_player(cmd);
+                g.generate_stairs();
+                //stairway location
+                //potions
+                //gold
+                g.generate_enemies();
                 cout << g;
             } else if (cmd == "u") {
                 string dir;

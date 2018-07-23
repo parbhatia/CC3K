@@ -25,8 +25,8 @@ Object *Factory::EnemyFactory(int rand_num) {
     else if (rand_num == 13) return new Elf();
     else if (rand_num == 14) return new Orc();
     else if (rand_num == 15) return new Orc();
-    else if (rand_num == 16) return new Merchant();
-    else return new Merchant();
+    else if (rand_num == 16) return new Dwarf(); //change to merchant
+    else return new Dwarf(); //change to merchant
 }
 
 Object *Factory::PlayerFactory(string s) {
