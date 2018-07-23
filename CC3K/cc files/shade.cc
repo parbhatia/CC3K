@@ -9,6 +9,7 @@ Shade::Shade(int atk, int def, int hp): Player{atk, def, hp} {}
 void Shade::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
+
 void Shade::attack(Halfling *h) {
   srand(time(NULL));
   int chance = rand() % 10 + 1;
@@ -16,6 +17,7 @@ void Shade::attack(Halfling *h) {
     h->changeHp(-getAtk() * 100 / (100 + h->getDef())); 
   }
 }
+
 void Shade::attack(Dwarf *d) {
   srand(time(NULL));
   int chance = rand() % 10 + 1;
