@@ -1,7 +1,6 @@
 #include "shade.h"
 #include "halfling.h"
 #include "dwarf.h"
-#include <ctime>
 #include <cstdlib>
 
 Shade::Shade(int atk, int def, int hp): Player{atk, def, hp} {}
