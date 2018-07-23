@@ -1,8 +1,6 @@
 #ifndef DROW_H
 #define DROW_H
 #include "player.h"
-#include <string>
-
 
 class Drow: public Player {
 public:
