@@ -9,6 +9,9 @@ class Elf : public Enemy
   public:
     Elf();
     char print() override;
+    void beAttacked(Object* whoFrom) override;
+    void attack(Drow* d) override;
+    void attack(Character* whoTo) override;
 };
 
 #endif
