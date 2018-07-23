@@ -1,5 +1,5 @@
 
-enum Result {Attack, Death};
+enum Result {attack, death, miss};
 
 struct Attack{
     int dmg;
