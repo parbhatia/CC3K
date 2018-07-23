@@ -26,3 +26,6 @@ void Orc::attack(Goblin* g){
         }
     }
 }
+
+Orc::~Orc() {}
+
