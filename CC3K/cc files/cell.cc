@@ -3,8 +3,7 @@
 using namespace std;
 
 Cell::Cell(int r, int c): row{r},col{c}{}
-Cell::~Cell(){
-    delete player;
+Cell::~Cell() {
     delete ob;
 }
 
