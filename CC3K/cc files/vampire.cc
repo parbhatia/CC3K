@@ -2,8 +2,6 @@
 #include <climits>
 #include "halfling.h"
 #include "dwarf.h"
-#include "drow.h"
-#include "goblin.h"
 #include <ctime>
 #include <cstdlib>
 

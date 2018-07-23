@@ -6,8 +6,4 @@ void Drow::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
 
-/*char Drow::print() {
-    return 'D';
-}*/
 
-Drow::~Drow() {}
