@@ -6,11 +6,10 @@ class Object;
 
 class DoorCell : public Cell {
 public:
-    DoorCell(int r, int c);
-    char print() override;
+    DoorCell(int r, int c, char t);
     ~DoorCell();
     
-    int acceptMove(Cell &whoFrom) override;
+    //int acceptMove(Cell &whoFrom) override;
 //    void attack(Cell &target) override;
 //    void beAttacked(Cell &whoFrom) override;
 //

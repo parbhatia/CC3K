@@ -5,9 +5,8 @@
 class Object;
 class FloorCell: public Cell{
 public:
-    FloorCell(int r, int c);
+    FloorCell(int r, int c, char t);
 
-    char print() override;
     ~FloorCell() {}
 //    void move_to(Cell& to) override;
 //    bool accept_move(Cell &who) override;

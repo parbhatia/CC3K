@@ -8,10 +8,9 @@ class NullCell: public Cell{
 public:
     NullCell(int r, int c, char type);
 
-    char print() override;
     ~NullCell();
-    int moveTo(Cell &whoTo) override;
-    int acceptMove(Cell &whoFrom) override;
+    void moveTo(Cell &whoTo) override;
+    void acceptMove(Cell &whoFrom) override;
     
 //    void attack(Cell &target) override;
 //    void beAttacked(Cell &whoFrom) override;
