@@ -7,7 +7,6 @@ class Enemy : public Character {
     bool isHostile;
 public:
     Enemy(int atk, int def, int hp);
-    void attack(Character* whoTo) override;
     ~Enemy() = 0;
     
 };
