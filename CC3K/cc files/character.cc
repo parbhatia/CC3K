@@ -17,6 +17,7 @@ int Character::getAtk() {return atk;}
 int Character::getDef() {return def;}
 int Character::getHp() {return hp;}
 int Character::getMaxHp() {return maxHp;}
+int Character::getMissChance() {return missChance;}
 void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, so it does nothing.
 void Character::attack(Character *whoTo) {
     int chance = rand()%10 + 1;
