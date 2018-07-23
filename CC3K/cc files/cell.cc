@@ -86,7 +86,9 @@ void Cell::acceptMove(Cell &whoFrom) {
     //only throw Stair_Cell if whoFrom is a player moving onto stair
     if (has_stair() && whoFrom.hasPlayer()) throw Stair_Cell();
     else if (!isOccupied()) {
+        //only one object will be set
         setPlayer(whoFrom.getPlayer());
+        setObject(whoFrom.getObject());
         notifyObservers();
     } else {
         throw Move_Unsuccessful();

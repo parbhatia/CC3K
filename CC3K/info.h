@@ -14,6 +14,7 @@ class No_More_Potions {};
 class No_More_Gold {};
 class Move_Unsuccessful {};
 class Stair_Cell {};
+class InvalidRange {};
 
 //number of enemies and items
 const int globalPotions = 10;

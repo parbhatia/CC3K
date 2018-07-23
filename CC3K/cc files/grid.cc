@@ -139,6 +139,7 @@ Direction Grid::direction_picker() {
 Cell* Grid::new_cell_pos(Cell *old_cell, Direction d) {
     int o_row = old_cell->getRow();
     int o_col = old_cell->getCol();
+    if (!in_range(o_row,o_col)) throw InvalidRange();
     Cell *new_cell = nullptr;
     if (d == Direction::N) { new_cell = cells[o_row-1][o_col]; }
     else if (d == Direction::NW) { new_cell = cells[o_row-1][o_col-1]; }
@@ -157,8 +158,13 @@ void Grid::move_enemies() {
         for (auto cell: row) {
             //pick random direction
             Direction dir = direction_picker();
-            //get new cell position
-            Cell *new_cell = new_cell_pos(cell,dir);
+            Cell *new_cell = nullptr;
+            try { //try getting new cell of valid range
+                new_cell = new_cell_pos(cell,dir);
+            }
+            catch (InvalidRange &i) {
+                return;
+            }
             //move enemy
             try {
                 cell->moveTo(*new_cell);
