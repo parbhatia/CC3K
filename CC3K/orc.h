@@ -1,6 +1,5 @@
 #ifndef orc_hpp
 #define orc_hpp
-#include <iostream>
 #include "enemy.h"
 class Object;
 

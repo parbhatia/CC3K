@@ -9,6 +9,7 @@ class Dwarf : public Enemy
   public:
     Dwarf();
     char print() override;
+    void beAttacked(Object* whoFrom) override;
 };
 
 #endif

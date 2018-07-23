@@ -24,6 +24,8 @@ void Orc::attack(Goblin* g){
         else{
         throw Attack{dmg, g->getHp(), Result::attack};
         }
+    } else {
+        throw Attack{0, g->getHp(), Result::miss};
     }
 }
 
