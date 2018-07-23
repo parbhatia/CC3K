@@ -5,8 +5,7 @@
 class Object;
 class Bridge: public Cell{
 public:
-    Bridge(int r, int c);
-    char print() override;
+    Bridge(int r, int c, char t);
     ~Bridge() {}
 //    void move_to(Cell& to) override;
 //    bool accept_move(Cell &who) override;

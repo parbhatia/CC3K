@@ -2,7 +2,8 @@
 #include "object.h"
 using namespace std;
 
-Cell::Cell(int r, int c): row{r},col{c}{}
+Cell::Cell(int r, int c, char t): row{r},col{c},type{t}{}
+
 Cell::~Cell(){
     delete player;
     delete ob;
@@ -16,6 +17,12 @@ bool Cell::hasPlayer() {
     return (player != nullptr);
 }
 
+bool Cell::has_stair() { return stair; }
+
+void Cell::set_stair() {
+    stair = true;
+    type = '/';
+}
 
 void Cell::clear(){
     delete ob;
@@ -53,28 +60,26 @@ char Cell::print() {
     } else if (ob) {
         return ob->print();
     } else {
-        return ' ';
+        return type;
     }
 }
 
-int Cell::moveTo(Cell &whoTo) {
-    int move_code = whoTo.acceptMove(*this);
-    if (move_code == 1) { //if player move was successful
-        player = nullptr;
-        return 1;
-    } else if (move_code == 2) { //if player moves on door
-        player = nullptr;
-        return 2;
-    } else return 0;
+void Cell::moveTo(Cell &whoTo) {
+    try {
+        whoTo.acceptMove(*this);
+    }
+    catch (Move_Unsuccessful &o) {
+        throw;
+    }
+    player = nullptr;
 }
 
-int Cell::acceptMove(Cell &whoFrom) {
+void Cell::acceptMove(Cell &whoFrom) {
     if (!isOccupied()) {
         setPlayer(whoFrom.getPlayer());
         notifyObservers();
-        return 1;
     } else {
-        return 0;
+        throw Move_Unsuccessful();
     }
 }
 

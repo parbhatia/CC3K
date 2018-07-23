@@ -80,16 +80,20 @@ void Grid::move_player(Direction d) {
     else if (d == Direction::SE) { new_cell = cells[p_row+1][p_col+1]; }
     else if (d == Direction::E) { new_cell = cells[p_row][p_col+1]; }
     else { new_cell = cells[p_row][p_col-1]; }
-    //move player by moving player, then checking what type of move was made
-    int move_code = player_cell->moveTo(*new_cell);
-    if (move_code == 1) { //if move successful
-        player_cell = new_cell;
-    } else if (move_code == 2) { //if move was on door
-        player_cell = new_cell;
-        move_player(d);
+    //move player
+    try {
+        player_cell->moveTo(*new_cell);
     }
-    
+    catch (Move_Unsuccessful &o) {
+        return;
+    }
+    catch (Stair_Cell &o) {
+        return;
+    }
+    //only change player_cell if move was successful
+    player_cell = new_cell;
 }
+    
 
 void Grid::move_enemies() {
     
@@ -149,54 +153,54 @@ void Grid::read_layout(string s) {
             ++col;
             switch (c) {
                 case '|':
-                    line.emplace_back(new NullCell(row, col, c));
+                    line.emplace_back(new NullCell(row, col, '|'));
                     break;
                 case '-':
-                    line.emplace_back(new NullCell(row, col, c));
+                    line.emplace_back(new NullCell(row, col, '-'));
                     break;
                 case '1':
                 {
-                    Cell *new_cell = new FloorCell(row, col);
+                    Cell *new_cell = new FloorCell(row, col, '.');
                     line.emplace_back(new_cell);
                     chambers[0].add_cell(new_cell);
                     break;
                 }
                 case '2':
                 {
-                    Cell *new_cell2 = new FloorCell(row, col);
+                    Cell *new_cell2 = new FloorCell(row, col, '.');
                     line.emplace_back(new_cell2);
                     chambers[1].add_cell(new_cell2);
                     break;
                 }
                 case '3':
                 {
-                    Cell *new_cell3 = new FloorCell(row, col);
+                    Cell *new_cell3 = new FloorCell(row, col, '.');
                     line.emplace_back(new_cell3);
                     chambers[2].add_cell(new_cell3);
                     break;
                 }
                 case '4':
                 {
-                    Cell *new_cell4 = new FloorCell(row, col);
+                    Cell *new_cell4 = new FloorCell(row, col, '.');
                     line.emplace_back(new_cell4);
                     chambers[3].add_cell(new_cell4);
                     break;
                 }
                 case '5':
                 {
-                    Cell *new_cell5 = new FloorCell(row, col);
+                    Cell *new_cell5 = new FloorCell(row, col, '.');
                     line.emplace_back(new_cell5);
                     chambers[4].add_cell(new_cell5);
                     break;
                 }
                 case '#':
-                    line.emplace_back(new Bridge(row, col));
+                    line.emplace_back(new Bridge(row, col, '#'));
                     break;
                 case ' ':
-                    line.emplace_back(new NullCell(row, col, c));
+                    line.emplace_back(new NullCell(row, col, ' '));
                     break;
                 case '+':
-                    line.emplace_back(new DoorCell(row, col));
+                    line.emplace_back(new DoorCell(row, col, '+'));
                     break;
             }
         }

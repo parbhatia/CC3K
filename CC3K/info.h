@@ -12,6 +12,8 @@ const int potion_distribution_number = 6;
 class No_More_Enemies {};
 class No_More_Potions {};
 class No_More_Gold {};
+class Move_Unsuccessful {};
+class Stair_Cell {};
 
 enum class Direction { NW, N, NE, W, E, SW, S, SE };
 

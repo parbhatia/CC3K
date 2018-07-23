@@ -1,11 +1,11 @@
-#include "stair.h"
+/*#include "stair.h"
 #include <string>
 using namespace std;
 
-StairCell::StairCell(int r, int c) : Cell{r,c} {}
+StairCell::StairCell(int r, int c, char t) : Cell{r,c,t} {}
 
 char StairCell::print() {
-    return '/';
+    return get_type();
 }
 
 int StairCell::acceptMove(Cell &whoFrom) {
@@ -18,3 +18,5 @@ int StairCell::acceptMove(Cell &whoFrom) {
 }
 
 //bool StairCell::isOccupied() { return true; }
+
+*/
