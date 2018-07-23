@@ -38,6 +38,8 @@ void Character::attack(Character *whoTo) {
         else{
             throw Attack{dmg, whoTo->getHp(), Result::attack};
         } 
+    } else {
+        throw Attack{0, whoTo->getHp(), Result::miss};
     }
 }
 
