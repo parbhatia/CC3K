@@ -5,3 +5,7 @@ char Human::print(){
 }
 
 Human::Human() : Enemy{20, 20, 140} {}
+
+void Human::beAttacked(Object* whoFrom){
+    whoFrom->attack(this);
+}

@@ -9,6 +9,7 @@ class Human : public Enemy
   public:
     Human();
     char print() override;
+    void beAttacked(Object* whoFrom) override;
 };
 
 #endif

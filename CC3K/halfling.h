@@ -8,7 +8,9 @@ class Halfling : public Enemy
 {
   public:
     Halfling();
+    void beAttacked(Object* whoFrom) override;
     char print() override;
+    
 };
 
 #endif

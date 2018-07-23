@@ -9,6 +9,7 @@ class Elf : public Enemy
   public:
     Elf();
     char print() override;
+    void beAttacked(Object* whoFrom) override;
 };
 
 #endif
