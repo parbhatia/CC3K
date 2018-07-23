@@ -26,7 +26,7 @@ int Character::getMissChance() {return missChance;}
 void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, so it does nothing.
 void Character::attack(Character *whoTo) {
     int chance = rand() % 10 + 1;
-    if (chance > missChance) {
+    if (chance > whoTo->getMissChance()) {
         whoTo->changeHp(-getAtk() * 100 / (100 + whoTo->getDef())); 
     }
 }
