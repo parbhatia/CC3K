@@ -44,6 +44,8 @@ class Grid {
     void generate_stairs(); //random chamber generates stairs
     void create_randomness(); //sets time as seed 
     int chamber_picker(); //returns random chamber (0 to 4)
+    Direction direction_picker(); //returns random direction
+    Cell* new_cell_pos(Cell *old_cell, Direction d); //returns new cell based on direction from old_cell
     void test_chambers();    //for testing chambers, delete later!
     void set_observers();    //sets observers for cell
     bool valid_direction();

@@ -131,7 +131,43 @@ void Grid::move_player(Direction d) {
     player_cell = new_cell;
 }
 
+Direction Grid::direction_picker() {
+    int rand_dir = rand() % 8;
+    return Direction(rand_dir);
+}
+
+Cell* Grid::new_cell_pos(Cell *old_cell, Direction d) {
+    int o_row = old_cell->getRow();
+    int o_col = old_cell->getCol();
+    Cell *new_cell = nullptr;
+    if (d == Direction::N) { new_cell = cells[o_row-1][o_col]; }
+    else if (d == Direction::NW) { new_cell = cells[o_row-1][o_col-1]; }
+    else if (d == Direction::NE) { new_cell = cells[o_row-1][o_col+1]; }
+    else if (d == Direction::S) { new_cell = cells[o_row+1][o_col]; }
+    else if (d == Direction::SW) { new_cell = cells[o_row+1][o_col-1]; }
+    else if (d == Direction::SE) { new_cell = cells[o_row+1][o_col+1]; }
+    else if (d == Direction::E) { new_cell = cells[o_row][o_col+1]; }
+    else { new_cell = cells[o_row][o_col-1]; }
+    return new_cell;
+}
+
 void Grid::move_enemies() {
+    //pick random direction
+    for (auto row: cells) {
+        for (auto cell: row) {
+            //pick random direction
+            Direction dir = direction_picker();
+            //get new cell position
+            Cell *new_cell = new_cell_pos(cell,dir);
+            //move enemy
+            try {
+                cell->moveTo(*new_cell);
+            }
+            catch (Move_Unsuccessful &o) {
+                continue;
+            }
+        }
+    }
 }
 
 void Grid::test_chambers() {

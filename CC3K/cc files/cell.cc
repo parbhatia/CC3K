@@ -73,14 +73,18 @@ void Cell::moveTo(Cell &whoTo) {
     try {
         whoTo.acceptMove(*this);
     }
-    catch (Move_Unsuccessful &o) {
+    /*catch (Move_Unsuccessful &o) {
+        throw;
+    }*/
+    catch(...) {
         throw;
     }
     player = nullptr;
 }
 
 void Cell::acceptMove(Cell &whoFrom) {
-    if (has_stair()) throw Stair_Cell();
+    //only throw Stair_Cell if whoFrom is a player moving onto stair
+    if (has_stair() && whoFrom.hasPlayer()) throw Stair_Cell();
     else if (!isOccupied()) {
         setPlayer(whoFrom.getPlayer());
         notifyObservers();
