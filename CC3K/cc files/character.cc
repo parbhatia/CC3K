@@ -12,7 +12,12 @@ void Character::changeDef(int n) {
 void Character::changeHp(int n) {
     hp += n;  
 }
-void Character::setMaxHp(int n) {maxHp = n;}
+void Character::setMaxHp(int n) {
+    maxHp = n;
+}
+void Character::setMissChance(int n) {   
+    missChance = n;
+}
 int Character::getAtk() {return atk;}
 int Character::getDef() {return def;}
 int Character::getHp() {return hp;}

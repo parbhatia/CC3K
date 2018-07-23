@@ -16,6 +16,7 @@ class Character : public Object
     void changeDef(int n);
     void changeHp(int n);
     void setMaxHp(int n);
+    void setMissChance(int n);
     int getAtk();
     int getDef();
     int getHp();
@@ -25,6 +26,7 @@ class Character : public Object
     void attack(Character *whoTo) override;
     void beUsed(Player *whoFrom) override;
     void beAttacked(Object *whoFrom) override;
+
     ~Character() = 0;
 };
 #endif
