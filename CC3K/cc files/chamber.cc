@@ -47,6 +47,17 @@ int Chamber::enemy_picker() {
     return rand() % enemy_distribution_number;
 }
 
+void Chamber::generate_player_cell(Object *p) {
+    bool done = false;
+    while (!done) {
+        int x = cell_picker();
+        if (!cells[x]->isOccupied()) {
+            cells[x]->setPlayer(p);
+            done = true;
+        }
+    }
+}
+
 void Chamber::generate_player(string type) {
     bool done = false;
     while (!done) {
@@ -54,7 +65,6 @@ void Chamber::generate_player(string type) {
         if (!cells[x]->isOccupied()) {
             Object *new_player = f.PlayerFactory(type);
             cells[x]->setPlayer(new_player);
-            --numEnemies;
             done = true;
         }
     }
@@ -101,7 +111,7 @@ void Chamber::generate_stairs() {
     while (!done) {
         int x = cell_picker();
         if (!cells[x]->isOccupied()) {
-            cells[x]->set_stair();
+            cells[x]->toggle_stair();
             done = true;
         }
     }

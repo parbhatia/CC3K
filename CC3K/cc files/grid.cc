@@ -10,23 +10,38 @@ Grid::Grid() {
     read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
 }
 
-void Grid::reset_cell() {
+void Grid::reset_cells() {
+    //clear old cells
     for (auto row: cells) {
         for (auto cell: row) {
-            
+            cell->clear();
         }
     }
+    player_cell = nullptr;
+}
+
+void Grid::intialize_player(string type) {
+    //pick chamber to generate player
+    int chamb_num = chamber_picker();
+    chambers[chamb_num].generate_player(type);
+    player = chambers[chamb_num].give_player(); //grid keeps track of player
+    race = player_name.at(type); //for grid's display purposes
+    player_cell = chambers[chamb_num].give_playercell(); //ask chamber for player cell
 }
 
 void Grid::new_level() {
-    //reset all cells
-    
-    
-    read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
-    if (level != 5) {
-        generate_stairs();
-    }
-    
+    reset_cells();
+    //pick chamber to generate new player location
+    int chamb_num = chamber_picker();
+    //put existing player on new cel
+    chambers[chamb_num].generate_player_cell(player);
+    //set new player_cell location
+    player_cell = chambers[chamb_num].give_playercell(); //ask chamber for player cell
+    if (level != 5) { generate_stairs(); }
+    //generate_potions();
+    //generate_gold();
+    generate_enemies();
+    ++level;
 }
 
 Grid::~Grid() {
@@ -72,15 +87,6 @@ void Grid::cell_test() {
             cout << cell->getRow() << "," << cell->getCol() << endl;
         }
     }
-}
-
-void Grid::intialize_player(string type) {
-    //pick chamber to generate player
-    int chamb_num = chamber_picker();
-    chambers[chamb_num].generate_player(type);
-    player = chambers[chamb_num].give_player(); //grid keeps track of player
-    race = player_name.at(type); //for grid's display purposes
-    player_cell = chambers[chamb_num].give_playercell(); //ask chamber for player cell
 }
 
 void Grid::use_pot(Direction d) {

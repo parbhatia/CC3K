@@ -5,8 +5,7 @@ using namespace std;
 Cell::Cell(int r, int c, char t): row{r},col{c},type{t}{}
 
 Cell::~Cell(){
-    delete player;
-    delete ob;
+    clear();
 }
 
 int Cell::getRow() { return row; }
@@ -19,14 +18,16 @@ bool Cell::hasPlayer() {
 
 bool Cell::has_stair() { return stair; }
 
-void Cell::set_stair() {
-    stair = true;
-    type = '/';
+void Cell::toggle_stair() {
+    if (stair) stair = false;
+    else stair = true;
 }
 
+void set_stair_off();
+
 void Cell::clear(){
+    if (has_stair()) toggle_stair();
     delete ob;
-    delete player;
 }
 
 bool Cell::isOccupied(){
@@ -55,7 +56,9 @@ Object* Cell::getObject() {
 }
 
 char Cell::print() {
-    if (player) {
+    if (stair) {
+        return '/';
+    } else if (player) {
         return player->print();
     } else if (ob) {
         return ob->print();

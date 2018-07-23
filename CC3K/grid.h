@@ -30,7 +30,7 @@ class Grid {
     Grid();
     ~Grid();
     void new_level();
-    void reset_cell();
+    void reset_cells();
     void read_layout(std::string s);
     bool has_player_test(); //delete later
     void cell_test(); //delete later
