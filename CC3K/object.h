@@ -18,8 +18,8 @@ public:
     virtual void attack(Dwarf *d){}
     virtual void attack(Drow *h){}
     virtual void attack(Goblin *g){}
-    //virtual void attack(Drow *h){}
-    //virtual void attack(Goblin *g){}
+    virtual void attack(Drow *h){}   //enemy
+    virtual void attack(Goblin *g){}  //enemy
     virtual void beUsed(Player *whoFrom)=0;
     virtual ~Object() = 0;
 };
