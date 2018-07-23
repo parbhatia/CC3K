@@ -20,6 +20,7 @@ class Character : public Object
     int getDef();
     int getHp();
     int getMaxHp();
+    int getMissChance();
     void attack(Item *whoTo) override;
     void attack(Character *whoTo) override;
     void beUsed(Player *whoFrom) override;
