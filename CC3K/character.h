@@ -24,7 +24,7 @@ class Character : public Object
     int getMissChance();
     void beAttacked(Object *whoFrom) override;
     void attack(Item *whoTo) override;
-    virtual void attack(Character *whoTo) override;
+    void attack(Character *whoTo) override;
     void beUsed(Player *whoFrom) override;
     ~Character() = 0;
 };
