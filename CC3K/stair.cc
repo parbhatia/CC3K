@@ -1,13 +1,12 @@
-#include "staircell.h"
+#include "stair.h"
+#include <string>
+using namespace std;
 
-
-StairCell::StairCell(int r, int c) :  Cell{r,c} {}
+StairCell::StairCell(int r, int c) : Cell{r,c} {}
 
 char StairCell::print() {
     return '/';
 }
-
-StairCell::StairCell() {}
 
 int StairCell::acceptMove(Cell &whoFrom) {
     if (!isOccupied()) {
@@ -18,4 +17,4 @@ int StairCell::acceptMove(Cell &whoFrom) {
     }
 }
 
-bool StairCell::isOccupied() override { return true; }
+//bool StairCell::isOccupied() { return true; }

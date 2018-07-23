@@ -5,7 +5,7 @@
 #include "cell.h"
 #include "shade.h"
 #include "info.h"
-#include "staircell.h"
+#include "stair.h"
 #include "factory.h"
 
 class Chamber {

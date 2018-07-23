@@ -104,10 +104,9 @@ void Chamber::generate_stairs() {
             //delete old cell, replace with stair cell
             int temp_row = cells[x]->getRow();
             int temp_col = cells[x]->getCol();
-            Cell *temp = cells[x];
             Cell *new_cell = new StairCell(temp_row, temp_col);
+            cells[x]->~Cell(); //destroy object but leave space allocated
             cells[x] = new_cell;
-            delete temp;
             done = true;
         }
     }

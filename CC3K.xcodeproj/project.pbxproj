@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B26C30F210584C00054EA99 /* stair.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B26C30D210584C00054EA99 /* stair.cc */; };
 		4B2B5D6E20FE8B1B00F5B673 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D6D20FE8B1B00F5B673 /* main.cc */; };
 		4B2B5D7620FE968D00F5B673 /* grid.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D7420FE968D00F5B673 /* grid.cc */; };
 		4B2B5D7920FE969A00F5B673 /* textdisplay.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D7720FE969A00F5B673 /* textdisplay.cc */; };
@@ -49,6 +50,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4B26C30D210584C00054EA99 /* stair.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stair.cc; sourceTree = "<group>"; };
+		4B26C30E210584C00054EA99 /* stair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stair.h; sourceTree = "<group>"; };
 		4B2B5D6A20FE8B1B00F5B673 /* CC3K */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CC3K; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2B5D6D20FE8B1B00F5B673 /* main.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
 		4B2B5D7420FE968D00F5B673 /* grid.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = grid.cc; sourceTree = "<group>"; };
@@ -93,7 +96,6 @@
 		4BA7722F21057001000D60CC /* goblin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goblin.h; sourceTree = "<group>"; };
 		4BA7723021057001000D60CC /* troll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = troll.h; sourceTree = "<group>"; };
 		4BA77233210577EA000D60CC /* cc files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cc files"; sourceTree = "<group>"; };
-		4BA772342105787E000D60CC /* staircell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = staircell.h; sourceTree = "<group>"; };
 		4BCE7AEB21052EED00B2532A /* resHP.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = resHP.cc; sourceTree = "<group>"; };
 		4BCE7AEC21052EED00B2532A /* resHP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resHP.h; sourceTree = "<group>"; };
 		4BCE7AED21052EED00B2532A /* halfling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = halfling.h; sourceTree = "<group>"; };
@@ -144,10 +146,12 @@
 				4B53F1C821018EE300736E14 /* info.h */,
 				4B2B5D7D20FE9B6900F5B673 /* cc3k_emptyfloor.txt */,
 				4B2B5D6D20FE8B1B00F5B673 /* main.cc */,
+				4B2B5D7F20FEBA2200F5B673 /* doorcell.h */,
 				4B2B5D7520FE968D00F5B673 /* grid.h */,
-				4BA772342105787E000D60CC /* staircell.h */,
 				4B2B5D7B20FE96C700F5B673 /* cell.h */,
 				4B53F1B720FFE96300736E14 /* chamber.h */,
+				4B26C30E210584C00054EA99 /* stair.h */,
+				4B2B5D7E20FEBA2200F5B673 /* floorcell.h */,
 				4B53F1BC2100105A00736E14 /* object.h */,
 				4B2B5D8B20FFD7A000F5B673 /* character.h */,
 				4B53F1C12100105B00736E14 /* player.h */,
@@ -160,8 +164,6 @@
 				4B2B5D8D20FFD7F300F5B673 /* item.h */,
 				4BCE7AEC21052EED00B2532A /* resHP.h */,
 				4B53F1BE2100105A00736E14 /* potion.h */,
-				4B2B5D7F20FEBA2200F5B673 /* doorcell.h */,
-				4B2B5D7E20FEBA2200F5B673 /* floorcell.h */,
 				4B53F1CE2104E20900736E14 /* vampire.h */,
 				4B53F1CC2104406700736E14 /* factory.h */,
 				4B53F1BB2100105A00736E14 /* enemy.h */,
@@ -172,6 +174,7 @@
 				4BCE7AEF21052EED00B2532A /* orc.h */,
 				4B2B5D8720FEC1D200F5B673 /* bridge.h */,
 				4B2B5D7820FE969A00F5B673 /* textdisplay.h */,
+				4B26C30D210584C00054EA99 /* stair.cc */,
 				4BA77233210577EA000D60CC /* cc files */,
 				4B2B5D8220FEBB6300F5B673 /* nullcell.h */,
 				4BA7722C21056FE0000D60CC /* cc files */,
@@ -287,6 +290,7 @@
 				4B2B5D8F20FFD80B00F5B673 /* item.cc in Sources */,
 				4B2B5D6E20FE8B1B00F5B673 /* main.cc in Sources */,
 				4B53F1B820FFE96300736E14 /* chamber.cc in Sources */,
+				4B26C30F210584C00054EA99 /* stair.cc in Sources */,
 				4B53F1C721018CF900736E14 /* dwarf.cc in Sources */,
 				4BA7723121057002000D60CC /* troll.cc in Sources */,
 				4B2B5D8620FEBD2B00F5B673 /* doorcell.cc in Sources */,
