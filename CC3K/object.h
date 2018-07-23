@@ -10,16 +10,16 @@ class Drow;
 
 class Object {
 public:
+    virtual ~Object()=0;
     virtual char print()=0;
     virtual void beAttacked(Object *whoFrom)=0;
     virtual void attack(Item *whoTo)=0;
     virtual void attack(Character *whoTo)=0;
-    virtual void attack(Halfling *h){}
-    virtual void attack(Dwarf *d){}
-    virtual void attack(Drow *h){}   //enemy
-    virtual void attack(Goblin *g){}  //enemy
     virtual void beUsed(Player *whoFrom)=0;
-    virtual ~Object() = 0;
+    virtual void attack(Halfling *h);
+    virtual void attack(Dwarf *d);
+    virtual void attack(Drow *h);
+    virtual void attack(Goblin *g);
 };
 
 #endif
