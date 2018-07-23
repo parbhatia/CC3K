@@ -16,7 +16,8 @@ void Vampire::beAttacked(Object *whoFrom) {
 void Vampire::attack(Character *whoTo) {
     int chance = rand() % 10 + 1;
     if (chance > getMissChance()) {
-    whoTo->changeHp(-getAtk() * 100 / (100 + whoTo->getDef())); 
+    int dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
+    whoTo->changeHp(dmg); 
     changeHp(5);
     }   // Vampire gains 5 HP every successful attack.
 }
