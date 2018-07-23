@@ -22,7 +22,6 @@ class Character : public Object
     int getHp();
     int getMaxHp();
     int getMissChance();
-    void beAttacked(Object *whoFrom) override;
     void attack(Item *whoTo) override;
     void attack(Character *whoTo) override;
     void beUsed(Player *whoFrom) override;
