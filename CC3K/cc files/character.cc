@@ -1,7 +1,9 @@
 #include "character.h"
+#include "attack.h" 
 #include <cstdlib>
 #include <ctime>
-    
+
+
 Character::Character(int atk, int def, int hp) : atk{atk}, def{def}, hp{hp}, maxHp{hp}, missChance{0} {}
 void Character::changeAtk(int n) {
     atk += n;
@@ -27,7 +29,15 @@ void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, 
 void Character::attack(Character *whoTo) {
     int chance = rand() % 10 + 1;
     if (chance > whoTo->getMissChance()) {
-        whoTo->changeHp(-getAtk() * 100 / (100 + whoTo->getDef())); 
+        int dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
+        whoTo->changeHp(dmg);
+        whoTo->changeHp(dmg);
+        if(whoTo->getHp()<=0){
+            throw Attack{dmg, 0, Result::death};
+        }
+        else{
+            throw Attack{dmg, whoTo->getHp(), Result::attack};
+        } 
     }
 }
 
