@@ -3,6 +3,8 @@
 #include "player.h"
 #include <string>
 
+class Halfling;
+class Dwarf;
 class Shade : public Player
 {
   public:
@@ -10,7 +12,5 @@ class Shade : public Player
     void beAttacked(Object *whoFrom) override;
     void attack(Halfling *h) override;
     void attack(Dwarf *d) override;
-    void attack(Drow *h) override;
-    void attack(Goblin *g) override;
 };
 #endif

@@ -1,5 +1,10 @@
 #include "shade.h"
 #include "halfling.h"
+#include "dwarf.h"
+#include "drow.h"
+#include "goblin.h"
+
+
 Shade::Shade(int atk, int def, int hp): Player{atk, def, hp} {}
 
 void Shade::beAttacked(Object *whoFrom) {
