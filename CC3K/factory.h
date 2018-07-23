@@ -9,6 +9,8 @@
 #include "halfling.h"
 #include "drow.h"
 #include "vampire.h"
+#include "human.h"
+#include "merchant.h"
 
 class Factory {
 public:
