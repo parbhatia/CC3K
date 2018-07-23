@@ -5,7 +5,8 @@ Troll::Troll(int atk, int def, int hp): Player{atk, def, hp} {}
 void Troll::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
-/*void Shade::attack(Halfling *h);
-void attack(Dwarf *d);
-void attack(Drow *h);
-void attack(Goblin *g);*/
+
+void Troll::attack(Halfling *h) {}
+void Troll::attack(Dwarf *d) {}
+void Troll::attack(Drow *h) {}
+void Troll::attack(Goblin *g) {}

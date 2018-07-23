@@ -15,3 +15,5 @@ void attack(Dwarf *d);
 void attack(Drow *h);
 void attack(Goblin *g);*/
 
+void Shade::attack(Halfling *h) {}
+void Shade::attack(Dwarf *d) {}

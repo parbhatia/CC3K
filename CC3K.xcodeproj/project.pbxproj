@@ -24,6 +24,8 @@
 		4B53F1CA2102A26000736E14 /* object.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1C92102A26000736E14 /* object.cc */; };
 		4B53F1CD2104406700736E14 /* factory.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1CB2104406700736E14 /* factory.cc */; };
 		4B53F1D02104E20900736E14 /* potion.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1CF2104E20900736E14 /* potion.cc */; };
+		4BA7723121057002000D60CC /* troll.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7722D21057001000D60CC /* troll.cc */; };
+		4BA7723221057002000D60CC /* goblin.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7722E21057001000D60CC /* goblin.cc */; };
 		4BCE7AF621052EEE00B2532A /* resHP.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AEB21052EED00B2532A /* resHP.cc */; };
 		4BCE7AF721052EEE00B2532A /* vampire.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF021052EED00B2532A /* vampire.cc */; };
 		4BCE7AF821052EEE00B2532A /* elf.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF121052EED00B2532A /* elf.cc */; };
@@ -86,6 +88,10 @@
 		4B53F1CC2104406700736E14 /* factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = factory.h; sourceTree = "<group>"; };
 		4B53F1CE2104E20900736E14 /* vampire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vampire.h; sourceTree = "<group>"; };
 		4B53F1CF2104E20900736E14 /* potion.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = potion.cc; sourceTree = "<group>"; };
+		4BA7722D21057001000D60CC /* troll.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = troll.cc; sourceTree = "<group>"; };
+		4BA7722E21057001000D60CC /* goblin.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = goblin.cc; sourceTree = "<group>"; };
+		4BA7722F21057001000D60CC /* goblin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goblin.h; sourceTree = "<group>"; };
+		4BA7723021057001000D60CC /* troll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = troll.h; sourceTree = "<group>"; };
 		4BCE7AEB21052EED00B2532A /* resHP.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = resHP.cc; sourceTree = "<group>"; };
 		4BCE7AEC21052EED00B2532A /* resHP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resHP.h; sourceTree = "<group>"; };
 		4BCE7AED21052EED00B2532A /* halfling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = halfling.h; sourceTree = "<group>"; };
@@ -139,7 +145,12 @@
 				4B53F1BC2100105A00736E14 /* object.h */,
 				4B2B5D8B20FFD7A000F5B673 /* character.h */,
 				4B53F1C12100105B00736E14 /* player.h */,
+				4BA7723021057001000D60CC /* troll.h */,
+				4B53F1BF2100105B00736E14 /* shade.h */,
 				4BCE7AFD210535E900B2532A /* drow.h */,
+				4BA7722E21057001000D60CC /* goblin.cc */,
+				4BA7722F21057001000D60CC /* goblin.h */,
+				4BA7722D21057001000D60CC /* troll.cc */,
 				4B2B5D7520FE968D00F5B673 /* grid.h */,
 				4B2B5D8D20FFD7F300F5B673 /* item.h */,
 				4B53F1BE2100105A00736E14 /* potion.h */,
@@ -151,7 +162,6 @@
 				4B53F1CC2104406700736E14 /* factory.h */,
 				4B53F1BB2100105A00736E14 /* enemy.h */,
 				4B53F1C621018CF900736E14 /* dwarf.h */,
-				4B53F1BF2100105B00736E14 /* shade.h */,
 				4BCE7AF321052EEE00B2532A /* elf.h */,
 				4BCE7AED21052EED00B2532A /* halfling.h */,
 				4BCE7AEE21052EED00B2532A /* human.h */,
@@ -160,6 +170,14 @@
 				4B2B5D8720FEC1D200F5B673 /* bridge.h */,
 				4B2B5D7820FE969A00F5B673 /* textdisplay.h */,
 				4B2B5D8220FEBB6300F5B673 /* nullcell.h */,
+				4BA7722C21056FE0000D60CC /* cc files */,
+			);
+			path = CC3K;
+			sourceTree = "<group>";
+		};
+		4BA7722C21056FE0000D60CC /* cc files */ = {
+			isa = PBXGroup;
+			children = (
 				4BCE7AFE210535E900B2532A /* drow.cc */,
 				4BCE7AFC210535E800B2532A /* player.cc */,
 				4B53F1CB2104406700736E14 /* factory.cc */,
@@ -185,7 +203,7 @@
 				4B2B5D7A20FE96C700F5B673 /* cell.cc */,
 				4B2B5D8320FEBB6300F5B673 /* nullcell.cc */,
 			);
-			path = CC3K;
+			path = "cc files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +274,7 @@
 				4B53F1C421018C8200736E14 /* enemy.cc in Sources */,
 				4B53F1CD2104406700736E14 /* factory.cc in Sources */,
 				4B53F1CA2102A26000736E14 /* object.cc in Sources */,
+				4BA7723221057002000D60CC /* goblin.cc in Sources */,
 				4B2B5D8920FEC1D200F5B673 /* bridge.cc in Sources */,
 				4BCE7AF921052EEE00B2532A /* halfling.cc in Sources */,
 				4BCE7AF621052EEE00B2532A /* resHP.cc in Sources */,
@@ -265,6 +284,7 @@
 				4B2B5D6E20FE8B1B00F5B673 /* main.cc in Sources */,
 				4B53F1B820FFE96300736E14 /* chamber.cc in Sources */,
 				4B53F1C721018CF900736E14 /* dwarf.cc in Sources */,
+				4BA7723121057002000D60CC /* troll.cc in Sources */,
 				4B2B5D8620FEBD2B00F5B673 /* doorcell.cc in Sources */,
 				4BCE7AFA21052EEE00B2532A /* human.cc in Sources */,
 				4B2B5D7620FE968D00F5B673 /* grid.cc in Sources */,
