@@ -1,11 +1,10 @@
-#include "doorcell.h"
-#include <string>
+#include "staircell.h"
 
 
 StairCell::StairCell(int r, int c) :  Cell{r,c} {}
 
 char StairCell::print() {
-        return '/';
+    return '/';
 }
 
 StairCell::StairCell() {}
