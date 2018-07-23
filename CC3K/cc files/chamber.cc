@@ -36,7 +36,7 @@ int Chamber::cell_picker() {
 }
 
 int Chamber::enemy_picker() {
-    return rand() % enemy_types;
+    return rand() % enemy_distribution_number;
 }
 
 void Chamber::generate_player(string type) {

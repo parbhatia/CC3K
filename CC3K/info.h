@@ -4,9 +4,9 @@
 #include <string>
 #include <iostream>
 
-const int enemy_types = 8;
+const int enemy_distribution_number = 18;
 const int player_types = 5;
-const int potion_types = 6;
+const int potion_distribution_number = 6;
 
 //error codes to move in seperate file later
 class No_More_Enemies {};

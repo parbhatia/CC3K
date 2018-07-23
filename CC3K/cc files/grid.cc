@@ -79,16 +79,19 @@ void Grid::move_player(Direction d) {
     else if (d == Direction::SE) { new_cell = cells[p_row+1][p_col+1]; }
     else if (d == Direction::E) { new_cell = cells[p_row][p_col+1]; }
     else { new_cell = cells[p_row][p_col-1]; }
-    //move player if newcell is not empty
-    if (!new_cell->isOccupied()) {
-        int move_code = player_cell->moveTo(*new_cell);
-        if (move_code == 1) { //if move successful
-            player_cell = new_cell;
-        } else if (move_code == 2) { //if move was on door
-            player_cell = new_cell;
-            move_player(d);
-        }
+    //move player by moving player, then checking what type of move was made
+    int move_code = player_cell->moveTo(*new_cell);
+    if (move_code == 1) { //if move successful
+        player_cell = new_cell;
+    } else if (move_code == 2) { //if move was on door
+        player_cell = new_cell;
+        move_player(d);
     }
+    
+}
+
+void Grid::move_enemies() {
+    
 }
 
 void Grid::test_chambers() {
