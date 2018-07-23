@@ -6,7 +6,27 @@
 using namespace std;
 
 Grid::Grid() {
+    create_randomness(); //for random generation
     read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
+}
+
+void Grid::reset_cell() {
+    for (auto row: cells) {
+        for (auto cell: row) {
+            
+        }
+    }
+}
+
+void Grid::new_level() {
+    //reset all cells
+    
+    
+    read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
+    if (level != 5) {
+        generate_stairs();
+    }
+    
 }
 
 Grid::~Grid() {
@@ -88,15 +108,14 @@ void Grid::move_player(Direction d) {
         return;
     }
     catch (Stair_Cell &o) {
+        //reset level
         return;
     }
     //only change player_cell if move was successful
     player_cell = new_cell;
 }
-    
 
 void Grid::move_enemies() {
-    
 }
 
 void Grid::test_chambers() {
@@ -138,7 +157,6 @@ void Grid::read_layout(string s) {
     for (int i = 0; i < 5; ++i) {
         chambers.emplace_back(Chamber());
     }
-    create_randomness(); //for random generation
     
     ifstream file(s.c_str()); //read lines
     string l;

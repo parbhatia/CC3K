@@ -75,7 +75,8 @@ void Cell::moveTo(Cell &whoTo) {
 }
 
 void Cell::acceptMove(Cell &whoFrom) {
-    if (!isOccupied()) {
+    if (has_stair()) throw Stair_Cell();
+    else if (!isOccupied()) {
         setPlayer(whoFrom.getPlayer());
         notifyObservers();
     } else {

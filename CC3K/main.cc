@@ -35,7 +35,6 @@ int main(int argc, const char * argv[]) {
                 g.intialize_player(cmd);
                 g.generate_stairs();
                 //g.cell_test();
-                //stairway location
                 //potions
                 //gold
                 g.generate_enemies();
