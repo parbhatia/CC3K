@@ -16,6 +16,7 @@ class Chamber {
     //void generate_potion();
     //void generate_gold();
     void generate_enemy();
+    void clear(); //clear stats for new level
     int cell_picker(); //picks random cell
     int enemy_picker(); //picks random enemy type(int)
     void generate_player(std::string type);

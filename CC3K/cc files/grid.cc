@@ -10,6 +10,13 @@ Grid::Grid() {
     read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
 }
 
+void Grid::reset_chambers() {
+    //reset variales of chambers
+    for (auto chamber: chambers) {
+        chamber.clear();
+    }
+}
+
 void Grid::reset_cells() {
     //clear old cells
     for (auto row: cells) {
@@ -31,17 +38,20 @@ void Grid::intialize_player(string type) {
 
 void Grid::new_level() {
     reset_cells();
+    reset_chambers();
     //pick chamber to generate new player location
     int chamb_num = chamber_picker();
     //put existing player on new cel
     chambers[chamb_num].generate_player_cell(player);
     //set new player_cell location
     player_cell = chambers[chamb_num].give_playercell(); //ask chamber for player cell
-    if (level != 5) { generate_stairs(); }
+    if (level != 5) {
+        ++level;
+        generate_stairs();
+    }
     //generate_potions();
     //generate_gold();
     generate_enemies();
-    ++level;
 }
 
 Grid::~Grid() {
@@ -114,7 +124,7 @@ void Grid::move_player(Direction d) {
         return;
     }
     catch (Stair_Cell &o) {
-        //reset level
+        new_level();
         return;
     }
     //only change player_cell if move was successful

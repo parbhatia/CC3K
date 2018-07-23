@@ -31,6 +31,7 @@ class Grid {
     ~Grid();
     void new_level();
     void reset_cells();
+    void reset_chambers();
     void read_layout(std::string s);
     bool has_player_test(); //delete later
     void cell_test(); //delete later
@@ -44,7 +45,6 @@ class Grid {
     void create_randomness(); //sets time as seed 
     int chamber_picker(); //returns random chamber (0 to 4)
     void test_chambers();    //for testing chambers, delete later!
-    void reset_chambers();   //regenerates all chambers
     void set_observers();    //sets observers for cell
     bool valid_direction();
     void update_observers();

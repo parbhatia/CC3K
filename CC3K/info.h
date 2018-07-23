@@ -15,6 +15,11 @@ class No_More_Gold {};
 class Move_Unsuccessful {};
 class Stair_Cell {};
 
+//number of enemies and items
+const int globalPotions = 10;
+const int globalGold = 10;
+const int globalEnemies = 20;
+
 enum class Direction { NW, N, NE, W, E, SW, S, SE };
 
 const std::map<std::string, Direction> dir_map {

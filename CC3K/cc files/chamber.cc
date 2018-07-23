@@ -6,6 +6,12 @@ int Chamber::numPotions = 10;
 int Chamber::numGold = 10;
 int Chamber::numEnemies = 20;
 
+void Chamber::clear() {
+    numPotions = globalPotions;
+    numGold = globalGold;
+    numEnemies = globalEnemies;
+}
+
 void Chamber::print() {
     for (auto cell : cells) {
         std::cout << cell->print() << " ";

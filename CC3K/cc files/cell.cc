@@ -28,6 +28,8 @@ void set_stair_off();
 void Cell::clear(){
     if (has_stair()) toggle_stair();
     delete ob;
+    ob = nullptr;
+    player = nullptr;
 }
 
 bool Cell::isOccupied(){
