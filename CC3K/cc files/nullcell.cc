@@ -1,14 +1,9 @@
 #include "nullcell.h"
 
-NullCell::NullCell(int r, int c, char type):Cell{r,c},type{type}{}
+NullCell::NullCell(int r, int c, char t):Cell{r,c,t} {}
 
+void NullCell::moveTo(Cell &whoTo) { throw Move_Unsuccessful(); }
 
-char NullCell::print(){
-    return type;
-}
-
-int NullCell::moveTo(Cell &whoTo) { return 0; }
-
-int NullCell::acceptMove(Cell &whoFrom) { return 0; }
+void NullCell::acceptMove(Cell &whoFrom) { throw Move_Unsuccessful(); }
 
 NullCell::~NullCell() {}

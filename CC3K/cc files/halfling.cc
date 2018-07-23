@@ -5,3 +5,7 @@ char Halfling::print(){
 }
 
 Halfling::Halfling() : Enemy{15, 20, 100} {}
+
+void Halfling::beAttacked(Object* whoFrom){
+    whoFrom->attack(this);
+}

@@ -2,9 +2,10 @@
 #include "object.h"
 using namespace std;
 
-Cell::Cell(int r, int c): row{r},col{c}{}
-Cell::~Cell() {
-    delete ob;
+Cell::Cell(int r, int c, char t): row{r},col{c},type{t}{}
+
+Cell::~Cell(){
+    clear();
 }
 
 int Cell::getRow() { return row; }
@@ -15,10 +16,18 @@ bool Cell::hasPlayer() {
     return (player != nullptr);
 }
 
+bool Cell::has_stair() { return stair; }
+
+void Cell::toggle_stair() {
+    if (stair) stair = false;
+    else stair = true;
+}
+
+void set_stair_off();
 
 void Cell::clear(){
+    if (has_stair()) toggle_stair();
     delete ob;
-    delete player;
 }
 
 bool Cell::isOccupied(){
@@ -47,33 +56,34 @@ Object* Cell::getObject() {
 }
 
 char Cell::print() {
-    if (player) {
+    if (stair) {
+        return '/';
+    } else if (player) {
         return player->print();
     } else if (ob) {
         return ob->print();
     } else {
-        return ' ';
+        return type;
     }
 }
 
-int Cell::moveTo(Cell &whoTo) {
-    int move_code = whoTo.acceptMove(*this);
-    if (move_code == 1) { //if player move was successful
-        player = nullptr;
-        return 1;
-    } else if (move_code == 2) { //if player moves on door
-        player = nullptr;
-        return 2;
-    } else return 0;
+void Cell::moveTo(Cell &whoTo) {
+    try {
+        whoTo.acceptMove(*this);
+    }
+    catch (Move_Unsuccessful &o) {
+        throw;
+    }
+    player = nullptr;
 }
 
-int Cell::acceptMove(Cell &whoFrom) {
-    if (!isOccupied()) {
+void Cell::acceptMove(Cell &whoFrom) {
+    if (has_stair()) throw Stair_Cell();
+    else if (!isOccupied()) {
         setPlayer(whoFrom.getPlayer());
         notifyObservers();
-        return 1;
     } else {
-        return 0;
+        throw Move_Unsuccessful();
     }
 }
 

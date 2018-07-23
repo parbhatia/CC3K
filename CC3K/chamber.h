@@ -5,7 +5,6 @@
 #include "cell.h"
 #include "shade.h"
 #include "info.h"
-#include "stair.h"
 #include "factory.h"
 
 class Chamber {
@@ -21,6 +20,7 @@ class Chamber {
     int enemy_picker(); //picks random enemy type(int)
     void generate_player(std::string type);
     void generate_stairs();
+    void generate_player_cell(Object *p); //puts Player on existing cell
     Cell *give_playercell(); //gives player cell to Grid, assumes chamber has player
     Object *give_player(); //gives player to Grid, assumes chamber has a player cell
     void reset();
