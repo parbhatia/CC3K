@@ -31,7 +31,6 @@ void Character::attack(Character *whoTo) {
     if (chance > whoTo->getMissChance()) {
         int dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
         whoTo->changeHp(dmg);
-        whoTo->changeHp(dmg);
         if(whoTo->getHp()<=0){
             throw Attack{dmg, 0, Result::death};
         }
