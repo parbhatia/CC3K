@@ -3,17 +3,25 @@
 #include "dwarf.h"
 #include "drow.h"
 #include "goblin.h"
-
+#include <ctime>
+#include <cstdlib>
 
 Shade::Shade(int atk, int def, int hp): Player{atk, def, hp} {}
 
 void Shade::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
-/*void Shade::attack(Halfling *h);
-void attack(Dwarf *d);
-void attack(Drow *h);
-void attack(Goblin *g);*/
-
-void Shade::attack(Halfling *h) {}
-void Shade::attack(Dwarf *d) {}
+void Shade::attack(Halfling *h) {
+  srand(time(NULL));
+  int chance = rand()%10 + 1;
+  if (chance > 5) {   // Halfling has 50% chance to cause PC to miss.
+    h->changeHp(-getAtk() * 100 / (100 + h->getDef())); 
+  }
+}
+void Shade::attack(Dwarf *d) {
+  srand(time(NULL));
+  int chance = rand()%10 + 1;
+  if (chance > getMissChance()) {
+    d->changeHp(-getAtk() * 100 / (100 + d->getDef())); 
+  }
+}
