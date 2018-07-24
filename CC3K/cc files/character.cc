@@ -5,16 +5,16 @@
 
 
 Character::Character(int atk, int def, int hp) : atk{atk}, def{def}, hp{hp}, maxHp{hp}, missChance{0} {}
-void Character::changeAtk(int n) {
+void Character::changeAtk(double n) {
     atk += n;
 }
-void Character::changeDef(int n) {
+void Character::changeDef(double n) {
     def += n;
 }
-void Character::changeHp(int n) {
+void Character::changeHp(double n) {
     hp += n;  
 }
-void Character::setMaxHp(int n) {
+void Character::setMaxHp(double n) {
     maxHp = n;
 }
 void Character::setMissChance(int n) {   

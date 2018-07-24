@@ -15,10 +15,10 @@ class Character : public Object
     double defEffect=0; 
   public:
     Character(int atk, int def, int hp);
-    void changeAtk(int n);
-    void changeDef(int n);
-    void changeHp(int n);
-    void setMaxHp(int n);
+    void changeAtk(double n);
+    void changeDef(double n);
+    void changeHp(double n);
+    void setMaxHp(double n);
     void setMissChance(int n);
     double getAtk();
     double getDef();
