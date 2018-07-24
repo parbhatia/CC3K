@@ -11,3 +11,5 @@ void Player::changeGold(int n) {
 int Player::getGold() {
     return gold;
 }
+
+void Player::notify(Player* p) {}
