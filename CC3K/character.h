@@ -31,6 +31,7 @@ class Character : public Object
     void attack(Item *whoTo) override;
     void attack(Character *whoTo) override;
     void beUsed(Player *whoFrom) override;
+    void notify(Player* p){}
     ~Character() = 0;
 };
 #endif

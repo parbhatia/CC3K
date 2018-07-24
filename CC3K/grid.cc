@@ -7,7 +7,7 @@ using namespace std;
 
 Grid::Grid() {
     create_randomness(); //for random generation
-    read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
+    read_layout("./cc3k_emptyfloor.txt");
 }
 
 void Grid::reset_chambers() {
