@@ -99,6 +99,35 @@ void Grid::cell_test() {
     }
 }
 
+void Grid::attack_enemy(Direction d) {
+    int p_row = player_cell->getRow();
+    int p_col = player_cell->getCol();
+    Cell *new_cell = nullptr;
+    //set new_cell position
+    if (d == Direction::N) { new_cell = cells[p_row-1][p_col]; }
+    else if (d == Direction::NW) { new_cell = cells[p_row-1][p_col-1]; }
+    else if (d == Direction::NE) { new_cell = cells[p_row-1][p_col+1]; }
+    else if (d == Direction::S) { new_cell = cells[p_row+1][p_col]; }
+    else if (d == Direction::SW) { new_cell = cells[p_row+1][p_col-1]; }
+    else if (d == Direction::SE) { new_cell = cells[p_row+1][p_col+1]; }
+    else if (d == Direction::E) { new_cell = cells[p_row][p_col+1]; }
+    else { new_cell = cells[p_row][p_col-1]; }
+    //attack enemy
+    try {
+        player_cell->attack(*new_cell);
+    }
+    catch (Attack &o) {
+        cout << "health is: " << o.health << endl;
+        return;
+    }
+    catch (Stair_Cell &o) {
+        new_level();
+        return;
+    }
+    //only change player_cell if move was successful
+    player_cell = new_cell;
+}
+
 void Grid::use_pot(Direction d) {
     if (d == Direction::N) {}
 }

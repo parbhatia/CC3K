@@ -12,6 +12,7 @@
 #include "chamber.h"
 #include "character.h"
 #include "info.h"
+#include "attack.h"
 
 class Grid {
     int width = 79;
@@ -34,6 +35,7 @@ class Grid {
     void reset_chambers();
     void reset_cellsmoved(); //resets hasmoved flag on all cells
     void read_layout(std::string s);
+    void attack_enemy(Direction d);
     bool has_player_test(); //delete later
     void cell_test(); //delete later
     void intialize_player(std::string type); //initializes player with race type, and changes race attribute for display purposes

@@ -30,6 +30,11 @@ void Cell::clear(){
     player = nullptr;
 }
 
+void Cell::attack(Cell &target) {
+    Object *new_object = target.getObject();
+    new_object->beAttacked(ob?ob:player);
+}
+
 bool Cell::isOccupied(){
     if(hasPlayer() || ob){
         return true;
@@ -119,9 +124,6 @@ void Cell::attachObserver(Cell* ob) {
 }
 void setDisplay(TextDisplay *td) {
     td = td;
-}
-void Cell::attack(Cell &target) {
-    //to write
 }
 void Cell::use(Cell &target) {
     //to write

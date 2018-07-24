@@ -47,6 +47,16 @@ int main(int argc, const char * argv[]) {
                 //make player use potion at direction dir
                 g.use_pot(dir_map.at(dir));
             } else if (cmd == "a") {
+                cin >> cmd;
+                if ((cmd == "no") | (cmd == "so") | (cmd == "ea") |
+                    (cmd == "we") | (cmd == "ne") | (cmd == "nw") |
+                    (cmd == "se") | (cmd == "sw")) {
+                    //grid attacks player at direction cmd
+                    g.attack_enemy(dir_map.at(cmd));
+                    // g.move_enemies();
+                    // g.reset_cellsmoved();
+                    cout << g;
+                }
             } else if (cmd == "f") {
             } else if (cmd == "r") {
             } else if (cmd == "q") {
