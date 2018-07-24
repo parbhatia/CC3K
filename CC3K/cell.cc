@@ -136,7 +136,12 @@ void setDisplay(TextDisplay *td) {td = td; }
 
 void Cell::use(Cell &target) {
     Object *new_object = target.getObject();
-    if (new_object) new_object->beUsed(player);
+    if (new_object) {
+        new_object->beUsed(player);
+        delete target.ob;
+        target.ob = nullptr;
+        target.reset_potion();
+    }
 }
 
 void notifyDisplay() { 
