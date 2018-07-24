@@ -36,7 +36,15 @@ double Character::getHp() {
 double Character::getMaxHp() {
     return maxHp;
 }
-int Character::getMissChance() {return missChance;}
+double Character::getPotRate() {
+    return potRate;
+}
+int Character::getMissChance() {
+    return missChance;
+}
+void Character::setPotRate(double n) {
+    potRate = n;
+}
 void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, so it does nothing.
 void Character::attack(Character *whoTo) {
     int chance = rand() % 10 + 1;

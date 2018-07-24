@@ -24,7 +24,9 @@ class Character : public Object
     double getDef();
     double getHp();
     double getMaxHp();
+    double getPotRate();
     int getMissChance();
+    void setPotRate(double n);
     void resetEffect();
     void attack(Item *whoTo) override;
     void attack(Character *whoTo) override;

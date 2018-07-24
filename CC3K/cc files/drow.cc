@@ -4,7 +4,9 @@
 #include "attack.h"
 #include <cstdlib>
 
-Drow::Drow(int atk, int def, int hp): Player{atk, def, hp} {}
+Drow::Drow(int atk, int def, int hp): Player{atk, def, hp} {
+  setPotRate(1.5);
+}
 
 void Drow::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
