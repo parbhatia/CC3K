@@ -101,6 +101,9 @@ void Cell::acceptMove(Cell &whoFrom) {
         notifyObservers();
         set_moved();
     } else {
+        //check that a player was trying to move
+        //if it was, set whoFrom hasmoved to be true
+        whoFrom.set_moved();
         throw Move_Unsuccessful();
     }
 }
