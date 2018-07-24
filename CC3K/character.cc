@@ -6,10 +6,10 @@
 
 Character::Character(double atk, double def, double hp) : atk{atk}, def{def}, hp{hp}, maxHp{hp}, missChance{0} {}
 void Character::changeAtk(double n) {
-    atk += n;
+    atkEffect += n;
 }
 void Character::changeDef(double n) {
-    def += n;
+    defEffect += n;
 }
 void Character::changeHp(double n) {
     hp += n;  
