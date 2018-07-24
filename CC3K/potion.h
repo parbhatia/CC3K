@@ -5,11 +5,8 @@
 
 class Potion : public Item{
 public:
-    //~Potion();
+    ~Potion();
     char print() override;
-//    void beAttacked(Object *whoFrom) override;
-//    void attack(Item *whoTo) override;
-//    void attack(Character *whoTo) override;
 };
 
 #endif

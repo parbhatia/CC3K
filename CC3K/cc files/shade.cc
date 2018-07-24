@@ -13,7 +13,7 @@ void Shade::beAttacked(Object *whoFrom) {
 void Shade::attack(Halfling *h) {
   int chance = rand() % 10 + 1;
   if (chance > 5) {   // Halfling has 50% chance to cause PC to miss.
-    int dmg = (-getAtk() * 100 / (100 + h->getDef()));
+    double dmg = (-getAtk() * 100 / (100 + h->getDef()));
     h->changeHp(dmg);
     if(h->getHp()<=0){
       throw Attack{dmg, 0, Result::death};
@@ -28,7 +28,7 @@ void Shade::attack(Halfling *h) {
 void Shade::attack(Dwarf *d) {
   int chance = rand() % 10 + 1;
   if (chance > getMissChance()) {
-    int dmg = (-getAtk() * 100 / (100 + d->getDef()));
+    double dmg = (-getAtk() * 100 / (100 + d->getDef()));
     d->changeHp(dmg);
     if(d->getHp()<=0){
       throw Attack{dmg, 0, Result::death};

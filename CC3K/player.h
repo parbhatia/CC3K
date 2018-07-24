@@ -7,7 +7,7 @@ class Player : public Character {
     int gold;
     bool merchant_hostile;
 public:
-    Player( int atk=10, int def=5, int hp=100);
+    Player( double atk, double def, double hp);
     char print() override;
     void changeGold(int n);
     int getGold();

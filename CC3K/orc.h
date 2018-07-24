@@ -7,8 +7,8 @@ class Orc : public Enemy
 {
   public:
     Orc();
-    void beAttacked(Object* whoFrom) override;
     char print() override;
+    void beAttacked(Object* whoFrom) override;   
     void attack(Goblin* g) override;
     void attack(Drow *h) override;
     ~Orc();

@@ -2,7 +2,7 @@
 enum Result {attack, death, miss};
 
 struct Attack{
-    int dmg;
-    int health;
+    double dmg;
+    double health;
     Result res; 
 };

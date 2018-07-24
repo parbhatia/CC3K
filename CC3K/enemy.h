@@ -6,7 +6,7 @@
 class Enemy : public Character {
     bool isHostile;
 public:
-    Enemy(int atk, int def, int hp);
+    Enemy(double atk, double def, double hp);
     ~Enemy() = 0;
     
 };

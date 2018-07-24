@@ -5,31 +5,51 @@
 
 
 Character::Character(int atk, int def, int hp) : atk{atk}, def{def}, hp{hp}, maxHp{hp}, missChance{0} {}
-void Character::changeAtk(int n) {
+void Character::changeAtk(double n) {
     atk += n;
 }
-void Character::changeDef(int n) {
+void Character::changeDef(double n) {
     def += n;
 }
-void Character::changeHp(int n) {
+void Character::changeHp(double n) {
     hp += n;  
 }
-void Character::setMaxHp(int n) {
+void Character::setMaxHp(double n) {
     maxHp = n;
 }
 void Character::setMissChance(int n) {   
     missChance = n;
 }
-int Character::getAtk() {return atk;}
-int Character::getDef() {return def;}
-int Character::getHp() {return hp;}
-int Character::getMaxHp() {return maxHp;}
-int Character::getMissChance() {return missChance;}
+void Character::resetEffect() {
+    atkEffect = 0;
+    defEffect = 0;
+}
+double Character::getAtk() {
+    return atk + atkEffect;
+}
+double Character::getDef() {
+    return def + defEffect;
+}
+double Character::getHp() {
+    return hp;
+}
+double Character::getMaxHp() {
+    return maxHp;
+}
+double Character::getPotRate() {
+    return potRate;
+}
+int Character::getMissChance() {
+    return missChance;
+}
+void Character::setPotRate(double n) {
+    potRate = n;
+}
 void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, so it does nothing.
 void Character::attack(Character *whoTo) {
     int chance = rand() % 10 + 1;
     if (chance > whoTo->getMissChance()) {
-        int dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
+        double dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
         whoTo->changeHp(dmg);
         if(whoTo->getHp()<=0){
             throw Attack{dmg, 0, Result::death};
@@ -42,6 +62,6 @@ void Character::attack(Character *whoTo) {
     }
 }
 
-void Character::beUsed(Player *whoFrom) {}; //Only a potion can be used or a gold can be picked, so it does nothing.ss
+void Character::beUsed(Player *whoFrom) {} //Only a potion can be used or a gold can be picked, so it does nothing.ss
 
 Character::~Character() {}

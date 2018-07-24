@@ -16,7 +16,7 @@ void Human::beAttacked(Object* whoFrom){
 void Human::attack(Goblin* g){
     int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
-        int dmg = (-getAtk()*100/(100+g->getDef()))*1.5;
+        double dmg = (-getAtk()*100/(100+g->getDef()));
         g->changeHp(dmg);
         if(g->getHp()<=0){
             throw Attack{dmg, 0, Result::death};
@@ -30,7 +30,7 @@ void Human::attack(Goblin* g){
 }
 
 void Human::attack(Drow *h) {
-    int chance = rand() % 10 + 1;
+    double chance = rand() % 10 + 1;
     if (chance > h->getMissChance()) {
         int dmg = (-getAtk() * 100 / (100 + h->getDef()));
         h->changeHp(dmg);

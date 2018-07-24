@@ -5,23 +5,29 @@
 
 class Character : public Object
 {
-    int atk;
-    int def;
-    int hp;
-    int maxHp;
+    double atk;
+    double def;
+    double hp;
+    double maxHp;
     int missChance;
+    double potRate=1;
+    double atkEffect=0;
+    double defEffect=0; 
   public:
     Character(int atk, int def, int hp);
-    void changeAtk(int n);
-    void changeDef(int n);
-    void changeHp(int n);
-    void setMaxHp(int n);
+    void changeAtk(double n);
+    void changeDef(double n);
+    void changeHp(double n);
+    void setMaxHp(double n);
     void setMissChance(int n);
-    int getAtk();
-    int getDef();
-    int getHp();
-    int getMaxHp();
+    double getAtk();
+    double getDef();
+    double getHp();
+    double getMaxHp();
+    double getPotRate();
     int getMissChance();
+    void setPotRate(double n);
+    void resetEffect();
     void attack(Item *whoTo) override;
     void attack(Character *whoTo) override;
     void beUsed(Player *whoFrom) override;
