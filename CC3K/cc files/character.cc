@@ -49,7 +49,7 @@ void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, 
 void Character::attack(Character *whoTo) {
     int chance = rand() % 10 + 1;
     if (chance > whoTo->getMissChance()) {
-        int dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
+        double dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
         whoTo->changeHp(dmg);
         if(whoTo->getHp()<=0){
             throw Attack{dmg, 0, Result::death};

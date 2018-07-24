@@ -4,6 +4,6 @@
 
 class Gold: public Item {
     int value;
-
+    void beUsed(Player* whoFrom) override;
 };
 #endif
