@@ -13,11 +13,12 @@ class Chamber {
     Factory f;
   public:
     void print();
-    //void generate_potion();
     //void generate_gold();
     void generate_enemy();
+    void generate_potion();
     void clear(); //clear stats for new level
     int cell_picker(); //picks random cell
+    int potion_picker();
     int enemy_picker(); //picks random enemy type(int)
     void generate_player(std::string type);
     void generate_stairs();

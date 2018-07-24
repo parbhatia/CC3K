@@ -10,12 +10,16 @@
 #include "drow.h"
 #include "vampire.h"
 #include "human.h"
+#include "potion.h"
+#include "resHP.h"
+#include "poiHP.h"
 //#include "merchant.h"
 
 class Factory {
 public:
     Object *EnemyFactory(int rand_num); //creates enemies based on random number passed
     Player *PlayerFactory(std::string s); //creates players based on string s
+    Potion *PotionFactory(int rand_num);
 };
 
 

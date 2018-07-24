@@ -12,6 +12,7 @@
 #include "chamber.h"
 #include "character.h"
 #include "info.h"
+#include "player.h"
 #include "attack.h"
 
 class Grid {
@@ -36,20 +37,18 @@ class Grid {
     void reset_cellsmoved(); //resets hasmoved flag on all cells
     void read_layout(std::string s);
     void attack_enemy(Direction d);
-    bool has_player_test(); //delete later
-    void cell_test(); //delete later
     void intialize_player(std::string type); //initializes player with race type, and changes race attribute for display purposes
     void default_layout();
     void move_player(Direction d);    //moves player in d
     void move_enemies(); //moves all enemies in random directions
     void use_pot(Direction d); //makes player use potion in d
     void generate_enemies(); //chambers generate enemies
+    void generate_potions(); //chambers generate potions
     void generate_stairs(); //random chamber generates stairs
     void create_randomness(); //sets time as seed 
     int chamber_picker(); //returns random chamber (0 to 4)
     Direction direction_picker(); //returns random direction
     Cell* new_cell_pos(Cell *old_cell, Direction d); //returns new cell based on direction from old_cell
-    void test_chambers();    //for testing chambers, delete later!
     void set_observers();    //sets observers for cell
     bool valid_direction();
     void update_observers();

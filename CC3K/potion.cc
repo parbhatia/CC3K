@@ -4,5 +4,7 @@ char Potion::print(){
     return 'P';
 }
 
+
+
 Potion::~Potion(){}
 

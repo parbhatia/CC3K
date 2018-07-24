@@ -35,16 +35,23 @@ int main(int argc, const char * argv[]) {
                 player_set = true;
                 g.intialize_player(cmd);
                 g.generate_stairs();
+                g.generate_potions();
                 //g.cell_test();
                 //potions
                 //gold
                 g.generate_enemies();
                 cout << g;
             } else if (cmd == "u") {
-                string dir;
-                cin >> dir;
+                cin >> cmd;
+                if ((cmd == "no") | (cmd == "so") | (cmd == "ea") |
+                    (cmd == "we") | (cmd == "ne") | (cmd == "nw") |
+                    (cmd == "se") | (cmd == "sw")) {
+                    g.use_pot(dir_map.at(cmd));
+
+                    cout << g;
+                }
                 //make player use potion at direction dir
-                g.use_pot(dir_map.at(dir));
+                
             } else if (cmd == "a") {
                 cin >> cmd;
                 if ((cmd == "no") | (cmd == "so") | (cmd == "ea") |

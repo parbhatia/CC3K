@@ -53,6 +53,10 @@ int Chamber::enemy_picker() {
     return rand() % enemy_distribution_number;
 }
 
+int Chamber::potion_picker() {
+    return rand() % potion_types;
+}
+
 void Chamber::generate_player_cell(Player *p) {
     bool done = false;
     while (!done) {
@@ -123,6 +127,26 @@ void Chamber::generate_stairs() {
     }
 }
 
+void Chamber::generate_potion() {
+    if (numPotions == 0) {
+        throw No_More_Potions();
+    }
+    else {
+        bool done = false;
+        while (!done) {
+            int x = cell_picker();
+            if (!cells[x]->isOccupied()) {
+                int y = potion_picker();
+                //choose random potion
+                Object *new_pot = f.PotionFactory(y);
+                cells[x]->setObject(new_pot);
+                --numPotions;
+                done = true;
+            }
+        }
+    }
+}
+
 void Chamber::generate_enemy() {
     if (numEnemies == 0) {
         throw No_More_Enemies();
@@ -141,5 +165,4 @@ void Chamber::generate_enemy() {
             }
         }
     }
-   
 }

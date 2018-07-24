@@ -127,7 +127,8 @@ void setDisplay(TextDisplay *td) {
     td = td;
 }
 void Cell::use(Cell &target) {
-    //to write
+    Object *new_object = target.getObject();
+    if (new_object) new_object->beUsed(player);
 } 
 void notifyDisplay() { 
     //to write

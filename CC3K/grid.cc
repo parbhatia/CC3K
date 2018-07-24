@@ -86,7 +86,7 @@ void Grid::set_observers() {
 }
 
 
-bool Grid::has_player_test() {
+/*bool Grid::has_player_test() {
     cout << player_cell->print() << endl;
     return player_cell != nullptr;
 }
@@ -97,7 +97,7 @@ void Grid::cell_test() {
             cout << cell->getRow() << "," << cell->getCol() << endl;
         }
     }
-}
+}*/
 
 void Grid::attack_enemy(Direction d) {
     int p_row = player_cell->getRow();
@@ -129,7 +129,15 @@ void Grid::attack_enemy(Direction d) {
 }
 
 void Grid::use_pot(Direction d) {
-    if (d == Direction::N) {}
+    //get cell to call use pot on
+    Cell *new_cell = nullptr;
+    new_cell = new_cell_pos(player_cell,d);
+    //make player use pot
+    try {
+        new_cell->use(*new_cell);
+    }
+    catch (...) {
+    }
 }
 
 void Grid::move_player(Direction d) {
@@ -236,14 +244,14 @@ void Grid::move_enemies() {
     }
 }
 
-void Grid::test_chambers() {
+/*void Grid::test_chambers() {
     int i = 1;
     for (auto it : chambers) {
         cout << "Chamber: " << i << " " << endl;
         ++i;
         it.print();
     }
-}
+}*/
 
 void Grid::create_randomness() {
     srand((unsigned)time(NULL));
@@ -265,6 +273,18 @@ void Grid::generate_enemies() {
             chambers[chamb_num].generate_enemy();
         }
         catch(No_More_Enemies &) {
+            return;
+        }
+    }
+}
+
+void Grid::generate_potions() {
+    while(1) {
+        int chamb_num = chamber_picker();
+        try {
+            chambers[chamb_num].generate_potion();
+        }
+        catch(No_More_Potions &) {
             return;
         }
     }
@@ -361,9 +381,9 @@ std::ostream &operator<<(std::ostream &out, const Grid &g) {
     out.setf(ios::right);
     out << setw(50) << "Level: " << g.level << endl;
     out.unsetf(ios::right);
-    out << "HP: " << endl;
-    out << "Atk: " << endl;
-    out << "Def: " << endl;
+    out << "HP: " << g.player->getHp() << endl;
+    out << "Atk: " << g.player->getAtk() << endl;
+    out << "Def: " << g.player->getDef() << endl;
     out << "Action: " << endl;
     
     return out;

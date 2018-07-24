@@ -96,7 +96,6 @@
 		4B53F1BC2100105A00736E14 /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
 		4B53F1BE2100105A00736E14 /* potion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = potion.h; sourceTree = "<group>"; };
 		4B53F1BF2100105B00736E14 /* shade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shade.h; sourceTree = "<group>"; };
-		4B53F1C02100105B00736E14 /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		4B53F1C12100105B00736E14 /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
 		4B53F1C621018CF900736E14 /* dwarf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dwarf.h; sourceTree = "<group>"; };
 		4B53F1C821018EE300736E14 /* info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = info.h; sourceTree = "<group>"; };
@@ -146,7 +145,6 @@
 		4B2B5D6C20FE8B1B00F5B673 /* CC3K */ = {
 			isa = PBXGroup;
 			children = (
-				4B53F1C02100105B00736E14 /* Todo */,
 				4B53F1C821018EE300736E14 /* info.h */,
 				4B2B5D7D20FE9B6900F5B673 /* cc3k_emptyfloor.txt */,
 				4B2B5D6D20FE8B1B00F5B673 /* main.cc */,

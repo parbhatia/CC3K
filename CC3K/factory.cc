@@ -36,3 +36,12 @@ Player *Factory::PlayerFactory(string s) {
     else if (s == "t") return new Shade(); //change to Troll();
     else return new Shade();
 }
+
+Potion *Factory::PotionFactory(int rand_num) {
+    if (rand_num == 0) return new resHP();
+    else if (rand_num == 1) return new poiHP();
+    else if (rand_num == 2) return new resHP();
+    else if (rand_num == 3) return new resHP();
+    else if (rand_num == 4) return new resHP();
+    else return new resHP();
+}
