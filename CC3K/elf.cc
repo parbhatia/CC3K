@@ -46,6 +46,8 @@ void Elf::attack(Character* whoTo){
             else{
                 throw Attack{dmg, whoTo->getHp(), Result::attack};
             }
+        } else {
+            throw Attack{0, whoTo->getHp(), Result::attack};         
         }
     }
 }
@@ -63,6 +65,7 @@ void Elf::attack(Goblin *g) {
         else{
             throw Attack{0, g->getHp(), Result::miss};
         }
-    }
+    }  else {
+            throw Attack{0, g->getHp(), Result::attack};         
     }
 }
