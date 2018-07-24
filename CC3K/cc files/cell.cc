@@ -87,7 +87,7 @@ void Cell::moveTo(Cell &whoTo) {
         throw;
     }
     player = nullptr;
-    ob = nullptr;
+    //ob = nullptr;
 }
 
 void Cell::acceptMove(Cell &whoFrom) {

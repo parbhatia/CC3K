@@ -11,7 +11,7 @@ class Cell {
     int row, col;
     bool hasmoved = false;
     char type = ' ';
-    bool stair; //determines if cell is stair
+    bool stair = false; //determines if cell is stair
     TextDisplay *td;
     std::vector<Cell *> observers;
 protected:
