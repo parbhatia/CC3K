@@ -10,6 +10,6 @@ void poiHP::beUsed(Player *whoFrom) {
         whoFrom->changeHp(0);
     }
     double after = whoFrom->getHp();
-    throw Potion{before,after,Type::increaseHP};
+    throw Potion{before,after,Type::decreaseHP};
 }
 poiHP::~poiHP(){}
