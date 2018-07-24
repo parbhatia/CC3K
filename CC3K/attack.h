@@ -8,7 +8,7 @@ struct Attack {
     Result res; 
 };
 
-struct Potion {
+struct Poteffect {
     double before;
     double after;
     Type type;
