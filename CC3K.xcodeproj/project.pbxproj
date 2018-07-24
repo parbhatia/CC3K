@@ -16,6 +16,10 @@
 		4B2B5D8620FEBD2B00F5B673 /* doorcell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8520FEBD2B00F5B673 /* doorcell.cc */; };
 		4B2B5D8920FEC1D200F5B673 /* bridge.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8820FEC1D200F5B673 /* bridge.cc */; };
 		4B2B5D8F20FFD80B00F5B673 /* item.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8E20FFD80B00F5B673 /* item.cc */; };
+		4B3BD7552107AF3500C0C3E7 /* gold.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD74F2107AF3400C0C3E7 /* gold.cc */; };
+		4B3BD7562107AF3500C0C3E7 /* goblin.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7512107AF3400C0C3E7 /* goblin.cc */; };
+		4B3BD7572107AF3500C0C3E7 /* poiHP.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7522107AF3400C0C3E7 /* poiHP.cc */; };
+		4B3BD7582107AF3500C0C3E7 /* troll.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7532107AF3400C0C3E7 /* troll.cc */; };
 		4B53F1B820FFE96300736E14 /* chamber.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1B620FFE96300736E14 /* chamber.cc */; };
 		4B53F1BA21000FB800736E14 /* character.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1B921000FB800736E14 /* character.cc */; };
 		4B53F1C22100105B00736E14 /* shade.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1BD2100105A00736E14 /* shade.cc */; };
@@ -69,6 +73,12 @@
 		4B2B5D8B20FFD7A000F5B673 /* character.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = character.h; sourceTree = "<group>"; };
 		4B2B5D8D20FFD7F300F5B673 /* item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = item.h; sourceTree = "<group>"; };
 		4B2B5D8E20FFD80B00F5B673 /* item.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = item.cc; sourceTree = "<group>"; };
+		4B3BD74F2107AF3400C0C3E7 /* gold.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gold.cc; path = "cc files/gold.cc"; sourceTree = "<group>"; };
+		4B3BD7502107AF3400C0C3E7 /* poiHP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = poiHP.h; sourceTree = "<group>"; };
+		4B3BD7512107AF3400C0C3E7 /* goblin.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = goblin.cc; path = "cc files/goblin.cc"; sourceTree = "<group>"; };
+		4B3BD7522107AF3400C0C3E7 /* poiHP.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = poiHP.cc; path = "cc files/poiHP.cc"; sourceTree = "<group>"; };
+		4B3BD7532107AF3400C0C3E7 /* troll.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = troll.cc; path = "cc files/troll.cc"; sourceTree = "<group>"; };
+		4B3BD7542107AF3500C0C3E7 /* gold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gold.h; sourceTree = "<group>"; };
 		4B53F1B620FFE96300736E14 /* chamber.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chamber.cc; sourceTree = "<group>"; };
 		4B53F1B720FFE96300736E14 /* chamber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chamber.h; sourceTree = "<group>"; };
 		4B53F1B921000FB800736E14 /* character.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = character.cc; sourceTree = "<group>"; };
@@ -153,6 +163,12 @@
 				4BCE7AEF21052EED00B2532A /* orc.h */,
 				4B53F1BB2100105A00736E14 /* enemy.h */,
 				4B2B5D8B20FFD7A000F5B673 /* character.h */,
+				4B3BD7512107AF3400C0C3E7 /* goblin.cc */,
+				4B3BD74F2107AF3400C0C3E7 /* gold.cc */,
+				4B3BD7542107AF3500C0C3E7 /* gold.h */,
+				4B3BD7522107AF3400C0C3E7 /* poiHP.cc */,
+				4B3BD7502107AF3400C0C3E7 /* poiHP.h */,
+				4B3BD7532107AF3400C0C3E7 /* troll.cc */,
 				4B53F1BC2100105A00736E14 /* object.h */,
 				4B2B5D7F20FEBA2200F5B673 /* doorcell.h */,
 				4B2B5D7E20FEBA2200F5B673 /* floorcell.h */,
@@ -279,6 +295,7 @@
 				4B53F1CD2104406700736E14 /* factory.cc in Sources */,
 				4B53F1CA2102A26000736E14 /* object.cc in Sources */,
 				4BA7723221057002000D60CC /* goblin.cc in Sources */,
+				4B3BD7582107AF3500C0C3E7 /* troll.cc in Sources */,
 				4B2B5D8920FEC1D200F5B673 /* bridge.cc in Sources */,
 				4BCE7AF921052EEE00B2532A /* halfling.cc in Sources */,
 				4BCE7AF621052EEE00B2532A /* resHP.cc in Sources */,
@@ -286,9 +303,12 @@
 				4B53F1C22100105B00736E14 /* shade.cc in Sources */,
 				4B2B5D8F20FFD80B00F5B673 /* item.cc in Sources */,
 				4B2B5D6E20FE8B1B00F5B673 /* main.cc in Sources */,
+				4B3BD7572107AF3500C0C3E7 /* poiHP.cc in Sources */,
 				4B53F1B820FFE96300736E14 /* chamber.cc in Sources */,
+				4B3BD7552107AF3500C0C3E7 /* gold.cc in Sources */,
 				4B53F1C721018CF900736E14 /* dwarf.cc in Sources */,
 				4BA7723121057002000D60CC /* troll.cc in Sources */,
+				4B3BD7562107AF3500C0C3E7 /* goblin.cc in Sources */,
 				4B2B5D8620FEBD2B00F5B673 /* doorcell.cc in Sources */,
 				4BCE7AFA21052EEE00B2532A /* human.cc in Sources */,
 				4B2B5D7620FE968D00F5B673 /* grid.cc in Sources */,

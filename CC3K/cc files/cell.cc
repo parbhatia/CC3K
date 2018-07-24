@@ -47,7 +47,7 @@ void Cell::setObject(Object *newob){
     ob = newob;
 }
 
-void Cell::setPlayer(Object *newob){
+void Cell::setPlayer(Player *newob){
     player = newob;
 }
 
@@ -57,7 +57,7 @@ void Cell::set_moved() { hasmoved = true; }
 
 void Cell::reset_has_moved() { hasmoved = false; }
 
-Object* Cell::getPlayer() {
+Player* Cell::getPlayer() {
     return player;
 }
 

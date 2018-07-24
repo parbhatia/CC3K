@@ -4,7 +4,7 @@
 #include <ctime>
 
 
-Character::Character(int atk, int def, int hp) : atk{atk}, def{def}, hp{hp}, maxHp{hp}, missChance{0} {}
+Character::Character(double atk, double def, double hp) : atk{atk}, def{def}, hp{hp}, maxHp{hp}, missChance{0} {}
 void Character::changeAtk(double n) {
     atk += n;
 }

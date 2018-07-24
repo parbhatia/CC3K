@@ -14,7 +14,7 @@ class Character : public Object
     double atkEffect=0;
     double defEffect=0; 
   public:
-    Character(int atk, int def, int hp);
+    Character(double atk, double def, double hp);
     void changeAtk(double n);
     void changeDef(double n);
     void changeHp(double n);

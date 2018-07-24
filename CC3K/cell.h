@@ -4,6 +4,7 @@
 #include <iostream>
 #include "object.h"
 #include "info.h"
+#include "player.h"
 
 class TextDisplay;
 class Object;
@@ -15,7 +16,7 @@ class Cell {
     TextDisplay *td;
     std::vector<Cell *> observers;
 protected:
-    Object *player = nullptr;
+    Player *player = nullptr;
     Object *ob = nullptr;
 public:
     Cell(int r, int c, char t);
@@ -32,7 +33,7 @@ public:
     bool isOccupied();
     void clear();
     virtual void setObject(Object *newob);
-    virtual void setPlayer(Object *newob);
+    virtual void setPlayer(Player *newob);
     virtual void moveTo(Cell &whoTo);
     virtual void acceptMove(Cell &whoFrom);
     virtual void attack(Cell &target);
@@ -42,7 +43,7 @@ public:
     void attachObserver(Cell* ob);
     void setDisplay(TextDisplay *td);
     void notifyDisplay(); 
-    Object* getPlayer(); 
+    Player* getPlayer(); 
     Object* getObject();
     virtual ~Cell() = 0;
 };
