@@ -20,7 +20,7 @@ public:
     virtual void attack(Dwarf *d);
     virtual void attack(Drow *d);  
     virtual void attack(Goblin *g);
-    //virtual void notify(Object* p)=0;
+    virtual void notify(Player* p)=0;
 };
 
 #endif

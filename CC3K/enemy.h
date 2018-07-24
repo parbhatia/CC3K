@@ -10,6 +10,7 @@ public:
     ~Enemy() = 0;
     void setHostile(bool n);
     bool getHostile();
+    void notify(Player* p) override;
 };
 
 #endif

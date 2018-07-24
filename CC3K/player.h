@@ -11,5 +11,6 @@ public:
     char print() override;
     void changeGold(int n);
     int getGold();
+    void notify(Player* p) override;
 };
 #endif

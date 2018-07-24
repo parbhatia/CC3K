@@ -1,4 +1,6 @@
 #include "enemy.h"
+#include "player.h"
+#include "object.h"
 
 Enemy::Enemy(double atk, double def, double hp): Character{atk, def, hp} {}
 
@@ -10,4 +12,8 @@ void Enemy::setHostile(bool n) {
 
 bool Enemy::getHostile() {
     return isHostile;
+}
+
+void Enemy::notify(Player* p) { 
+    this->beAttacked(p);
 }
