@@ -57,6 +57,9 @@ int Chamber::potion_picker() {
     return rand() % potion_types;
 }
 
+
+//generators
+
 void Chamber::generate_player_cell(Player *p) {
     bool done = false;
     while (!done) {
@@ -79,42 +82,6 @@ void Chamber::generate_player(string type) {
         }
     }
 }
-
-/*
-void Chamber::generate_potion() {
-    if (numPotions == 0) {
-        throw No_More_Potions();
-    }
-    else {
-        bool done = false;
-        while (!done) {
-            int x = cell_picker();
-            if (!cells[x]->isOccupied()) {
-                cells[x]->setObject();
-                done = true;
-            }
-        }
- --numPotions;
-    }
-}
-
-void Chamber::generate_gold() {
-    if (numGold == 0) {
-        throw No_More_Gold();
-    }
-    else {
-        bool done = false;
-        while (!done) {
-            int x = cell_picker();
-            if (!cells[x]->isOccupied()) {
-                cells[x]->setObject();
-                done = true;
-            }
-        }
-    }
- --numGold;
-}
-*/
 
 void Chamber::generate_stairs() {
     bool done = false;
