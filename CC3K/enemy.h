@@ -4,11 +4,12 @@
 #include "character.h"
 
 class Enemy : public Character {
-    bool isHostile;
+    bool isHostile = true;
 public:
     Enemy(double atk, double def, double hp);
     ~Enemy() = 0;
-    
+    void setHostile(bool n);
+    bool getHostile();
 };
 
 #endif

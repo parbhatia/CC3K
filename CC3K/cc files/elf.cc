@@ -48,12 +48,13 @@ void Elf::attack(Character* whoTo){
             }
         }
     }
-
 }
+
 void Elf::attack(Goblin *g) {
-    int chance = rand()%10 + 1;
+    int chance;
     for (int i = 0; i < 2; i++) {
     if (chance > getMissChance()) {
+        chance = rand()%10 + 1;
         double dmg = -getAtk()*100/(100+g->getDef());
         g->changeHp(dmg);
         if(g->getHp() <= 0){
