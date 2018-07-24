@@ -48,9 +48,23 @@ void Elf::attack(Character* whoTo){
             }
         }
     }
+<<<<<<< HEAD:CC3K/cc files/elf.cc
+=======
     
+>>>>>>> dd6ffc9a75018b1164dc6163cf7e485d88fdd3ac:CC3K/elf.cc
 }
+
 void Elf::attack(Goblin *g) {
+<<<<<<< HEAD:CC3K/cc files/elf.cc
+    int chance;
+    for (int i = 0; i < 2; i++) {
+    if (chance > getMissChance()) {
+        chance = rand()%10 + 1;
+        double dmg = -getAtk()*100/(100+g->getDef());
+        g->changeHp(dmg);
+        if(g->getHp() <= 0){
+            throw Attack{dmg,0,Result::death};
+=======
     int chance = rand()%10 + 1;
     for (int i = 0; i < 2; ++i) {
         if (chance > getMissChance()) {
@@ -62,6 +76,7 @@ void Elf::attack(Goblin *g) {
             else{
                 throw Attack{dmg, g->getHp(), Result::attack};
             }
+>>>>>>> dd6ffc9a75018b1164dc6163cf7e485d88fdd3ac:CC3K/elf.cc
         }
         else{
             throw Attack{0, g->getHp(), Result::miss};
