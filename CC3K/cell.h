@@ -27,7 +27,8 @@ public:
     int getCol();
     bool hasPlayer();
     bool has_stair();
-    void toggle_stair();
+    void set_stair();
+    void clear_stair();
     bool isOccupied();
     void clear();
     virtual void setObject(Object *newob);

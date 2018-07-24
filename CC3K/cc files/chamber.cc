@@ -46,7 +46,6 @@ void Chamber::add_cell(Cell *c) {
 }
 
 int Chamber::cell_picker() {
-    cout << cells.size() << endl;
     return rand() % cells.size();
 }
 
@@ -118,7 +117,7 @@ void Chamber::generate_stairs() {
     while (!done) {
         int x = cell_picker();
         if (!cells[x]->isOccupied()) {
-            cells[x]->toggle_stair();
+            cells[x]->set_stair();
             done = true;
         }
     }

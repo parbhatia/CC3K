@@ -7,7 +7,6 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     Grid g;
     string race;
-    //cout << g;
     //command interpreter
     cin.exceptions(ios::eofbit|ios::failbit);
     string cmd;
@@ -24,8 +23,8 @@ int main(int argc, const char * argv[]) {
                 }
                 //grid moves player at direction cmd
                 g.move_player(dir_map.at(cmd));
-               // g.move_enemies();
-               // g.reset_cellsmoved();
+                g.move_enemies();
+                g.reset_cellsmoved();
                 cout << g;
             } else if ((cmd == "s") | (cmd == "d") | (cmd == "v") |
                        (cmd == "g") | (cmd == "t")) {
