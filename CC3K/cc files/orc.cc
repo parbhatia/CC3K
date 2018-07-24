@@ -1,6 +1,7 @@
 #include "orc.h"
 #include "attack.h"
 #include "goblin.h"
+#include "drow.h"
 
 char Orc::print(){
     return 'O';
@@ -26,6 +27,22 @@ void Orc::attack(Goblin* g){
         }
     } else {
         throw Attack{0, g->getHp(), Result::miss};
+    }
+}
+
+void Orc::attack(Drow *h) {
+    int chance = rand() % 10 + 1;
+    if (chance > h->getMissChance()) {
+        int dmg = (-getAtk() * 100 / (100 + h->getDef()));
+        h->changeHp(dmg);
+        if(h->getHp()<=0){
+            throw Attack{dmg, 0, Result::death};
+        }
+        else{
+            throw Attack{dmg, h->getHp(), Result::attack};
+        } 
+    } else {
+        throw Attack{0, h->getHp(), Result::miss};
     }
 }
 
