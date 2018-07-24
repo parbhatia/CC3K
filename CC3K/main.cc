@@ -46,6 +46,8 @@ int main(int argc, const char * argv[]) {
                     (cmd == "we") | (cmd == "ne") | (cmd == "nw") |
                     (cmd == "se") | (cmd == "sw")) {
                     g.use_pot(dir_map.at(cmd));
+                    g.move_enemies();
+                    g.reset_cellsmoved();
                     g.notify_player_observers();
                     cout << g;
                 }
@@ -56,8 +58,8 @@ int main(int argc, const char * argv[]) {
                     (cmd == "se") | (cmd == "sw")) {
                     //grid attacks player at direction cmd
                     g.attack_enemy(dir_map.at(cmd));
-                    // g.move_enemies();
-                    // g.reset_cellsmoved();
+                    g.move_enemies();
+                    g.reset_cellsmoved();
                     g.notify_player_observers();
                     cout << g;
                 }

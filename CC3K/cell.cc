@@ -66,7 +66,11 @@ void Cell::clear() {
 
 void Cell::attack(Cell &target) {
     Object *new_object = target.getObject();
-    new_object->beAttacked(ob?ob:player);
+    if (target.hasObject()) {
+        new_object->beAttacked(ob);
+    } else if (target.hasPlayer()) {
+        new_object->beAttacked(player);
+    } else {}
 }
 
 bool Cell::isOccupied(){
@@ -137,10 +141,15 @@ void setDisplay(TextDisplay *td) {td = td; }
 void Cell::use(Cell &target) {
     Object *new_object = target.getObject();
     if (new_object) {
-        new_object->beUsed(player);
-        delete target.ob;
-        target.ob = nullptr;
-        target.reset_potion();
+        try {
+            new_object->beUsed(player);
+        }
+        catch (...) {
+            delete target.ob;
+            target.ob = nullptr;
+            target.reset_potion();
+            throw;
+        }
     }
 }
 

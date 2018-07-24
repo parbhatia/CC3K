@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-int Chamber::numPotions = 10;
+int Chamber::numPotions = 100;
 int Chamber::numGold = 10;
 int Chamber::numEnemies = 20;
 
