@@ -143,7 +143,7 @@ void Grid::use_pot(Direction d) {
     new_cell = new_cell_pos(player_cell,d);
     //make player use pot
     try {
-        new_cell->use(*new_cell);
+        player_cell->use(*new_cell);
     }
     catch (Poteffect &p) {
     }
