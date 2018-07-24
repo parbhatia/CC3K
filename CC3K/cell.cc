@@ -65,11 +65,14 @@ void Cell::clear() {
 }
 
 void Cell::attack(Cell &target) {
-    Object *new_object = target.getObject();
+    Object *p = this->getPlayer();
+    Object *new_object;
     if (target.hasObject()) {
-        new_object->beAttacked(ob);
+        new_object = target.getObject();
+        new_object->beAttacked(p);
     } else if (target.hasPlayer()) {
-        new_object->beAttacked(player);
+        new_object = target.getPlayer();
+        new_object->beAttacked(p);
     } else {}
 }
 
@@ -151,6 +154,10 @@ void Cell::use(Cell &target) {
             throw;
         }
     }
+}
+
+int Cell::sizeObservers() {
+    return observers.size();
 }
 
 void notifyDisplay() { 

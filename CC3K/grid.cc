@@ -7,7 +7,7 @@ using namespace std;
 
 Grid::Grid() {
     create_randomness(); //for random generation
-    read_layout("./cc3k_emptyfloor.txt");
+    read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
 }
 
 void Grid::reset_chambers() {
@@ -64,7 +64,7 @@ Grid::~Grid() {
 }
 
 bool Grid::in_range(int row, int col) {
-    return ((row>=0 && row<height-5) && (col >0 && col<width));
+    return ((row>=0 && row<height-5) && (col >=0 && col<width));
 }
 
 void Grid::notify_player_observers() {
@@ -73,6 +73,14 @@ void Grid::notify_player_observers() {
     }
     catch(Attack &o) {
         cout << "Enemy attacks player" << endl;
+    }
+}
+
+void Grid::test_observers() {
+    for (auto row:cells) {
+        for (auto cell:row) {
+            cout << "CELL: " << cell->sizeObservers() << endl;
+        }
     }
 }
 
@@ -373,6 +381,7 @@ void Grid::read_layout(string s) {
         line.clear();
         col = 0; //reset column counter
     }
+    set_observers();
 }
 
 std::ostream &operator<<(std::ostream &out, const Grid &g) {

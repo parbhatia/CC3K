@@ -50,6 +50,7 @@ class Grid {
     Direction direction_picker(); //returns random direction
     Cell* new_cell_pos(Cell *old_cell, Direction d); //returns new cell based on direction from old_cell
     void set_observers();    //sets observers for cell
+    void test_observers();
     bool valid_direction();
     void notify_player_observers();
     friend std::ostream &operator<<(std::ostream &out, const Grid &g);

@@ -51,7 +51,8 @@ public:
     virtual void notify(Cell &whoFrom);
     void attachObserver(Cell* ob);
     void setDisplay(TextDisplay *td);
-    void notifyDisplay(); 
+    void notifyDisplay();
+    int sizeObservers();
     Player* getPlayer(); 
     Object* getObject();
     virtual ~Cell() = 0;

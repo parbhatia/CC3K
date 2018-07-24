@@ -6,6 +6,7 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     Grid g;
+    //g.test_observers();
     string race;
     //command interpreter
     cin.exceptions(ios::eofbit|ios::failbit);

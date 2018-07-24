@@ -2,9 +2,9 @@
 #include <iostream>
 using namespace std;
 
-int Chamber::numPotions = 100;
+int Chamber::numPotions = 10;
 int Chamber::numGold = 10;
-int Chamber::numEnemies = 20;
+int Chamber::numEnemies = 150;
 
 void Chamber::clear() {
     numPotions = globalPotions;
