@@ -11,6 +11,7 @@ class Elf : public Enemy
     char print() override;
     void beAttacked(Object* whoFrom) override;
     void attack(Drow* d) override;
+    void attack(Goblin* g) override;    
     void attack(Character* whoTo) override;
 };
 
