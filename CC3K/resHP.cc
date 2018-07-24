@@ -10,6 +10,6 @@ void resHP::beUsed(Player *whoFrom) {
         whoFrom->changeHp(whoFrom->getMaxHp() - whoFrom->getHp());
     }
     double after = whoFrom->getHp();
-    throw Potion{before, after, Type::increaseHP};
+    throw Poteffect{before, after, Type::increaseHP};
 }
 resHP::~resHP(){}
