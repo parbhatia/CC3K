@@ -45,11 +45,11 @@ void Cell::reset_potion() { haspotion = false; }
 ////////
 
 //stair
-bool Cell::has_stair() { return stair; }
+bool Cell::has_stair() { return hasstair; }
 
-void Cell::set_stair() { stair = true; }
+void Cell::set_stair() { hasstair = true; }
 
-void Cell::clear_stair() { stair = false; }
+void Cell::clear_stair() { hasstair = false; }
 ///////
 
 void Cell::clear() {
@@ -74,7 +74,7 @@ bool Cell::isOccupied(){
 }
 
 char Cell::print() {
-    if (stair) {
+    if (hasstair) {
         return '/';
     } else if (player) {
         return player->print();

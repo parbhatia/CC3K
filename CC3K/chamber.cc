@@ -107,6 +107,7 @@ void Chamber::generate_potion() {
                 //choose random potion
                 Object *new_pot = f.PotionFactory(y);
                 cells[x]->setObject(new_pot);
+                cells[x]->set_potion();
                 --numPotions;
                 done = true;
             }

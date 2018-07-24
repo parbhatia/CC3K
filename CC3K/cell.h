@@ -13,8 +13,8 @@ class Cell {
     bool hasmoved = false;
     bool haspotion = false;
     bool hasgold = false;
+    bool hasstair = false;
     char type = ' ';
-    bool stair = false;
     TextDisplay *td;
     std::vector<Cell *> observers;
 protected:
