@@ -9,6 +9,7 @@ class TextDisplay;
 class Object;
 class Cell {
     int row, col;
+    bool hasmoved = false;
     char type = ' ';
     bool stair; //determines if cell is stair
     TextDisplay *td;
@@ -18,6 +19,9 @@ protected:
     Object *ob = nullptr;
 public:
     Cell(int r, int c, char t);
+    bool has_moved();
+    void set_moved();
+    void reset_has_moved();
     virtual char print();
     int getRow();
     int getCol();

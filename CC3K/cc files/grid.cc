@@ -139,17 +139,48 @@ Direction Grid::direction_picker() {
 Cell* Grid::new_cell_pos(Cell *old_cell, Direction d) {
     int o_row = old_cell->getRow();
     int o_col = old_cell->getCol();
-    if (!in_range(o_row,o_col)) throw InvalidRange();
     Cell *new_cell = nullptr;
-    if (d == Direction::N) { new_cell = cells[o_row-1][o_col]; }
-    else if (d == Direction::NW) { new_cell = cells[o_row-1][o_col-1]; }
-    else if (d == Direction::NE) { new_cell = cells[o_row-1][o_col+1]; }
-    else if (d == Direction::S) { new_cell = cells[o_row+1][o_col]; }
-    else if (d == Direction::SW) { new_cell = cells[o_row+1][o_col-1]; }
-    else if (d == Direction::SE) { new_cell = cells[o_row+1][o_col+1]; }
-    else if (d == Direction::E) { new_cell = cells[o_row][o_col+1]; }
-    else { new_cell = cells[o_row][o_col-1]; }
+    if (d == Direction::N) {
+        if (!in_range(o_row-1,o_col)) throw InvalidRange();
+        new_cell = cells[o_row-1][o_col];
+    }
+    else if (d == Direction::NW) {
+        if (!in_range(o_row-1,o_col-1)) throw InvalidRange();
+        new_cell = cells[o_row-1][o_col-1];
+    }
+    else if (d == Direction::NE) {
+        if (!in_range(o_row-1,o_col+1)) throw InvalidRange();
+        new_cell = cells[o_row-1][o_col+1];
+    }
+    else if (d == Direction::S) {
+        if (!in_range(o_row+1,o_col)) throw InvalidRange();
+        new_cell = cells[o_row+1][o_col];
+    }
+    else if (d == Direction::SW) {
+        if (!in_range(o_row+1,o_col-1)) throw InvalidRange();
+        new_cell = cells[o_row+1][o_col-1];
+    }
+    else if (d == Direction::SE) {
+        if (!in_range(o_row+1,o_col+1)) throw InvalidRange();
+        new_cell = cells[o_row+1][o_col+1];
+    }
+    else if (d == Direction::E) {
+        if (!in_range(o_row,o_col+1)) throw InvalidRange();
+        new_cell = cells[o_row][o_col+1];
+    }
+    else {
+        if (!in_range(o_row,o_col-1)) throw InvalidRange();
+        new_cell = cells[o_row][o_col-1];
+    }
     return new_cell;
+}
+
+void Grid::reset_cellsmoved() {
+    for (auto row: cells) {
+        for (auto cell: row) {
+            cell->reset_has_moved();
+        }
+    }
 }
 
 void Grid::move_enemies() {
@@ -163,7 +194,7 @@ void Grid::move_enemies() {
                 new_cell = new_cell_pos(cell,dir);
             }
             catch (InvalidRange &i) {
-                return;
+                continue;
             }
             //move enemy
             try {

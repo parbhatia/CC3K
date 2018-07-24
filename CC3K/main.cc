@@ -24,7 +24,8 @@ int main(int argc, const char * argv[]) {
                 }
                 //grid moves player at direction cmd
                 g.move_player(dir_map.at(cmd));
-                g.move_enemies();
+               // g.move_enemies();
+               // g.reset_cellsmoved();
                 cout << g;
             } else if ((cmd == "s") | (cmd == "d") | (cmd == "v") |
                        (cmd == "g") | (cmd == "t")) {

@@ -23,8 +23,6 @@ void Cell::toggle_stair() {
     else stair = true;
 }
 
-void set_stair_off();
-
 void Cell::clear(){
     if (has_stair()) toggle_stair();
     delete ob;
@@ -47,6 +45,18 @@ void Cell::setObject(Object *newob){
 
 void Cell::setPlayer(Object *newob){
     player = newob;
+}
+
+bool Cell::has_moved() {
+    return hasmoved;
+}
+
+void Cell::set_moved() {
+    hasmoved = true;;
+}
+
+void Cell::reset_has_moved() {
+    if (hasmoved) hasmoved = false;
 }
 
 Object* Cell::getPlayer() {
@@ -73,23 +83,22 @@ void Cell::moveTo(Cell &whoTo) {
     try {
         whoTo.acceptMove(*this);
     }
-    /*catch (Move_Unsuccessful &o) {
-        throw;
-    }*/
     catch(...) {
         throw;
     }
     player = nullptr;
+    ob = nullptr;
 }
 
 void Cell::acceptMove(Cell &whoFrom) {
     //only throw Stair_Cell if whoFrom is a player moving onto stair
     if (has_stair() && whoFrom.hasPlayer()) throw Stair_Cell();
-    else if (!isOccupied()) {
+    else if (!isOccupied())  { //not occupied, and cell has not been moved
         //only one object will be set
         setPlayer(whoFrom.getPlayer());
         setObject(whoFrom.getObject());
         notifyObservers();
+        //set_moved();
     } else {
         throw Move_Unsuccessful();
     }

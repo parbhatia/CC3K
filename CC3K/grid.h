@@ -32,6 +32,7 @@ class Grid {
     void new_level();
     void reset_cells();
     void reset_chambers();
+    void reset_cellsmoved(); //resets hasmoved flag on all cells
     void read_layout(std::string s);
     bool has_player_test(); //delete later
     void cell_test(); //delete later
