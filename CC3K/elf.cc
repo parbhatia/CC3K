@@ -64,4 +64,5 @@ void Elf::attack(Goblin *g) {
             throw Attack{0, g->getHp(), Result::miss};
         }
     }
+    }
 }
