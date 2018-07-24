@@ -11,8 +11,10 @@ class Object;
 class Cell {
     int row, col;
     bool hasmoved = false;
+    bool haspotion = false;
+    bool hasgold = false;
     char type = ' ';
-    bool stair = false; //determines if cell is stair
+    bool stair = false;
     TextDisplay *td;
     std::vector<Cell *> observers;
 protected:
@@ -20,6 +22,12 @@ protected:
     Object *ob = nullptr;
 public:
     Cell(int r, int c, char t);
+    void set_gold();
+    bool has_gold();
+    void reset_gold();
+    void set_potion();
+    bool has_potion();
+    void reset_potion();
     bool has_moved();
     void set_moved();
     void reset_has_moved();

@@ -36,8 +36,6 @@ int main(int argc, const char * argv[]) {
                 g.intialize_player(cmd);
                 g.generate_stairs();
                 g.generate_potions();
-                //g.cell_test();
-                //potions
                 //gold
                 g.generate_enemies();
                 cout << g;

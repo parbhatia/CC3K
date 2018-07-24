@@ -4,26 +4,59 @@ using namespace std;
 
 Cell::Cell(int r, int c, char t): row{r},col{c},type{t}{}
 
-Cell::~Cell(){
-    clear();
-}
+Cell::~Cell(){ clear(); }
 
 int Cell::getRow() { return row; }
 
 int Cell::getCol() { return col; }
 
-bool Cell::hasPlayer() {
-    return (player != nullptr);
-}
+bool Cell::hasPlayer() { return (player != nullptr); }
 
+void Cell::setObject(Object *newob){ ob = newob; }
+
+void Cell::setPlayer(Player *newob){ player = newob; }
+
+Player* Cell::getPlayer() { return player; }
+
+Object* Cell::getObject() { return ob; }
+
+//moved
+bool Cell::has_moved() { return hasmoved; }
+
+void Cell::set_moved() { hasmoved = true; }
+
+void Cell::reset_has_moved() { hasmoved = false; }
+///////
+
+//gold
+void Cell::set_gold() { hasgold = true; }
+
+bool Cell::has_gold() { return hasgold; }
+
+void Cell::reset_gold() { hasgold = false; }
+//////
+
+//potion
+void Cell::set_potion() { haspotion = true; }
+
+bool Cell::has_potion() { return haspotion; }
+
+void Cell::reset_potion() { haspotion = false; }
+////////
+
+//stair
 bool Cell::has_stair() { return stair; }
 
 void Cell::set_stair() { stair = true; }
 
 void Cell::clear_stair() { stair = false; }
+///////
 
-void Cell::clear(){
-    if (has_stair()) clear_stair();
+void Cell::clear() {
+    clear_stair();
+    reset_gold();
+    reset_potion();
+    reset_has_moved();
     delete ob;
     ob = nullptr;
     player = nullptr;
@@ -37,32 +70,7 @@ void Cell::attack(Cell &target) {
 bool Cell::isOccupied(){
     if(hasPlayer() || ob){
         return true;
-    }
-    else{
-        return false;
-    }
-}
-
-void Cell::setObject(Object *newob){
-    ob = newob;
-}
-
-void Cell::setPlayer(Player *newob){
-    player = newob;
-}
-
-bool Cell::has_moved() { return hasmoved; }
-
-void Cell::set_moved() { hasmoved = true; }
-
-void Cell::reset_has_moved() { hasmoved = false; }
-
-Player* Cell::getPlayer() {
-    return player;
-}
-
-Object* Cell::getObject() {
-    return ob;
+    } return false;
 }
 
 char Cell::print() {
@@ -116,20 +124,18 @@ void Cell::notifyObservers() {
     }
 }
 void Cell::notify(Cell &whoFrom) {
-    if (ob) {
-        whoFrom.getPlayer()->beAttacked(ob);
-    }
+    if (ob) { whoFrom.getPlayer()->beAttacked(ob); }
 }
 void Cell::attachObserver(Cell* ob) {
     observers.emplace_back(ob);
 }
-void setDisplay(TextDisplay *td) {
-    td = td;
-}
+void setDisplay(TextDisplay *td) {td = td; }
+
 void Cell::use(Cell &target) {
     Object *new_object = target.getObject();
     if (new_object) new_object->beUsed(player);
-} 
+}
+
 void notifyDisplay() { 
     //to write
 }
