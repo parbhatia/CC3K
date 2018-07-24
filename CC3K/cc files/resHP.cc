@@ -6,3 +6,4 @@ void resHP::beUsed(Player *whoFrom) {
         whoFrom->changeHp(whoFrom->getMaxHp() - whoFrom->getHp());
     }
 }
+resHP::~resHP(){}
