@@ -124,7 +124,10 @@ void Cell::notifyObservers() {
     }
 }
 void Cell::notify(Cell &whoFrom) {
-    if (ob) { whoFrom.getPlayer()->beAttacked(ob); }
+    if (ob) { 
+        Player* p = whoFrom.getPlayer();
+        ob->notify(p); 
+    }
 }
 void Cell::attachObserver(Cell* ob) {
     observers.emplace_back(ob);
