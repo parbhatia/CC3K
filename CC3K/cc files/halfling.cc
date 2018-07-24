@@ -17,7 +17,7 @@ void Halfling::beAttacked(Object* whoFrom){
 void Halfling::attack(Goblin* g){
     int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
-        int dmg = (-getAtk()*100/(100+g->getDef()));
+        double dmg = (-getAtk()*100/(100+g->getDef()));
         g->changeHp(dmg);
         if(g->getHp()<=0){
             throw Attack{dmg, 0, Result::death};
@@ -33,7 +33,7 @@ void Halfling::attack(Goblin* g){
 void Halfling::attack(Drow *h) {
     int chance = rand() % 10 + 1;
     if (chance > h->getMissChance()) {
-        int dmg = (-getAtk() * 100 / (100 + h->getDef()));
+        double dmg = (-getAtk() * 100 / (100 + h->getDef()));
         h->changeHp(dmg);
         if(h->getHp()<=0){
             throw Attack{dmg, 0, Result::death};

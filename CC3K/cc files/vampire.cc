@@ -16,10 +16,10 @@ void Vampire::beAttacked(Object *whoFrom) {
 void Vampire::attack(Character *whoTo) {
     int chance = rand() % 10 + 1;
     if (chance > getMissChance()) {
-    int dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
+    double dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
     whoTo->changeHp(dmg); 
     if(whoTo->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
+      throw Attack{dmg, 0, Result::death};
     } else {
       throw Attack{dmg, whoTo->getHp(), Result::attack};
     }
@@ -32,11 +32,11 @@ void Vampire::attack(Character *whoTo) {
 void Vampire::attack(Halfling *h) {
   int chance = rand() % 10 + 1;
   if (chance > 5) {   // Halfling has 50% chance to cause PC to miss.
-    int dmg = (-getAtk() * 100 / (100 + h->getDef()));
+    double dmg = (-getAtk() * 100 / (100 + h->getDef()));
     h->changeHp(dmg); 
     changeHp(5);   // Vampire gains 5 HP every successful attack.
     if(h->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
+      throw Attack{dmg, 0, Result::death};
     } else {
       throw Attack{dmg, h->getHp(), Result::attack};
     }    
@@ -48,7 +48,7 @@ void Vampire::attack(Halfling *h) {
 void Vampire::attack(Dwarf *d) {
   int chance = rand() % 10 + 1;
   if (chance > getMissChance()) {
-    int dmg = (-getAtk() * 100 / (100 + d->getDef()));
+    double dmg = (-getAtk() * 100 / (100 + d->getDef()));
     d->changeHp(dmg);
     if(d->getHp()<=0){
       throw Attack{dmg, 0, Result::death};
