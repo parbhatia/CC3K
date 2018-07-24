@@ -87,7 +87,7 @@ char Cell::print() {
 
 void Cell::moveTo(Cell &whoTo) {
     //only move cell if it's not been moved on
-    if (!has_moved()) {
+    if (!has_moved() && !has_potion() && !has_gold()) {
         try {
             whoTo.acceptMove(*this);
         }
