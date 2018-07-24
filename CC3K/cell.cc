@@ -12,6 +12,8 @@ int Cell::getCol() { return col; }
 
 bool Cell::hasPlayer() { return (player != nullptr); }
 
+bool Cell::hasObject() { return (ob!= nullptr); }
+
 void Cell::setObject(Object *newob){ ob = newob; }
 
 void Cell::setPlayer(Player *newob){ player = newob; }
@@ -86,7 +88,6 @@ char Cell::print() {
 }
 
 void Cell::moveTo(Cell &whoTo) {
-    //only move cell if it's not been moved on
     if (!has_moved() && !has_potion() && !has_gold()) {
         try {
             whoTo.acceptMove(*this);
@@ -107,6 +108,7 @@ void Cell::moveTo(Cell &whoTo) {
 
 void Cell::acceptMove(Cell &whoFrom) {
     if (has_stair() && whoFrom.hasPlayer()) throw Stair_Cell();
+    else if (has_stair() && whoFrom.hasObject()) { throw Move_Unsuccessful(); }
     else if (!isOccupied())  {
         //only one object will be set
         setPlayer(whoFrom.getPlayer());

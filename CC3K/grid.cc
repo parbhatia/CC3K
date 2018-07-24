@@ -67,6 +67,15 @@ bool Grid::in_range(int row, int col) {
     return ((row>=0 && row<height-5) && (col >0 && col<width));
 }
 
+void Grid::notify_player_observers() {
+    try {
+        player_cell->notifyObservers();
+    }
+    catch(Attack &o) {
+        cout << "Enemy attacks player" << endl;
+    }
+}
+
 void Grid::set_observers() {
     //iterate over cells, and set radius of each cell to observe others
     for (auto row : cells) {
@@ -136,7 +145,7 @@ void Grid::use_pot(Direction d) {
     try {
         new_cell->use(*new_cell);
     }
-    catch (...) {
+    catch (Poteffect &p) {
     }
 }
 
