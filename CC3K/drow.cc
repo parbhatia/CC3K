@@ -4,7 +4,7 @@
 #include "attack.h"
 #include <cstdlib>
 
-Drow::Drow(int atk, int def, int hp): Player{atk, def, hp} {
+Drow::Drow(double atk, double def, double hp): Player{atk, def, hp} {
   setPotRate(1.5);
 }
 

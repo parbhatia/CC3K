@@ -15,7 +15,7 @@
 class Factory {
 public:
     Object *EnemyFactory(int rand_num); //creates enemies based on random number passed
-    Object *PlayerFactory(std::string s); //creates players based on string s
+    Player *PlayerFactory(std::string s); //creates players based on string s
 };
 
 

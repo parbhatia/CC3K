@@ -17,7 +17,7 @@ Elf::Elf() : Enemy{30, 10, 140} {
 
 
 void Elf::attack(Drow *d){  //only attack Drow once
-    int chance = rand()%10 + 1;   
+    int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
         double dmg = -getAtk()*100/(100+d->getDef());
         d->changeHp(dmg);
@@ -25,7 +25,7 @@ void Elf::attack(Drow *d){  //only attack Drow once
             throw Attack{dmg,0,Result::death};
         }
         else{
-            throw Attack{dmg, d->getHp(), Result::attack}; 
+            throw Attack{dmg, d->getHp(), Result::attack};
         }
     }
     else{
@@ -44,13 +44,18 @@ void Elf::attack(Character* whoTo){
                 throw Attack{dmg,0,Result::death};
             }
             else{
-                throw Attack{dmg, whoTo->getHp(), Result::attack}; 
+                throw Attack{dmg, whoTo->getHp(), Result::attack};
             }
         }
     }
+<<<<<<< HEAD:CC3K/cc files/elf.cc
+=======
+    
+>>>>>>> dd6ffc9a75018b1164dc6163cf7e485d88fdd3ac:CC3K/elf.cc
 }
 
 void Elf::attack(Goblin *g) {
+<<<<<<< HEAD:CC3K/cc files/elf.cc
     int chance;
     for (int i = 0; i < 2; i++) {
     if (chance > getMissChance()) {
@@ -59,13 +64,22 @@ void Elf::attack(Goblin *g) {
         g->changeHp(dmg);
         if(g->getHp() <= 0){
             throw Attack{dmg,0,Result::death};
+=======
+    int chance = rand()%10 + 1;
+    for (int i = 0; i < 2; ++i) {
+        if (chance > getMissChance()) {
+            double dmg = -getAtk()*100/(100+g->getDef());
+            g->changeHp(dmg);
+            if(g->getHp() <= 0){
+                throw Attack{dmg,0,Result::death};
+            }
+            else{
+                throw Attack{dmg, g->getHp(), Result::attack};
+            }
+>>>>>>> dd6ffc9a75018b1164dc6163cf7e485d88fdd3ac:CC3K/elf.cc
         }
         else{
-            throw Attack{dmg, g->getHp(), Result::attack}; 
+            throw Attack{0, g->getHp(), Result::miss};
         }
-    }
-    else{
-        throw Attack{0, g->getHp(), Result::miss};
-    }   
     }
 }

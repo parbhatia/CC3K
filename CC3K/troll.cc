@@ -4,7 +4,7 @@
 #include "attack.h"
 #include <cstdlib>
 
-Troll::Troll(int atk, int def, int hp): Player{atk, def, hp} {}
+Troll::Troll(double atk, double def, double hp): Player{atk, def, hp} {}
 
 void Troll::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
@@ -28,7 +28,7 @@ void Troll::attack(Halfling *h) {
 void Troll::attack(Dwarf *d) {
   double chance = rand() % 10 + 1;
   if (chance > getMissChance()) {
-    int dmg = (-getAtk() * 100 / (100 + d->getDef()));
+    double dmg = (-getAtk() * 100 / (100 + d->getDef()));
     d->changeHp(dmg); 
     if(d->getHp()<=0){
       throw Attack{dmg, 0, Result::death};

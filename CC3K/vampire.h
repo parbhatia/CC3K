@@ -6,7 +6,7 @@
 
 class Vampire: public Player {
 public:
-    Vampire(int atk=25, int def=25, int hp=50);
+    Vampire(double atk=25, double def=25, double hp=50);
     void beAttacked(Object *whoFrom) override;
     void attack(Character *whoTo) override; //gains 5 hp every successful attack
     void attack(Halfling *h) override;

@@ -21,7 +21,7 @@ class Grid {
     int level = 1;
     std::string race;
     int gold = 0;
-    Object *player = nullptr; //grid keeps track of player
+    Player *player = nullptr; //grid keeps track of player
     Cell *player_cell = nullptr; //keeping track of player's movements
     std::vector<Chamber> chambers; //chambers on each level
     std::vector<std::string> actions; //keeping track of actions
