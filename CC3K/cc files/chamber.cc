@@ -46,6 +46,7 @@ void Chamber::add_cell(Cell *c) {
 }
 
 int Chamber::cell_picker() {
+    cout << cells.size() << endl;
     return rand() % cells.size();
 }
 
