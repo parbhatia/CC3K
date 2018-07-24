@@ -34,7 +34,7 @@ Cell* Chamber::give_playercell() {
 }
 
 //assumes chamber has player
-Object* Chamber::give_player() {
+Player* Chamber::give_player() {
     for (auto cell: cells) {
         if (cell->hasPlayer()) return cell->getPlayer();
     }
@@ -53,7 +53,7 @@ int Chamber::enemy_picker() {
     return rand() % enemy_distribution_number;
 }
 
-void Chamber::generate_player_cell(Object *p) {
+void Chamber::generate_player_cell(Player *p) {
     bool done = false;
     while (!done) {
         int x = cell_picker();
@@ -69,7 +69,7 @@ void Chamber::generate_player(string type) {
     while (!done) {
         int x = cell_picker();
         if (!cells[x]->isOccupied()) {
-            Object *new_player = f.PlayerFactory(type);
+            Player *new_player = f.PlayerFactory(type);
             cells[x]->setPlayer(new_player);
             done = true;
         }

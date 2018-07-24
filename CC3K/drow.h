@@ -4,7 +4,7 @@
 
 class Drow: public Player {
 public:
-    Drow(int atk=25, int def=15, int hp=150);
+    Drow(double atk=25, double def=15, double hp=150);
     void beAttacked(Object *whoFrom) override;
     void attack(Halfling *h) override;
     void attack(Dwarf *d) override;

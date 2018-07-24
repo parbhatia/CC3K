@@ -29,7 +29,7 @@ Object *Factory::EnemyFactory(int rand_num) {
     else return new Dwarf(); //change to merchant
 }
 
-Object *Factory::PlayerFactory(string s) {
+Player *Factory::PlayerFactory(string s) {
     if (s == "d") return new Drow();
     else if (s == "v") return new Vampire();
     else if (s == "g") return new Shade (); //change to Goblin();

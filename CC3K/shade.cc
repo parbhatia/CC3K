@@ -4,7 +4,7 @@
 #include "attack.h"
 #include <cstdlib>
 
-Shade::Shade(int atk, int def, int hp): Player{atk, def, hp} {}
+Shade::Shade(double atk, double def, double hp): Player{atk, def, hp} {}
 
 void Shade::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);

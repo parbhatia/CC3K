@@ -8,36 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		4B2B5D6E20FE8B1B00F5B673 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D6D20FE8B1B00F5B673 /* main.cc */; };
-		4B2B5D7620FE968D00F5B673 /* grid.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D7420FE968D00F5B673 /* grid.cc */; };
-		4B2B5D7920FE969A00F5B673 /* textdisplay.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D7720FE969A00F5B673 /* textdisplay.cc */; };
-		4B2B5D7C20FE96C700F5B673 /* cell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D7A20FE96C700F5B673 /* cell.cc */; };
-		4B2B5D8120FEBA2200F5B673 /* floorcell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8020FEBA2200F5B673 /* floorcell.cc */; };
-		4B2B5D8420FEBB6300F5B673 /* nullcell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8320FEBB6300F5B673 /* nullcell.cc */; };
-		4B2B5D8620FEBD2B00F5B673 /* doorcell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8520FEBD2B00F5B673 /* doorcell.cc */; };
-		4B2B5D8920FEC1D200F5B673 /* bridge.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8820FEC1D200F5B673 /* bridge.cc */; };
-		4B2B5D8F20FFD80B00F5B673 /* item.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B2B5D8E20FFD80B00F5B673 /* item.cc */; };
-		4B3BD7552107AF3500C0C3E7 /* gold.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD74F2107AF3400C0C3E7 /* gold.cc */; };
-		4B3BD7562107AF3500C0C3E7 /* goblin.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7512107AF3400C0C3E7 /* goblin.cc */; };
-		4B3BD7572107AF3500C0C3E7 /* poiHP.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7522107AF3400C0C3E7 /* poiHP.cc */; };
-		4B3BD7582107AF3500C0C3E7 /* troll.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7532107AF3400C0C3E7 /* troll.cc */; };
-		4B53F1B820FFE96300736E14 /* chamber.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1B620FFE96300736E14 /* chamber.cc */; };
-		4B53F1BA21000FB800736E14 /* character.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1B921000FB800736E14 /* character.cc */; };
-		4B53F1C22100105B00736E14 /* shade.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1BD2100105A00736E14 /* shade.cc */; };
-		4B53F1C421018C8200736E14 /* enemy.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1C321018C8200736E14 /* enemy.cc */; };
-		4B53F1C721018CF900736E14 /* dwarf.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1C521018CF900736E14 /* dwarf.cc */; };
-		4B53F1CA2102A26000736E14 /* object.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1C92102A26000736E14 /* object.cc */; };
-		4B53F1CD2104406700736E14 /* factory.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1CB2104406700736E14 /* factory.cc */; };
-		4B53F1D02104E20900736E14 /* potion.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B53F1CF2104E20900736E14 /* potion.cc */; };
+		4B3BD7752107AF8900C0C3E7 /* dwarf.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7592107AF8300C0C3E7 /* dwarf.cc */; };
+		4B3BD7762107AF8900C0C3E7 /* grid.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD75A2107AF8300C0C3E7 /* grid.cc */; };
+		4B3BD7772107AF8900C0C3E7 /* vampire.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD75B2107AF8300C0C3E7 /* vampire.cc */; };
+		4B3BD7782107AF8900C0C3E7 /* character.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD75C2107AF8400C0C3E7 /* character.cc */; };
+		4B3BD7792107AF8900C0C3E7 /* object.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD75D2107AF8400C0C3E7 /* object.cc */; };
+		4B3BD77A2107AF8900C0C3E7 /* enemy.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD75E2107AF8400C0C3E7 /* enemy.cc */; };
+		4B3BD77B2107AF8900C0C3E7 /* halfling.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD75F2107AF8400C0C3E7 /* halfling.cc */; };
+		4B3BD77D2107AF8900C0C3E7 /* textdisplay.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7612107AF8500C0C3E7 /* textdisplay.cc */; };
+		4B3BD77F2107AF8900C0C3E7 /* poiHP.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7632107AF8500C0C3E7 /* poiHP.cc */; };
+		4B3BD7802107AF8900C0C3E7 /* nullcell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7642107AF8500C0C3E7 /* nullcell.cc */; };
+		4B3BD7812107AF8900C0C3E7 /* gold.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7652107AF8600C0C3E7 /* gold.cc */; };
+		4B3BD7822107AF8900C0C3E7 /* potion.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7662107AF8600C0C3E7 /* potion.cc */; };
+		4B3BD7832107AF8900C0C3E7 /* shade.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7672107AF8600C0C3E7 /* shade.cc */; };
+		4B3BD7842107AF8900C0C3E7 /* player.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7682107AF8600C0C3E7 /* player.cc */; };
+		4B3BD7852107AF8900C0C3E7 /* drow.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7692107AF8600C0C3E7 /* drow.cc */; };
+		4B3BD7862107AF8900C0C3E7 /* doorcell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD76A2107AF8600C0C3E7 /* doorcell.cc */; };
+		4B3BD7872107AF8900C0C3E7 /* resHP.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD76B2107AF8700C0C3E7 /* resHP.cc */; };
+		4B3BD7882107AF8900C0C3E7 /* floorcell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD76C2107AF8700C0C3E7 /* floorcell.cc */; };
+		4B3BD7892107AF8900C0C3E7 /* chamber.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD76D2107AF8700C0C3E7 /* chamber.cc */; };
+		4B3BD78A2107AF8900C0C3E7 /* orc.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD76E2107AF8700C0C3E7 /* orc.cc */; };
+		4B3BD78B2107AF8900C0C3E7 /* human.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD76F2107AF8700C0C3E7 /* human.cc */; };
+		4B3BD78C2107AF8900C0C3E7 /* item.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7702107AF8800C0C3E7 /* item.cc */; };
+		4B3BD78D2107AF8900C0C3E7 /* factory.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7712107AF8800C0C3E7 /* factory.cc */; };
+		4B3BD78E2107AF8900C0C3E7 /* elf.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7722107AF8800C0C3E7 /* elf.cc */; };
+		4B3BD78F2107AF8900C0C3E7 /* bridge.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7732107AF8800C0C3E7 /* bridge.cc */; };
+		4B3BD7902107AF8900C0C3E7 /* cell.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4B3BD7742107AF8800C0C3E7 /* cell.cc */; };
 		4BA7723121057002000D60CC /* troll.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7722D21057001000D60CC /* troll.cc */; };
 		4BA7723221057002000D60CC /* goblin.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BA7722E21057001000D60CC /* goblin.cc */; };
-		4BCE7AF621052EEE00B2532A /* resHP.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AEB21052EED00B2532A /* resHP.cc */; };
-		4BCE7AF721052EEE00B2532A /* vampire.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF021052EED00B2532A /* vampire.cc */; };
-		4BCE7AF821052EEE00B2532A /* elf.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF121052EED00B2532A /* elf.cc */; };
-		4BCE7AF921052EEE00B2532A /* halfling.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF221052EEE00B2532A /* halfling.cc */; };
-		4BCE7AFA21052EEE00B2532A /* human.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF421052EEE00B2532A /* human.cc */; };
-		4BCE7AFB21052EEE00B2532A /* orc.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AF521052EEE00B2532A /* orc.cc */; };
-		4BCE7AFF210535E900B2532A /* player.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AFC210535E800B2532A /* player.cc */; };
-		4BCE7B00210535E900B2532A /* drow.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BCE7AFE210535E900B2532A /* drow.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,69 +53,67 @@
 /* Begin PBXFileReference section */
 		4B2B5D6A20FE8B1B00F5B673 /* CC3K */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CC3K; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B2B5D6D20FE8B1B00F5B673 /* main.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cc; sourceTree = "<group>"; };
-		4B2B5D7420FE968D00F5B673 /* grid.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = grid.cc; sourceTree = "<group>"; };
 		4B2B5D7520FE968D00F5B673 /* grid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = grid.h; sourceTree = "<group>"; };
-		4B2B5D7720FE969A00F5B673 /* textdisplay.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = textdisplay.cc; sourceTree = "<group>"; };
 		4B2B5D7820FE969A00F5B673 /* textdisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textdisplay.h; sourceTree = "<group>"; };
-		4B2B5D7A20FE96C700F5B673 /* cell.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cell.cc; sourceTree = "<group>"; };
 		4B2B5D7B20FE96C700F5B673 /* cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cell.h; sourceTree = "<group>"; };
 		4B2B5D7D20FE9B6900F5B673 /* cc3k_emptyfloor.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = cc3k_emptyfloor.txt; sourceTree = "<group>"; };
 		4B2B5D7E20FEBA2200F5B673 /* floorcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = floorcell.h; sourceTree = "<group>"; };
 		4B2B5D7F20FEBA2200F5B673 /* doorcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doorcell.h; sourceTree = "<group>"; };
-		4B2B5D8020FEBA2200F5B673 /* floorcell.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = floorcell.cc; sourceTree = "<group>"; };
 		4B2B5D8220FEBB6300F5B673 /* nullcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nullcell.h; sourceTree = "<group>"; };
-		4B2B5D8320FEBB6300F5B673 /* nullcell.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nullcell.cc; sourceTree = "<group>"; };
-		4B2B5D8520FEBD2B00F5B673 /* doorcell.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = doorcell.cc; sourceTree = "<group>"; };
 		4B2B5D8720FEC1D200F5B673 /* bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
-		4B2B5D8820FEC1D200F5B673 /* bridge.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bridge.cc; sourceTree = "<group>"; };
 		4B2B5D8B20FFD7A000F5B673 /* character.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = character.h; sourceTree = "<group>"; };
 		4B2B5D8D20FFD7F300F5B673 /* item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = item.h; sourceTree = "<group>"; };
-		4B2B5D8E20FFD80B00F5B673 /* item.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = item.cc; sourceTree = "<group>"; };
-		4B3BD74F2107AF3400C0C3E7 /* gold.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gold.cc; path = "cc files/gold.cc"; sourceTree = "<group>"; };
 		4B3BD7502107AF3400C0C3E7 /* poiHP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = poiHP.h; sourceTree = "<group>"; };
-		4B3BD7512107AF3400C0C3E7 /* goblin.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = goblin.cc; path = "cc files/goblin.cc"; sourceTree = "<group>"; };
-		4B3BD7522107AF3400C0C3E7 /* poiHP.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = poiHP.cc; path = "cc files/poiHP.cc"; sourceTree = "<group>"; };
-		4B3BD7532107AF3400C0C3E7 /* troll.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = troll.cc; path = "cc files/troll.cc"; sourceTree = "<group>"; };
 		4B3BD7542107AF3500C0C3E7 /* gold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gold.h; sourceTree = "<group>"; };
-		4B53F1B620FFE96300736E14 /* chamber.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chamber.cc; sourceTree = "<group>"; };
+		4B3BD7592107AF8300C0C3E7 /* dwarf.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dwarf.cc; sourceTree = "<group>"; };
+		4B3BD75A2107AF8300C0C3E7 /* grid.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = grid.cc; sourceTree = "<group>"; };
+		4B3BD75B2107AF8300C0C3E7 /* vampire.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vampire.cc; sourceTree = "<group>"; };
+		4B3BD75C2107AF8400C0C3E7 /* character.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = character.cc; sourceTree = "<group>"; };
+		4B3BD75D2107AF8400C0C3E7 /* object.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = object.cc; sourceTree = "<group>"; };
+		4B3BD75E2107AF8400C0C3E7 /* enemy.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enemy.cc; sourceTree = "<group>"; };
+		4B3BD75F2107AF8400C0C3E7 /* halfling.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = halfling.cc; sourceTree = "<group>"; };
+		4B3BD7612107AF8500C0C3E7 /* textdisplay.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = textdisplay.cc; sourceTree = "<group>"; };
+		4B3BD7632107AF8500C0C3E7 /* poiHP.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = poiHP.cc; sourceTree = "<group>"; };
+		4B3BD7642107AF8500C0C3E7 /* nullcell.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = nullcell.cc; sourceTree = "<group>"; };
+		4B3BD7652107AF8600C0C3E7 /* gold.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gold.cc; sourceTree = "<group>"; };
+		4B3BD7662107AF8600C0C3E7 /* potion.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = potion.cc; sourceTree = "<group>"; };
+		4B3BD7672107AF8600C0C3E7 /* shade.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = shade.cc; sourceTree = "<group>"; };
+		4B3BD7682107AF8600C0C3E7 /* player.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = player.cc; sourceTree = "<group>"; };
+		4B3BD7692107AF8600C0C3E7 /* drow.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = drow.cc; sourceTree = "<group>"; };
+		4B3BD76A2107AF8600C0C3E7 /* doorcell.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = doorcell.cc; sourceTree = "<group>"; };
+		4B3BD76B2107AF8700C0C3E7 /* resHP.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = resHP.cc; sourceTree = "<group>"; };
+		4B3BD76C2107AF8700C0C3E7 /* floorcell.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = floorcell.cc; sourceTree = "<group>"; };
+		4B3BD76D2107AF8700C0C3E7 /* chamber.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = chamber.cc; sourceTree = "<group>"; };
+		4B3BD76E2107AF8700C0C3E7 /* orc.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = orc.cc; sourceTree = "<group>"; };
+		4B3BD76F2107AF8700C0C3E7 /* human.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = human.cc; sourceTree = "<group>"; };
+		4B3BD7702107AF8800C0C3E7 /* item.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = item.cc; sourceTree = "<group>"; };
+		4B3BD7712107AF8800C0C3E7 /* factory.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = factory.cc; sourceTree = "<group>"; };
+		4B3BD7722107AF8800C0C3E7 /* elf.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = elf.cc; sourceTree = "<group>"; };
+		4B3BD7732107AF8800C0C3E7 /* bridge.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bridge.cc; sourceTree = "<group>"; };
+		4B3BD7742107AF8800C0C3E7 /* cell.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cell.cc; sourceTree = "<group>"; };
 		4B53F1B720FFE96300736E14 /* chamber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chamber.h; sourceTree = "<group>"; };
-		4B53F1B921000FB800736E14 /* character.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = character.cc; sourceTree = "<group>"; };
 		4B53F1BB2100105A00736E14 /* enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enemy.h; sourceTree = "<group>"; };
 		4B53F1BC2100105A00736E14 /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
-		4B53F1BD2100105A00736E14 /* shade.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shade.cc; sourceTree = "<group>"; };
 		4B53F1BE2100105A00736E14 /* potion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = potion.h; sourceTree = "<group>"; };
 		4B53F1BF2100105B00736E14 /* shade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shade.h; sourceTree = "<group>"; };
 		4B53F1C02100105B00736E14 /* Todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo; sourceTree = "<group>"; };
 		4B53F1C12100105B00736E14 /* player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = player.h; sourceTree = "<group>"; };
-		4B53F1C321018C8200736E14 /* enemy.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enemy.cc; sourceTree = "<group>"; };
-		4B53F1C521018CF900736E14 /* dwarf.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dwarf.cc; sourceTree = "<group>"; };
 		4B53F1C621018CF900736E14 /* dwarf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dwarf.h; sourceTree = "<group>"; };
 		4B53F1C821018EE300736E14 /* info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = info.h; sourceTree = "<group>"; };
-		4B53F1C92102A26000736E14 /* object.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = object.cc; sourceTree = "<group>"; };
-		4B53F1CB2104406700736E14 /* factory.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = factory.cc; sourceTree = "<group>"; };
 		4B53F1CC2104406700736E14 /* factory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = factory.h; sourceTree = "<group>"; };
 		4B53F1CE2104E20900736E14 /* vampire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vampire.h; sourceTree = "<group>"; };
-		4B53F1CF2104E20900736E14 /* potion.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = potion.cc; sourceTree = "<group>"; };
 		4BA7722D21057001000D60CC /* troll.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = troll.cc; sourceTree = "<group>"; };
 		4BA7722E21057001000D60CC /* goblin.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = goblin.cc; sourceTree = "<group>"; };
 		4BA7722F21057001000D60CC /* goblin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = goblin.h; sourceTree = "<group>"; };
 		4BA7723021057001000D60CC /* troll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = troll.h; sourceTree = "<group>"; };
 		4BA77233210577EA000D60CC /* cc files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "cc files"; sourceTree = "<group>"; };
 		4BBD9C5B21067BCE00F0BC2B /* attack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = attack.h; sourceTree = "<group>"; };
-		4BCE7AEB21052EED00B2532A /* resHP.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = resHP.cc; sourceTree = "<group>"; };
 		4BCE7AEC21052EED00B2532A /* resHP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resHP.h; sourceTree = "<group>"; };
 		4BCE7AED21052EED00B2532A /* halfling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = halfling.h; sourceTree = "<group>"; };
 		4BCE7AEE21052EED00B2532A /* human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = human.h; sourceTree = "<group>"; };
 		4BCE7AEF21052EED00B2532A /* orc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orc.h; sourceTree = "<group>"; };
-		4BCE7AF021052EED00B2532A /* vampire.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vampire.cc; sourceTree = "<group>"; };
-		4BCE7AF121052EED00B2532A /* elf.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = elf.cc; sourceTree = "<group>"; };
-		4BCE7AF221052EEE00B2532A /* halfling.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = halfling.cc; sourceTree = "<group>"; };
 		4BCE7AF321052EEE00B2532A /* elf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = elf.h; sourceTree = "<group>"; };
-		4BCE7AF421052EEE00B2532A /* human.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = human.cc; sourceTree = "<group>"; };
-		4BCE7AF521052EEE00B2532A /* orc.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = orc.cc; sourceTree = "<group>"; };
-		4BCE7AFC210535E800B2532A /* player.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = player.cc; sourceTree = "<group>"; };
 		4BCE7AFD210535E900B2532A /* drow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drow.h; sourceTree = "<group>"; };
-		4BCE7AFE210535E900B2532A /* drow.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = drow.cc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,12 +159,12 @@
 				4BCE7AEF21052EED00B2532A /* orc.h */,
 				4B53F1BB2100105A00736E14 /* enemy.h */,
 				4B2B5D8B20FFD7A000F5B673 /* character.h */,
-				4B3BD7512107AF3400C0C3E7 /* goblin.cc */,
-				4B3BD74F2107AF3400C0C3E7 /* gold.cc */,
+				4B3BD7712107AF8800C0C3E7 /* factory.cc */,
+				4B3BD76C2107AF8700C0C3E7 /* floorcell.cc */,
 				4B3BD7542107AF3500C0C3E7 /* gold.h */,
-				4B3BD7522107AF3400C0C3E7 /* poiHP.cc */,
+				4B3BD76E2107AF8700C0C3E7 /* orc.cc */,
+				4B3BD7682107AF8600C0C3E7 /* player.cc */,
 				4B3BD7502107AF3400C0C3E7 /* poiHP.h */,
-				4B3BD7532107AF3400C0C3E7 /* troll.cc */,
 				4B53F1BC2100105A00736E14 /* object.h */,
 				4B2B5D7F20FEBA2200F5B673 /* doorcell.h */,
 				4B2B5D7E20FEBA2200F5B673 /* floorcell.h */,
@@ -189,6 +185,28 @@
 				4BCE7AED21052EED00B2532A /* halfling.h */,
 				4BCE7AEE21052EED00B2532A /* human.h */,
 				4B2B5D7820FE969A00F5B673 /* textdisplay.h */,
+				4B3BD7732107AF8800C0C3E7 /* bridge.cc */,
+				4B3BD7742107AF8800C0C3E7 /* cell.cc */,
+				4B3BD76D2107AF8700C0C3E7 /* chamber.cc */,
+				4B3BD75C2107AF8400C0C3E7 /* character.cc */,
+				4B3BD76A2107AF8600C0C3E7 /* doorcell.cc */,
+				4B3BD7692107AF8600C0C3E7 /* drow.cc */,
+				4B3BD7592107AF8300C0C3E7 /* dwarf.cc */,
+				4B3BD7722107AF8800C0C3E7 /* elf.cc */,
+				4B3BD75E2107AF8400C0C3E7 /* enemy.cc */,
+				4B3BD7652107AF8600C0C3E7 /* gold.cc */,
+				4B3BD75A2107AF8300C0C3E7 /* grid.cc */,
+				4B3BD75F2107AF8400C0C3E7 /* halfling.cc */,
+				4B3BD76F2107AF8700C0C3E7 /* human.cc */,
+				4B3BD7702107AF8800C0C3E7 /* item.cc */,
+				4B3BD7642107AF8500C0C3E7 /* nullcell.cc */,
+				4B3BD75D2107AF8400C0C3E7 /* object.cc */,
+				4B3BD7632107AF8500C0C3E7 /* poiHP.cc */,
+				4B3BD7662107AF8600C0C3E7 /* potion.cc */,
+				4B3BD76B2107AF8700C0C3E7 /* resHP.cc */,
+				4B3BD7672107AF8600C0C3E7 /* shade.cc */,
+				4B3BD7612107AF8500C0C3E7 /* textdisplay.cc */,
+				4B3BD75B2107AF8300C0C3E7 /* vampire.cc */,
 				4BA77233210577EA000D60CC /* cc files */,
 				4BA7722C21056FE0000D60CC /* cc files */,
 			);
@@ -198,30 +216,6 @@
 		4BA7722C21056FE0000D60CC /* cc files */ = {
 			isa = PBXGroup;
 			children = (
-				4BCE7AFE210535E900B2532A /* drow.cc */,
-				4BCE7AFC210535E800B2532A /* player.cc */,
-				4B53F1CB2104406700736E14 /* factory.cc */,
-				4BCE7AF521052EEE00B2532A /* orc.cc */,
-				4BCE7AF121052EED00B2532A /* elf.cc */,
-				4BCE7AF221052EEE00B2532A /* halfling.cc */,
-				4BCE7AF421052EEE00B2532A /* human.cc */,
-				4BCE7AEB21052EED00B2532A /* resHP.cc */,
-				4BCE7AF021052EED00B2532A /* vampire.cc */,
-				4B53F1CF2104E20900736E14 /* potion.cc */,
-				4B53F1C92102A26000736E14 /* object.cc */,
-				4B53F1C521018CF900736E14 /* dwarf.cc */,
-				4B53F1C321018C8200736E14 /* enemy.cc */,
-				4B53F1B921000FB800736E14 /* character.cc */,
-				4B53F1BD2100105A00736E14 /* shade.cc */,
-				4B53F1B620FFE96300736E14 /* chamber.cc */,
-				4B2B5D8E20FFD80B00F5B673 /* item.cc */,
-				4B2B5D7420FE968D00F5B673 /* grid.cc */,
-				4B2B5D8520FEBD2B00F5B673 /* doorcell.cc */,
-				4B2B5D8020FEBA2200F5B673 /* floorcell.cc */,
-				4B2B5D8820FEC1D200F5B673 /* bridge.cc */,
-				4B2B5D7720FE969A00F5B673 /* textdisplay.cc */,
-				4B2B5D7A20FE96C700F5B673 /* cell.cc */,
-				4B2B5D8320FEBB6300F5B673 /* nullcell.cc */,
 			);
 			path = "cc files";
 			sourceTree = "<group>";
@@ -282,37 +276,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B53F1BA21000FB800736E14 /* character.cc in Sources */,
-				4B2B5D8420FEBB6300F5B673 /* nullcell.cc in Sources */,
-				4BCE7AFF210535E900B2532A /* player.cc in Sources */,
-				4B2B5D7920FE969A00F5B673 /* textdisplay.cc in Sources */,
-				4BCE7AFB21052EEE00B2532A /* orc.cc in Sources */,
-				4BCE7AF721052EEE00B2532A /* vampire.cc in Sources */,
-				4B53F1D02104E20900736E14 /* potion.cc in Sources */,
-				4BCE7AF821052EEE00B2532A /* elf.cc in Sources */,
-				4BCE7B00210535E900B2532A /* drow.cc in Sources */,
-				4B53F1C421018C8200736E14 /* enemy.cc in Sources */,
-				4B53F1CD2104406700736E14 /* factory.cc in Sources */,
-				4B53F1CA2102A26000736E14 /* object.cc in Sources */,
+				4B3BD78F2107AF8900C0C3E7 /* bridge.cc in Sources */,
+				4B3BD7872107AF8900C0C3E7 /* resHP.cc in Sources */,
+				4B3BD77A2107AF8900C0C3E7 /* enemy.cc in Sources */,
+				4B3BD78D2107AF8900C0C3E7 /* factory.cc in Sources */,
 				4BA7723221057002000D60CC /* goblin.cc in Sources */,
-				4B3BD7582107AF3500C0C3E7 /* troll.cc in Sources */,
-				4B2B5D8920FEC1D200F5B673 /* bridge.cc in Sources */,
-				4BCE7AF921052EEE00B2532A /* halfling.cc in Sources */,
-				4BCE7AF621052EEE00B2532A /* resHP.cc in Sources */,
-				4B2B5D7C20FE96C700F5B673 /* cell.cc in Sources */,
-				4B53F1C22100105B00736E14 /* shade.cc in Sources */,
-				4B2B5D8F20FFD80B00F5B673 /* item.cc in Sources */,
+				4B3BD7902107AF8900C0C3E7 /* cell.cc in Sources */,
+				4B3BD7802107AF8900C0C3E7 /* nullcell.cc in Sources */,
+				4B3BD7882107AF8900C0C3E7 /* floorcell.cc in Sources */,
+				4B3BD7792107AF8900C0C3E7 /* object.cc in Sources */,
+				4B3BD78E2107AF8900C0C3E7 /* elf.cc in Sources */,
+				4B3BD7752107AF8900C0C3E7 /* dwarf.cc in Sources */,
+				4B3BD7762107AF8900C0C3E7 /* grid.cc in Sources */,
+				4B3BD7822107AF8900C0C3E7 /* potion.cc in Sources */,
+				4B3BD7832107AF8900C0C3E7 /* shade.cc in Sources */,
 				4B2B5D6E20FE8B1B00F5B673 /* main.cc in Sources */,
-				4B3BD7572107AF3500C0C3E7 /* poiHP.cc in Sources */,
-				4B53F1B820FFE96300736E14 /* chamber.cc in Sources */,
-				4B3BD7552107AF3500C0C3E7 /* gold.cc in Sources */,
-				4B53F1C721018CF900736E14 /* dwarf.cc in Sources */,
+				4B3BD77F2107AF8900C0C3E7 /* poiHP.cc in Sources */,
+				4B3BD7892107AF8900C0C3E7 /* chamber.cc in Sources */,
+				4B3BD7842107AF8900C0C3E7 /* player.cc in Sources */,
+				4B3BD78C2107AF8900C0C3E7 /* item.cc in Sources */,
+				4B3BD77B2107AF8900C0C3E7 /* halfling.cc in Sources */,
+				4B3BD7782107AF8900C0C3E7 /* character.cc in Sources */,
+				4B3BD7812107AF8900C0C3E7 /* gold.cc in Sources */,
 				4BA7723121057002000D60CC /* troll.cc in Sources */,
-				4B3BD7562107AF3500C0C3E7 /* goblin.cc in Sources */,
-				4B2B5D8620FEBD2B00F5B673 /* doorcell.cc in Sources */,
-				4BCE7AFA21052EEE00B2532A /* human.cc in Sources */,
-				4B2B5D7620FE968D00F5B673 /* grid.cc in Sources */,
-				4B2B5D8120FEBA2200F5B673 /* floorcell.cc in Sources */,
+				4B3BD7852107AF8900C0C3E7 /* drow.cc in Sources */,
+				4B3BD78B2107AF8900C0C3E7 /* human.cc in Sources */,
+				4B3BD77D2107AF8900C0C3E7 /* textdisplay.cc in Sources */,
+				4B3BD7862107AF8900C0C3E7 /* doorcell.cc in Sources */,
+				4B3BD7772107AF8900C0C3E7 /* vampire.cc in Sources */,
+				4B3BD78A2107AF8900C0C3E7 /* orc.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
