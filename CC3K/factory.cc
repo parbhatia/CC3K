@@ -38,10 +38,10 @@ Player *Factory::PlayerFactory(string s) {
 }
 
 Potion *Factory::PotionFactory(int rand_num) {
-    if (rand_num == 0) return new resHP();
+    if (rand_num == 0) return new poiHP();
     else if (rand_num == 1) return new poiHP();
-    else if (rand_num == 2) return new resHP();
-    else if (rand_num == 3) return new resHP();
-    else if (rand_num == 4) return new resHP();
-    else return new resHP();
+    else if (rand_num == 2) return new poiHP();
+    else if (rand_num == 3) return new poiHP();
+    else if (rand_num == 4) return new poiHP();
+    else return new poiHP();
 }

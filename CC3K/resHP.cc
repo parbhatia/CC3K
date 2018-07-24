@@ -1,6 +1,8 @@
 #include "resHP.h"
 #include "player.h"
 #include "attack.h"
+#include <iostream>
+using namespace std;
 
 void resHP::beUsed(Player *whoFrom) {
     double before = whoFrom->getHp();

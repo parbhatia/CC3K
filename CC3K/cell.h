@@ -35,6 +35,7 @@ public:
     int getRow();
     int getCol();
     bool hasPlayer();
+    bool hasObject();
     bool has_stair();
     void set_stair();
     void clear_stair();

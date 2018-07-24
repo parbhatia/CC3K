@@ -25,6 +25,7 @@ int main(int argc, const char * argv[]) {
                 g.move_player(dir_map.at(cmd));
                 g.move_enemies();
                 g.reset_cellsmoved();
+                g.notify_player_observers();
                 cout << g;
             } else if ((cmd == "s") | (cmd == "d") | (cmd == "v") |
                        (cmd == "g") | (cmd == "t")) {
@@ -45,11 +46,9 @@ int main(int argc, const char * argv[]) {
                     (cmd == "we") | (cmd == "ne") | (cmd == "nw") |
                     (cmd == "se") | (cmd == "sw")) {
                     g.use_pot(dir_map.at(cmd));
-
+                    g.notify_player_observers();
                     cout << g;
                 }
-                //make player use potion at direction dir
-                
             } else if (cmd == "a") {
                 cin >> cmd;
                 if ((cmd == "no") | (cmd == "so") | (cmd == "ea") |
@@ -59,6 +58,7 @@ int main(int argc, const char * argv[]) {
                     g.attack_enemy(dir_map.at(cmd));
                     // g.move_enemies();
                     // g.reset_cellsmoved();
+                    g.notify_player_observers();
                     cout << g;
                 }
             } else if (cmd == "f") {

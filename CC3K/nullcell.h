@@ -11,14 +11,6 @@ public:
     ~NullCell();
     void moveTo(Cell &whoTo) override;
     void acceptMove(Cell &whoFrom) override;
-    
-//    void attack(Cell &target) override;
-//    void beAttacked(Cell &whoFrom) override;
-//
-//    void notifyObservers() override;
-//    void notify(Cell &whoFrom) override;
-//    Object& getObject() override;
-//    void attachObserver(Cell* ob) override;
 };
 
 #endif

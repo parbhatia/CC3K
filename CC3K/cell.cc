@@ -12,6 +12,8 @@ int Cell::getCol() { return col; }
 
 bool Cell::hasPlayer() { return (player != nullptr); }
 
+bool Cell::hasObject() { return (ob!= nullptr); }
+
 void Cell::setObject(Object *newob){ ob = newob; }
 
 void Cell::setPlayer(Player *newob){ player = newob; }
@@ -86,7 +88,6 @@ char Cell::print() {
 }
 
 void Cell::moveTo(Cell &whoTo) {
-    //only move cell if it's not been moved on
     if (!has_moved() && !has_potion() && !has_gold()) {
         try {
             whoTo.acceptMove(*this);
@@ -107,6 +108,7 @@ void Cell::moveTo(Cell &whoTo) {
 
 void Cell::acceptMove(Cell &whoFrom) {
     if (has_stair() && whoFrom.hasPlayer()) throw Stair_Cell();
+    else if (has_stair() && whoFrom.hasObject()) { throw Move_Unsuccessful(); }
     else if (!isOccupied())  {
         //only one object will be set
         setPlayer(whoFrom.getPlayer());
@@ -124,10 +126,8 @@ void Cell::notifyObservers() {
     }
 }
 void Cell::notify(Cell &whoFrom) {
-    if (ob) { 
-        Player* p = whoFrom.getPlayer();
-        ob->notify(p); 
-    }
+    Player* p = whoFrom.getPlayer();
+    if (ob) { ob->notify(p);}
 }
 void Cell::attachObserver(Cell* ob) {
     observers.emplace_back(ob);
@@ -136,7 +136,12 @@ void setDisplay(TextDisplay *td) {td = td; }
 
 void Cell::use(Cell &target) {
     Object *new_object = target.getObject();
-    if (new_object) new_object->beUsed(player);
+    if (new_object) {
+        new_object->beUsed(player);
+        delete target.ob;
+        target.ob = nullptr;
+        target.reset_potion();
+    }
 }
 
 void notifyDisplay() { 

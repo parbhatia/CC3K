@@ -51,7 +51,7 @@ class Grid {
     Cell* new_cell_pos(Cell *old_cell, Direction d); //returns new cell based on direction from old_cell
     void set_observers();    //sets observers for cell
     bool valid_direction();
-    void update_observers();
+    void notify_player_observers();
     friend std::ostream &operator<<(std::ostream &out, const Grid &g);
 };
 
