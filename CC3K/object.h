@@ -21,6 +21,7 @@ public:
     virtual void attack(Drow *d);  
     virtual void attack(Goblin *g);
     virtual void notify(Player* p)=0;
+    virtual bool getHostile();
 };
 
 #endif

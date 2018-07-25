@@ -2,9 +2,11 @@
 #include <stdexcept>
 #include "grid.h"
 #include "info.h"
+#include "merchant.h"
 using namespace std;
 
 std::vector <std::string> Character::actions;
+bool Merchant::merchant_hostile = false;
 
 int main(int argc, const char * argv[]) {
     Grid g;
