@@ -1,17 +1,17 @@
-#include "dragon.h"
+#include "merchant.h"
 #include "drow.h"
 #include "goblin.h"
 #include "attack.h"
 
-Dragon::Dragon(): Enemy{20, 20, 150} {}
-char Dragon::print() {
-    return 'D';
+Merchant::Merchant(): Enemy{70, 5, 30} {}
+char Merchant::print() {
+    return 'M';
 } 
-void Dragon::beAttacked(Object* whoFrom) {
+void Merchant::beAttacked(Object* whoFrom) {
     whoFrom->attack(this);
 }
 
-void Dragon::attack(Drow *d) {
+void Merchant::attack(Drow *d) {
     int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
         double dmg = -getAtk()*100/(100+d->getDef());
@@ -28,7 +28,7 @@ void Dragon::attack(Drow *d) {
     }   
 }
 
-void Dragon::attack(Goblin *g) {
+void Merchant::attack(Goblin *g) {
     int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
         double dmg = -getAtk()*100/(100+g->getDef());
@@ -45,7 +45,7 @@ void Dragon::attack(Goblin *g) {
     }    
 }
 
-void Dragon::attack(Character *whoTo) {
+void Merchant::attack(Character *whoTo) {
     int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
         double dmg = -getAtk()*100/(100+whoTo->getDef());
@@ -62,10 +62,9 @@ void Dragon::attack(Character *whoTo) {
     } 
 }
 
-bool Dragon::getHostile() {
-    return dragon_hostile;
+bool Merchant::getHostile() {
+    return merchant_hostile;
 }
-
-void Dragon::setHostile(bool n) {
-    dragon_hostile = n;
+void Merchant::setHostile(bool n) {
+    merchant_hostile = n;
 }

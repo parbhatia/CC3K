@@ -1,18 +1,19 @@
-#ifndef DRAGON_H
-#define DRAGON_H
+#ifndef MERCHANT_H
+#define MERCHANT_H
 #include "enemy.h"
 
-class Dragon: public Enemy{
-    bool dragon_hostile = false;
+class Merchant: public Enemy{
+    static bool merchant_hostile;
+    bool update_hostile;
   public:
-    Dragon();
+    Merchant();
     char print() override;
     void beAttacked(Object* whoFrom) override;
     void attack(Drow* d) override;
     void attack(Goblin* g) override;    
     void attack(Character* whoTo) override;
-    bool getHostile()override;
-    void setHostile(bool n);
+    bool getHostile() override;
+    static void setHostile(bool n);
 };
 
 
