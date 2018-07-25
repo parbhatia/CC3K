@@ -27,10 +27,9 @@ void Enemy::attack(Player *p) {
     if (chance > p->getMissChance()) {
         p->changeHp(dmg);
         stringstream ss;
-        if(p->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
-        }
-
+        // if(p->getHp()<=0){
+        //     throw Attack{dmg, 0, Result::death};
+        // }
     } else {
         dmg = 0;
        // throw Attack{0, whoTo->getHp(), Result::miss};
@@ -47,9 +46,9 @@ void Enemy::attack(Drow *d) {
     if (chance > getMissChance()) {
 
         d->changeHp(dmg);
-        if(d->getHp() <= 0){
-            throw Attack{dmg,0,Result::death};
-        }
+        // if(d->getHp() <= 0){
+        //     throw Attack{dmg,0,Result::death};
+        // }
     }
     else{
         dmg = 0;
@@ -64,9 +63,9 @@ void Enemy::attack(Goblin *g) {
     if (chance > getMissChance()) {
         
         g->changeHp(dmg);
-        if(g->getHp() <= 0){
-            throw Attack{dmg,0,Result::death};
-        }
+        // if(g->getHp() <= 0){
+        //     throw Attack{dmg,0,Result::death};
+        // }
     }
     else{
         dmg = 0;
