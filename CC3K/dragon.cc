@@ -11,60 +11,58 @@ void Dragon::beAttacked(Object* whoFrom) {
     whoFrom->attack(this);
 }
 
-/*void Dragon::attack(Drow *d) {
-    int chance = rand()%10 + 1;
-    if (chance > getMissChance()) {
-        double dmg = -getAtk()*100/(100+d->getDef());
-        d->changeHp(dmg);
-        if(d->getHp() <= 0){
-            throw Attack{dmg,0,Result::death};
-        }
-        else{
-            throw Attack{dmg, d->getHp(), Result::attack}; 
-        }
-    }
-    else{
-        throw Attack{0, d->getHp(), Result::miss};
-    }   
-}
+// void Dragon::attack(Drow *d) {
+//     if (getHostile()) {
+//     double dmg = -getAtk()*100/(100+d->getDef());
+//     int chance = rand()%10 + 1;
+//     if (chance > getMissChance()) {
+        
+//         d->changeHp(dmg);
+//         if(d->getHp() <= 0){
+//             throw Attack{dmg,0,Result::death};
+//         }
+//     }
+//     else{
+//         dmg = 0;
+//     }
+//     Character::storeAction(dmg, print(), 'P', d->getHp);   
+//     } 
+// }
 
-void Dragon::attack(Goblin *g) {
-    int chance = rand()%10 + 1;
-    if (chance > getMissChance()) {
-        double dmg = -getAtk()*100/(100+g->getDef());
-        g->changeHp(dmg);
-        if(g->getHp() <= 0){
-            throw Attack{dmg,0,Result::death};
-        }
-        else{
-            throw Attack{dmg, g->getHp(), Result::attack}; 
-        }
-    }
-    else{
-        throw Attack{0, g->getHp(), Result::miss};
-    }    
-}
+// void Dragon::attack(Goblin *g) {
+//     if (getHostile()) {
+//     double dmg = -getAtk()*100/(100+g->getDef());
+//     int chance = rand()%10 + 1;
+//     if (chance > getMissChance()) {
+        
+//         g->changeHp(dmg);
+//         if(g->getHp()<=0){
+//             throw Attack{dmg, 0, Result::death};
+//         }
+//     }
+//     else{
+//         dmg = 0;
+//     }
+//     Character::storeAction(dmg, print(), 'P', g->getHp);
+//     }
+// }
 
-void Dragon::attack(Character *whoTo) {
-    int chance = rand()%10 + 1;
-    if (chance > getMissChance()) {
-        double dmg = -getAtk()*100/(100+whoTo->getDef());
-        whoTo->changeHp(dmg);
-        if(whoTo->getHp() <= 0){
-            throw Attack{dmg,0,Result::death};
-        }
-        else{
-            throw Attack{dmg, whoTo->getHp(), Result::attack}; 
-        }
-    }
-    else{
-        throw Attack{0, whoTo->getHp(), Result::miss};
-    } 
-}*/
-
-bool Dragon::getHostile() {
-    return dragon_hostile;
-}
+// void Dragon::attack(Character *whoTo) {
+//     if (getHostile()) {
+//     double dmg = -getAtk()*100/(100+whoTo->getDef());
+//     int chance = rand()%10 + 1;
+//     if (chance > getMissChance()) {    
+//         whoTo->changeHp(dmg);
+//         if(whoTo->getHp() <= 0){
+//             throw Attack{dmg,0,Result::death};
+//         }
+//     }
+//     else{
+//         dmg = 0;
+//     }
+//     Character::storeAction(dmg, print(), 'P', whoTo->getHp);
+// }   
+// }
 
 void Dragon::setHostile(bool n) {
     dragon_hostile = n;
