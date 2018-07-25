@@ -10,7 +10,7 @@ void Goblin::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
 
-void Goblin::attack(Character *whoTo) {
+void Goblin::attack(Enemy *whoTo) {
     double dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
     int chance = rand() % 10 + 1;
     if (chance > getMissChance()) {

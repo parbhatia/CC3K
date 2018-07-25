@@ -2,7 +2,8 @@
 #define GOLD_H
 #include "item.h"
 #include <iostream>
-#include "dragon.h"
+
+class Dragon;
 
 class Gold: public Item {
     int value;

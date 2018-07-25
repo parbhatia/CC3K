@@ -8,7 +8,7 @@ class Vampire: public Player {
 public:
     Vampire(double atk=25, double def=25, double hp=50);
     void beAttacked(Object *whoFrom) override;
-    void attack(Character *whoTo) override; //gains 5 hp every successful attack
+    void attack(Enemy *whoTo) override; //gains 5 hp every successful attack
     void attack(Halfling *h) override;
     void attack(Dwarf *d) override;
 };

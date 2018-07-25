@@ -1,5 +1,7 @@
 #include "gold.h"
 #include "player.h"
+#include "dragon.h"
+
 Gold::Gold(int n):value{n}, dragon{nullptr} {}
 using namespace std;
 

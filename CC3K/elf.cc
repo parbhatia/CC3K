@@ -28,7 +28,7 @@ Elf::Elf() : Enemy{30, 10, 140} {
    Character::storeAction(dmg, print(), 'P', d->getHp());
 }*/
 
-void Elf::attack(Character* whoTo){
+void Elf::attack(Enemy* whoTo){
     int chance;
     double dmg = -getAtk()*100/(100+whoTo->getDef());
     for(int i = 0; i<2; i++){

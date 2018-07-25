@@ -16,7 +16,6 @@ public:
     virtual void beAttacked(Object *whoFrom)=0;
     virtual void attack(Item *whoTo)=0;
     virtual void attack(Player *p);
-    virtual void attack(Character *whoTo);
     virtual void attack(Enemy *e);
     virtual void beUsed(Player *whoFrom)=0;
     virtual void attack(Halfling *h);
