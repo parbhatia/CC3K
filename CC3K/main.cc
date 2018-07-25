@@ -19,7 +19,7 @@ bool valid_direction(string dir) {
 
 int main(int argc, const char * argv[]) {
     while(true) { //handles multiple games
-        cout << "starting game" << endl;
+        //cout << "starting game" << endl;
         Grid g;
         string race;
         //command interpreter
