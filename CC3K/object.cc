@@ -8,3 +8,6 @@ void Object::attack(Goblin *g) {}
 void Object::attack(Player *p) {}
 void Object::attack(Enemy *e) {}
 bool Object::getHostile() {return true;}
+Object* Object::spawn() {
+    return nullptr;
+}
