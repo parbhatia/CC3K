@@ -1,6 +1,5 @@
 #ifndef CHAMBER_H
 #define CHAMBER_H
-
 #include <vector>
 #include "cell.h"
 #include "shade.h"

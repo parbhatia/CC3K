@@ -25,7 +25,7 @@ void Vampire::attack(Enemy *whoTo) {
     } else {
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), whoTo->print(), whoTo->getHp);
+    Character::storeAction(dmg, print(), whoTo->print(), whoTo->getHp());
 }
 
 void Vampire::attack(Halfling *h) {
@@ -40,7 +40,7 @@ void Vampire::attack(Halfling *h) {
     } else {
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), h->print(), h->getHp);
+    Character::storeAction(dmg, print(), h->print(), h->getHp());
 }
 
 void Vampire::attack(Dwarf *d) {
@@ -55,5 +55,5 @@ void Vampire::attack(Dwarf *d) {
     } else {
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), d->print(), d->getHp);
+    Character::storeAction(dmg, print(), d->print(), d->getHp());
 }

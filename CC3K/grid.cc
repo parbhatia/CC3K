@@ -333,9 +333,10 @@ void Grid::set_dragon(Cell *c) {
         //pick new cell based on direction
         Cell *new_cell = new_cell_pos(c,d);
         if (!new_cell->isOccupied()) {
+            new_cell->setObject(c->getObject()->getDragon());
             //set dragon on new cell
-            //set gold on dragon
         }
+        done = true;
     }
 }
 
@@ -346,10 +347,8 @@ void Grid::generate_gold() {
             chambers[chamb_num].generate_gold();
         }
         catch(Set_Dragon &cell_info) { //set dragon
-            while(1) {
-                Cell *gold_cell = cells[cell_info.row][cell_info.col];
-                set_dragon(gold_cell);
-            }
+            Cell *gold_cell = cells[cell_info.row][cell_info.col];
+            set_dragon(gold_cell);
         }
         catch(No_More_Gold &) {
             return;

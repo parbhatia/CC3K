@@ -2,7 +2,6 @@
 #define factory_hpp
 #include <iostream>
 #include "player.h"
-#include "chamber.h"
 #include "dwarf.h"
 #include "shade.h"
 #include "orc.h"

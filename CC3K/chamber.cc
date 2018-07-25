@@ -140,6 +140,7 @@ void Chamber::generate_gold() {
                     --numEnemies;
                     Gold *g = new Gold(6);
                     g->setDragon(new_dragon);
+                    new_dragon->setDGold(g);
                     throw Set_Dragon(cells[x]->getRow(), cells[x]->getCol());
                 }
                 done = true;

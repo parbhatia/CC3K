@@ -35,7 +35,7 @@ void Enemy::attack(Player *p) {
         dmg = 0;
        // throw Attack{0, whoTo->getHp(), Result::miss};
     }
-    Character::storeAction(dmg, print(), 'P', p->getHp);
+    Character::storeAction(dmg, print(), 'P', p->getHp());
 
 
 }
@@ -54,7 +54,7 @@ void Enemy::attack(Drow *d) {
     else{
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), 'P', d->getHp);
+    Character::storeAction(dmg, print(), 'P', d->getHp());
     
 }
 
@@ -71,7 +71,7 @@ void Enemy::attack(Goblin *g) {
     else{
         dmg = 0;
     }    
-    Character::storeAction(dmg, print(), 'P', g->getHp);
+    Character::storeAction(dmg, print(), 'P', g->getHp());
 }
 
 void Enemy::setHostile(bool n) {}
