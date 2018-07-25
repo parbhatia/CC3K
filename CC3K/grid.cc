@@ -17,6 +17,8 @@ void Grid::reset_chambers() {
     }
 }
 
+void Grid::reset_actions() { player->cleanActions(); }
+
 void Grid::reset_cells() {
     //clear old cells
     for (auto row: cells) {

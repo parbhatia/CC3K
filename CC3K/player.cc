@@ -1,4 +1,5 @@
 #include "player.h"
+using namespace std;
 
 Player::Player( double atk, double def, double hp): Character{atk, def, hp}, gold{0}, merchant_hostile{false} {}
 char Player::print() {
@@ -13,3 +14,11 @@ int Player::getGold() {
 }
 
 void Player::notify(Player* p) {}
+
+void Player::addAction(string s) {
+    actions.emplace_back(s);
+}
+
+void Player::cleanActions() {
+    actions.clear();
+}

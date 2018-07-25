@@ -33,6 +33,7 @@ class Grid {
     ~Grid();
     void new_level();
     void reset_cells();
+    void reset_actions();
     void reset_chambers();
     void reset_cellsmoved(); //resets hasmoved flag on all cells
     void read_layout(std::string s);
