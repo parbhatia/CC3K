@@ -75,4 +75,7 @@ void Dragon::setDGold(Object* g) {
 Object* Dragon::getDGold() {
     return dgold;
 }
+bool Dragon::getHostile() {
+    return dragon_hostile;
+}
 
