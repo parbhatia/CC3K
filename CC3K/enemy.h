@@ -13,6 +13,7 @@ public:
     void attack(Drow *d) override;
     void attack(Goblin *g) override;
     void attack(Player *p) override;
+    bool isDead() override;
 };
 
 #endif
