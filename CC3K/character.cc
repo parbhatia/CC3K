@@ -59,7 +59,13 @@ bool Character::dead() { return hp <= 0; }
 void Character::storeAction(int dmg, char attacker, char defender, int hp){
     stringstream ss;
     if(hp>0){
-        ss << attacker << " deals " << dmg << " damage to " << defender << "(" << hp << " HP" << ").";
+        if(dmg){
+            ss << attacker << " deals " << dmg << " damage to " << defender << "(" << hp << " HP" << ").";
+        }
+        else{
+            ss << attacker << " tries to attack " << defender << " but misses!";
+        }
+        
     }
     else{
         ss << attacker << " deals " << dmg << " damage to " << defender << ". " << defender << " is defeated.";
