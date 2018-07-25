@@ -21,59 +21,57 @@ void Enemy::notify(Player* p) {
 }
 
 void Enemy::attack(Player *p) {
+    double dmg = (-getAtk() * 100 / (100 + p->getDef()));
+
     int chance = rand() % 10 + 1;
     if (chance > p->getMissChance()) {
-        double dmg = (-getAtk() * 100 / (100 + p->getDef()));
         p->changeHp(dmg);
         stringstream ss;
         if(p->getHp()<=0){
-            ss << print() <<" kills PC" << ".";
-            addAction(ss.str());
-            //throw Attack{dmg, 0, Result::death};
+            throw Attack{dmg, 0, Result::death};
         }
-        else{
-            // ss << printAttack(dmg);
-            // addAction(ss.str());
-            //throw Attack{dmg, whoTo->getHp(), Result::attack};
-        } 
+
     } else {
+        dmg = 0;
        // throw Attack{0, whoTo->getHp(), Result::miss};
     }
+    Character::storeAction(dmg, print(), 'P', p->getHp);
+
+
 }
 
 
 void Enemy::attack(Drow *d) {
+    double dmg = -getAtk()*100/(100+d->getDef());
     int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
-        double dmg = -getAtk()*100/(100+d->getDef());
+
         d->changeHp(dmg);
         if(d->getHp() <= 0){
             throw Attack{dmg,0,Result::death};
         }
-        else{
-            throw Attack{dmg, d->getHp(), Result::attack}; 
-        }
     }
     else{
-        throw Attack{0, d->getHp(), Result::miss};
-    }    
+        dmg = 0;
+    }
+    Character::storeAction(dmg, print(), 'P', d->getHp);
+    
 }
 
 void Enemy::attack(Goblin *g) {
+    double dmg = -getAtk()*100/(100+g->getDef());
     int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
-        double dmg = -getAtk()*100/(100+g->getDef());
+        
         g->changeHp(dmg);
         if(g->getHp() <= 0){
             throw Attack{dmg,0,Result::death};
         }
-        else{
-            throw Attack{dmg, g->getHp(), Result::attack}; 
-        }
     }
     else{
-        throw Attack{0, g->getHp(), Result::miss};
+        dmg = 0;
     }    
+    Character::storeAction(dmg, print(), 'P', g->getHp);
 }
 
 void Enemy::setHostile(bool n) {}
