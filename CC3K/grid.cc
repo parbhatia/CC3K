@@ -76,7 +76,7 @@ Grid::~Grid() {
         }
     }
 }
-
+//
 bool Grid::in_range(int row, int col) {
     return ((row>=0 && row<height-5) && (col >=0 && col<width));
 }
