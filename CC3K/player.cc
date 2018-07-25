@@ -53,3 +53,25 @@ void Player::attack(Dwarf *d) {
         throw Attack{0, d->getHp(), Result::miss};
     }
 }
+
+void Player::attack(Enemy *e) {
+    int chance = rand() % 10 + 1;
+    if (chance > e->getMissChance()) {
+        double dmg = (-getAtk() * 100 / (100 + e->getDef()));
+        e->changeHp(dmg);
+        stringstream ss;
+        if(e->getHp()<=0){
+            ss << "PC kills " << e->print() << ".";
+            addAction(ss.str());
+            //throw Attack{dmg, 0, Result::death};
+        }
+        else{
+            // ss << printAttack(dmg);
+            // addAction(ss.str());
+            //throw Attack{dmg, whoTo->getHp(), Result::attack};
+        }
+        e->setHostile(true); //only need to set hostile for merchant and dragon 
+    } else {
+       // throw Attack{0, whoTo->getHp(), Result::miss};
+    }
+}

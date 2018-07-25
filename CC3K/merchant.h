@@ -13,7 +13,7 @@ class Merchant: public Enemy{
     void attack(Goblin* g) override;    
     void attack(Character* whoTo) override;*/
     bool getHostile() override;
-    static void setHostile(bool n);
+    void setHostile(bool n=true) override;
 };
 
 

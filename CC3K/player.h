@@ -15,5 +15,6 @@ public:
     void notify(Player* p) override;
     void attack(Halfling *h) override;
     void attack(Dwarf *d) override;
+    void attack(Enemy *e)override;
 };
 #endif

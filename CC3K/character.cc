@@ -65,7 +65,7 @@ std::string Character::storeAction(int dmg, char attacker, char defender, int hp
 std::string Character::getAction() { return actions[0]; }
 
 void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, so it does nothing.
-void Character::attack(Character *whoTo) {
+/*void Character::attack(Character *whoTo) {
     int chance = rand() % 10 + 1;
     if (chance > whoTo->getMissChance()) {
         double dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
@@ -84,7 +84,7 @@ void Character::attack(Character *whoTo) {
     } else {
        // throw Attack{0, whoTo->getHp(), Result::miss};
     }
-}
+}*/
 
 void Character::beUsed(Player *whoFrom) {} //Only a potion can be used or a gold can be picked, so it does nothing.ss
 

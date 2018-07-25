@@ -17,6 +17,27 @@ void Enemy::notify(Player* p) {
     }
 }
 
+void Enemy::attack(Player *p) {
+    int chance = rand() % 10 + 1;
+    if (chance > p->getMissChance()) {
+        double dmg = (-getAtk() * 100 / (100 + p->getDef()));
+        p->changeHp(dmg);
+        stringstream ss;
+        if(p->getHp()<=0){
+            ss << print() <<" kills PC" << ".";
+            addAction(ss.str());
+            //throw Attack{dmg, 0, Result::death};
+        }
+        else{
+            // ss << printAttack(dmg);
+            // addAction(ss.str());
+            //throw Attack{dmg, whoTo->getHp(), Result::attack};
+        } 
+    } else {
+       // throw Attack{0, whoTo->getHp(), Result::miss};
+    }
+}
+
 
 void Enemy::attack(Drow *d) {
     int chance = rand()%10 + 1;
@@ -51,3 +72,5 @@ void Enemy::attack(Goblin *g) {
         throw Attack{0, g->getHp(), Result::miss};
     }    
 }
+
+void Enemy::setHostile(bool n) {}
