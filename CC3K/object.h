@@ -31,7 +31,8 @@ public:
     virtual bool needsDragon();
     virtual Object* getDragon();
     virtual void setHostile(bool n=true);
-
+    virtual void setDGold(Object* g);
+    virtual Object* getDGold();
 };
 
 #endif
