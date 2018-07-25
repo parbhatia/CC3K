@@ -180,7 +180,7 @@ void Cell::notifyObservers() {
     for (auto it : observers) {
         it->notify(*this);
     }
-}
+} 
 void Cell::notify(Cell &whoFrom) {
     Player* p = whoFrom.getPlayer();
     if (ob) { ob->notify(p);}
