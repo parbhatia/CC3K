@@ -12,7 +12,7 @@ void Drow::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
 
-void Drow::attack(Halfling *h) {
+/*void Drow::attack(Halfling *h) {
   int chance = rand() % 10 + 1;
 
   if (chance > 5) {   // Halfling has 50% chance to cause PC to miss.
@@ -41,5 +41,5 @@ void Drow::attack(Dwarf *d) {
   } else {
     throw Attack{0, d->getHp(), Result::miss};
   }
-}
+}*/
 

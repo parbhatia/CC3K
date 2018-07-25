@@ -10,7 +10,7 @@ class Elf : public Enemy
     Elf();
     char print() override;
     void beAttacked(Object* whoFrom) override;
-    void attack(Drow* d) override;
+    //void attack(Drow* d) override;
     void attack(Goblin* g) override;    
     void attack(Character* whoTo) override;
 };

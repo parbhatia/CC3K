@@ -16,7 +16,7 @@ Elf::Elf() : Enemy{30, 10, 140} {
 
 
 
-void Elf::attack(Drow *d){  //only attack Drow once
+/*void Elf::attack(Drow *d){  //only attack Drow once
     int chance = rand()%10 + 1;
     double dmg = -getAtk()*100/(100+d->getDef());
     if (chance > getMissChance()) {
@@ -26,7 +26,7 @@ void Elf::attack(Drow *d){  //only attack Drow once
         dmg = 0;
     }
    Character::storeAction(dmg, print(), 'P', d->getHp());
-}
+}*/
 
 void Elf::attack(Character* whoTo){
     int chance;

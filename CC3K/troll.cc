@@ -10,7 +10,7 @@ void Troll::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
 
-void Troll::attack(Halfling *h) {
+/*void Troll::attack(Halfling *h) {
   int chance = rand() % 10 + 1;
   if (chance > 5) {   // Halfling has 50% chance to cause PC to miss.
     double dmg = (-getAtk() * 100 / (100 + h->getDef()));
@@ -38,5 +38,5 @@ void Troll::attack(Dwarf *d) {
   } else {
     throw Attack{0, d->getHp(), Result::miss};
   }
-}
+}*/
 
