@@ -19,6 +19,12 @@ class InvalidRange {};
 class PickUpGold {};
 class Game_Won {};
 class Game_Lost {};
+class Set_Dragon {
+    Object *d
+public:
+    Object *d = nullptr;
+    
+}
 
 //number of enemies and items
 const int globalPotions = 10;

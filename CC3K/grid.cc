@@ -331,6 +331,9 @@ void Grid::generate_gold() {
         try {
             chambers[chamb_num].generate_gold();
         }
+        catch(Set_Dragon &e) {
+            
+        }
         catch(No_More_Gold &) {
             return;
         }
