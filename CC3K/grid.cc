@@ -146,7 +146,7 @@ void Grid::attack_enemy(Direction d) {
     //attack enemy
     try {
         player_cell->attack(*new_cell);
-        cout << player->getAction() << endl;
+       // cout << player->getAction() << endl;
     }
     catch (Attack &o) {
         cout << "health is: " << o.health << endl;

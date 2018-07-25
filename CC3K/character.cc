@@ -73,12 +73,12 @@ void Character::storeAction(int dmg, char attacker, char defender, int hp){
     // return ss.str();
 }
 
-void storePotion(std::string type){
+void Character::storePotion(std::string type){
     string s = "PC uses "+ type;
     Character::addAction(s);
 }
 
-std::string Character::getAction() { return actions[0]; }
+//std::string Character::getAction() { return actions[0]; }
 
 void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, so it does nothing.
 /*void Character::attack(Character *whoTo) {
