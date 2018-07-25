@@ -28,11 +28,11 @@ bool Cell::canDragon() {
 }
 
 //dragon
-void Cell::set_dragon() { hasdragon = true; }
 
-bool Cell::has_dragon() { return hasdragon; }
-
-void Cell::reset_dragon() { hasdragon = false; }
+bool Cell::has_dragon() {
+    if (ob) return ob->hasDragon();
+    else return false;
+}
 
 //moved
 bool Cell::has_moved() { return hasmoved; }
@@ -83,14 +83,15 @@ void Cell::attack(Cell &target) {
         new_object = target.getObject();
         new_object->beAttacked(p);
         if (new_object->isDead()) {
+            Object* Dgold = new_object->getDGold();
+            if (Dgold) {
+                Dgold->setDragon(nullptr);
+            }
+            Object *spawn = new_object->spawn();
             delete new_object;
-            target.setObject(nullptr);
+            target.setObject(spawn);
         }
-    } else if (target.hasPlayer()) {
-        new_object = target.getPlayer();
-        new_object->beAttacked(p);
-    } else {}
-    
+    }
 }
 
 bool Cell::isOccupied(){
@@ -127,23 +128,6 @@ void Cell::moveTo(Cell &whoTo) {
     }
 }
 
-/*
- //only move cells with players and objects
- if (!has_moved() && !has_potion() && !has_gold()) {
- try {
- whoTo.acceptMove(*this);
- }
- catch(...) {
- //check that a player was trying to move
- //if it was, set whoFrom hasmoved to be true
- if (hasPlayer()) { set_moved(); }
- throw;
- }
- //move was successful
- player = nullptr;
- ob = nullptr;
- }*/
-
 void Cell::acceptMove(Cell &whoFrom) {
     if (has_stair() && whoFrom.hasPlayer()) throw Stair_Cell();
     else if (has_gold() && whoFrom.hasPlayer()) {
@@ -156,7 +140,7 @@ void Cell::acceptMove(Cell &whoFrom) {
         setObject(whoFrom.getObject());
         set_moved();
     }
-    else if (!isOccupied())  {
+    else if (!isOccupied() && !has_dragon())  {
         //only one object will be set
         setPlayer(whoFrom.getPlayer());
         setObject(whoFrom.getObject());
@@ -166,32 +150,6 @@ void Cell::acceptMove(Cell &whoFrom) {
     }
 }
 
-/*if (has_stair() && whoFrom.hasPlayer()) throw Stair_Cell();
- else if (has_stair() && whoFrom.hasObject()) { throw Move_Unsuccessful();
- }
- else if (has_gold() && whoFrom.hasObject()) { throw Move_Unsuccessful();
- }
- else if (has_gold() && whoFrom.hasPlayer()) {
- if (has_gold()) {
- cout << "PLAYER USING GOLD" << endl;
- ob->beUsed(whoFrom.getPlayer());
- delete ob;
- ob = nullptr;
- reset_gold();
- }
- //only one object will be set
- setPlayer(whoFrom.getPlayer());
- setObject(whoFrom.getObject());
- set_moved();
- }
- else if (!isOccupied())  {
- //only one object will be set
- setPlayer(whoFrom.getPlayer());
- setObject(whoFrom.getObject());
- set_moved();
- } else {
- throw Move_Unsuccessful();
- }*/
 
 void Cell::notifyObservers() {
     for (auto it : observers) {
@@ -209,7 +167,7 @@ void setDisplay(TextDisplay *td) {td = td; }
 
 void Cell::use(Cell &target) {
     Object *new_object = target.getObject();
-    if (new_object) {
+    if (target.has_potion()) {
         new_object->beUsed(player);
         delete target.ob;
         target.ob = nullptr;

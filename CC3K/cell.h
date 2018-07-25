@@ -23,9 +23,7 @@ protected:
     Object *ob = nullptr;
 public:
     Cell(int r, int c, char t);
-    void set_dragon();
     bool has_dragon();
-    void reset_dragon();
     void set_gold();
     bool has_gold();
     void reset_gold();

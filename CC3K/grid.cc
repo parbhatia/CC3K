@@ -308,7 +308,6 @@ void Grid::set_dragon(Cell *c) {
         //check whether new cell can hold dragon
         if (new_cell->canDragon()) {
             new_cell->setObject(c->getObject()->getDragon());
-            new_cell->set_dragon();
             //set dragon on new cell
             done = true;
         }
