@@ -5,6 +5,7 @@
 #include "goblin.h"
 #include "attack.h"
 #include <string>
+#include <iostream>
 using namespace std;
 
 Enemy::Enemy(double atk, double def, double hp): Character{atk, def, hp} {}
@@ -14,6 +15,8 @@ Enemy::~Enemy() {}
 void Enemy::notify(Player* p) { 
     if (getHostile()) {                  //decide if attack here. check hostile
         p->beAttacked(this);
+    } else {
+        cout << "I am your friend" << endl;
     }
 }
 
