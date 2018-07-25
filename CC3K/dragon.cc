@@ -63,3 +63,15 @@ void Dragon::attack(Character *whoTo) {
     Character::storeAction(dmg, print(), 'P', whoTo->getHp);
 }   
 }
+
+void Dragon::setHostile(bool n) {
+    dragon_hostile = n;
+}
+
+void Dragon::setDragongold(Gold* g) {
+    dragongold = g;
+}
+
+Gold* Dragon::getDragongold() {
+    return dragongold;
+}

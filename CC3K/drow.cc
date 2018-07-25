@@ -12,7 +12,7 @@ void Drow::beAttacked(Object *whoFrom) {
   whoFrom->attack(this);
 }
 
-void Drow::attack(Halfling *h) {
+/*void Drow::attack(Halfling *h) {
   int chance = rand() % 10 + 1;
   double dmg = (-getAtk() * 100 / (100 + h->getDef()));
 
@@ -42,6 +42,5 @@ void Drow::attack(Dwarf *d) {
   else {
     dmg = 0;
   }
-  
-}
+}*/
 

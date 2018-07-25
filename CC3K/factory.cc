@@ -45,3 +45,16 @@ Potion *Factory::PotionFactory(int rand_num) {
     else if (rand_num == 4) return new poiHP();
     else return new poiHP();
 }
+
+Gold *Factory::GoldFactory(int rand_num) {
+    if (rand_num == 0) return new Gold(2);
+    else if (rand_num == 1) return new Gold(2);
+    else if (rand_num == 2) return new Gold(2);
+    else if (rand_num == 3) return new Gold(2);
+    else if (rand_num == 4) return new Gold(2);
+    else if (rand_num == 5) return new Gold(6);
+    else if (rand_num == 6) return new Gold(1);
+    else if (rand_num == 7) return new Gold(1);
+    else return new Gold(4); //merchant hoard
+}
+

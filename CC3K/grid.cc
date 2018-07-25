@@ -313,6 +313,18 @@ void Grid::generate_potions() {
     }
 }
 
+void Grid::generate_gold() {
+    while(1) {
+        int chamb_num = chamber_picker();
+        try {
+            chambers[chamb_num].generate_gold();
+        }
+        catch(No_More_Gold &) {
+            return;
+        }
+    }
+}
+
 void Grid::read_layout(string s) {
     //create chambers
     for (int i = 0; i < 5; ++i) {
@@ -400,7 +412,7 @@ std::ostream &operator<<(std::ostream &out, const Grid &g) {
     }
     //print stats
     out.setf(ios::left);
-    out << "Race: " << setw(8) << g.race << " Gold: " << setw(3) << g.gold;
+    out << "Race: " << setw(8) << g.race << " Gold: " << setw(3) << g.player->getGold();
     out.unsetf(ios::left);
     out.setf(ios::right);
     out << setw(50) << "Level: " << g.level << endl;

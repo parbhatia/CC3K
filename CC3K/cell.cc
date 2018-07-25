@@ -98,39 +98,89 @@ void Cell::moveTo(Cell &whoTo) {
     if (!has_moved() && !has_potion() && !has_gold()) {
         try {
             whoTo.acceptMove(*this);
+            player = nullptr;
+            ob = nullptr;
         }
         catch(...) {
             //check that a player was trying to move
             //if it was, set whoFrom hasmoved to be true
-            if (hasPlayer()) {
-                set_moved();
-            }
+            if (hasPlayer()) { set_moved(); }
+            throw;
+        }
+    }
+}
+
+    /*
+    //only move cells with players and objects
+    if (!has_moved() && !has_potion() && !has_gold()) {
+        try {
+            whoTo.acceptMove(*this);
+        }
+        catch(...) {
+            //check that a player was trying to move
+            //if it was, set whoFrom hasmoved to be true
+            if (hasPlayer()) { set_moved(); }
             throw;
         }
         //move was successful
         player = nullptr;
         ob = nullptr;
-    }
-}
+    }*/
 
 void Cell::acceptMove(Cell &whoFrom) {
     if (has_stair() && whoFrom.hasPlayer()) throw Stair_Cell();
-    else if (has_stair() && whoFrom.hasObject()) { throw Move_Unsuccessful(); }
+    else if (has_gold() && whoFrom.hasPlayer()) {
+        ob->beUsed(whoFrom.getPlayer());
+        delete ob;
+        ob = nullptr;
+        reset_gold();
+        //only one object will be set
+        setPlayer(whoFrom.getPlayer());
+        setObject(whoFrom.getObject());
+        set_moved();
+    }
     else if (!isOccupied())  {
         //only one object will be set
         setPlayer(whoFrom.getPlayer());
         setObject(whoFrom.getObject());
         set_moved();
     } else {
-        throw Move_Unsuccessful();
+        throw Move_Unsuccessful();;
     }
 }
+
+/*if (has_stair() && whoFrom.hasPlayer()) throw Stair_Cell();
+else if (has_stair() && whoFrom.hasObject()) { throw Move_Unsuccessful();
+}
+else if (has_gold() && whoFrom.hasObject()) { throw Move_Unsuccessful();
+}
+else if (has_gold() && whoFrom.hasPlayer()) {
+    if (has_gold()) {
+        cout << "PLAYER USING GOLD" << endl;
+        ob->beUsed(whoFrom.getPlayer());
+        delete ob;
+        ob = nullptr;
+        reset_gold();
+        }
+        //only one object will be set
+        setPlayer(whoFrom.getPlayer());
+        setObject(whoFrom.getObject());
+        set_moved();
+        }
+        else if (!isOccupied())  {
+            //only one object will be set
+            setPlayer(whoFrom.getPlayer());
+            setObject(whoFrom.getObject());
+            set_moved();
+        } else {
+            throw Move_Unsuccessful();
+        }*/
 
 void Cell::notifyObservers() {
     for (auto it : observers) {
         it->notify(*this);
     }
-}
+} 
 void Cell::notify(Cell &whoFrom) {
     Player* p = whoFrom.getPlayer();
     if (ob) { ob->notify(p);}

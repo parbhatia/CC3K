@@ -13,7 +13,7 @@ void Vampire::beAttacked(Object *whoFrom) {
     whoFrom->attack(this);
 }
 
-void Vampire::attack(Character *whoTo) {
+void Vampire::attack(Enemy *whoTo) {
     int chance = rand() % 10 + 1;
     if (chance > getMissChance()) {
         double dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));

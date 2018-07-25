@@ -13,7 +13,7 @@ void Dwarf::beAttacked(Object* whoFrom) {
     whoFrom->attack(this);
 }
 
-void Dwarf::attack(Drow *d) {
+/*void Dwarf::attack(Drow *d) {
     int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
         double dmg = -getAtk()*100/(100+d->getDef());
@@ -44,4 +44,4 @@ void Dwarf::attack(Goblin *g) {
     else{
         throw Attack{0, g->getHp(), Result::miss};
     }    
-}
+}*/

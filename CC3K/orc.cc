@@ -23,11 +23,11 @@ void Orc::attack(Goblin* g){
     else {
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), 'P', g->getHp);
+    Character::storeAction(dmg, print(), 'P', g->getHp());
 
 }
 
-void Orc::attack(Drow *h) {
+/*void Orc::attack(Drow *h) {
     double dmg = (-getAtk() * 100 / (100 + h->getDef()));
     int chance = rand() % 10 + 1;
     if (chance > h->getMissChance()) {
@@ -35,8 +35,8 @@ void Orc::attack(Drow *h) {
     } else {
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), 'P', h->getHp);
-}
+    Character::storeAction(dmg, print(), 'P', h->getHp());
+}*/
 
 Orc::~Orc() {}
 
