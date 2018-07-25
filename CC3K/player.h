@@ -13,5 +13,7 @@ public:
     void changeGold(int n);
     int getGold();
     void notify(Player* p) override;
+    void attack(Halfling *h) override;
+    void attack(Dwarf *d) override;
 };
 #endif

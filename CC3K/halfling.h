@@ -10,8 +10,8 @@ class Halfling : public Enemy
     Halfling();
     char print() override;
     void beAttacked(Object* whoFrom) override;  
-    void attack(Goblin* g) override;
-    void attack(Drow *h) override;
+    /*void attack(Goblin* g) override;
+    void attack(Drow *h) override;*/
 };
 
 #endif

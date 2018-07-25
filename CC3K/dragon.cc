@@ -11,7 +11,7 @@ void Dragon::beAttacked(Object* whoFrom) {
     whoFrom->attack(this);
 }
 
-void Dragon::attack(Drow *d) {
+/*void Dragon::attack(Drow *d) {
     int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
         double dmg = -getAtk()*100/(100+d->getDef());
@@ -60,7 +60,7 @@ void Dragon::attack(Character *whoTo) {
     else{
         throw Attack{0, whoTo->getHp(), Result::miss};
     } 
-}
+}*/
 
 bool Dragon::getHostile() {
     return dragon_hostile;

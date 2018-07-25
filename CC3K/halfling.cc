@@ -14,7 +14,7 @@ void Halfling::beAttacked(Object* whoFrom){
 }
 
 
-void Halfling::attack(Goblin* g){
+/*void Halfling::attack(Goblin* g){
     double dmg = (-getAtk()*100/(100+g->getDef()));
     int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
@@ -36,4 +36,4 @@ void Halfling::attack(Drow *h) {
         dmg = 0;
     }
     Character::storeAction(dmg, print(), 'P', h->getHp());
-}
+}*/
