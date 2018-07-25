@@ -17,7 +17,7 @@ void Goblin::attack(Enemy *whoTo) {
         whoTo->changeHp(dmg);
         if (whoTo->getHp() <= 0) {
           changeGold(5); //Goblin steals 5 gold from every slain enemy.
-          //throw Attack{dmg, 0 , Result::death};
+          throw Attack{dmg, 0 , Result::death};
         } else {
 
           //throw Attack{dmg, whoTo->getHp(), Result::attack};
@@ -25,7 +25,7 @@ void Goblin::attack(Enemy *whoTo) {
     } else {
           dmg = 0;
     }
-    Character::storeAction(dmg, print(), 'P', whoTo->getHp());
+    Character::storeAction(dmg, 'P', whoTo->print(), whoTo->getHp);
 }
 
 void Goblin::attack(Halfling *h) {
@@ -35,12 +35,13 @@ void Goblin::attack(Halfling *h) {
     h->changeHp(dmg);
     if (h->getHp() <= 0) {
       changeGold(5); //Goblin steals 5 gold from every slain enemy.
+      throw Attack{dmg, 0, Result::death};
     }
   }
   else {
       dmg = 0;
   } 
-  Character::storeAction(dmg, print(), 'P', h->getHp());
+  Character::storeAction(dmg, 'P', 'L', h->getHp);
 }
 
 void Goblin::attack(Dwarf *d) {
@@ -50,12 +51,13 @@ void Goblin::attack(Dwarf *d) {
     d->changeHp(dmg);
     if (d->getHp() <= 0) {
       changeGold(5); //Goblin steals 5 gold from every slain enemy.
+      throw Attack{dmg, 0, Result::death};
     }
   }
   else{
      dmg = 0;
   }
-  Character::storeAction(dmg, print(), 'P', d->getHp());
+  Character::storeAction(dmg, 'P', d->print(), d->getHp);
 
 }
 
