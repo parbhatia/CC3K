@@ -25,7 +25,7 @@ void Elf::attack(Drow *d){  //only attack Drow once
     else{
         dmg = 0;
     }
-   Character::storeAction(dmg, print(), 'P', d->getHp);   
+   Character::storeAction(dmg, print(), 'P', d->getHp());
 }
 
 void Elf::attack(Character* whoTo){
@@ -39,7 +39,7 @@ void Elf::attack(Character* whoTo){
         else {
             dmg = 0;
         }
-        Character::storeAction(dmg, print(), 'P', whoTo->getHp);   
+        Character::storeAction(dmg, print(), 'P', whoTo->getHp());
     }
 
 }
@@ -55,6 +55,6 @@ void Elf::attack(Goblin *g) {
         else{
             dmg = 0;
         }
-        Character::storeAction(dmg, print(), 'P', g->getHp);   
+        Character::storeAction(dmg, print(), 'P', g->getHp());   
     }
 }

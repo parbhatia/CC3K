@@ -25,7 +25,7 @@ void Goblin::attack(Character *whoTo) {
     } else {
           dmg = 0;
     }
-    Character::storeAction(dmg, print(), 'P', whoTo->getHp);
+    Character::storeAction(dmg, print(), 'P', whoTo->getHp());
 }
 
 void Goblin::attack(Halfling *h) {
@@ -40,7 +40,7 @@ void Goblin::attack(Halfling *h) {
   else {
       dmg = 0;
   } 
-  Character::storeAction(dmg, print(), 'P', h->getHp);
+  Character::storeAction(dmg, print(), 'P', h->getHp());
 }
 
 void Goblin::attack(Dwarf *d) {
@@ -55,7 +55,7 @@ void Goblin::attack(Dwarf *d) {
   else{
      dmg = 0;
   }
-  Character::storeAction(dmg, print(), 'P', d->getHp);
+  Character::storeAction(dmg, print(), 'P', d->getHp());
 
 }
 
