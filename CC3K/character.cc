@@ -55,6 +55,16 @@ void Character::cleanActions() {
 }
 
 std::string Character::storeAction(int dmg, char attacker, char defender, int hp){
+    stringstream ss;
+    if(hp>0){
+        ss << attacker << " deals " << dmg << " damage to " << defender << "(" << hp << " HP" << ").";
+    }
+    else{
+        ss << attacker << " deals " << dmg << " damage to " << defender << ". " << defender << " is defeated.";
+    }
+
+
+    
     // char race = print();
     // stringstream ss;
     // ss << race << " deals " << std::to_string(dmg) << " to player.";
