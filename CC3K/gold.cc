@@ -24,3 +24,10 @@ void Gold::notify(Player* p) {
     dragon->setHostile(true);
     p->beAttacked(dragon);
 }
+bool Gold::hasDragon() {
+    return (dragon);
+}
+
+bool Gold::needsDragon() {
+    return (value == 6);
+}

@@ -13,6 +13,8 @@ public:
     void beUsed(Player* whoFrom) override;
     char print() override;
     void setDragon(Dragon *d);
+    bool hasDragon();
+    bool needsDragon();
     Dragon* getDragon();
     void notify(Player* p) override;
 };
