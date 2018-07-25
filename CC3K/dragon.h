@@ -5,11 +5,11 @@
 
 class Dragon: public Enemy{
     bool dragon_hostile = false;
-    Gold* dragongold = nullptr;
+    Object* dgold = nullptr;
   public:
     Dragon();
-    void setDragongold(Gold* g);
-    Gold* getDragongold();
+    void setDGold(Object* g) override;
+    Object* getDGold() override;
     char print() override;
     void beAttacked(Object* whoFrom) override;
     /*void attack(Drow* d) override;
