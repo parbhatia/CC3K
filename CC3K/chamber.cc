@@ -131,6 +131,14 @@ void Chamber::generate_gold() {
                 int y = gold_picker();
                 //choose random gold
                 Object *new_gold = f.GoldFactory(y);
+                if (new_gold->needsDragon()) {
+                    Object *new_dragon = new Dragon();
+                    ++numEnemies;
+                    Gold *g = new Gold(6);
+                    g->setDragon(new_dragon);
+                }
+                    //generate dragon
+                }
                 cells[x]->setObject(new_gold);
                 cells[x]->set_gold();
                 --numGold;
@@ -160,8 +168,8 @@ void Chamber::generate_enemy() {
     }
 }
 
-int Chamber::get_numEnemies() { return numEnemies; }
+//int Chamber::get_numEnemies() { return numEnemies; }
 
-int Chamber::add_numEnemies() { ++numEnemies; }
+//int Chamber::add_numEnemies() { ++numEnemies; }
 
 
