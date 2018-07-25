@@ -17,7 +17,12 @@ bool valid_direction(string dir) {
     } return false;
 }
 
+void create_randomness() {
+    srand((unsigned)time(NULL));
+}
+
 int main(int argc, const char * argv[]) {
+    create_randomness();
     while(true) { //handles multiple games
         //cout << "starting game" << endl;
         Grid g;

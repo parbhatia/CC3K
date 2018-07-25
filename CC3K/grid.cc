@@ -6,8 +6,21 @@
 using namespace std;
 
 Grid::Grid() {
-    create_randomness(); //for random generation
     read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
+}
+
+Grid::~Grid() {
+    //delete all cells
+    for (auto row: cells) {
+        for (auto cell: row) {
+            delete cell; //calls cell's dtor
+        }
+    }
+    //reset fields
+    Merchant::resetHostile();
+    actions.clear();
+    //clear chamber static fields
+    chambers[0].clear();
 }
 
 void Grid::reset_chambers() {
@@ -68,15 +81,7 @@ void Grid::new_level() {
     }
 }
 
-Grid::~Grid() {
-    //delete all cells
-    for (auto row: cells) {
-        for (auto cell: row) {
-            delete cell; //calls cell's dtor
-        }
-    }
-}
-//
+
 bool Grid::in_range(int row, int col) {
     return ((row>=0 && row<height-5) && (col >=0 && col<width));
 }
@@ -275,9 +280,6 @@ void Grid::move_enemies() {
  }
  }*/
 
-void Grid::create_randomness() {
-    srand((unsigned)time(NULL));
-}
 
 int Grid::chamber_picker() {
     return rand() % 5;

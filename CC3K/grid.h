@@ -49,7 +49,6 @@ class Grid {
     void generate_potions(); //chambers generate potions
     void generate_gold(); //chambers generate gold
     void generate_stairs(); //random chamber generates stairs
-    void create_randomness(); //sets time as seed 
     int chamber_picker(); //returns random chamber (0 to 4)
     Direction direction_picker(); //returns random direction
     Cell* new_cell_pos(Cell *old_cell, Direction d); //returns new cell based on direction from old_cell
