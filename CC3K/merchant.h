@@ -4,7 +4,6 @@
 
 class Merchant: public Enemy{
     static bool merchant_hostile;
-    bool update_hostile;
   public:
     Merchant();
     char print() override;
