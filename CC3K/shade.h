@@ -2,6 +2,7 @@
 #define SHADE_H
 #include "player.h"
 #include <string>
+#include <sstream>
 
 class Halfling;
 class Dwarf;

@@ -24,7 +24,9 @@ class Character : public Object
     void setMaxHp(double n);
     void setMissChance(int n);
     static void addAction(std::string s);
+    static std::string getAction();
     static void cleanActions();
+    std::string printAttack(int dmg);
     double getAtk();
     double getDef();
     double getHp();

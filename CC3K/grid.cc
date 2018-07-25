@@ -134,6 +134,7 @@ void Grid::attack_enemy(Direction d) {
     //attack enemy
     try {
         player_cell->attack(*new_cell);
+        cout << player->getAction() << endl;
     }
     catch (Attack &o) {
         cout << "health is: " << o.health << endl;
@@ -144,7 +145,7 @@ void Grid::attack_enemy(Direction d) {
         return;
     }
     //only change player_cell if move was successful
-   // player_cell = new_cell;
+    // player_cell = new_cell;
     player_cell->notifyObservers();
 }
 
