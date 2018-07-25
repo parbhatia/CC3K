@@ -2,6 +2,8 @@
 #define CHARACTER_H
 #include "object.h"
 #include <string>
+#include <sstream>
+#include <vector>
 
 class Character : public Object
 {
@@ -12,7 +14,8 @@ class Character : public Object
     int missChance;
     double potRate=1;
     double atkEffect=0;
-    double defEffect=0; 
+    double defEffect=0;
+    static std::vector <std::string> actions;
   public:
     Character(double atk, double def, double hp);
     void changeAtk(double n);
@@ -20,6 +23,8 @@ class Character : public Object
     void changeHp(double n);
     void setMaxHp(double n);
     void setMissChance(int n);
+    static void addAction(std::string s);
+    static void cleanActions();
     double getAtk();
     double getDef();
     double getHp();
@@ -31,7 +36,7 @@ class Character : public Object
     void attack(Item *whoTo) override;
     void attack(Character *whoTo) override;
     void beUsed(Player *whoFrom) override;
-    void notify(Player* p){}
+    void notify(Player* p) override{}
     ~Character() = 0;
 };
 #endif

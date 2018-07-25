@@ -2,7 +2,7 @@
 #include "attack.h" 
 #include <cstdlib>
 #include <ctime>
-
+using namespace std;
 
 Character::Character(double atk, double def, double hp) : atk{atk}, def{def}, hp{hp}, maxHp{hp}, missChance{0} {}
 void Character::changeAtk(double n) {
@@ -45,20 +45,33 @@ int Character::getMissChance() {
 void Character::setPotRate(double n) {
     potRate = n;
 }
+
+void Character::addAction(std::string s) {
+    actions.emplace_back(s);
+}
+
+void Character::cleanActions() {
+    actions.clear();
+}
+
 void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, so it does nothing.
 void Character::attack(Character *whoTo) {
     int chance = rand() % 10 + 1;
     if (chance > whoTo->getMissChance()) {
         double dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
         whoTo->changeHp(dmg);
+        stringstream ss;
         if(whoTo->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
+            ss << "PC kills " << whoTo->print() << ".";
+            addAction(ss.str());
+            //throw Attack{dmg, 0, Result::death};
         }
         else{
-            throw Attack{dmg, whoTo->getHp(), Result::attack};
+            
+            //throw Attack{dmg, whoTo->getHp(), Result::attack};
         } 
     } else {
-        throw Attack{0, whoTo->getHp(), Result::miss};
+       // throw Attack{0, whoTo->getHp(), Result::miss};
     }
 }
 

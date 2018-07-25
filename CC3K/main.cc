@@ -4,6 +4,8 @@
 #include "info.h"
 using namespace std;
 
+std::vector <std::string> Character::actions;
+
 int main(int argc, const char * argv[]) {
     Grid g;
     //g.test_observers();

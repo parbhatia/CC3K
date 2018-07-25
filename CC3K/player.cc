@@ -15,10 +15,3 @@ int Player::getGold() {
 
 void Player::notify(Player* p) {}
 
-void Player::addAction(string s) {
-    actions.emplace_back(s);
-}
-
-void Player::cleanActions() {
-    actions.clear();
-}
