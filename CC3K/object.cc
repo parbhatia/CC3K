@@ -1,4 +1,5 @@
 #include "object.h"
+#include "dragon.h"
 
 Object::~Object() {}
 void Object::attack(Halfling *h) {}
@@ -11,3 +12,8 @@ bool Object::getHostile() {return true;}
 Object* Object::spawn() {
     return nullptr;
 }
+void Object::setDragon(Object *d) {}
+bool Object::hasDragon() {return false;}
+bool Object::needsDragon() {return false;}
+Object* getDragon() {return nullptr;}
+void Object::setHostile(bool n) {}

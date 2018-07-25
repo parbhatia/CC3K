@@ -24,7 +24,14 @@ public:
     virtual void attack(Goblin *g);
     virtual void notify(Player* p)=0;
     virtual bool getHostile();
+   
     virtual Object* spawn();
+    virtual void setDragon(Object *d);
+    virtual bool hasDragon();
+    virtual bool needsDragon();
+    virtual Object* getDragon();
+    virtual void setHostile(bool n=true);
+
 };
 
 #endif

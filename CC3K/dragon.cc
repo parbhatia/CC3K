@@ -75,3 +75,4 @@ void Dragon::setDragongold(Gold* g) {
 Gold* Dragon::getDragongold() {
     return dragongold;
 }
+

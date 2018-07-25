@@ -7,15 +7,15 @@ class Dragon;
 
 class Gold: public Item {
     int value;
-    Dragon *dragon = nullptr;
+    Object *dragon = nullptr;
 public:
     Gold(int n = 0);
     void beUsed(Player* whoFrom) override;
     char print() override;
-    void setDragon(Dragon *d);
-    bool hasDragon();
-    bool needsDragon();
-    Dragon* getDragon();
+    void setDragon(Object *d) override;
+    bool hasDragon() override;
+    bool needsDragon() override;
+    Object* getDragon() override;
     void notify(Player* p) override;
 };
 #endif
