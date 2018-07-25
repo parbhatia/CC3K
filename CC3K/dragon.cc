@@ -69,3 +69,11 @@ bool Dragon::getHostile() {
 void Dragon::setHostile(bool n) {
     dragon_hostile = n;
 }
+
+void Dragon::setDragongold(Gold* g) {
+    dragongold = g;
+}
+
+Gold* Dragon::getDragongold() {
+    return dragongold;
+}
