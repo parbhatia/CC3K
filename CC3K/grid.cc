@@ -76,7 +76,7 @@ Grid::~Grid() {
         }
     }
 }
-
+//
 bool Grid::in_range(int row, int col) {
     return ((row>=0 && row<height-5) && (col >=0 && col<width));
 }
@@ -146,7 +146,7 @@ void Grid::attack_enemy(Direction d) {
     //attack enemy
     try {
         player_cell->attack(*new_cell);
-        cout << player->getAction() << endl;
+       // cout << player->getAction() << endl;
     }
     catch (Attack &o) {
         cout << "health is: " << o.health << endl;
