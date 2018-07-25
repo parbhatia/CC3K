@@ -67,6 +67,7 @@ bool Character::dead() { return hp <= 0; }
 
 void Character::storeAction(int dmg, char attacker, char defender, int hp){
     stringstream ss;
+    string attack = (attacker=='@')?"PC":to_string(attacker);
     if(hp>0){
         if(dmg){
             ss << attacker << " deals " << dmg << " damage to " << defender << "(" << hp << " HP" << ").";
