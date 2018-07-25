@@ -31,6 +31,9 @@ void Halfling::attack(Drow *h) {
 
     if (chance > h->getMissChance()) {
         h->changeHp(dmg);
+        if(h->getHp()<=0){
+            throw Attack{dmg, 0, Result::death};
+        } 
     } 
     else {
         dmg = 0;

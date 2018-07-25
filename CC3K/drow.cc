@@ -14,32 +14,34 @@ void Drow::beAttacked(Object *whoFrom) {
 
 void Drow::attack(Halfling *h) {
   int chance = rand() % 10 + 1;
+  double dmg = (-getAtk() * 100 / (100 + h->getDef()));
 
   if (chance > 5) {   // Halfling has 50% chance to cause PC to miss.
-    double dmg = (-getAtk() * 100 / (100 + h->getDef()));
     h->changeHp(dmg);
     if(h->getHp()<=0){
       throw Attack{dmg, 0, Result::death};
-    } else {
-      throw Attack{dmg, h->getHp(), Result::attack};
-    } 
-  } else {
-    throw Attack{0, h->getHp(), Result::miss};
+    }
   }
+  else {
+    dmg = 0;
+  }
+  Character::storeAction(dmg, 'P', h->print(), h->getHp);
+
 }
 
 void Drow::attack(Dwarf *d) {
   int chance = rand() % 10 + 1;
+  double dmg = (-getAtk() * 100 / (100 + d->getDef()));
+
   if (chance > getMissChance()) {
-    double dmg = (-getAtk() * 100 / (100 + d->getDef()));
     d->changeHp(dmg); 
     if(d->getHp()<=0){
             throw Attack{dmg, 0, Result::death};
-    } else {
-      throw Attack{dmg, d->getHp(), Result::attack};
-    }    
-  } else {
-    throw Attack{0, d->getHp(), Result::miss};
+    }
   }
+  else {
+    dmg = 0;
+  }
+  
 }
 
