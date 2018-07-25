@@ -40,6 +40,8 @@
 		4BC3A7302107CED0002286B9 /* plusDef.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3A7292107CED0002286B9 /* plusDef.cc */; };
 		4BC3A7312107CED0002286B9 /* minAtk.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3A72B2107CED0002286B9 /* minAtk.cc */; };
 		4BC3A7322107CED0002286B9 /* minDef.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3A72C2107CED0002286B9 /* minDef.cc */; };
+		4BC3A7372108E323002286B9 /* merchant.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3A7352108E323002286B9 /* merchant.cc */; };
+		4BC3A7382108E323002286B9 /* dragon.cc in Sources */ = {isa = PBXBuildFile; fileRef = 4BC3A7362108E323002286B9 /* dragon.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,6 +121,10 @@
 		4BC3A72C2107CED0002286B9 /* minDef.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = minDef.cc; sourceTree = "<group>"; };
 		4BC3A72D2107CED0002286B9 /* minAtk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minAtk.h; sourceTree = "<group>"; };
 		4BC3A72E2107CED0002286B9 /* plusDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plusDef.h; sourceTree = "<group>"; };
+		4BC3A7332108E322002286B9 /* dragon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dragon.h; sourceTree = "<group>"; };
+		4BC3A7342108E323002286B9 /* merchant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = merchant.h; sourceTree = "<group>"; };
+		4BC3A7352108E323002286B9 /* merchant.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = merchant.cc; sourceTree = "<group>"; };
+		4BC3A7362108E323002286B9 /* dragon.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = dragon.cc; sourceTree = "<group>"; };
 		4BCE7AEC21052EED00B2532A /* resHP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resHP.h; sourceTree = "<group>"; };
 		4BCE7AED21052EED00B2532A /* halfling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = halfling.h; sourceTree = "<group>"; };
 		4BCE7AEE21052EED00B2532A /* human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = human.h; sourceTree = "<group>"; };
@@ -167,6 +173,10 @@
 				4B2B5D7B20FE96C700F5B673 /* cell.h */,
 				4B53F1BB2100105A00736E14 /* enemy.h */,
 				4B53F1BC2100105A00736E14 /* object.h */,
+				4BC3A7362108E323002286B9 /* dragon.cc */,
+				4BC3A7332108E322002286B9 /* dragon.h */,
+				4BC3A7352108E323002286B9 /* merchant.cc */,
+				4BC3A7342108E323002286B9 /* merchant.h */,
 				4B53F1C12100105B00736E14 /* player.h */,
 				4B2B5D8B20FFD7A000F5B673 /* character.h */,
 				4B53F1BF2100105B00736E14 /* shade.h */,
@@ -315,6 +325,7 @@
 				4B3BD77F2107AF8900C0C3E7 /* poiHP.cc in Sources */,
 				4B3BD7892107AF8900C0C3E7 /* chamber.cc in Sources */,
 				4B3BD7842107AF8900C0C3E7 /* player.cc in Sources */,
+				4BC3A7382108E323002286B9 /* dragon.cc in Sources */,
 				4B3BD78C2107AF8900C0C3E7 /* item.cc in Sources */,
 				4B3BD77B2107AF8900C0C3E7 /* halfling.cc in Sources */,
 				4BC3A72F2107CED0002286B9 /* plusAtk.cc in Sources */,
@@ -327,6 +338,7 @@
 				4B3BD7862107AF8900C0C3E7 /* doorcell.cc in Sources */,
 				4B3BD7772107AF8900C0C3E7 /* vampire.cc in Sources */,
 				4B3BD78A2107AF8900C0C3E7 /* orc.cc in Sources */,
+				4BC3A7372108E323002286B9 /* merchant.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
