@@ -15,48 +15,45 @@ void Vampire::beAttacked(Object *whoFrom) {
 
 void Vampire::attack(Enemy *whoTo) {
     int chance = rand() % 10 + 1;
+    double dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
     if (chance > getMissChance()) {
-        double dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
         whoTo->changeHp(dmg);
         if(whoTo->getHp()<=0){
             throw Attack{dmg, 0, Result::death};
-        } else {
-            throw Attack{dmg, whoTo->getHp(), Result::attack};
         }
         changeHp(5); // Vampire gains 5 HP every successful attack.
     } else {
-        throw Attack{0, whoTo->getHp(), Result::miss};
+        dmg = 0;
     }
+    Character::storeAction(dmg, print(), whoTo->print(), whoTo->getHp);
 }
 
 void Vampire::attack(Halfling *h) {
+    double dmg = (-getAtk() * 100 / (100 + h->getDef()));
     int chance = rand() % 10 + 1;
     if (chance > 5) {   // Halfling has 50% chance to cause PC to miss.
-        double dmg = (-getAtk() * 100 / (100 + h->getDef()));
         h->changeHp(dmg);
         changeHp(5);   // Vampire gains 5 HP every successful attack.
         if(h->getHp()<=0){
             throw Attack{dmg, 0, Result::death};
-        } else {
-            throw Attack{dmg, h->getHp(), Result::attack};
         }
     } else {
-        throw Attack{0, h->getHp(), Result::miss};
+        dmg = 0;
     }
+    Character::storeAction(dmg, print(), h->print(), h->getHp);
 }
 
 void Vampire::attack(Dwarf *d) {
+    double dmg = (-getAtk() * 100 / (100 + d->getDef()));
     int chance = rand() % 10 + 1;
     if (chance > getMissChance()) {
-        double dmg = (-getAtk() * 100 / (100 + d->getDef()));
         d->changeHp(dmg);
         changeHp(-5);   // Vampires are allergic to dwarves. lose 5HP instead.
         if(d->getHp()<=0){
             throw Attack{dmg, 0, Result::death};
-        } else {
-            throw Attack{dmg, d->getHp(), Result::attack};
         }
     } else {
-        throw Attack{0, d->getHp(), Result::miss};
+        dmg = 0;
     }
+    Character::storeAction(dmg, print(), d->print(), d->getHp);
 }
