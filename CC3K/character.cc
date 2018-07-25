@@ -59,7 +59,7 @@ std::string Character::storeAction(int dmg, char attacker, char defender, int hp
     // stringstream ss;
     // ss << race << " deals " << std::to_string(dmg) << " to player.";
     // return ss.str();
-    return;
+    return 0;
 }
 
 std::string Character::getAction() { return actions[0]; }

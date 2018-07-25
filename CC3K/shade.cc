@@ -38,7 +38,7 @@ void Shade::attack(Dwarf *d) {
             addAction(ss.str());
             //throw Attack{dmg, 0, Result::death};
         } else {
-            ss << printAttack(dmg);
+            //ss << printAttack(dmg);
             addAction(ss.str());
             //throw Attack{dmg, d->getHp(), Result::attack};
         }

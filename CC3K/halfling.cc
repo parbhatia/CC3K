@@ -22,7 +22,7 @@ void Halfling::attack(Goblin* g){
     } else {
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), 'P', g->getHp);
+    Character::storeAction(dmg, print(), 'P', g->getHp());
 }
 
 void Halfling::attack(Drow *h) {
@@ -35,5 +35,5 @@ void Halfling::attack(Drow *h) {
     else {
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), 'P', h->getHp);
+    Character::storeAction(dmg, print(), 'P', h->getHp());
 }
