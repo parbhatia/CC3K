@@ -19,3 +19,4 @@ Object* Object::getDragon() {return nullptr;}
 void Object::setHostile(bool n) {}
 void Object::setDGold(Object* g) {}
 Object* Object::getDGold() {return nullptr;}
+bool Object::isDead() {return false;}

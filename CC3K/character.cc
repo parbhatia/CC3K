@@ -12,18 +12,27 @@ void Character::changeDef(double n) {
     defEffect += n;
 }
 void Character::changeHp(double n) {
-    hp += n;  
+    if ( 0 <= hp + n && hp+n <= maxHp) {
+        hp += n;
+    } else if  (hp + n < 0) {
+        hp = 0;
+    } else {
+        hp = maxHp;
+    }  
 }
 void Character::setMaxHp(double n) {
     maxHp = n;
 }
+
 void Character::setMissChance(int n) {   
     missChance = n;
 }
+
 void Character::resetEffect() {
     atkEffect = 0;
     defEffect = 0;
 }
+
 double Character::getAtk() {
     return atk + atkEffect;
 }
@@ -59,7 +68,13 @@ bool Character::dead() { return hp <= 0; }
 void Character::storeAction(int dmg, char attacker, char defender, int hp){
     stringstream ss;
     if(hp>0){
-        ss << attacker << " deals " << dmg << " damage to " << defender << "(" << hp << " HP" << ").";
+        if(dmg){
+            ss << attacker << " deals " << dmg << " damage to " << defender << "(" << hp << " HP" << ").";
+        }
+        else{
+            ss << attacker << " tries to attack " << defender << " but misses!";
+        }
+        
     }
     else{
         ss << attacker << " deals " << dmg << " damage to " << defender << ". " << defender << " is defeated.";

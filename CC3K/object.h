@@ -33,6 +33,7 @@ public:
     virtual void setHostile(bool n=true);
     virtual void setDGold(Object* g);
     virtual Object* getDGold();
+    virtual bool isDead();
 };
 
 #endif
