@@ -68,3 +68,7 @@ bool Merchant::getHostile() {
 void Merchant::setHostile(bool n) {
     merchant_hostile = n;
 }
+
+void Merchant::resetHostile() {
+    merchant_hostile = false;
+}

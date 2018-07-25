@@ -13,6 +13,7 @@ class Merchant: public Enemy{
     void attack(Character* whoTo) override;*/
     bool getHostile() override;
     void setHostile(bool n=true) override;
+    static void resetHostile();
 };
 
 
