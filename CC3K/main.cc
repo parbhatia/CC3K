@@ -19,6 +19,7 @@ bool valid_direction(string dir) {
 
 int main(int argc, const char * argv[]) {
     while(true) { //handles multiple games
+        cout << "starting game" << endl;
         Grid g;
         string race;
         //command interpreter
@@ -81,7 +82,9 @@ int main(int argc, const char * argv[]) {
                     break;
                 } else if (cmd == "q") {
                 }
+                g.check_game(); //check after every move
             }
+            
         }
         catch (ios::failure &) {
             return 0;

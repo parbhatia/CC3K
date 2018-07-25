@@ -21,6 +21,8 @@ Dragon* Gold::getDragon() {
 }
 
 void Gold::notify(Player* p) {
-    dragon->setHostile(true);
-    p->beAttacked(dragon);
+    if (dragon) {
+        dragon->setHostile(true);
+        p->beAttacked(dragon);
+    }
 }

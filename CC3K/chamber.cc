@@ -159,3 +159,9 @@ void Chamber::generate_enemy() {
         }
     }
 }
+
+int Chamber::get_numEnemies() { return numEnemies; }
+
+int Chamber::add_numEnemies() { ++numEnemies; }
+
+

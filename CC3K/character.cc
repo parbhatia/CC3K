@@ -54,6 +54,8 @@ void Character::cleanActions() {
     actions.clear();
 }
 
+bool Character::dead() { return hp <= 0; }
+
 std::string Character::storeAction(int dmg, char attacker, char defender, int hp){
     // char race = print();
     // stringstream ss;

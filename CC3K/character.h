@@ -32,6 +32,7 @@ class Character : public Object
     double getHp();
     double getMaxHp();
     double getPotRate();
+    bool dead();
     int getMissChance();
     void setPotRate(double n);
     void resetEffect();

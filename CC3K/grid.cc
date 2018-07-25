@@ -17,6 +17,11 @@ void Grid::reset_chambers() {
     }
 }
 
+void Grid::check_game() {
+    if (player->dead()) throw Game_Lost();
+    if (won) throw Game_Won();
+}
+
 void Grid::reset_actions() { player->cleanActions(); }
 
 void Grid::reset_cells() {
@@ -39,21 +44,28 @@ void Grid::intialize_player(string type) {
 }
 
 void Grid::new_level() {
-    reset_cells();
-    reset_chambers();
-    //pick chamber to generate new player location
-    int chamb_num = chamber_picker();
-    //put existing player on new cel
-    chambers[chamb_num].generate_player_cell(player);
-    //set new player_cell location
-    player_cell = chambers[chamb_num].give_playercell(); //ask chamber for player cell
-    if (level != 5) {
-        ++level;
-        generate_stairs();
+    ++level;
+    if (level == 6) {
+        won = true;
+        //main will check game conditions after every turn
     }
-    //generate_potions();
-    //generate_gold();
-    generate_enemies();
+    else {
+        reset_cells();
+        reset_chambers();
+        //pick chamber to generate new player location
+        int chamb_num = chamber_picker();
+        //put existing player on new cel
+        chambers[chamb_num].generate_player_cell(player);
+        //set new player_cell location
+        player_cell = chambers[chamb_num].give_playercell(); //ask chamber for player cell
+        if (level <= 5) {
+            ++level;
+            generate_stairs();
+        }
+        //generate_potions();
+        //generate_gold();
+        generate_enemies();
+    }
 }
 
 Grid::~Grid() {

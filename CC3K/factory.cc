@@ -25,15 +25,15 @@ Object *Factory::EnemyFactory(int rand_num) {
     else if (rand_num == 13) return new Elf();
     else if (rand_num == 14) return new Orc();
     else if (rand_num == 15) return new Orc();
-    else if (rand_num == 16) return new Dwarf(); //change to merchant
-    else return new Dwarf(); //change to merchant
+    else if (rand_num == 16) return new Merchant();
+    else return new Merchant();
 }
 
 Player *Factory::PlayerFactory(string s) {
     if (s == "d") return new Drow();
     else if (s == "v") return new Vampire();
-    else if (s == "g") return new Shade (); //change to Goblin();
-    else if (s == "t") return new Shade(); //change to Troll();
+    else if (s == "g") return new Goblin ();
+    else if (s == "t") return new Troll();
     else return new Shade();
 }
 
@@ -52,7 +52,13 @@ Gold *Factory::GoldFactory(int rand_num) {
     else if (rand_num == 2) return new Gold(2);
     else if (rand_num == 3) return new Gold(2);
     else if (rand_num == 4) return new Gold(2);
-    else if (rand_num == 5) return new Gold(6);
+    else if (rand_num == 5) {
+        Dragon *new_dragon = new Dragon();
+        Chamber::add_numEnemies();
+        Gold *g = new Gold(6);
+        g->setDragon(new_dragon);
+        return g;
+    }
     else if (rand_num == 6) return new Gold(1);
     else if (rand_num == 7) return new Gold(1);
     else return new Gold(4); //merchant hoard

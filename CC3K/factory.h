@@ -2,6 +2,7 @@
 #define factory_hpp
 #include <iostream>
 #include "player.h"
+#include "chamber.h"
 #include "dwarf.h"
 #include "shade.h"
 #include "orc.h"
@@ -14,7 +15,10 @@
 #include "resHP.h"
 #include "poiHP.h"
 #include "gold.h"
-//#include "merchant.h"
+#include "merchant.h"
+#include "troll.h"
+#include "dragon.h"
+#include "goblin.h"
 
 class Factory {
 public:

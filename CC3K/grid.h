@@ -20,6 +20,7 @@ class Grid {
     int height = 30;
     std::vector<std::vector<Cell *>> cells;
     int level = 1;
+    bool won = false;
     std::string race;
     Player *player = nullptr; //grid keeps track of player
     Cell *player_cell = nullptr; //keeping track of player's movements
@@ -34,6 +35,7 @@ class Grid {
     void reset_cells();
     void reset_actions();
     void reset_chambers();
+    void check_game(); //initiates player win, or loss
     void reset_cellsmoved(); //resets hasmoved flag on all cells
     void read_layout(std::string s);
     void attack_enemy(Direction d);
