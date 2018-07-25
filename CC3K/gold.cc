@@ -12,11 +12,11 @@ char Gold::print() {
     return 'G';
 }
 
-void Gold::setDragon(Dragon *d) {
+void Gold::setDragon(Object *d) {
     dragon = d;
 }
 
-Dragon* Gold::getDragon() {
+Object* Gold::getDragon() {
     return dragon;
 }
 
