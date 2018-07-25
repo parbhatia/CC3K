@@ -27,7 +27,7 @@ void Gold::notify(Player* p) {
     }
 }
 bool Gold::hasDragon() {
-    return (dragon);
+    return (dragon != nullptr);
 }
 
 bool Gold::needsDragon() {
