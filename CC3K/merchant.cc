@@ -2,6 +2,7 @@
 #include "drow.h"
 #include "goblin.h"
 #include "attack.h"
+#include "gold.h"
 
 Merchant::Merchant(): Enemy{70, 5, 30} {}
 char Merchant::print() {
@@ -71,4 +72,8 @@ void Merchant::setHostile(bool n) {
 
 void Merchant::resetHostile() {
     merchant_hostile = false;
+}
+
+Object* Merchant::spawn() {
+    return new Gold{4};
 }

@@ -14,6 +14,7 @@ class Merchant: public Enemy{
     bool getHostile() override;
     void setHostile(bool n=true) override;
     static void resetHostile();
+    Object* spawn() override;
 };
 
 
