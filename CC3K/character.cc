@@ -54,7 +54,7 @@ void Character::cleanActions() {
     actions.clear();
 }
 
-std::string Character::storeAction(int dmg, char attacker, char defender, int hp){
+void Character::storeAction(int dmg, char attacker, char defender, int hp){
     stringstream ss;
     if(hp>0){
         ss << attacker << " deals " << dmg << " damage to " << defender << "(" << hp << " HP" << ").";
@@ -62,14 +62,18 @@ std::string Character::storeAction(int dmg, char attacker, char defender, int hp
     else{
         ss << attacker << " deals " << dmg << " damage to " << defender << ". " << defender << " is defeated.";
     }
-
+    Character::addAction(ss.str());
 
     
     // char race = print();
     // stringstream ss;
     // ss << race << " deals " << std::to_string(dmg) << " to player.";
     // return ss.str();
-    return 0;
+}
+
+void storePotion(std::string type){
+    string s = "PC uses "+ type;
+    Character::addAction(s);
 }
 
 std::string Character::getAction() { return actions[0]; }
