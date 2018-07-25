@@ -10,6 +10,7 @@ class TextDisplay;
 class Object;
 class Cell {
     int row, col;
+    bool hasdragon = false;
     bool hasmoved = false;
     bool haspotion = false;
     bool hasgold = false;
@@ -22,6 +23,9 @@ protected:
     Object *ob = nullptr;
 public:
     Cell(int r, int c, char t);
+    void set_dragon();
+    bool has_dragon();
+    void reset_dragon();
     void set_gold();
     bool has_gold();
     void reset_gold();
@@ -41,6 +45,7 @@ public:
     void clear_stair();
     bool isOccupied();
     void clear();
+    virtual bool canDragon();
     virtual void setObject(Object *newob);
     virtual void setPlayer(Player *newob);
     virtual void moveTo(Cell &whoTo);

@@ -5,6 +5,8 @@ DoorCell::DoorCell(int r, int c, char t) :  Cell{r,c, t} {}
 
 DoorCell::~DoorCell() {}
 
+bool DoorCell::canDragon() { return false; }
+
 /*void DoorCell::moveTo(Cell &whoTo) {
     //if (whoTo.hasObject())
     if (!has_moved() && !has_potion() && !has_gold()) {

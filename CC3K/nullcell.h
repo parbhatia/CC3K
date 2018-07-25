@@ -7,9 +7,9 @@ class NullCell: public Cell{
     char type;
 public:
     NullCell(int r, int c, char type);
-
     ~NullCell();
     void moveTo(Cell &whoTo) override;
+    bool canDragon() override;
     void acceptMove(Cell &whoFrom) override;
 };
 
