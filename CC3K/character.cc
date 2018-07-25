@@ -67,18 +67,19 @@ bool Character::dead() { return hp <= 0; }
 
 void Character::storeAction(int dmg, char attacker, char defender, int hp){
     stringstream ss;
-    string attack = (attacker=='@')?"PC":to_string(attacker);
+    string a = (attacker=='@' || attacker=='P')?"PC":string(1,attacker);
+    string d = (defender=='@' || defender=='P')?"PC":string(1,defender);
     if(hp>0){
         if(dmg){
-            ss << attacker << " deals " << dmg << " damage to " << defender << "(" << hp << " HP" << ").";
+            ss << a << " deals " << dmg << " damage to " << d << "(" << hp << " HP" << ").";
         }
         else{
-            ss << attacker << " tries to attack " << defender << " but misses!";
+            ss << a << " tries to attack " << d << " but misses!";
         }
         
     }
     else{
-        ss << attacker << " deals " << dmg << " damage to " << defender << ". " << defender << " is defeated.";
+        ss << a << " deals " << dmg << " damage to " << d << ". " << d << " is defeated.";
     }
     Character::addAction(ss.str());
 
