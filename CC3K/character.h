@@ -26,7 +26,8 @@ class Character : public Object
     static void addAction(std::string s);
     static std::string getAction();
     static void cleanActions();
-    static std::string storeAction(int dmg, char attacker, char defender, int hp);
+    static void storeAction(int dmg, char attacker, char defender, int hp);
+    static void storePotion(std::string type);
     double getAtk();
     double getDef();
     double getHp();
