@@ -140,10 +140,6 @@ void Grid::attack_enemy(Direction d) {
         player_cell->attack(*new_cell);
        // cout << player->getAction() << endl;
     }
-    catch (Attack &o) {
-        cout << "health is: " << o.health << endl;
-        return;
-    }
     catch (Stair_Cell &o) {
         new_level();
         return;
@@ -158,11 +154,7 @@ void Grid::use_pot(Direction d) {
     Cell *new_cell = nullptr;
     new_cell = new_cell_pos(player_cell,d);
     //make player use pot
-    try {
-        player_cell->use(*new_cell);
-    }
-    catch (Poteffect &p) {
-    }
+    player_cell->use(*new_cell);
 }
 
 void Grid::move_player(Direction d) {
