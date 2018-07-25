@@ -1,6 +1,7 @@
 #include "gold.h"
 #include "player.h"
 Gold::Gold(int n):value{n} {}
+using namespace std;
 
 void Gold::beUsed(Player* whoFrom) {
     whoFrom->changeGold(value);

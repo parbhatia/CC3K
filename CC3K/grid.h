@@ -21,7 +21,6 @@ class Grid {
     std::vector<std::vector<Cell *>> cells;
     int level = 1;
     std::string race;
-    int gold = 0;
     Player *player = nullptr; //grid keeps track of player
     Cell *player_cell = nullptr; //keeping track of player's movements
     std::vector<Chamber> chambers; //chambers on each level
@@ -45,6 +44,7 @@ class Grid {
     void use_pot(Direction d); //makes player use potion in d
     void generate_enemies(); //chambers generate enemies
     void generate_potions(); //chambers generate potions
+    void generate_gold(); //chambers generate gold
     void generate_stairs(); //random chamber generates stairs
     void create_randomness(); //sets time as seed 
     int chamber_picker(); //returns random chamber (0 to 4)

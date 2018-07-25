@@ -57,6 +57,10 @@ int Chamber::potion_picker() {
     return rand() % potion_types;
 }
 
+int Chamber::gold_picker() {
+    return rand() % gold_distribution_number;
+}
+
 
 //generators
 
@@ -109,6 +113,27 @@ void Chamber::generate_potion() {
                 cells[x]->setObject(new_pot);
                 cells[x]->set_potion();
                 --numPotions;
+                done = true;
+            }
+        }
+    }
+}
+
+void Chamber::generate_gold() {
+    if (numGold == 0) {
+        throw No_More_Gold();
+    }
+    else {
+        bool done = false;
+        while (!done) {
+            int x = cell_picker();
+            if (!cells[x]->isOccupied()) {
+                int y = gold_picker();
+                //choose random gold
+                Object *new_gold = f.GoldFactory(y);
+                cells[x]->setObject(new_gold);
+                cells[x]->set_gold();
+                --numGold;
                 done = true;
             }
         }

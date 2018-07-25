@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
                 g.intialize_player(cmd);
                 g.generate_stairs();
                 g.generate_potions();
-                //gold
+                g.generate_gold();
                 g.generate_enemies();
                 cout << g;
             } else if (cmd == "u") {
