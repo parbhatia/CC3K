@@ -38,9 +38,9 @@ void Elf::attack(Enemy* whoTo){
         chance = rand()%10 + 1;
         if (chance > getMissChance()) {
             whoTo->changeHp(dmg);
-            if(whoTo->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
-        } 
+        //     if(whoTo->getHp()<=0){
+        //     throw Attack{dmg, 0, Result::death};
+        // } 
         } 
         else {
             dmg = 0;
@@ -57,9 +57,9 @@ void Elf::attack(Goblin *g) {
         chance = rand()%10 + 1;
         if (chance > getMissChance()) {
             g->changeHp(dmg);
-            if(g->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
-            } 
+            // if(g->getHp()<=0){
+            // throw Attack{dmg, 0, Result::death};
+            // } 
         }
         else{
             dmg = 0;

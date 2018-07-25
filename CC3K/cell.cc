@@ -193,16 +193,12 @@ void setDisplay(TextDisplay *td) {td = td; }
 void Cell::use(Cell &target) {
     Object *new_object = target.getObject();
     if (new_object) {
-        try {
-            new_object->beUsed(player);
-        }
-        catch (...) {
-            delete target.ob;
-            target.ob = nullptr;
-            target.reset_potion();
-            throw;
-        }
+        new_object->beUsed(player);
+        delete target.ob;
+        target.ob = nullptr;
+        target.reset_potion();
     }
+    has_moved();
 }
 
 int Cell::sizeObservers() {
