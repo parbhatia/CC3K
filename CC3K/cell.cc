@@ -77,7 +77,7 @@ void Cell::attack(Cell &target) {
 }
 
 bool Cell::isOccupied(){
-    if(hasPlayer() || ob){
+    if(hasPlayer() || hasObject()){
         return true;
     } return false;
 }

@@ -83,6 +83,7 @@ bool Grid::in_range(int row, int col) {
 
 void Grid::notify_player_observers() {
     try {
+        cout << "notifying observers" << endl;
         player_cell->notifyObservers();
     }
     catch(Attack &o) {
@@ -115,20 +116,6 @@ void Grid::set_observers() {
         }
     }
 }
-
-
-/*bool Grid::has_player_test() {
- cout << player_cell->print() << endl;
- return player_cell != nullptr;
- }
- 
- void Grid::cell_test() {
- for(auto row: cells) {
- for (auto cell: row) {
- cout << cell->getRow() << "," << cell->getCol() << endl;
- }
- }
- }*/
 
 void Grid::attack_enemy(Direction d) {
     int p_row = player_cell->getRow();
@@ -326,6 +313,7 @@ void Grid::generate_potions() {
 }
 
 void Grid::set_dragon(Cell *c) {
+    cout << "settign dragon" << endl;
     bool done = false;
     while(!done) {
         //pick random directiom
@@ -335,8 +323,10 @@ void Grid::set_dragon(Cell *c) {
         if (!new_cell->isOccupied()) {
             new_cell->setObject(c->getObject()->getDragon());
             //set dragon on new cell
+            cout << "dragon cell is: " << new_cell->getRow() << ","
+            << new_cell->getCol() << endl;
+            done = true;
         }
-        done = true;
     }
 }
 
