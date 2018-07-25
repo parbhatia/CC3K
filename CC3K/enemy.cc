@@ -15,5 +15,5 @@ bool Enemy::getHostile() {
 }
 
 void Enemy::notify(Player* p) { 
-    this->beAttacked(p);
+    p->beAttacked(this);
 }

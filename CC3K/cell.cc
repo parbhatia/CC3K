@@ -66,7 +66,7 @@ void Cell::clear() {
 
 void Cell::attack(Cell &target) {
     Object *p = this->getPlayer();
-    Object *new_object;
+    Object *new_object = nullptr;
     if (target.hasObject()) {
         new_object = target.getObject();
         new_object->beAttacked(p);
@@ -120,7 +120,6 @@ void Cell::acceptMove(Cell &whoFrom) {
         //only one object will be set
         setPlayer(whoFrom.getPlayer());
         setObject(whoFrom.getObject());
-        notifyObservers();
         set_moved();
     } else {
         throw Move_Unsuccessful();

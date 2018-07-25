@@ -142,7 +142,8 @@ void Grid::attack_enemy(Direction d) {
         return;
     }
     //only change player_cell if move was successful
-    player_cell = new_cell;
+   // player_cell = new_cell;
+    player_cell->notifyObservers();
 }
 
 void Grid::use_pot(Direction d) {
@@ -175,6 +176,7 @@ void Grid::move_player(Direction d) {
         player_cell->moveTo(*new_cell);
     }
     catch (Move_Unsuccessful &o) {
+        player_cell->notifyObservers();
         return;
     }
     catch (Stair_Cell &o) {
@@ -183,6 +185,7 @@ void Grid::move_player(Direction d) {
     }
     //only change player_cell if move was successful
     player_cell = new_cell;
+    player_cell->notifyObservers();
 }
 
 Direction Grid::direction_picker() {
