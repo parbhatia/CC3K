@@ -75,8 +75,8 @@ void Grid::new_level() {
             ++level;
             generate_stairs();
         }
-        //generate_potions();
-        //generate_gold();
+        generate_potions();
+        generate_gold();
         generate_enemies();
     }
 }
@@ -138,7 +138,7 @@ void Grid::attack_enemy(Direction d) {
     //attack enemy
     player_cell->attack(*new_cell);
     
-    player_cell->notifyObservers();
+    //player_cell->notifyObservers();
 }
 
 void Grid::use_pot(Direction d) {
@@ -167,7 +167,6 @@ void Grid::move_player(Direction d) {
         player_cell->moveTo(*new_cell);
     }
     catch (Move_Unsuccessful &o) {
-        player_cell->notifyObservers();
         return;
     }
     catch (Stair_Cell &o) {
@@ -176,7 +175,6 @@ void Grid::move_player(Direction d) {
     }
     //only change player_cell if move was successful
     player_cell = new_cell;
-    player_cell->notifyObservers();
 }
 
 Direction Grid::direction_picker() {

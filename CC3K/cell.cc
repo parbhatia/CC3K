@@ -30,7 +30,7 @@ bool Cell::canDragon() {
 //dragon
 
 bool Cell::has_dragon() {
-    if (ob) return ob->hasDragon();
+    if (ob)return (ob->getDGold()!= nullptr);
     else return false;
 }
 
@@ -45,7 +45,9 @@ void Cell::reset_has_moved() { hasmoved = false; }
 //gold
 void Cell::set_gold() { hasgold = true; }
 
-bool Cell::has_gold() { return hasgold; }
+bool Cell::has_gold() {
+    return hasgold;
+}
 
 void Cell::reset_gold() { hasgold = false; }
 //////
@@ -131,6 +133,9 @@ void Cell::moveTo(Cell &whoTo) {
 void Cell::acceptMove(Cell &whoFrom) {
     if (has_stair() && whoFrom.hasPlayer()) throw Stair_Cell();
     else if (has_gold() && whoFrom.hasPlayer()) {
+        if (ob->getDragon()){
+            throw Move_Unsuccessful();
+        }
         ob->beUsed(whoFrom.getPlayer());
         delete ob;
         ob = nullptr;
