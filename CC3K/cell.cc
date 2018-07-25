@@ -82,7 +82,10 @@ void Cell::attack(Cell &target) {
     if (target.hasObject()) {
         new_object = target.getObject();
         new_object->beAttacked(p);
-        if (new_object->)
+        if (new_object->isDead()) {
+            delete new_object;
+            target.setObject(nullptr);
+        }
     } else if (target.hasPlayer()) {
         new_object = target.getPlayer();
         new_object->beAttacked(p);
