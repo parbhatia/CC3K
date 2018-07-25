@@ -31,6 +31,7 @@ int main(int argc, const char * argv[]) {
         bool stop_enemies = false;
         cin.exceptions(ios::eofbit|ios::failbit);
         string cmd;
+        cout << "Please pick race." << endl;
         try {
             bool player_set = false;
             while (true) { //handles all moves in single game
@@ -43,9 +44,9 @@ int main(int argc, const char * argv[]) {
                     //grid moves player at direction cmd
                     g.move_player(dir_map.at(cmd));
                     if (!stop_enemies) g.move_enemies();
-                    g.reset_cellsmoved();
-                    g.notify_player_observers();
-                    cout << g;
+                    //g.reset_cellsmoved();
+                    //g.notify_player_observers();
+                    //cout << g;
                 } else if ((cmd == "s") | (cmd == "d") | (cmd == "v") |
                            (cmd == "g") | (cmd == "t")) {
                     if (player_set) {
@@ -58,15 +59,15 @@ int main(int argc, const char * argv[]) {
                     g.generate_potions();
                     g.generate_gold();
                     g.generate_enemies();
-                    cout << g;
+                    //cout << g;
                 } else if (cmd == "u") {
                     cin >> cmd;
                     if (valid_direction(cmd)) {
                         g.use_pot(dir_map.at(cmd));
                         if (!stop_enemies) g.move_enemies();
-                        g.reset_cellsmoved();
-                        g.notify_player_observers();
-                        cout << g;
+                        //g.reset_cellsmoved();
+                        //g.notify_player_observers();
+                        //cout << g;
                     }
                 } else if (cmd == "a") {
                     cin >> cmd;
@@ -74,9 +75,9 @@ int main(int argc, const char * argv[]) {
                         //grid attacks player at direction cmd
                         g.attack_enemy(dir_map.at(cmd));
                         if (!stop_enemies) g.move_enemies();
-                        g.reset_cellsmoved();
-                        g.notify_player_observers();
-                        cout << g;
+                        //g.reset_cellsmoved();
+                        //g.notify_player_observers();
+                        //cout << g;
                     }
                 } else if (cmd == "f") {
                     //toggle stop_enemies flag
@@ -87,6 +88,9 @@ int main(int argc, const char * argv[]) {
                     break;
                 } else if (cmd == "q") {
                 }
+                g.reset_cellsmoved();
+                g.notify_player_observers();
+                cout << g;
                 g.reset_actions();
                 g.check_game(); //check after every move
             }
@@ -96,7 +100,7 @@ int main(int argc, const char * argv[]) {
             cout << "yay" << endl;
         }
         catch (Game_Lost &g) {
-            cout << "nooo!" << endl;
+            cout << "Game Lost." << endl;
         }
         catch (ios::failure &) {
             return 0;

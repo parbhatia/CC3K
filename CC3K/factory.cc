@@ -39,19 +39,19 @@ Player *Factory::PlayerFactory(string s) {
 
 Potion *Factory::PotionFactory(int rand_num) {
     if (rand_num == 0) return new poiHP();
-    else if (rand_num == 1) return new poiHP();
-    else if (rand_num == 2) return new poiHP();
-    else if (rand_num == 3) return new poiHP();
-    else if (rand_num == 4) return new poiHP();
-    else return new poiHP();
+    else if (rand_num == 1) return new resHP();
+    else if (rand_num == 2) return new PlusAttack();
+    else if (rand_num == 3) return new PlusDef();
+    else if (rand_num == 4) return new MinDef();
+    else return new MinAttack();
 }
 
 Gold *Factory::GoldFactory(int rand_num) {
     if (rand_num == 0) return new Gold(2);
-    else if (rand_num == 1) return new Gold(2);
-    else if (rand_num == 2) return new Gold(2);
-    else if (rand_num == 3) return new Gold(2);
-    else if (rand_num == 4) return new Gold(2);
+    else if (rand_num == 1) return new Gold(6); //2
+    else if (rand_num == 2) return new Gold(6); //2
+    else if (rand_num == 3) return new Gold(6); //2
+    else if (rand_num == 4) return new Gold(6); //2
     else if (rand_num == 5) return new Gold(6);
     else if (rand_num == 6) return new Gold(1);
     else if (rand_num == 7) return new Gold(1);
