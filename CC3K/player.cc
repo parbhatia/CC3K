@@ -23,9 +23,9 @@ void Player::attack(Halfling *h) {
     double dmg = (-getAtk() * 100 / (100 + h->getDef()));
     if (chance > 5) {   // Halfling has 50% chance to cause PC to miss.
         h->changeHp(dmg);
-        if(h->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
-        }
+        // if(h->getHp()<=0){
+        //     throw Attack{dmg, 0, Result::death};
+        // }
     } else {
         dmg = 0;
     }
@@ -39,10 +39,10 @@ void Player::attack(Dwarf *d) {
     int chance = rand() % 10 + 1;
     if (chance > getMissChance()) {
         d->changeHp(dmg);
-        stringstream ss;
-        if(d->getHp()<=0){            
-            throw Attack{dmg, 0, Result::death};
-        }
+        // stringstream ss;
+        // if(d->getHp()<=0){            
+        //     throw Attack{dmg, 0, Result::death};
+        // }
     } else {
         dmg = 0;
     }
@@ -55,10 +55,9 @@ void Player::attack(Enemy *e) {
     if (chance > e->getMissChance()) {
         
         e->changeHp(dmg);
-        stringstream ss;
-        if(e->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
-        }
+        // if(e->getHp()<=0){
+        //     throw Attack{dmg, 0, Result::death};
+        // }
         e->setHostile(true); //only need to set hostile for merchant and dragon 
     } else {
         dmg = 0;
