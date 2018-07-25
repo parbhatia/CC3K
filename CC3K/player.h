@@ -2,6 +2,7 @@
 #define PLAYER_H
 #include "character.h"
 #include <string>
+#include <vector>
 
 class Player : public Character {
     int gold;

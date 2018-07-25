@@ -16,12 +16,12 @@ void Shade::attack(Halfling *h) {
     double dmg = (-getAtk() * 100 / (100 + h->getDef()));
     h->changeHp(dmg);
     if(h->getHp()<=0){
-      throw Attack{dmg, 0, Result::death};
+      //throw Attack{dmg, 0, Result::death};
     } else {
-      throw Attack{dmg, h->getHp(), Result::attack};
+      //throw Attack{dmg, h->getHp(), Result::attack};
     } 
   } else {
-    throw Attack{0, h->getHp(), Result::miss};
+    //throw Attack{0, h->getHp(), Result::miss};
   }
 }
 
