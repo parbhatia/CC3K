@@ -68,11 +68,11 @@ void Dragon::setHostile(bool n) {
     dragon_hostile = n;
 }
 
-void Dragon::setDragongold(Gold* g) {
-    dragongold = g;
+void Dragon::setDGold(Object* g) {
+    dgold = g;
 }
 
-Gold* Dragon::getDragongold() {
-    return dragongold;
+Object* Dragon::getDGold() {
+    return dgold;
 }
 
