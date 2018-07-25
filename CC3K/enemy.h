@@ -1,6 +1,7 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
+
 #include "character.h"
 
 class Enemy : public Character {
@@ -11,6 +12,7 @@ public:
     void setHostile(bool n);
     bool getHostile();
     void notify(Player* p) override;
+    std::string printAttack(int dmg);
 };
 
 #endif

@@ -77,4 +77,6 @@ void Character::attack(Character *whoTo) {
 
 void Character::beUsed(Player *whoFrom) {} //Only a potion can be used or a gold can be picked, so it does nothing.ss
 
+
+
 Character::~Character() {}
