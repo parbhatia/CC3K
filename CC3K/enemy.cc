@@ -74,3 +74,6 @@ void Enemy::attack(Goblin *g) {
 }
 
 void Enemy::setHostile(bool n) {}
+bool Enemy::isDead() {
+    return (getHp() <= 0);
+}
