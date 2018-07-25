@@ -91,6 +91,12 @@ int main(int argc, const char * argv[]) {
             }
             
         }
+        catch (Game_Won &g) {
+            cout << "yay" << endl;
+        }
+        catch (Game_Lost &g) {
+            cout << "nooo!" << endl;
+        }
         catch (ios::failure &) {
             return 0;
         }  // Any I/O failure quits

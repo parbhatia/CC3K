@@ -136,16 +136,8 @@ void Grid::attack_enemy(Direction d) {
     else if (d == Direction::E) { new_cell = cells[p_row][p_col+1]; }
     else { new_cell = cells[p_row][p_col-1]; }
     //attack enemy
-    try {
-        player_cell->attack(*new_cell);
-       // cout << player->getAction() << endl;
-    }
-    catch (Stair_Cell &o) {
-        new_level();
-        return;
-    }
-    //only change player_cell if move was successful
-    // player_cell = new_cell;
+    player_cell->attack(*new_cell);
+    
     player_cell->notifyObservers();
 }
 
@@ -314,8 +306,10 @@ void Grid::set_dragon(Cell *c) {
         Direction d = direction_picker();
         //pick new cell based on direction
         Cell *new_cell = new_cell_pos(c,d);
-        if (!new_cell->isOccupied()) {
+        //check whether new cell can hold dragon
+        if (new_cell->canDragon()) {
             new_cell->setObject(c->getObject()->getDragon());
+            new_cell->set_dragon();
             //set dragon on new cell
             cout << "dragon cell is: " << new_cell->getRow() << ","
             << new_cell->getCol() << endl;
