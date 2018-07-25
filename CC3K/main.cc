@@ -87,6 +87,7 @@ int main(int argc, const char * argv[]) {
                     break;
                 } else if (cmd == "q") {
                 }
+                g.reset_actions();
                 g.check_game(); //check after every move
             }
             

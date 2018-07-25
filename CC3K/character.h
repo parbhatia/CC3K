@@ -23,8 +23,9 @@ class Character : public Object
     void changeHp(double n);
     void setMaxHp(double n);
     void setMissChance(int n);
+    static void clearActions();
     static void addAction(std::string s);
-    static std::string getAction();
+    static std::vector <std::string> getAction();
     static void cleanActions();
     static void storeAction(int dmg, char attacker, char defender, int hp);
     static void storePotion(std::string type);

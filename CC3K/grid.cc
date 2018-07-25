@@ -35,7 +35,7 @@ void Grid::check_game() {
     if (won) throw Game_Won();
 }
 
-void Grid::reset_actions() { player->cleanActions(); }
+void Grid::reset_actions() { Character::clearActions(); }
 
 void Grid::reset_cells() {
     //clear old cells
@@ -299,7 +299,6 @@ void Grid::generate_potions() {
 }
 
 void Grid::set_dragon(Cell *c) {
-    cout << "settign dragon" << endl;
     bool done = false;
     while(!done) {
         //pick random directiom
@@ -311,8 +310,6 @@ void Grid::set_dragon(Cell *c) {
             new_cell->setObject(c->getObject()->getDragon());
             new_cell->set_dragon();
             //set dragon on new cell
-            cout << "dragon cell is: " << new_cell->getRow() << ","
-            << new_cell->getCol() << endl;
             done = true;
         }
     }
@@ -430,6 +427,8 @@ std::ostream &operator<<(std::ostream &out, const Grid &g) {
     out << "Atk: " << g.player->getAtk() << endl;
     out << "Def: " << g.player->getDef() << endl;
     out << "Action: " << endl;
-    
+    for (auto a: Character::getAction()) {
+        cout << a << endl;
+    }
     return out;
 }

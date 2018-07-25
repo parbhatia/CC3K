@@ -93,7 +93,9 @@ void Character::storePotion(std::string type){
     Character::addAction(s);
 }
 
-//std::string Character::getAction() { return actions[0]; }
+void Character::clearActions() { actions.clear(); }
+
+std::vector <std::string> Character::getAction() { return actions; }
 
 void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, so it does nothing.
 /*void Character::attack(Character *whoTo) {
