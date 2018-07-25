@@ -15,7 +15,7 @@ Object* Object::spawn() {
 void Object::setDragon(Object *d) {}
 bool Object::hasDragon() {return false;}
 bool Object::needsDragon() {return false;}
-Object* getDragon() {return nullptr;}
+Object* Object::getDragon() {return nullptr;}
 void Object::setHostile(bool n) {}
 void Object::setDGold(Object* g) {}
 Object* Object::getDGold() {return nullptr;}
