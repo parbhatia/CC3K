@@ -15,35 +15,27 @@ void Orc::beAttacked(Object* whoFrom){
 }
 
 void Orc::attack(Goblin* g){
+    double dmg = (-getAtk()*100/(100+g->getDef()))*1.5;
     int chance = rand()%10 + 1;
     if (chance > getMissChance()) {
-        double dmg = (-getAtk()*100/(100+g->getDef()))*1.5;
         g->changeHp(dmg);
-        if(g->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
-        }
-        else{
-        throw Attack{dmg, g->getHp(), Result::attack};
-        }
-    } else {
-        throw Attack{0, g->getHp(), Result::miss};
     }
+    else {
+        dmg = 0;
+    }
+    Character::storeAction(dmg, print(), 'P', g->getHp);
+
 }
 
 void Orc::attack(Drow *h) {
+    double dmg = (-getAtk() * 100 / (100 + h->getDef()));
     int chance = rand() % 10 + 1;
     if (chance > h->getMissChance()) {
-        double dmg = (-getAtk() * 100 / (100 + h->getDef()));
-        h->changeHp(dmg);
-        if(h->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
-        }
-        else{
-            throw Attack{dmg, h->getHp(), Result::attack};
-        } 
+        h->changeHp(dmg); 
     } else {
-        throw Attack{0, h->getHp(), Result::miss};
+        dmg = 0;
     }
+    Character::storeAction(dmg, print(), 'P', h->getHp);
 }
 
 Orc::~Orc() {}

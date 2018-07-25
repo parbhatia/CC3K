@@ -54,11 +54,11 @@ void Character::cleanActions() {
     actions.clear();
 }
 
-std::string Character::printAttack(int dmg){
-    char race = print();
-    stringstream ss;
-    ss << race << " deals " << std::to_string(dmg) << " to player.";
-    return ss.str();
+std::string Character::storeAction(int dmg, char attacker, char defender, int hp){
+    // char race = print();
+    // stringstream ss;
+    // ss << race << " deals " << std::to_string(dmg) << " to player.";
+    // return ss.str();
 }
 
 std::string Character::getAction() { return actions[0]; }
@@ -76,8 +76,8 @@ void Character::attack(Character *whoTo) {
             //throw Attack{dmg, 0, Result::death};
         }
         else{
-            ss << printAttack(dmg);
-            addAction(ss.str());
+            // ss << printAttack(dmg);
+            // addAction(ss.str());
             //throw Attack{dmg, whoTo->getHp(), Result::attack};
         } 
     } else {
