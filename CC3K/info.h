@@ -20,11 +20,11 @@ class PickUpGold {};
 class Game_Won {};
 class Game_Lost {};
 class Set_Dragon {
-    Object *d
 public:
-    Object *d = nullptr;
-    
-}
+    int row;
+    int col;
+    Set_Dragon(int r,int c) : row{r}, col{c} {}
+};
 
 //number of enemies and items
 const int globalPotions = 10;

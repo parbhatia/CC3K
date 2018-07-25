@@ -118,17 +118,17 @@ void Grid::set_observers() {
 
 
 /*bool Grid::has_player_test() {
-    cout << player_cell->print() << endl;
-    return player_cell != nullptr;
-}
-
-void Grid::cell_test() {
-    for(auto row: cells) {
-        for (auto cell: row) {
-            cout << cell->getRow() << "," << cell->getCol() << endl;
-        }
-    }
-}*/
+ cout << player_cell->print() << endl;
+ return player_cell != nullptr;
+ }
+ 
+ void Grid::cell_test() {
+ for(auto row: cells) {
+ for (auto cell: row) {
+ cout << cell->getRow() << "," << cell->getCol() << endl;
+ }
+ }
+ }*/
 
 void Grid::attack_enemy(Direction d) {
     int p_row = player_cell->getRow();
@@ -280,13 +280,13 @@ void Grid::move_enemies() {
 }
 
 /*void Grid::test_chambers() {
-    int i = 1;
-    for (auto it : chambers) {
-        cout << "Chamber: " << i << " " << endl;
-        ++i;
-        it.print();
-    }
-}*/
+ int i = 1;
+ for (auto it : chambers) {
+ cout << "Chamber: " << i << " " << endl;
+ ++i;
+ it.print();
+ }
+ }*/
 
 void Grid::create_randomness() {
     srand((unsigned)time(NULL));
@@ -325,14 +325,31 @@ void Grid::generate_potions() {
     }
 }
 
+void Grid::set_dragon(Cell *c) {
+    bool done = false;
+    while(!done) {
+        //pick random directiom
+        Direction d = direction_picker();
+        //pick new cell based on direction
+        Cell *new_cell = new_cell_pos(c,d);
+        if (!new_cell->isOccupied()) {
+            //set dragon on new cell
+            //set gold on dragon
+        }
+    }
+}
+
 void Grid::generate_gold() {
     while(1) {
         int chamb_num = chamber_picker();
         try {
             chambers[chamb_num].generate_gold();
         }
-        catch(Set_Dragon &e) {
-            
+        catch(Set_Dragon &cell_info) { //set dragon
+            while(1) {
+                Cell *gold_cell = cells[cell_info.row][cell_info.col];
+                set_dragon(gold_cell);
+            }
         }
         catch(No_More_Gold &) {
             return;

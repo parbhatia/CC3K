@@ -38,6 +38,7 @@ class Grid {
     void check_game(); //initiates player win, or loss
     void reset_cellsmoved(); //resets hasmoved flag on all cells
     void read_layout(std::string s);
+    void set_dragon(Cell *c); //set dragon around cell c
     void attack_enemy(Direction d);
     void intialize_player(std::string type); //initializes player with race type, and changes race attribute for display purposes
     void default_layout();
