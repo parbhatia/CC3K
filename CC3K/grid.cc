@@ -21,6 +21,7 @@ Grid::~Grid() {
     actions.clear();
     //clear chamber static fields
     chambers[0].clear();
+    delete player;
 }
 
 void Grid::reset_chambers() {
@@ -45,6 +46,7 @@ void Grid::reset_cells() {
         }
     }
     player_cell = nullptr;
+    reset_actions();
 }
 
 void Grid::intialize_player(string type) {
@@ -65,7 +67,6 @@ void Grid::new_level() {
     else {
         //reset potion effects
         player->resetEffect();
-        
         reset_cells();
         reset_chambers();
         //pick chamber to generate new player location
@@ -74,10 +75,8 @@ void Grid::new_level() {
         chambers[chamb_num].generate_player_cell(player);
         //set new player_cell location
         player_cell = chambers[chamb_num].give_playercell(); //ask chamber for player cell
-        if (level <= 5) {
-            ++level;
-            generate_stairs();
-        }
+        player_cell->set_moved();
+        if (level <= 5) { generate_stairs(); }
         generate_potions();
         generate_gold();
         generate_enemies();
