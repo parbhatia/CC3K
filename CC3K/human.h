@@ -10,8 +10,6 @@ class Human : public Enemy
     Human();
     char print() override;
     void beAttacked(Object* whoFrom) override;
-    //void attack(Goblin* g) override;
-    //void attack(Drow *h) override;
     Object* spawn() override;
 };
 

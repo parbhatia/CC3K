@@ -8,9 +8,6 @@ class Merchant: public Enemy{
     Merchant();
     char print() override;
     void beAttacked(Object* whoFrom) override;
-    /*void attack(Drow* d) override;
-    void attack(Goblin* g) override;    
-    void attack(Character* whoTo) override;*/
     bool getHostile() override;
     void setHostile(bool n=true) override;
     static void resetHostile();
