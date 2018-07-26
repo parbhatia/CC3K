@@ -90,8 +90,6 @@ bool Grid::in_range(int row, int col) {
 }
 
 void Grid::notify_player_observers() {
-    cout << "notifying observers" << endl;
-    if (!player_cell->hasPlayer()) cout << "we fucke dup" << endl;
     player_cell->notifyObservers();
 }
 
@@ -135,7 +133,6 @@ void Grid::attack_enemy(Direction d) {
     else if (d == Direction::E) { new_cell = cells[p_row][p_col+1]; }
     else { new_cell = cells[p_row][p_col-1]; }
     //attack enemy
-    if (!player_cell->getPlayer()) cout << "par fucked up" << endl;
     player_cell->attack(*new_cell);
 }
 
@@ -247,7 +244,6 @@ void Grid::move_enemies() {
             catch (Move_Unsuccessful &o) {
                 continue;
             }
-            if (new_cell == player_cell) cout << "WTFFFF" << endl;
         }
     }
 }

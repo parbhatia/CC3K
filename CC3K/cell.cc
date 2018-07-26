@@ -80,10 +80,8 @@ void Cell::clear() {
 
 void Cell::attack(Cell &target) {
     Object *p = this->getPlayer();
-    if (!p) cout << "we fucke dup" << endl;
     Object *new_object = target.getObject();
     if (target.hasObject()) {
-        cout << "here" << endl;
         new_object->beAttacked(p);
         if (new_object->isDead()) {
             Object* Dgold = new_object->getDGold();
@@ -102,7 +100,7 @@ void Cell::attack(Cell &target) {
 }
 
 bool Cell::isOccupied(){
-    if(hasPlayer() || hasObject()){
+    if(hasPlayer() || hasObject() || has_stair()){
         return true;
     } return false;
 }

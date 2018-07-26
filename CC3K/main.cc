@@ -8,7 +8,7 @@ using namespace std;
 std::vector <std::string> Character::actions;
 bool Merchant::merchant_hostile = false;
 
-//determines whether given cmd
+//determines valid direction given direction
 bool valid_direction(string dir) {
     if ((dir == "no") | (dir == "so") | (dir == "ea") |
         (dir == "we") | (dir == "ne") | (dir == "nw") |
