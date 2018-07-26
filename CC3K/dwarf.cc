@@ -1,7 +1,6 @@
 #include "dwarf.h"
 #include "drow.h"
 #include "goblin.h"
-#include "attack.h"
 
 Dwarf::Dwarf() : Enemy{20, 30, 100} {}
 

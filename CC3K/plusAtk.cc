@@ -1,6 +1,6 @@
 #include "plusAtk.h"
 #include "player.h"
-#include "attack.h"
+
 
 void PlusAttack::beUsed(Player *whoFrom){
     whoFrom->changeAtk(5*whoFrom->getPotRate());

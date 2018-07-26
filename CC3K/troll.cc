@@ -1,7 +1,7 @@
 #include "troll.h"
 #include "halfling.h"
 #include "dwarf.h"
-#include "attack.h"
+
 #include <cstdlib>
 
 Troll::Troll(double atk, double def, double hp): Player{atk, def, hp} {}

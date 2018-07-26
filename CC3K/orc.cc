@@ -1,5 +1,5 @@
 #include "orc.h"
-#include "attack.h"
+
 #include "goblin.h"
 #include "drow.h"
 

@@ -1,7 +1,6 @@
 #include "goblin.h"
 #include "halfling.h"
 #include "dwarf.h"
-#include "attack.h"
 #include <cstdlib>
 
 Goblin::Goblin(): Player{15, 20, 110} {}

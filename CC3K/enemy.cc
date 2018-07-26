@@ -3,7 +3,7 @@
 #include "object.h"
 #include "drow.h"
 #include "goblin.h"
-#include "attack.h"
+
 #include <string>
 #include <iostream>
 using namespace std;

@@ -1,7 +1,7 @@
 #include "shade.h"
 #include "halfling.h"
 #include "dwarf.h"
-#include "attack.h"
+
 #include <cstdlib>
 using namespace std;
 

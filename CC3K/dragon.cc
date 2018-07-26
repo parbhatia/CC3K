@@ -1,7 +1,6 @@
 #include "dragon.h"
 #include "drow.h"
 #include "goblin.h"
-#include "attack.h"
 
 Dragon::Dragon(): Enemy{20, 20, 150} {}
 char Dragon::print() {

@@ -189,7 +189,3 @@ size_t Cell::sizeObservers() {
     return observers.size();
 }
 
-void notifyDisplay() { 
-    //to write
-}
-

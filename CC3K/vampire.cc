@@ -2,7 +2,7 @@
 #include <climits>
 #include "halfling.h"
 #include "dwarf.h"
-#include "attack.h"
+
 #include <cstdlib>
 
 Vampire::Vampire(double atk, double def, double hp): Player{atk, def, hp} {

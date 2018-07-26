@@ -1,5 +1,4 @@
 #include "halfling.h"
-#include "attack.h"
 #include "goblin.h"
 #include "drow.h"
 

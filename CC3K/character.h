@@ -39,7 +39,6 @@ class Character : public Object
     void setPotRate(double n);
     void resetEffect();
     void attack(Item *whoTo) override;
-    //void attack(Character *whoTo) override;
     void beUsed(Player *whoFrom) override;
     void notify(Player* p) override{}
     ~Character() = 0;

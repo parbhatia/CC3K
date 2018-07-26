@@ -1,7 +1,7 @@
 #include "merchant.h"
 #include "drow.h"
 #include "goblin.h"
-#include "attack.h"
+
 #include "gold.h"
 
 Merchant::Merchant(): Enemy{70, 5, 30} {}

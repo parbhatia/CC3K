@@ -9,7 +9,7 @@ const int player_types = 5;
 const int potion_types = 6;
 const int gold_distribution_number = 8;
 
-//error codes to move in seperate file later
+//error codes
 class No_More_Enemies {};
 class No_More_Potions {};
 class No_More_Gold {};

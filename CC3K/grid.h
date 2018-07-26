@@ -13,7 +13,7 @@
 #include "character.h"
 #include "info.h"
 #include "player.h"
-#include "attack.h"
+
 
 class Grid {
     int width = 79;

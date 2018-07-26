@@ -9,9 +9,7 @@ class Halfling : public Enemy
   public:
     Halfling();
     char print() override;
-    void beAttacked(Object* whoFrom) override;  
-    /*void attack(Goblin* g) override;
-    void attack(Drow *h) override;*/
+    void beAttacked(Object* whoFrom) override;
 };
 
 #endif

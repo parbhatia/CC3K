@@ -1,7 +1,7 @@
 #include "player.h"
 #include "halfling.h"
 #include "dwarf.h"
-#include "attack.h"
+
 using namespace std;
 
 Player::Player( double atk, double def, double hp): Character{atk, def, hp}, gold{0}, merchant_hostile{false} {}

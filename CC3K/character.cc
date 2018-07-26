@@ -1,5 +1,4 @@
 #include "character.h"
-#include "attack.h" 
 #include <cstdlib>
 #include <ctime>
 using namespace std;
@@ -83,11 +82,6 @@ void Character::storeAction(int dmg, char attacker, char defender, int hp){
     }
     Character::addAction(ss.str());
 
-    
-    // char race = print();
-    // stringstream ss;
-    // ss << race << " deals " << std::to_string(dmg) << " to player.";
-    // return ss.str();
 }
 
 void Character::storePotion(std::string type){
@@ -100,26 +94,6 @@ void Character::clearActions() { actions.clear(); }
 std::vector <std::string> Character::getAction() { return actions; }
 
 void Character::attack(Item *whoTo) {} //Attack an item is not a valid command, so it does nothing.
-/*void Character::attack(Character *whoTo) {
-    int chance = rand() % 10 + 1;
-    if (chance > whoTo->getMissChance()) {
-        double dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
-        whoTo->changeHp(dmg);
-        stringstream ss;
-        if(whoTo->getHp()<=0){
-            ss << "PC kills " << whoTo->print() << ".";
-            addAction(ss.str());
-            //throw Attack{dmg, 0, Result::death};
-        }
-        else{
-            // ss << printAttack(dmg);
-            // addAction(ss.str());
-            //throw Attack{dmg, whoTo->getHp(), Result::attack};
-        } 
-    } else {
-       // throw Attack{0, whoTo->getHp(), Result::miss};
-    }
-}*/
 
 void Character::beUsed(Player *whoFrom) {} //Only a potion can be used or a gold can be picked, so it does nothing.ss
 

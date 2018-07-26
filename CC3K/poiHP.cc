@@ -1,6 +1,6 @@
 #include "poiHP.h"
 #include "player.h"
-#include "attack.h"
+
 
 void poiHP::beUsed(Player *whoFrom) {
     if ((whoFrom->getHp() - 10 * whoFrom->getPotRate()) > 0) {

@@ -1,7 +1,6 @@
 #include "elf.h"
 #include "drow.h"
 #include "goblin.h"
-#include "attack.h"
 
 char Elf::print(){
     return 'E';

@@ -10,8 +10,6 @@ class Dwarf : public Enemy
     Dwarf();
     char print() override;
     void beAttacked(Object* whoFrom) override;
-    /*void attack(Drow *d) override;
-    void attack(Goblin *g) override;*/
 };
 
 #endif

@@ -1,5 +1,5 @@
 #include "human.h"
-#include "attack.h"
+
 #include "goblin.h"
 #include "drow.h"
 #include "gold.h"
