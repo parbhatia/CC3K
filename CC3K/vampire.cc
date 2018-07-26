@@ -18,14 +18,11 @@ void Vampire::attack(Enemy *whoTo) {
     double dmg = (-getAtk() * 100 / (100 + whoTo->getDef()));
     if (chance > getMissChance()) {
         whoTo->changeHp(dmg);
-        if(whoTo->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
-        }
         changeHp(5); // Vampire gains 5 HP every successful attack.
     } else {
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), whoTo->print(), whoTo->getHp());
+    Character::storeAction(-dmg, print(), whoTo->print(), whoTo->getHp());
 }
 
 void Vampire::attack(Halfling *h) {
@@ -34,13 +31,10 @@ void Vampire::attack(Halfling *h) {
     if (chance > 5) {   // Halfling has 50% chance to cause PC to miss.
         h->changeHp(dmg);
         changeHp(5);   // Vampire gains 5 HP every successful attack.
-        if(h->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
-        }
     } else {
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), h->print(), h->getHp());
+    Character::storeAction(-dmg, print(), h->print(), h->getHp());
 }
 
 void Vampire::attack(Dwarf *d) {
@@ -49,11 +43,8 @@ void Vampire::attack(Dwarf *d) {
     if (chance > getMissChance()) {
         d->changeHp(dmg);
         changeHp(-5);   // Vampires are allergic to dwarves. lose 5HP instead.
-        if(d->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
-        }
     } else {
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), d->print(), d->getHp());
+    Character::storeAction(-dmg, print(), d->print(), d->getHp());
 }

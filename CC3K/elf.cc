@@ -14,23 +14,6 @@ void Elf::beAttacked(Object* whoFrom){
 Elf::Elf() : Enemy{30, 10, 140} {    
 }
 
-
-
-/*void Elf::attack(Drow *d){  //only attack Drow once
-    int chance = rand()%10 + 1;
-    double dmg = -getAtk()*100/(100+d->getDef());
-    if (chance > getMissChance()) {
-        d->changeHp(dmg);
-        if(d->getHp()<=0){
-            throw Attack{dmg, 0, Result::death};
-        } 
-    }
-    else{
-        dmg = 0;
-    }
-   Character::storeAction(dmg, print(), 'P', d->getHp());
-}*/
-
 void Elf::attack(Enemy* whoTo){
     int chance;
     double dmg = -getAtk()*100/(100+whoTo->getDef());
@@ -38,14 +21,11 @@ void Elf::attack(Enemy* whoTo){
         chance = rand()%10 + 1;
         if (chance > getMissChance()) {
             whoTo->changeHp(dmg);
-        //     if(whoTo->getHp()<=0){
-        //     throw Attack{dmg, 0, Result::death};
-        // } 
         } 
         else {
             dmg = 0;
         }
-        Character::storeAction(dmg, print(), 'P', whoTo->getHp());
+        Character::storeAction(-dmg, print(), 'P', whoTo->getHp());
     }
 
 }
@@ -57,13 +37,10 @@ void Elf::attack(Goblin *g) {
         chance = rand()%10 + 1;
         if (chance > getMissChance()) {
             g->changeHp(dmg);
-            // if(g->getHp()<=0){
-            // throw Attack{dmg, 0, Result::death};
-            // } 
         }
         else{
             dmg = 0;
         }
-        Character::storeAction(dmg, print(), 'P', g->getHp());   
+        Character::storeAction(-dmg, print(), 'P', g->getHp());   
     }
 }

@@ -15,8 +15,6 @@ Enemy::~Enemy() {}
 void Enemy::notify(Player* p) { 
     if (getHostile()) {                  //decide if attack here. check hostile
         p->beAttacked(this);
-    } else {
-        cout << "I am your friend" << endl;
     }
 }
 
@@ -26,15 +24,10 @@ void Enemy::attack(Player *p) {
     int chance = rand() % 10 + 1;
     if (chance > p->getMissChance()) {
         p->changeHp(dmg);
-        stringstream ss;
-        // if(p->getHp()<=0){
-        //     throw Attack{dmg, 0, Result::death};
-        // }
     } else {
-        dmg = 0;
-       // throw Attack{0, whoTo->getHp(), Result::miss};
+        dmg = 0;;
     }
-    Character::storeAction(dmg, print(), 'P', p->getHp());
+    Character::storeAction(-dmg, print(), 'P', p->getHp());
 
 
 }
@@ -46,31 +39,24 @@ void Enemy::attack(Drow *d) {
     if (chance > getMissChance()) {
 
         d->changeHp(dmg);
-        // if(d->getHp() <= 0){
-        //     throw Attack{dmg,0,Result::death};
-        // }
     }
     else{
         dmg = 0;
     }
-    Character::storeAction(dmg, print(), 'P', d->getHp());
+    Character::storeAction(-dmg, print(), 'P', d->getHp());
     
 }
 
 void Enemy::attack(Goblin *g) {
     double dmg = -getAtk()*100/(100+g->getDef());
     int chance = rand()%10 + 1;
-    if (chance > getMissChance()) {
-        
+    if (chance > getMissChance()) {     
         g->changeHp(dmg);
-        // if(g->getHp() <= 0){
-        //     throw Attack{dmg,0,Result::death};
-        // }
     }
     else{
         dmg = 0;
     }    
-    Character::storeAction(dmg, print(), 'P', g->getHp());
+    Character::storeAction(-dmg, print(), 'P', g->getHp());
 }
 
 void Enemy::setHostile(bool n) {}
