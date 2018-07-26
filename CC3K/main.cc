@@ -76,6 +76,8 @@ int main(int argc, const char * argv[]) {
                     cout << "Restarting Game" << endl;
                     break;
                 } else if (cmd == "q") {
+                    cout << "Good game." << endl;
+                    break;
                 }
                 g.notify_player_observers();
                 g.reset_cellsmoved();
@@ -85,7 +87,7 @@ int main(int argc, const char * argv[]) {
             }
         }
         catch (Game_Won &g) {
-            cout << "yay" << endl;
+            cout << "Game Won." << endl;
         }
         catch (Game_Lost &g) {
             cout << "Game Lost." << endl;
