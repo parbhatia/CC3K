@@ -55,7 +55,7 @@ public:
     void attachObserver(Cell* ob);
     void setDisplay(TextDisplay *td);
     void notifyDisplay();
-    int sizeObservers();
+    size_t sizeObservers();
     Player* getPlayer(); 
     Object* getObject();
     virtual ~Cell() = 0;

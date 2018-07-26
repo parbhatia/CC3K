@@ -24,7 +24,6 @@ void create_randomness() {
 int main(int argc, const char * argv[]) {
     create_randomness();
     while(true) { //handles multiple games
-        //cout << "starting game" << endl;
         Grid g;
         string race;
         //command interpreter
@@ -41,12 +40,8 @@ int main(int argc, const char * argv[]) {
                         cout << "Please pick player." << endl;
                         continue;
                     }
-                    //grid moves player at direction cmd
                     g.move_player(dir_map.at(cmd));
                     if (!stop_enemies) g.move_enemies();
-                    //g.reset_cellsmoved();
-                    //g.notify_player_observers();
-                    //cout << g;
                 } else if ((cmd == "s") | (cmd == "d") | (cmd == "v") |
                            (cmd == "g") | (cmd == "t")) {
                     if (player_set) {
@@ -65,9 +60,6 @@ int main(int argc, const char * argv[]) {
                     if (valid_direction(cmd)) {
                         g.use_pot(dir_map.at(cmd));
                         if (!stop_enemies) g.move_enemies();
-                        //g.reset_cellsmoved();
-                        //g.notify_player_observers();
-                        //cout << g;
                     }
                 } else if (cmd == "a") {
                     cin >> cmd;
@@ -75,9 +67,6 @@ int main(int argc, const char * argv[]) {
                         //grid attacks player at direction cmd
                         g.attack_enemy(dir_map.at(cmd));
                         if (!stop_enemies) g.move_enemies();
-                        //g.reset_cellsmoved();
-                        //g.notify_player_observers();
-                        //cout << g;
                     }
                 } else if (cmd == "f") {
                     //toggle stop_enemies flag
@@ -88,13 +77,12 @@ int main(int argc, const char * argv[]) {
                     break;
                 } else if (cmd == "q") {
                 }
-                g.reset_cellsmoved();
                 g.notify_player_observers();
+                g.reset_cellsmoved();
                 cout << g;
                 g.reset_actions();
                 g.check_game(); //check after every move
             }
-            
         }
         catch (Game_Won &g) {
             cout << "yay" << endl;

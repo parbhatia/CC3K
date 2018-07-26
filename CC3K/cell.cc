@@ -80,9 +80,10 @@ void Cell::clear() {
 
 void Cell::attack(Cell &target) {
     Object *p = this->getPlayer();
-    Object *new_object = nullptr;
+    if (!p) cout << "we fucke dup" << endl;
+    Object *new_object = target.getObject();
     if (target.hasObject()) {
-        new_object = target.getObject();
+        cout << "here" << endl;
         new_object->beAttacked(p);
         if (new_object->isDead()) {
             Object* Dgold = new_object->getDGold();
@@ -90,10 +91,14 @@ void Cell::attack(Cell &target) {
                 Dgold->setDragon(nullptr);
             }
             Object *spawn = new_object->spawn();
+            if (spawn!=nullptr) {
+                target.set_gold();
+            }
             delete new_object;
             target.setObject(spawn);
         }
     }
+    set_moved();
 }
 
 bool Cell::isOccupied(){
@@ -158,9 +163,10 @@ void Cell::acceptMove(Cell &whoFrom) {
 
 void Cell::notifyObservers() {
     for (auto it : observers) {
-        it->notify(*this);
+        if (it) it->notify(*this);
     }
-} 
+}
+
 void Cell::notify(Cell &whoFrom) {
     Player* p = whoFrom.getPlayer();
     if (ob) { ob->notify(p);}
@@ -181,7 +187,7 @@ void Cell::use(Cell &target) {
     set_moved();
 }
 
-int Cell::sizeObservers() {
+size_t Cell::sizeObservers() {
     return observers.size();
 }
 

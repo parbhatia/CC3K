@@ -4,7 +4,7 @@ using namespace std;
 
 int Chamber::numPotions = 10;
 int Chamber::numGold = 10;
-int Chamber::numEnemies = 20;
+int Chamber::numEnemies = 150;
 
 void Chamber::clear() {
     numPotions = globalPotions;
@@ -168,8 +168,5 @@ void Chamber::generate_enemy() {
     }
 }
 
-//int Chamber::get_numEnemies() { return numEnemies; }
-
-//int Chamber::add_numEnemies() { ++numEnemies; }
 
 

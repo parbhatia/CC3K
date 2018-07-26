@@ -31,8 +31,4 @@ public:
     Gold *GoldFactory(int rand_num);
 };
 
-
-//gold is 5/8 chance of normal, 1/8 dragon hoard, 1/4 small hoard.
-
-
 #endif

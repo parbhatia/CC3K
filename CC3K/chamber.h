@@ -12,8 +12,6 @@ class Chamber {
     Factory f;
   public:
     void print();
-    //static int get_numEnemies();
-    //static int add_numEnemies();
     void generate_enemy();
     void generate_potion();
     void generate_gold();
