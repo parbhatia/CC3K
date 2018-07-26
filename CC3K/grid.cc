@@ -6,7 +6,7 @@
 using namespace std;
 
 Grid::Grid() {
-    read_layout("/Users/par/Desktop/CC3K/CC3K/cc3k_emptyfloor.txt");
+    read_layout("./cc3k_emptyfloor.txt");
 }
 
 Grid::~Grid() {
